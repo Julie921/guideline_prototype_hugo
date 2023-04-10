@@ -11,8 +11,13 @@ weight: 1
 
 # Test Ag-grid
 
-### shortcode `agg` 
+### first table
 
-{{< agg >}}
+{{< agg one >}}
+
+
+### second table
+
+{{< agg two >}}
 
 

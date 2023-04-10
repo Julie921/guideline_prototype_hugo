@@ -1,0 +1,12 @@
+{
+  "columnDefs": [
+    { "field": "marque" },
+    { "field": "modèle" },
+    { "field": "prix" }
+  ],
+  "rowData": [
+    { "marque": "Renault", "modèle": "R12", "prix": 35000 },
+    { "marque": "Peugeot", "modèle": "405", "prix": 32000 },
+    { "marque": "Citroën", "modèle": "2CV", "prix": 72000 }
+  ]
+}

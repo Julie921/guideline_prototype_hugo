@@ -1,0 +1,62 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": ["desc", "asc"],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "sortingOrder": [
+        "asc",
+        "desc",
+        null
+      ],
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "nom_subj",
+      "headerName": "nom_subj",
+      "request": "pattern { V -[subj]-> S; S[upos=NOUN|PROPN] }"
+    },
+    {
+      "field": "pron_subj",
+      "headerName": "pron_subj",
+      "request": "pattern { V -[subj]-> S; S[upos=PRON] }"
+    },
+    {
+      "field": "other_subj",
+      "headerName": "other_subj",
+      "request": "pattern { V -[subj]-> S; S[upos<>NOUN|PROPN|PRON] }"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@2.11",
+      "nom_subj": 10473,
+      "pron_subj": 8226,
+      "other_subj": 306
+    },
+    {
+      "row_header": "SUD_French-ParisStories@2.11",
+      "nom_subj": 134,
+      "pron_subj": 3837,
+      "other_subj": 7
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@2.11",
+      "nom_subj": 134,
+      "pron_subj": 3837,
+      "other_subj": 7
+    },
+    {
+      "row_header": "PS2023@2.11",
+      "nom_subj": 134,
+      "pron_subj": 3837,
+      "other_subj": 7
+    }
+  ]
+}

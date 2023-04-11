@@ -1,5 +1,6 @@
 {
-  "columnDefs": [
+  "defaultColDef": {},
+    "columnDefs": [
     { "field": "marque" },
     { "field": "modèle" },
     { "field": "prix" }

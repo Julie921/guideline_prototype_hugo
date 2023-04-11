@@ -13,8 +13,7 @@ weight: 1
 
 ### first table
 
-{{< agg one >}}
-
+{{< agg grew >}}
 
 ### second table
 

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "nom_subj",
+    "request": [
+      {"pattern": ["V -[subj]-> N", "N[upos=NOUN|PROPN]"] }
+    ]
+  },
+  {
+    "id": "pron_subj",
+    "request": [
+      {"pattern": ["V -[subj]-> N", "N[upos=PRON]"] }
+    ]
+  },
+  {
+    "id": "other_subj",
+    "request": [
+      {"pattern": ["V -[subj]-> N", "N[upos<>NOUN|PROPN|PRON]"] }
+    ]
+  }
+]

@@ -1,12 +1,14 @@
 ---
-title: "Number"
-weight: 1
+title: "French"
+weight: 3
 # bookFlatSection: false
 # bookToc: true
 # bookHidden: false
-# bookCollapseSection: false
+bookCollapseSection: true
 # bookComments: false
 # bookSearchExclude: false
 ---
 
-## NUMBER
+# French 
+
+est-ce qu'on va garder cette page ? 

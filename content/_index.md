@@ -1,13 +1,15 @@
 ---
 title: "Docs"
 weight: 1
-# bookFlatSection: false
+bookFlatSection: True
 # bookToc: true
 # bookHidden: false
 # bookCollapseSection: false
 # bookComments: false
-# bookSearchExclude: false
+bookSearch: true
+bookSection: docs
 ---
+
 
 # Welcome to Syntactic Universal Dependencies Guidelines (SUD)
 

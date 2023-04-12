@@ -29,10 +29,9 @@ The `subj` relation is used for all subjects, regardless of their form (nominal 
 ### French
 The `subj` in french is usualy between a VERB or an AUX (often the root) and a nominal group (PRON, PROPN or NOUN). You can see all the pattern in this table. 
 
-![extrait_image](/images/tableau_subj_test.png)
+{{< agg french_subj >}}
 
 
-{{< agg two >}}
 
 {{< hint info >}}
 Dans l'idéal, les patterns du tableau sont reliés aux patterns d'explication (s'il y en a ?) dans la page correspondante des guidelines. Est-ce qu'on met touts les patterns ? Comment on décide ? Pour le moment - manuellement. 

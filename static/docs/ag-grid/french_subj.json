@@ -1,0 +1,54 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "subject_noun",
+      "headerName": "subject_noun",
+      "request": "pattern {GOV-[subj]->DEP;GOV [upos=AUX|VERB];DEP[upos=NOUN|PROPN|PRON|NUM,!Title, !InTitle]}"
+    },
+    {
+      "field": "subject_verb_infinitif",
+      "headerName": "subject_verb_infinitif",
+      "request": "pattern {GOV-[subj]->DEP;GOV [upos=AUX|VERB];DEP [upos=VERB|AUX, VerbForm = Inf, !Title, !InTitle]}"
+    },
+    {
+      "field": "subject_adp",
+      "headerName": "subject_adp",
+      "request": "pattern {GOV-[subj]->DEP;GOV[upos=AUX|VERB];DEP [lemma=de|jusque];DEP-[comp:obj]->X;X [upos<>PROPN]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "subject_noun": 18647,
+      "subject_verb_infinitif": 19,
+      "subject_adp": 6
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "subject_noun": 3956,
+      "subject_verb_infinitif": 0,
+      "subject_adp": 0
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "subject_noun": 3366,
+      "subject_verb_infinitif": 2,
+      "subject_adp": 0
+    }
+  ]
+}

@@ -15,6 +15,8 @@ weight: 1
 
 {{< agg grew >}}
 
+{{< agg french_subj >}}
+
 ### second table
 
 {{< agg two >}}

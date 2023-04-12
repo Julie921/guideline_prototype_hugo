@@ -1,6 +1,6 @@
 ---
 title: "Language"
-weight: 3
+weight: 2
 # bookFlatSection: false
 bookToc: true
 # bookHidden: false

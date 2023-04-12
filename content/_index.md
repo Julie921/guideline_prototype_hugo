@@ -10,6 +10,7 @@ bookSearch: true
 ---
 # Welcome to Syntactic Universal Dependencies Guidelines (SUD)
 
+
 ## About Syntactic Universal Dependenciers (SUD)
 ![Surface Syntactic Universal Dependencies (SUD)](images/sud.svg) 
 SUD is an annotation scheme for syntactic dependency treebanks, and has a nearly perfect degree of two-way convertibility with the Universal Dependencies scheme (UD). Contrary to UD, it is based on syntactic criteria (favoring functional heads) and the relations are defined on distributional and functional bases. This web site centralizes the information necessary to understand the annotation in SUD and to annotate from sratch. You can found the guidelines [here](General_Guideline/General_Guideline.md)

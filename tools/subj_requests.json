@@ -1,20 +1,21 @@
 [
   {
-    "id": "nom_subj",
+    "id": "subject_noun",
     "request": [
-      {"pattern": ["V -[subj]-> N", "N[upos=NOUN|PROPN]"] }
+      {"pattern": ["GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP[upos=NOUN|PROPN|PRON|NUM,!Title, !InTitle]"] }
     ]
   },
   {
-    "id": "pron_subj",
+    "id": "subject_verb_infinitif",
     "request": [
-      {"pattern": ["V -[subj]-> N", "N[upos=PRON]"] }
+      {"pattern": ["GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP [upos=VERB|AUX, VerbForm = Inf, !Title, !InTitle]"] }
     ]
   },
   {
-    "id": "other_subj",
+    "id": "subject_adp",
     "request": [
-      {"pattern": ["V -[subj]-> N", "N[upos<>NOUN|PROPN|PRON]"] }
+      {"pattern": ["GOV-[subj]->DEP ; GOV[upos=AUX|VERB] ; DEP [lemma=de|jusque] ; DEP-[comp:obj]->X ; X [upos<>PROPN]"] }
     ]
   }
 ]
+

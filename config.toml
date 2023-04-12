@@ -27,14 +27,25 @@ contentDir = "content"
 [menu]
 # [[menu.before]]
 [[menu.after]]
-  name = "Github"
-  url = "https://github.com/alex-shpak/hugo-book"
+  name = "Autogramm project"
+  url = "https://autogramm.github.io/"
+  weight = 20
+
+[[menu.after]]
+  name = "Github SUD project"
+  url = "https://github.com/surfacesyntacticud"
   weight = 10
 
 [[menu.after]]
-  name = "Hugo Themes"
-  url = "https://themes.gohugo.io/hugo-book/"
+  name = "Arborator Grew"
+  url = "https://arboratorgrew.elizia.net"
   weight = 20
+
+[[menu.after]]
+  name = "Grew Match"
+  url = "http://universal.grew.fr/"
+  weight = 20
+
 
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.

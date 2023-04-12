@@ -1,16 +1,13 @@
 ---
 title: "Docs"
 weight: 1
-bookFlatSection: True
+bookFlatSection: False
 # bookToc: true
 # bookHidden: false
 # bookCollapseSection: false
 # bookComments: false
 bookSearch: true
-bookSection: docs
 ---
-
-
 # Welcome to Syntactic Universal Dependencies Guidelines (SUD)
 
 ## About Syntactic Universal Dependenciers (SUD)
@@ -511,8 +508,7 @@ In addition to its more economical set of labels, SUD also diverges from UD in t
 
 ##### Table of correspondences between UD and SUD
 
-{{< rawhtml >}}
-
+{{<rawhtml>}}
 <table class="center">
     <thead>
         <tr>
@@ -576,16 +572,14 @@ In addition to its more economical set of labels, SUD also diverges from UD in t
 
     </tbody>
 </table>
-</div>
-{{< /rawhtml >}}
+{{</rawhtml>}}
+
 
 
 ##### Example of a sentence annotated in SUD (above) and UD (below).
 ![Surface Syntactic Universal Dependencies (SUD)](/images/sud.svg)
 {{< conll >}}
-\# sent_id = email-enronsent38_01-0114
 \# text = I am out of the office today but will be back tomorrow.
-\# shownfeatures = FORM, UPOS
 1	I	_	PRON	_	_	2	subj	_	_
 2	am	_	AUX	_	_	0	root	_	_
 3	out	_	ADP	_	_	2	comp:pred	_	_
@@ -603,9 +597,7 @@ In addition to its more economical set of labels, SUD also diverges from UD in t
 
 ![Universal Dependencies (UD)](/images/ud.svg)
 {{< conll >}}
-\# sent_id = email-enronsent38_01-0114
 \# text = I am out of the office today but will be back tomorrow.
-\# shownfeatures = FORM, UPOS
 1	I	_	PRON	_	_	6	nsubj	_	_
 2	am	_	AUX	_	_	6	cop	_	_
 3	out	_	ADP	_	_	6	case	_	_

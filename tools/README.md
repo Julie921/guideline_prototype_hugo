@@ -21,8 +21,5 @@ It can be a symbolic link.
 If the (symbolically linked) folder `corpora` contains 3 sub-corpora named `SUD_French-GSD`, `SUD_French-ParisStories` and `SUD_French-Rhapsodie` with the latest version of each treebank, the following Python script builds a file in the format needed by the `agg.js` script.
 
 ```
-python3 build_ag-grid_table.py > ../static/docs/ag-grid/grew.json
+python3 build_ag-grid_table.py --request_file request-file.json --corpora_file corpora-file.json > ../static/docs/ag-grid/grew.json
 ```
-
-## TODO
- - [ ] make `request_file` and `corpora_file` arguments on the command line

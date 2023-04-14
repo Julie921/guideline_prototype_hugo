@@ -2,7 +2,7 @@
 title: "Docs"
 weight: 1
 bookFlatSection: False
-# bookToc: true
+bookToc: true
 # bookHidden: false
 # bookCollapseSection: false
 # bookComments: false

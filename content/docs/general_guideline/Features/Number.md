@@ -41,3 +41,4 @@ In languages where noun phrases are pluralized using a specific function word (p
 Different upos can have the Number features in French : 
 
 ![Number POS french](../../../images/french_number_upos.png)
+

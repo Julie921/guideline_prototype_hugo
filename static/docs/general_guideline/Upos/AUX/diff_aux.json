@@ -1,0 +1,70 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "aux_avoir",
+      "headerName": "aux_avoir",
+      "request": "pattern {GOV[lemma=avoir, upos=AUX]}"
+    },
+    {
+      "field": "aux_faire",
+      "headerName": "aux_faire",
+      "request": "pattern {GOV[upos=AUX, lemma=faire]}"
+    },
+    {
+      "field": "aux_refaire",
+      "headerName": "aux_refaire",
+      "request": "pattern {GOV[upos=AUX,lemma=refaire]}"
+    },
+    {
+      "field": "aux_etre",
+      "headerName": "aux_etre",
+      "request": "pattern {GOV[upos=AUX,lemma=\"\u00eatre\"]}"
+    },
+    {
+      "field": "aux_se_voir",
+      "headerName": "aux_se_voir",
+      "request": "pattern {GOV[lemma=voir, upos=AUX]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "aux_avoir": 3339,
+      "aux_faire": 271,
+      "aux_refaire": 0,
+      "aux_etre": 9461,
+      "aux_se_voir": 10
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "aux_avoir": 744,
+      "aux_faire": 18,
+      "aux_refaire": 1,
+      "aux_etre": 1344,
+      "aux_se_voir": 0
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "aux_avoir": 402,
+      "aux_faire": 27,
+      "aux_refaire": 0,
+      "aux_etre": 1215,
+      "aux_se_voir": 0
+    }
+  ]
+}

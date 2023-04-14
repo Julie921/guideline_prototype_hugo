@@ -1,0 +1,72 @@
+[
+  {
+    "id": "noun_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP;GOV [upos=AUX|VERB] ; DEP[ExtPos=NOUN/upos=NOUN,!Title, !InTitle]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pron_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP;GOV [upos=AUX|VERB] ; DEP[ExtPos=PRON/upos=PRON,!Title, !InTitle]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "propn_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP;GOV [upos=AUX|VERB] ; DEP[ExtPos=PROPN/upos=PROPN,!Title, !InTitle]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "num_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP;GOV [upos=AUX|VERB] ; DEP[ExtPos=NUM/upos=NUM,!Title, !InTitle]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "infinitiv_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP;GOV [upos=AUX|VERB] ; DEP[upos=VERB|AUX, VerbForm=Inf,!Title, !InTitle]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "title_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP ; DEP [Title=Yes/InTitle=Yes]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adverbial_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[subj]->DEP ; DEP [upos=ADV, ExtPos=PRON, !Title, !InTitle]"
+        ]
+      }
+    ]
+  }
+]

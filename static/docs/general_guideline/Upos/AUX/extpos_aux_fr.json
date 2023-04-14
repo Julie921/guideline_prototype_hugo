@@ -1,0 +1,38 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "extpos_aux",
+      "headerName": "extpos_aux",
+      "request": "pattern {N [ExtPos=AUX, upos=X]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "extpos_aux": 0
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "extpos_aux": 1
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "extpos_aux": 1
+    }
+  ]
+}

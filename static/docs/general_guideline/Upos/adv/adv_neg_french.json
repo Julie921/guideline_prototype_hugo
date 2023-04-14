@@ -1,0 +1,46 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "adv_neg",
+      "headerName": "adv_neg",
+      "request": "pattern {N [ExtPos=ADV/upos=ADV, Polarity=Neg]}"
+    },
+    {
+      "field": "adv_pos",
+      "headerName": "adv_pos",
+      "request": "pattern {N [ExtPos=ADV/upos=ADV, Polarity=Pos]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "adv_neg": 3210,
+      "adv_pos": 3
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "adv_neg": 164,
+      "adv_pos": 0
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "adv_neg": 737,
+      "adv_pos": 0
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "etre_aux",
+      "headerName": "etre_aux",
+      "request": "pattern {GOV[lemma=\"\u00eatre\", upos=AUX]}"
+    },
+    {
+      "field": "etre_verb",
+      "headerName": "etre_verb",
+      "request": "pattern {GOV[lemma=\"\u00eatre\", upos=VERB]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "etre_aux": 9461,
+      "etre_verb": 156
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "etre_aux": 1344,
+      "etre_verb": 260
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "etre_aux": 1215,
+      "etre_verb": 187
+    }
+  ]
+}

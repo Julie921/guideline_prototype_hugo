@@ -146,6 +146,8 @@ The ̀`comp:aux` relation always has a `deep` :
 - `pass` :  expressing a passive construction
 - `caus` :  expressing a causative construction
 
+The [`comp:aux`](../Syntactic_relations/comp/comp_aux.md) relation can be used with one of the three sub-relations [`@tense`](../Deep/tense.md), [`@pass`](../Deep/pass.md) or [`@caus`](../Deep/caus.md), depending on whether the auxiliary is expressing a tense, a passive or a causative construction. In French, the relation [`comp:aux@tense`](../Syntactic_relations/comp/comp_aux.md#auxilary-expressing-a-tense) is used with both verbs **être** and **avoir** and is the most common sub-relation. The relation [`comp:aux@pass`](../Syntactic_relations/comp/comp_aux.md#passive-construction) is only used with the verb **être** and **se voir**, while [`comp:aux@caus`](../Syntactic_relations/comp/comp_aux.md#causative-construction) is only used with the verb **faire**.
+
 ### **auxilary expressing a tense**
 {{< conll >}}
 # text_en = She has disappeared.

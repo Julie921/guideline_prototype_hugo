@@ -168,7 +168,7 @@ pattern : `GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP [upos=VERB|AUX, VerbForm 
 
 #### Adverbial used as pronoun in french subject
 
-In French, an [ADV](../../Upos/adv.md) can be a subject. It is a specific phenomena due to the french language. The ADV have an [`ExtPos=PRON`](../../Upos/PRON.md). 
+In French, an [ADV](../../Upos/adv.md) can be a subject. It is a specific phenomen due to the french language. The ADV have an [`ExtPos=PRON`](../../Upos/PRON.md). 
 
 pattern : `GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP [upos=ADV, ExtPos=PRON, !Title, !InTitle]`
 
@@ -184,7 +184,7 @@ pattern : `GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP [upos=ADV, ExtPos=PRON, !
 {{< /conll >}}
 
 {{< hint info >}}
-You can find more information about this phenomena [here](https://github.com/surfacesyntacticud/guidelines/issues/10).
+You can find more information about this phenomen [here](https://github.com/surfacesyntacticud/guidelines/issues/10).
 {{< /hint >}}
 
 ### Deep syntactic features for the french subject

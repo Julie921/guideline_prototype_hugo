@@ -8,14 +8,14 @@ In order to analyse these expression :
 <br><br>
 We use the features `Idiom` and `ExtPos` to consider the initial `ADV` as a `PRON` in theses expressions. So we have the following annotation :
 
->[!tip]
+
 > pattern { N1 [upos=ADV]; N2 [form="de"]; N3 [upos=NOUN] ;N1 < N2 ; N2<N3}
 
-<!-- tabs:start -->
 
 #### **un peu de**
 
-\# text = Je souligne que les brochettes de poulet sont exquises avec un peu de sauce !
+{{<conll>}}
+# text = Je souligne que les brochettes de poulet sont exquises avec un peu de sauce !
 1	Je	il	PRON	_	Number=Sing|Person=1|PronType=Prs	2	subj	_	wordform=je
 2	souligne	souligner	VERB	_	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	que	que	SCONJ	_	_	2	comp:obj	_	_
@@ -31,10 +31,12 @@ We use the features `Idiom` and `ExtPos` to consider the initial `ADV` as a `PRO
 13	de	de	ADP	_	_	12	comp:obl	_	_
 14	sauce	sauce	NOUN	_	Gender=Fem|Number=Sing	13	comp:obj	_	_
 15	!	!	PUNCT	_	_	2	punct	_	_
+{{</conll>}}
 
 #### **beaucoup de**
 
-\# text = Il a la particularité de marquer beaucoup de la tête.
+{{<conll>}}
+# text = Il a la particularité de marquer beaucoup de la tête.
 1	Il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	2	subj	_	wordform=il
 2	a	avoir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	4	det	_	_
@@ -46,10 +48,12 @@ We use the features `Idiom` and `ExtPos` to consider the initial `ADV` as a `PRO
 9	la	le	DET	_	Definite=Def|Gender=Fem|Number=Sing|PronType=Art	10	det	_	_
 10	tête	tête	NOUN	_	Gender=Fem|Number=Sing	8	comp:obj	_	SpaceAfter=No
 11	.	.	PUNCT	_	_	2	punct	_	_
+{{</conll>}}
 
 #### **plein de**
 
-\# text = Boutique agréable, on y trouve plein de marques.
+{{<conll>}}
+# text = Boutique agréable, on y trouve plein de marques.
 1	Boutique	boutique	NOUN	_	Gender=Fem|Number=Sing	6	mod	_	wordform=boutique
 2	agréable	agréable	ADJ	_	Gender=Fem|Number=Sing	1	mod	_	SpaceAfter=No
 3	,	,	PUNCT	_	_	1	punct	_	_
@@ -60,10 +64,12 @@ We use the features `Idiom` and `ExtPos` to consider the initial `ADV` as a `PRO
 8	de	de	ADP	_	_	7	comp:obl	_	_
 9	marques	marque	NOUN	_	Gender=Fem|Number=Plur	8	comp:obj	_	SpaceAfter=No
 10	.	.	PUNCT	_	_	6	punct	_	_
+{{</conll>}}
 
 #### **nombre de**
 
-\# text = Nombre d'investisseurs qui, auparavant, voyaient d'un mauvais œil l'accumulation de liquidités par les entreprises reconnaissent maintenant les avantages de la constitution de réserves de liquidités importantes.
+{{<conll>}}
+# text = Nombre d'investisseurs qui, auparavant, voyaient d'un mauvais œil l'accumulation de liquidités par les entreprises reconnaissent maintenant les avantages de la constitution de réserves de liquidités importantes.
 1	Nombre	nombre	ADV	_	_	20	subj	_	ExtPos=PRON|wordform=nombre
 2	d'	de	ADP	_	_	1	comp:obl	_	SpaceAfter=No
 3	investisseurs	investisseur	NOUN	_	Gender=Masc|Number=Plur	2	comp:obj	_	_
@@ -96,5 +102,5 @@ We use the features `Idiom` and `ExtPos` to consider the initial `ADV` as a `PRO
 30	liquidités	liquidité	NOUN	_	Gender=Fem|Number=Plur	29	comp:obj	_	_
 31	importantes	important	ADJ	_	Gender=Fem|Number=Plur	28	mod	_	SpaceAfter=No
 32	.	.	PUNCT	_	_	20	punct	_	_
-<!-- tabs:end -->
+{{</conll>}}
 

@@ -9,6 +9,6 @@ bookCollapseSection: true
 #bookSearchExclude: true
 ---
 
-# Zaar
+# Zaar Guidelines
 
-regrtgt
+This page outlines various features specific to Zaar.

@@ -2,9 +2,8 @@
 
 We analyse **peu** from **un peu** as a `NOUN` with an `ExtPos=ADV` because it can modify an `ADJ`, `ADV`, `VERB` and an `SCONJ`. We also add the features `Idiom`. 
 
-<!-- tabs:start -->
-#### **Example 1** 
-\# text = Je dis que je trouve ça un peu limite.
+{{<conll>}}
+# text = Je dis que je trouve ça un peu limite.
 1	Je	il	PRON	_	Number=Sing|Person=1|PronType=Prs	2	subj	_	wordform=je
 2	dis	dire	VERB	_	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
 3	que	que	SCONJ	_	_	2	comp:obj	_	_
@@ -15,7 +14,6 @@ We analyse **peu** from **un peu** as a `NOUN` with an `ExtPos=ADV` because it c
 8	peu	peu	NOUN	_	_	9	mod	_	ExtPos=ADV|Idiom=Yes
 9	limite	limite	NOUN	_	Gender=Fem|Number=Sing	5	comp:pred	_	SpaceAfter=No
 10	.	.	PUNCT	_	_	2	punct	_	_
-<!-- tabs:end -->
+{{</conll>}}
 
->[!NOTE]
 > You can find the conversation about this annotation [here](https://github.com/surfacesyntacticud/guidelines/issues/10)

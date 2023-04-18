@@ -4,11 +4,8 @@ For `VERB` that are in relation of `comp:pred` with the `AUX` **être**, we chos
 
 **B**: est -[comp:pred]-> située:**VERB**  
 
-<!-- tabs:start -->
-
-#### **Example 1**
-
-\# text = Le village est située sur une hauteur, à 5 km environ au sud de Soissons
+{{<conll>}}
+# text = Le village est située sur une hauteur, à 5 km environ au sud de Soissons
 1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	wordform=le
 2	village	village	NOUN	_	Gender=Masc|Number=Sing	3	subj	_	_
 3	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
@@ -27,11 +24,7 @@ For `VERB` that are in relation of `comp:pred` with the `AUX` **être**, we chos
 15	sud	sud	NOUN	_	Gender=Masc|Number=Sing	13	comp:obj	_	_
 16	de	de	ADP	_	_	15	udep	_	_
 17	Soissons	Soissons	PROPN	_	_	16	comp:obj	_	_
+{{</
+conll>}}
 
-#### **Example 2**
-
-ciao 
-<!-- tabs:end -->
-
->[!NOTE]
 > You can find the discussion about this case [here](http://universal.grew.fr/?custom=63f763da72f60)

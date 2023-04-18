@@ -1,4 +1,5 @@
-# interrogative
+# Interrogative
+
 * **Qu'est-ce que**: Interrogatives with **PRON est-ce qui/que** are analysed as particular cases of cleft clauses.
 
 ## Est-ce que ?

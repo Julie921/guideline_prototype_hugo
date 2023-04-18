@@ -15,15 +15,15 @@ In the construction VERB + pas de + (NOUN | PRON), we consider `de` as a preposi
 
 Examples:
 
-    Je ne veux pas de ça ici. (I don't want that here)
+- Je ne veux pas de ça ici. (I don't want that here)
 
         veux -[comp:obj]-> de. de -[comp:obj]-> ça
 
-    Je ne mange pas de fruits. (I don't eat fruit.)
+- Je ne mange pas de fruits. (I don't eat fruit.)
 
         mange -[comp:obj]-> de. de -[comp:obj]-> fruits
 
-    Mange de ce gâteau ! (Eat some of this cake!)
+- Mange de ce gâteau ! (Eat some of this cake!)
 
         mange -[comp:obj]-> de. de -[comp:obj]-> gâteau
 

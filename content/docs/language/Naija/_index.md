@@ -9,7 +9,6 @@ bookCollapseSection: true
 # bookSearchExclude: false
 ---
 
-# Naija 
+# Naija Guidelines 
 
-
-rtbrtbhtyhtyht
+This sections outlines various features and annotation conventions useful for the annotation of Naija.

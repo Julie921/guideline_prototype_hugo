@@ -1,18 +1,18 @@
 # Interjections and other discourse markers
 
-  
+{{< hint warning>}}
+BOUGER cette section dans les INTJ !!!
+{{</hint>}}
 
 Pure interjections (such as _ah_, _hein_, _ouais_, _euh_, etc.) are analysed as INTJs. Discourse markers coming from other POS (such as _enfin_, _chouette_, _disons_, etc.), as well as idioms (such as _en fait_, _tu sais_, etc.), keep their original POS but have an additional `ExtPos = INTJ` feature. Except 4 of them which are frequent and are analysed as pure INTJs:  _bon_, _ben_, _quoi_, and _tiens_.
 
   
-<!-- tabs:start -->
-#### **Example 1**
 
 {{< conll >}}
 
-\# text_en = So it was the price of, I mean, the price of a full course you know.
+# text_en = So it was the price of, I mean, the price of a full course you know.
 
-\# text = Donc le prix d'un, enfin ouais c'était, le prix d'un repas en fait hein.
+# text = Donc le prix d'un, enfin ouais c'était, le prix d'un repas en fait hein.
 
 1 donc  donc  ADV _ _ 10  discourse _ _
 
@@ -60,9 +60,8 @@ Pure interjections (such as _ah_, _hein_, _ouais_, _euh_, etc.) are analysed as 
 
 {{<conll>}}
 
-\# text_en = uh so actually uh you'll see then.
-
-\# text = euh ben en fait juste euh tu verras après.
+# text_en = uh so actually uh you'll see then.
+# text = euh ben en fait juste euh tu verras après.
 
 1 euh euh INTJ  _ _ 8 discourse _ _
 
@@ -85,4 +84,3 @@ Pure interjections (such as _ah_, _hein_, _ouais_, _euh_, etc.) are analysed as 
 10  . . PUNCT _ _ 8 punct _ _
 
 {{</conll>}}
-<!-- tabs:end -->

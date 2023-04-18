@@ -25,18 +25,18 @@ This phenomenon is frequent in languages and especially in oral speech. We gathe
 
 We distinguish:
 
-   * [`parataxis:parenth`](../parataxis_parenth) for parenthetical clauses (that can form independent sentences)
+   * [`parataxis:parenth`](./parataxis/parataxis_parenth.md) for parenthetical clauses (that can form independent sentences)
 
-   * [`parataxis:insert`](../parataxis_insert) for inserted clauses (that cannot form an independent sentence)
+   * [`parataxis:insert`](./parataxis//parataxis_insert.md) for inserted clauses (that cannot form an independent sentence)
 
-   * [`parataxis:obj`](../parataxis_obj) used before for attaching direct discourse. Now deleted.
+   * [`parataxis:obj`](./parataxis//parataxis_obj.md) used before for attaching direct discourse. Now deleted.
 
   
 
 However, there are three other cases that are not gathered under the `parataxis` relationship. The following three relations link elements to the main proposition on a macrosyntactic level. In some cases, these elements can be propositions, but also simple elements.
 
-   * [`dislocated`](../dislocated)
+   * [`dislocated`](./dislocated/dislocated.md)
 
-   * [`vocative`](../vocative)
+   * [`vocative`](./vocative/vocative.md)
 
-   * [`discourse`](../discourse)
+   * [`discourse`](./discourse/discourse.md)

@@ -46,7 +46,7 @@ The relation between the auxiliary and the verb is marked `comp:aux@pass` and th
 
 {{< /conll >}}
 
-In case of **passive reflexive constructions**, the subject is analysed with a regular `subj` relation and the pronoun with the `comp@pass` relation. For more information about the usage of `comp`, see the [dedicated page](../../relations/comp).
+In case of **passive reflexive constructions**, the subject is analysed with a regular `subj` relation and the pronoun with the `comp@pass` relation. For more information about the usage of `comp`, see the [dedicated page](../Syntactic_relations/comp/_index.md).
 
   > French
 {{< conll >}}

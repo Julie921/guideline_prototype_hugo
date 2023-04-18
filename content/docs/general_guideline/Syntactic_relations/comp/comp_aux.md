@@ -20,13 +20,13 @@ L'idée serait de pouvoir mettre des conll ici par exemple. Ou dans des tables.
 ## Universal
 The `comp:aux` relation is used for the argument of auxiliaries, and corresponds to the `aux` relationship as defined by UD.
 
-> [!NOTE]
-> The relation `comp:aux` can have these features:
-> * [@tense](../../deep_features/tense)
-> * [@pass](../../deep_features/pass)
-> * [@caus](../../deep_features/caus)
 
->[!tip]
+> The relation `comp:aux` can have these features:
+> * [@tense](../../Deep/tense.md)
+> * [@pass](../../Deep/pass.md)
+> * [@caus](../../Deep/caus.md)
+
+
 > pattern { GOV-[comp:aux]->DEP }
 
 {{< tabs "uniqueid" >}}
@@ -146,7 +146,7 @@ The ̀`comp:aux` relation always has a `deep` :
 - `pass` :  expressing a passive construction
 - `caus` :  expressing a causative construction
 
-The [`comp:aux`](../Syntactic_relations/comp/comp_aux.md) relation can be used with one of the three sub-relations [`@tense`](../Deep/tense.md), [`@pass`](../Deep/pass.md) or [`@caus`](../Deep/caus.md), depending on whether the auxiliary is expressing a tense, a passive or a causative construction. In French, the relation [`comp:aux@tense`](../Syntactic_relations/comp/comp_aux.md#auxilary-expressing-a-tense) is used with both verbs **être** and **avoir** and is the most common sub-relation. The relation [`comp:aux@pass`](../Syntactic_relations/comp/comp_aux.md#passive-construction) is only used with the verb **être** and **se voir**, while [`comp:aux@caus`](../Syntactic_relations/comp/comp_aux.md#causative-construction) is only used with the verb **faire**.
+The [`comp:aux`](../../Syntactic_relations/comp/comp_aux.md) relation can be used with one of the three sub-relations [`@tense`](../../Deep/tense.md), [`@pass`](../../Deep/pass.md) or [`@caus`](../../Deep/caus.md), depending on whether the auxiliary is expressing a tense, a passive or a causative construction. In French, the relation [`comp:aux@tense`](../../Syntactic_relations/comp/comp_aux.md#auxilary-expressing-a-tense) is used with both verbs **être** and **avoir** and is the most common sub-relation. The relation [`comp:aux@pass`](../../Syntactic_relations/comp/comp_aux.md#passive-construction) is only used with the verb **être** and **se voir**, while [`comp:aux@caus`](../../Syntactic_relations/comp/comp_aux.md#causative-construction) is only used with the verb **faire**.
 
 ### **auxilary expressing a tense**
 {{< conll >}}
@@ -156,7 +156,6 @@ The [`comp:aux`](../Syntactic_relations/comp/comp_aux.md) relation can be used w
 3	disparu	disparaître	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	2	comp:aux@tense	_	Gloss=disappeared
 {{< /conll >}}
 
->[!tip] 
 > pattern { GOV-[comp:aux@tense]->DEP }  
 
 ### **passive construction**
@@ -170,7 +169,6 @@ The [`comp:aux`](../Syntactic_relations/comp/comp_aux.md) relation can be used w
 5	vendu	vendre	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	3	comp:aux@pass	_	Gloss=sold
 {{< /conll >}}
 
->[!tip] 
 > pattern { GOV-[comp:aux@pass]->DEP }   
 
 ### **causative construction**
@@ -181,8 +179,7 @@ The [`comp:aux`](../Syntactic_relations/comp/comp_aux.md) relation can be used w
 3	fait	faire	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=makes
 4	tomber	tomber	VERB	_	VerbForm=Inf	3	comp:aux@caus	_	Gloss=fall
 {{< /conll >}}
-
->[!tip] 
+ 
 > pattern { GOV-[comp:aux@caus]->DEP }  
 
 
@@ -193,5 +190,5 @@ The [`comp:aux`](../Syntactic_relations/comp/comp_aux.md) relation can be used w
 
 
 
-## Naija copula
+
 

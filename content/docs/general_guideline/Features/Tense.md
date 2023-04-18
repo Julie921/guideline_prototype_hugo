@@ -1,5 +1,5 @@
 ---
-title: "Ag-grid"
+title: "Tense"
 weight: 1
 # bookFlatSection: false
 # bookToc: true
@@ -8,16 +8,3 @@ weight: 1
 # bookComments: false
 # bookSearchExclude: false
 ---
-
-# Test Ag-grid
-
-### first table
-
-{{< agg two >}}
-
-
-### second table
-
-{{< agg two >}}
-
-{{< agg hein >}}

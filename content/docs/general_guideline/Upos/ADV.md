@@ -51,20 +51,20 @@ To have an overview of the ADV in french, you can see the table below :
 
 {{< agg adv_in_french >}}
 
-An adverb can have different [ExtPos](ExtPos.md) : 
-![ExtPos of ADV](/images/adv_extpos.png)
+An adverb can have different [ExtPos](../Misc/ExtPos.md) : 
+![ExtPos of ADV](/images/General_Guideline/Upos/ADV/adv_extpos.png)
 
 ### ADV as a governer of a relation 
 
-![ADV as GOV](/images/adv_as_gov.png)
+![ADV as GOV](/images/General_Guideline/Upos/ADV/adv_as_gov.png)
 
 ### ADV as a dependant of a relation 
 
-![ADV as DEP](/images/adv_as_dep.png)
+![ADV as DEP](/images/General_Guideline/Upos/ADV/adv_as_dep.png)
 
 ### Other UPOS that are used as an ADV 
 
-![UPOS as ADV](/images/adv_ext_cluster_upos.png)
+![UPOS as ADV](/images/General_Guideline/Upos/ADV/adv_ext_cluster_upos.png)
 
 #### [upos = ADP , ExtPos = ADV](http://universal.grew.fr/?custom=642d785a507b0)
 
@@ -118,7 +118,7 @@ The AUX `être` has the ExtPos=ADV in the french structure : "C'**est** pourquoi
 
 #### [upos= NOUN , ExtPos = ADV](http://universal.grew.fr/?custom=642d78b376f44)
 
-A few noun can be used as ADV ![noun as adv](/images/noun_as_adv.png)
+A few noun can be used as ADV ![noun as adv](/images/General_Guideline/Upos/ADV/noun_as_adv.png)
 
 #### [upos=DET, ExtPos = ADV](http://universal.grew.fr/?custom=642d7981a6263)
 

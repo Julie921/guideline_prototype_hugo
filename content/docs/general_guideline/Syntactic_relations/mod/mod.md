@@ -4,7 +4,7 @@ The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, a
 
 
 > The relation `mod` can have these features:
-> * [@relcl](../../deep_features/relcl)
+> * [@relcl](../../Deep/relcl.md)
 > pattern { GOV -[mod@relcl]-> DEP}
 
 

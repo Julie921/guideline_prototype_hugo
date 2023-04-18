@@ -40,7 +40,7 @@ In languages where noun phrases are pluralized using a specific function word (p
 
 Several upos can have the `Number` features in French : 
 
-![Number POS french](/images/french_number_upos.png)
+![Number POS french](/images/General_Guideline/Features/Number/french_number_upos.png)
 
 {{< hint info >}}
 Tableau double entrée pour avoir les valeurs de traits ? Est-ce qu'on décrit les règles d'accord par exemple ? 

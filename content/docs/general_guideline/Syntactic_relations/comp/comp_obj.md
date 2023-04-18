@@ -1,19 +1,15 @@
 # comp:obj
 The `comp:obj` relation is used for direct object complements, including direct complements of an adposition or a subordinating conjunction.
 
-> [!NOTE]
 > The relation `comp:obj` can have these features:
-> * [@agent](../../deep_features/agent)
-> * [@lvc](../../deep_features/lvc)
-
->[!tip]
+> * [@agent](../../Deep/agent.md)
+> * [@lvc](../../Deep/lvc.md)
 > pattern { GOV-[comp:obj]->DEP }
 
 ## Direct object complements
 
   
-<!-- tabs:start -->
-#### **English**
+> English
 {{< conll >}}
 1   Norton  Norton  PROPN   _   _   2   subj    _   _
 2   spent   spend   VERB    _   _   0   root    _   _
@@ -27,10 +23,10 @@ The `comp:obj` relation is used for direct object complements, including direct 
   
   
 
-#### **French**
+> French
 {{< conll >}}
-\# text_fr = j'adore ce bar
-\# text_en = I love this bar
+# text_fr = j'adore ce bar
+# text_en = I love this bar
 1   j'  I   PRON    _   Number=Sing|Person=1|PronType=Prs   2   subj    _   SpaceAfter=No
 2   adore   love    VERB    _   Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin   0   root    _   _
 3   ce  this    DET _   Gender=Masc|Number=Sing|PronType=Dem    4   det _   _
@@ -38,52 +34,49 @@ The `comp:obj` relation is used for direct object complements, including direct 
 {{< /conll >}}
 
 
-#### **Russian**
+> Russian
 {{< conll >}}
-\# text_ru = Я ставлю точку
-\# text_en = I put a point
+# text_ru = Я ставлю точку
+# text_en = I put a point
 1   Я   я   PRON    _   Animacy=Anim|Case=Nom|Number=Sing   2   subj    _   Gloss=I
 2   ставлю  ставить VERB    _   Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin|Voice=Act  0   root    _   Gloss=put
 3   точку   точка   NOUN    _   Animacy=Inan|Case=Acc|Gender=Fem|Number=Sing    2   comp:obj    _   Gloss=point
 {{< /conll >}}
-<!-- tabs:end -->
-  
+
   
 Usually, in order to determine whether an object is direct or not, it suffices to know if it forms a construction with a preposition. If it doesn't, the object is direct. According to different languages, this criterion may be insufficient.
 
 In the following examples we can see direct objects of the Spanish verb *ver*. With animate objects this verb takes the preposition *a*, however the object is still considered direct and therefore the relation stays `comp:obj`.
 
   
-<!-- tabs:start -->
-#### **Spanish 1**
+> Spanish
 {{< conll >}}
-\# text_es = Veo su foto
-\# text_en = I see his photo
+# text_es = Veo su foto
+# text_en = I see his photo
 1   Veo ver VERB    _   _   0   root    _   Gloss=I see
 2   su  su  DET _   _   3   det _   Gloss=his
 3   foto    foto    NOUN    _   _   1   comp:obj    _   Gloss=photo
 {{< /conll >}}
 
   
-#### **Spanish 2**
+> Spanish
 {{< conll >}}
-\# text_es = Veo a Clinton
-\# text_en = I see Clinton
+# text_es = Veo a Clinton
+# text_en = I see Clinton
 1   Veo ver VERB    _   _   0   root    _   Gloss=I see
 2   a   a   ADP _   _   1   comp:obj    _   _
 3   Clinton Clinton PROPN   _   _   2   comp:obj    _   Gloss=Clinton
 {{< /conll >}}
-<!-- tabs:end -->
+
   
   
 
 ## Adposition arguments
 
-<!-- tabs:start -->
-#### **French**
+> French
 {{< conll >}}
-\# text_fr = On a décidé d'aller au CROUS de Censier
-\# text_en = We decided to go to the Censier CROUS
+# text_fr = On a décidé d'aller au CROUS de Censier
+# text_en = We decided to go to the Censier CROUS
 1   on  on  PRON    _   _   2   subj    _   Gloss=we
 2   a   avoir   AUX _   _   0   root    _   Gloss=have
 3   décidé  décider VERB    _   _   2   comp:aux    _   Gloss=decided
@@ -97,7 +90,7 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 {{< /conll >}}
 
 
-#### **English**
+> English
 {{< conll >}}
 1   Get get VERB    VB  VerbForm=Inf    0   root    _   _
 2   feedback    feedback    NOUN    NN  Number=Sing 1   comp:obj    _   Entity=(abstract-120
@@ -120,11 +113,11 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 {{< /conll >}}
 
   
-#### **Russian**
+> Russian
 {{< conll >}}
-\# sent_id = dev-s184
-\# text_ru = С запада к храму примыкала трапезная часть с колокольней
-\# text_en = From the west, the refectory part with the bell tower was adjoining the temple
+# sent_id = dev-s184
+# text_ru = С запада к храму примыкала трапезная часть с колокольней
+# text_en = From the west, the refectory part with the bell tower was adjoining the temple
 1   С   с   ADP IN  _   5   comp:obl    _   Gloss=From
 2   запада  запад   NOUN    NN  Animacy=Inan|Case=Gen|Gender=Masc|Number=Sing   1   comp:obj    _   Gloss=west
 3   к   к   ADP IN  _   5   comp:obl    _   Gloss=to
@@ -135,13 +128,12 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 8   с   с   ADP IN  _   7   udep    _   Gloss=with
 9   колокольней колокольня  NOUN    NN  Animacy=Inan|Case=Ins|Gender=Fem|Number=Sing    8   comp:obj    _   Gloss=bell tower
 {{< /conll >}}
-<!-- tabs:end -->
+
   
   
 
 ## Subordinating conjunction arguments
-<!-- tabs:start -->
-#### **English**
+> English
 {{< conll >}}
 1   this    this    PRON    _   _   2   subj    _   _
 2   means   mean    VERB    _   _   0   root    _   _
@@ -157,10 +149,10 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 {{< /conll >}}
 
   
-#### **Spanish**
+> Spanish
 {{< conll >}}
-\# text_es = Afirmó que sigue el criterio europeo y que trata de incentivar el mercado
-\# text_en = He stated that he follows the European criterion and tries to encourage the market
+# text_es = Afirmó que sigue el criterio europeo y que trata de incentivar el mercado
+# text_en = He stated that he follows the European criterion and tries to encourage the market
 1   Afirmó  afirmar VERB    VERB    Mood=Ind|Number=Sing|Person=3|Tense=Past|VerbForm=Fin   0   root    _   Gloss=affirmed
 2   que que SCONJ   SCONJ   _   1   comp:obj    _   Gloss=that
 3   sigue   seguir  VERB    VERB    Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   2   comp:obj    _   Gloss=follows
@@ -177,10 +169,10 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 {{< /conll >}}
 
   
-#### **French**
+> French
 {{< conll >}}
-\# text_fr = il faut que tu deviennes script girl.
-\# text_en = You need to become a script girl.
+# text_fr = il faut que tu deviennes script girl.
+# text_en = You need to become a script girl.
 1   il  il  PRON    _   _   2   subj    _   Gloss=it is
 2   faut    falloir VERB    _   _   0   parataxis:parenth   _   Gloss=necessary
 3   que que SCONJ   _   _   2   comp:obj    _   Gloss=that
@@ -189,7 +181,7 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 6   script  script  NOUN    _   _   7   compound    _   Gloss=script
 7   girl    girl    NOUN    _   _   5   comp:pred   _   Gloss=girl
 {{< /conll >}}
-<!-- tabs:end -->
+
   
 
 ## Complement of an adverb of comparison
@@ -197,10 +189,9 @@ In the following examples we can see direct objects of the Spanish verb *ver*. W
 Constructions such as: *plus... que* (French), *more... than* (English), *più... di* (Italian), *bardziej... niż* (Polish), *более... чем* (Russian).
 
   
-<!-- tabs:start -->
-#### **English**
+> English
 {{< conll >}}
-\# text_en = techniques far more assertive than his predecessors
+# text_en = techniques far more assertive than his predecessors
 1   techniques  technique   NOUN    NNS Number=Plur 0   root    _   _
 2   far far ADV RB  Degree=Pos  3   mod _   _
 3   more    more    ADV RBR _   4   mod _   _
@@ -210,9 +201,9 @@ Constructions such as: *plus... que* (French), *more... than* (English), *più..
 7   predecessors    predecessor NOUN    NNS Number=Plur 5   comp:obj    _   _
 {{< /conll >}}
 
-#### **Russian**
+> Russian
 {{< conll >}}
-\# text = электроны имеют отклик намного более быстрый, чем атомы
+# text = электроны имеют отклик намного более быстрый, чем атомы
 1   электроны   электрон    NOUN    _   Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur   2   subj    _   _
 2   имеют   иметь   VERB    _   Aspect=Imp|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin|Voice=Act  0   root    _   _
 3   отклик  отклик  NOUN    _   Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing   2   comp:obj    _   _
@@ -223,7 +214,7 @@ Constructions such as: *plus... que* (French), *more... than* (English), *più..
 8   чем чем SCONJ   _   _   5   comp:obj    _   _
 9   атомы   атом    NOUN    _   Animacy=Inan|Case=Nom|Gender=Masc|Number=Plur   8   comp:obj    _   _
 {{< /conll >}}
-<!-- tabs:end -->
+
   
   
 ## Complement in consecutive constructions
@@ -231,8 +222,7 @@ Constructions such as: *plus... que* (French), *more... than* (English), *più..
 Constructions such as: *tellement... que* (French), *so... that* (English), *così... che* (Italian), *tak... że* (Polish), *настолько... что* (Russian).
 
   
-<!-- tabs:start -->
-#### **French**
+> French
 {{< conll >}}
 1   tellement   tellement   ADV _   _   2   mod _   _
 2   vaste   vaste   ADJ _   _   0   root    _   _
@@ -244,11 +234,11 @@ Constructions such as: *tellement... que* (French), *so... that* (English), *cos
 {{< /conll >}}
 
   
-#### **Russian**
+> Russian
 {{< conll >}}
-\# sent_id = 2007Tele.xml_38
-\# text_ru = Изображение настолько хорошее, что все забыли о тестировании
-\# text_en = The image was so good that everyone forgot about testing
+# sent_id = 2007Tele.xml_38
+# text_ru = Изображение настолько хорошее, что все забыли о тестировании
+# text_en = The image was so good that everyone forgot about testing
 1   Изображение изображение NOUN    _   Animacy=Inan|Case=Nom|Gender=Neut|Number=Sing   3   subj    _   Gloss=image
 2   настолько   настолько   ADV _   Degree=Pos  3   mod _   Gloss=so
 3   хорошее хороший ADJ _   Case=Nom|Degree=Pos|Gender=Neut|Number=Sing 0   root    _   Gloss=good
@@ -259,14 +249,13 @@ Constructions such as: *tellement... que* (French), *so... that* (English), *cos
 8   о   о   ADP _   _   7   comp:obl    _   Gloss=about
 9   тестировании    тестирование    NOUN    _   Animacy=Inan|Case=Loc|Gender=Neut|Number=Sing   8   comp:obj    _   Gloss=testing
 {{< /conll >}}
-<!-- tabs:end -->
+
 
 ## Deep subjects of impersonal constructions
-<!-- tabs:start -->
-  
-#### **French**
+ 
+ > French
 {{< conll >}}
-\# text_en = There exist by the way many different types of cleats.
+# text_en = There exist by the way many different types of cleats.
 1   Il  il  PRON    _   Gender=Masc|Number=Sing|Person=3|PronType=Prs   2   subj@expl   _   Gloss=it
 2   existe  exister VERB    _   Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   0   root    _   Gloss=exists
 3   d'  de  ADP _   _   2   mod _   Gloss=of
@@ -280,11 +269,11 @@ Constructions such as: *tellement... que* (French), *so... that* (English), *cos
 {{< /conll >}}
 
   
-#### **Russian**
+> Russian
 {{< conll >}}
-\# sent_id = uppsalaGrekova_3.xml_179
-\# text_ru = Прошло много времени, пока я к ней приспособилась
-\# text_en = It took a lot of time until I got used to her
+# sent_id = uppsalaGrekova_3.xml_179
+# text_ru = Прошло много времени, пока я к ней приспособилась
+# text_en = It took a lot of time until I got used to her
 1   Прошло  пройти  VERB    _   Aspect=Perf|Gender=Neut|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Act  0   root    _   Gloss=passed
 2   много   много   ADV _   Degree=Pos  1   comp:obj@agent  _   Gloss=a lot of
 3   времени время   NOUN    _   Animacy=Inan|Case=Gen|Gender=Neut|Number=Sing   2   comp:obl    _   Gloss=time
@@ -295,18 +284,17 @@ Constructions such as: *tellement... que* (French), *so... that* (English), *cos
 8   ней она PRON    _   Case=Dat|Gender=Fem|Number=Sing|Person=3    7   comp:obj    _   Gloss=her
 9   приспособилась  приспособиться  VERB    _   Aspect=Perf|Gender=Fem|Mood=Ind|Number=Sing|Tense=Past|VerbForm=Fin|Voice=Mid   5   comp:obj    _   Gloss=got used
 {{< /conll >}}
-<!-- tabs:end -->
+
 
 ## Direct Speech
 
 Direct discourse is attached its governor by the relation `comp:obj` with the features `Reported = "Yes"` (link). It used to be annotate with the depency relation `parataxis:obj`. It has now been deleted.
 
   
-<!-- tabs:start -->
-#### **French**
+> French
 {{< conll >}}
-\# text_fr = Ce qui est horrible c' est de se dire je n' en sortirai jamais
-\# text_en = What is horrible is to think I will never get out
+# text_fr = Ce qui est horrible c' est de se dire je n' en sortirai jamais
+# text_en = What is horrible is to think I will never get out
 1   Ce  ce  PRON    _   _   6   dislocated  _   Gloss=this
 2   qui qui PRON    _   _   3   subj    _   Gloss=that
 3   est être    AUX _   Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   1   mod@relcl   _   Gloss=is
@@ -323,14 +311,14 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 14  jamais  jamais  ADV _   _   13  mod _   Gloss=never
 {{< /conll >}}
 
-#### **Naija**
+> Naija
 {{< conll >}}
-\# sent_id = ABJ_GWA_02_Market-Food-Church_DG__58
-\# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/ABJ_GWA_02_Market-Food-Church_DG.mp3
-\# speaker_id = Sp275
-\# text = eh e say [ you go parboil di banga //] //
-\# text_en = She said you'll parboil the banga.
-\# text_ortho = Eh e say you go parboil di banga.
+# sent_id = ABJ_GWA_02_Market-Food-Church_DG__58
+# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/ABJ_GWA_02_Market-Food-Church_DG.mp3
+# speaker_id = Sp275
+# text = eh e say [ you go parboil di banga //] //
+# text_en = She said you'll parboil the banga.
+# text_ortho = Eh e say you go parboil di banga.
 1   eh  eh  INTJ    _   _   3   discourse   _   AlignBegin=84260|AlignEnd=84598|Gloss=eh
 2   e   im  PRON    _   Case=Nom|Number=Sing|Person=3|PronType=Prs  3   subj    _   AlignBegin=84598|AlignEnd=84935|Gloss=NOM.SG.3
 3   say say VERB    _   _   0   root    _   AlignBegin=84935|AlignEnd=85272|Gloss=say
@@ -343,4 +331,3 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 10  //] //] PUNCT   _   _   6   punct   _   AlignBegin=86960|AlignEnd=86960|Gloss=PUNCT
 11  //  //  PUNCT   _   _   3   punct   _   AlignBegin=86960|AlignEnd=86960|Gloss=PUNCT
 {{< /conll >}}
-<!-- tabs:end -->

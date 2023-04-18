@@ -15,7 +15,7 @@ weight: 1
 
 The `ExtPos` feature was introduced to facilitate the annotation of idioms, titles, and other multi-word units which behave like a certain part of speech, even though none of their constituents necessarily carry that part of speech. This feature allows the annotator to preserve the internal syntactic relationships between the various components of these units.
 
-See [Idioms and titles](./extpos/idioms_titles) page for examples of idioms and titles annotations.
+See [Idioms and titles](./Idiom_Titles.md) page for examples of idioms and titles annotations.
 
 The usage of `ExtPos` was also generalized to cases of single tokens which are given a `upos`  but they are used in the syntactic structure with another role.
 
@@ -49,5 +49,5 @@ In French, it is mainly used for:
 
  * tokens with `upos=SYM` [Grew-match on SUD_French-GSD](http://match.grew.fr/?corpus=SUD_French-GSD@latest&custom=613e03ce49731)
  * tokens with `upos=ADV` and `ExtPos=PRON` for phrases like *beaucoup de NOUN*, *plus de NOUN* [Grew-match on SUD_French-GSD](http://match.grew.fr/?corpus=SUD_French-GSD@latest&custom=613e040411ae4&clustering=N.lemma)
- * tokens with [`upos=NOUN` and `ExtPos=ADV`](adv.md#upos-noun--extpos--adv) for phrases like *grâce à NOUN*, *face à NOUN* [Grew-match on SUD_French-GSD](http://match.grew.fr/?corpus=SUD_French-GSD@latest&custom=613e0370bf8ee&clustering=N.lemma)
+ * tokens with [`upos=NOUN` and `ExtPos=ADV`](../Upos/ADV.md#upos-noun--extpos--adv) for phrases like *grâce à NOUN*, *face à NOUN* [Grew-match on SUD_French-GSD](http://match.grew.fr/?corpus=SUD_French-GSD@latest&custom=613e0370bf8ee&clustering=N.lemma)
  

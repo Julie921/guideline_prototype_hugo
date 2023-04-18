@@ -1,12 +1,10 @@
 # comp:obl
 The `comp:obl` relation is used for oblique arguments of verbs, adjectives, adverbs, nouns or pronouns, regardless of their form. Unlike UD, SUD does not make a distinction between indirect objects and oblique arguments. SUD instead makes the distinction between arguments and modifiers.
 
-> [!NOTE]
-> The relation `comp:obl` can have these features:
-> * [@agent](../../deep_features/agent)
-> * [@lvc](../../deep_features/lvc)
 
->[!tip]
+> The relation `comp:obl` can have these features:
+> * [@agent](../../Deep/agent.md)
+> * [@lvc](../../Deep/lvc.md)
 > pattern { GOV-[comp:obl]->DEP }
 
 <!-- tabs:start -->
@@ -97,7 +95,7 @@ In the last sentence, *que ça marche* commutes with *de l'araignée*, therefore
 
 ## Oblique complement of a noun
 
-Like the example above shows (*Il a peur de l'araignée*) `comp:obl` can also be used for the complement of a noun. This happens when the noun is part of a light verb construction. For more information about these constructions, please visit our [dedicated page](../../particular_phenomena/lvc).
+Like the example above shows (*Il a peur de l'araignée*) `comp:obl` can also be used for the complement of a noun. This happens when the noun is part of a light verb construction. For more information about these constructions, please visit our [dedicated page](../../Deep/lvc.md).
 
   
 <!-- tabs:start -->

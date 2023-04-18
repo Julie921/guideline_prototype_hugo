@@ -13,7 +13,7 @@ bookSearch: true
 
 ## About Syntactic Universal Dependenciers (SUD)
 ![Surface Syntactic Universal Dependencies (SUD)](images/sud.svg) 
-SUD is an annotation scheme for syntactic dependency treebanks, and has a nearly perfect degree of two-way convertibility with the Universal Dependencies scheme (UD). Contrary to UD, it is based on syntactic criteria (favoring functional heads) and the relations are defined on distributional and functional bases. This web site centralizes the information necessary to understand the annotation in SUD and to annotate from sratch. You can found the guidelines [here](General_Guideline/General_Guideline.md)
+SUD is an annotation scheme for syntactic dependency treebanks, and has a nearly perfect degree of two-way convertibility with the Universal Dependencies scheme (UD). Contrary to UD, it is based on syntactic criteria (favoring functional heads) and the relations are defined on distributional and functional bases. This web site centralizes the information necessary to understand the annotation in SUD and to annotate from sratch. You can found the guidelines [here](./docs/_index.md)
 
 
 ## An Example of SUD annotation 
@@ -30,7 +30,7 @@ SUD is an annotation scheme for syntactic dependency treebanks, and has a nearly
 {{< /conll >}}
 
 
-To see more examples, head over to the [universal SUD guidelines](General_Guideline/General_Guideline.md). 
+To see more examples, head over to the [universal SUD guidelines](./docs/_index.md). 
 
   
 
@@ -327,7 +327,7 @@ This page describes the process used in the conversion from UD to SUD. It also e
 #### The main sequence
 
  * `Onf (eud_to_ud)`: Remove all enhanced annotation; the conversion supposes that the input is in basic UD format. Note that it can be safely applied to basic UD, the annotations are left unchanged.
- * `Onf (idioms)`: Add the features encoding of idioms in SUD; namely, features `ExtPos`, `PhraseType`, `InTitle` and `InIdiom` (see [Idioms and titles](General_Guideline/Features/Idiom_Titles.md)). Note that relations are not changed here.
+ * `Onf (idioms)`: Add the features encoding of idioms in SUD; namely, features `ExtPos`, `PhraseType`, `InTitle` and `InIdiom` (see [Idioms and titles](./docs/general_guideline/Misc/Idiom_Titles.md)). Note that relations are not changed here.
  * `specific_expr_init`: Add an explicit node for each `ExtPos`. TODO: give detail and an example.
  
  * `Onf (sub_relations)`: Transform UD relations with subtypes into the SUD equivalent.
@@ -506,7 +506,7 @@ SUD represents an alternative rather than a competitor to UD, and was designed i
 
 Correspondences between SUD and UD relationships are impacted by several key properties. Firstly, SUD annotations are less redundant and more economical than UD annotations. For example, we can see in the table below that SUD uses a single `subj` relation which comprises both the `nsubj` (nominal subject) and `csubj` (clausal subject) relationships in UD. However, the information provided by UD's distinction between nominal and clausal subjects is not lost in under the simpler SUD scheme: the differentiation can be recovered automatically from the POS of the subject and its context, though how this context is taken into account depends on the language. In total, a subset of 17 UD relations (`nsubj`, `csubj`, `obj`, `iobj`, `obl`, `xcomp`, `ccomp`, `amod`, `nmod`, `nummod`, `advmod`, `acl`, `advcl`, `aux`, `cop`, `case`, `mark`) is replaced by three major relations in SUD: `subj`, `comp`, `mod`, as well as `udep` to a marginal extent.
 
-In addition to its more economical set of labels, SUD also diverges from UD in the sense that it does not systematically label content words as heads. Instead, SUD treats adpositions, subordinating conjunctions, auxiliaries, and copulas as heads. This is because SUD identifies surface syntactic heads using the main criterion that they determine the distribution of the syntactic unit in question. For example, the SUD scheme would identify the preposition *to* in the sentence *Peter talked to Mary* as a head, since it determines the distribution of *Mary*. The UD scheme would label *Mary* as a head based on the fact that it is a content word. Because of this difference, **the direction of certain syntactic relationships is reversed between SUD and UD**. This namely applies to the SUD relationships `aux`, `cop`, `case`, and `mark`, which are also highlighted in **bold** in the correspondence table below. You may also find more information about this aspect of SUD relations on the [general principles](../guidelines/u/general_principles) page.
+In addition to its more economical set of labels, SUD also diverges from UD in the sense that it does not systematically label content words as heads. Instead, SUD treats adpositions, subordinating conjunctions, auxiliaries, and copulas as heads. This is because SUD identifies surface syntactic heads using the main criterion that they determine the distribution of the syntactic unit in question. For example, the SUD scheme would identify the preposition *to* in the sentence *Peter talked to Mary* as a head, since it determines the distribution of *Mary*. The UD scheme would label *Mary* as a head based on the fact that it is a content word. Because of this difference, **the direction of certain syntactic relationships is reversed between SUD and UD**. This namely applies to the SUD relationships `aux`, `cop`, `case`, and `mark`, which are also highlighted in **bold** in the correspondence table below. You may also find more information about this aspect of SUD relations on the [general principles](./_index.md#general-sud-principles) section.
 
 ##### Table of correspondences between UD and SUD
 
@@ -562,7 +562,7 @@ In addition to its more economical set of labels, SUD also diverges from UD in t
         <tr><td>nummod</td></tr>
         <tr>
           <td>fixed</td>
-          <td>encoded in node features (see <a href="../guidelines/u/extpos/idioms_titles">here</a>)</td>
+          <td>encoded in node features (see <a href="./docs/general_guideline/Misc/Idiom_Titles.md">here</a>)</td>
         </tr>
         <tr>
           <td>det</td>
@@ -628,7 +628,7 @@ SUD differs from UD in several general principles. The main differences with res
 
 - It is possible to distinguish between **arguments** and **modifiers**: Although this distinction involves semantic criteria (an argument of a lexical unit L is an obligatory participant in the semantic description of L), we consider that it is hard to avoid, because especially for verb dependents, most language have special functions.
 
-- A **multiple coordination**, such as *John, Mary and Peter*, is analyzed as a chain instead of a bouquet: One of the main argument for the chain-analysis is that it reduces the dependency length. See the [page](General_Guideline/Particular_construction/coordination.md) dedicated to coordination.
+- A **multiple coordination**, such as *John, Mary and Peter*, is analyzed as a chain instead of a bouquet: One of the main argument for the chain-analysis is that it reduces the dependency length. See the [page](./docs/general_guideline/Particular_construction/coordination.md) dedicated to coordination.
 
 - There is a strict distinction between surface-syntactic relations and deep-syntactic features expressed as extensions of syntactic relation names using the `@` symbol.
 
@@ -653,34 +653,35 @@ UD relations that are not used in **SUD**:
 [`mark`](https://universaldependencies.org/u/dep/mark.html).
 
 These 17 relations are replaced by three major relations in SUD --
-[`subj`](General_Guideline/Syntactic_relations/subj/subj.md),
-[`comp`](General_Guideline/Syntactic_relations/comp/comp.md),
-[`mod`](General_Guideline/Syntactic_relations/mod/mod.md)
-(subject, complement, modifier) -- with possible sub-relations, in addition to the general [`udep`](General_Guideline/Syntactic_relations/udep/udep.md) (underspecified dependency) to a more marginal extent. The key differences between SUD and UD as well as a table summarizing the most frequent correspondences may be consulted [here](#conversion-from-ud-to-sud).
+[`subj`](./docs/general_guideline/Syntactic_relations/subj/subj.md),
+[`comp`](./docs/general_guideline/Syntactic_relations/comp/_index.md),
+[`mod`](./docs/general_guideline/Syntactic_relations/mod/mod.md)
+(subject, complement, modifier) -- with possible sub-relations, in addition to the general [`udep`](./docs/general_guideline/Syntactic_relations/udep/udep.md) (underspecified dependency) to a more marginal extent. The key differences between SUD and UD as well as a table summarizing the most frequent correspondences may be consulted [here](#conversion-from-ud-to-sud).
 SUD has 4 specific syntactic relations and a few extended relations:
-- [`subj`](General_Guideline/Syntactic_relations/subj/subj.md)
-- [`udep`](General_Guideline/Syntactic_relations/udep/dep.md)
-- [`comp`](General_Guideline/Syntactic_relations/comp/comp.md)
-  - [`comp:aux`](General_Guideline/Syntactic_relations/comp/comp_aux.md)
-  - [`comp:cleft`](General_Guideline/Syntactic_relations/comp/comp_cleft.md)
-  - [`comp:obj`](General_Guideline/Syntactic_relations/comp/comp_obj.md)
-  - [`comp:obl`](General_Guideline/Syntactic_relations/comp/comp_obj.md)
-  - [`comp:pred`](General_Guideline/Syntactic_relations/comp/comp_pred.md)
-- [`mod`](General_Guideline/Syntactic_relations/mod/mod.md)
+- [`subj`](./docs/general_guideline/Syntactic_relations/subj/subj.md)
+- [`udep`](./docs/general_guideline/Syntactic_relations/udep/udep.md)
+- [`comp`](./docs/general_guideline/Syntactic_relations/comp/_index.md)
+  - [`comp:aux`](./docs/general_guideline/Syntactic_relations/comp/comp_aux.md)
+  - [`comp:cleft`](./docs/general_guideline/Syntactic_relations/comp/comp_cleft.md)
+  - [`comp:obj`](./docs/general_guideline/Syntactic_relations/comp/comp_obj.md)
+  - [`comp:obl`](./docs/general_guideline/Syntactic_relations/comp/comp_obj.md)
+  - [`comp:pred`](./docs/general_guideline/Syntactic_relations/comp/comp_pred.md)
+- [`mod`](./docs/general_guideline/Syntactic_relations/mod/mod.md)
 
 #### SUD deep features
 
 In SUD, dependency relations are designed to describe syntactic surface relations. Information related to deep syntax or semantics is given on dependencies with *deep features* which are extensions to dependency label introduced by the `@` symbol.
 The main deep features are:
-[`@agent`](General_Guideline/Deep/agent.md),
-[`@caus`](General_Guideline/Deep/caus.md),
-[`@expl`](General_Guideline/Deep/expletiv.md),
-[`@lvc`](General_Guideline/Deep/lvc.md),
-[`name`]((General_Guideline/Deep/name.md))
-[`@pass`](General_Guideline/Deep/pass.md),
-[`@relcl`](General_Guideline/Deep/relcl.md),
-[`@tense`](General_Guideline/Deep/tense.md),
-[`@x`](General_Guideline/Deep/x.md).
+[`@agent`](./docs/general_guideline/Deep/agent.md),
+[`@caus`](./docs/general_guideline/Deep/caus.md),
+[`@expl`](./docs/general_guideline/Deep/expletiv.md),
+[`@lvc`](./docs/general_guideline/Deep/lvc.md),
+[`name`](./docs/general_guideline/Deep/name.md),
+[`@pass`](./docs/general_guideline/Deep/pass.md),
+[`@relcl`](./docs/general_guideline/Deep/relcl.md),
+[`@tense`](./docs/general_guideline/Deep/tense.md),
+[@scrap](./docs/general_guideline/Deep/scrap.md)
+[`@x`](./docs/general_guideline/Deep/x.md).
 
 ## Tutorials 
 

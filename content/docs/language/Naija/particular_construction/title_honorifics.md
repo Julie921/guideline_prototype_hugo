@@ -3,10 +3,9 @@
 
   
 
-Honorifics such as *Mister* or *President* are connected to the names they precede with a simple `flat` relation.
+Honorifics such as *Mister* or *President* are connected to the names they precede with a simple [flat](../../../general_guideline/Syntactic_relations/flat/flat.md) relation.
 
-<!-- tabs:start -->
-#### **Example 1**
+> Example 1
 {{< conll >}}
 
 1 Mister  Mister  NOUN  _ _ 0 conj:appos  _ AlignBegin=228030|AlignEnd=228400|Gloss=Mister
@@ -18,7 +17,7 @@ Honorifics such as *Mister* or *President* are connected to the names they prece
 {{< /conll >}}
 
   
-#### **Example 2**
+> Example 2
 {{< conll >}}
 
 1 Presido presido NOUN  _ _ 0 subj  _ AlignBegin=17490|AlignEnd=17830|Gloss=president
@@ -28,7 +27,7 @@ Honorifics such as *Mister* or *President* are connected to the names they prece
 3 Biden Biden PROPN _ _ 2 flat  _ AlignBegin=18270|AlignEnd=18540|Gloss=Biden
 
 {{< /conll >}}
-<!-- tabs:end -->
+
   
   
 
@@ -53,7 +52,7 @@ However, this is not the case when a title is connected to a determiner or other
   
   
 
-Official multi-word titles such as *Minister of Foreign Affairs* are treated as titles (see [here](../u/extpos/idioms_titles) for a detailed guide). The head of the title is given an `ExtPos` of `PROPN`.
+Official multi-word titles such as *Minister of Foreign Affairs* are treated as titles (see [here](../../../general_guideline/Misc/Idiom_Titles.md) for a detailed guide). The head of the title is given an `ExtPos` of `PROPN`.
 
 {{< conll >}}
 

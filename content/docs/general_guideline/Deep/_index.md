@@ -15,7 +15,7 @@ In SUD, dependency relations are designed to describe syntactic surface relation
 The deep features are : 
 - @[agent](./agent.md)
 - @[caus](./caus.md)
-- @[expl](./expletive.md)
+- @[expl](./expletiv.md)
 - @[lvc](./lvc.md)
 - @[pass](./pass.md)
 - @[relcl](./relcl.md)

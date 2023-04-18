@@ -38,13 +38,13 @@ La colonne du lemmes être n'est pas cliquable -> problème d'encodage du "ê".
 
 The `AUX` can be the head of différent syntactic relation : 
 
-![AUX as GOV](/images/aux_as_gov.png)
+![AUX as GOV](/images/General_Guideline/Upos/AUX/aux_as_gov.png)
 
 ### AUX as dependant of a relation
 
 The `AUX` can be the dependant of différent syntactic relation : 
 
-![AUX as DEP](/images/aux_as_dep.png)
+![AUX as DEP](/images/General_Guideline/Upos/AUX/aux_as_dep.png)
 
 ### Other upos that are used as an AUX 
 

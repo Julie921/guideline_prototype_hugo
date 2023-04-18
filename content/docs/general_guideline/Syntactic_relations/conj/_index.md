@@ -30,11 +30,11 @@ These three relations work as paradigmatic lists. That's why in SUD for oral spe
 
 We distinguish:
 
-   * [`conj:dicto`](../conj_dicto) for disfluencies when the speaker corrects his speech (parallel to `reparandum` in written texts)
+   * [`conj:dicto`](./conj_dicto.md) for disfluencies when the speaker corrects his speech (parallel to `reparandum` in written texts)
 
-   * [`conj:coord`](../conj_coord) for elements connected by a coordinating conjunction (parallel to `conj` in written texts)
+   * [`conj:coord`](./conj_coord.md) for elements connected by a coordinating conjunction (parallel to `conj` in written texts)
 
-   * [`conj:appos`](../conj_appos) for appositional modifiers that serve to define better the previous noun (parallel to `appos` in written texts)
+   * [`conj:appos`](./conj_appos.md) for appositional modifiers that serve to define better the previous noun (parallel to `appos` in written texts)
 
 Note : for analysing oral speech we never use the `conj` relationship alone.
 

@@ -13,7 +13,7 @@ bookToc: true
 
 Four relations are considered for the reflexive marker _se_: `comp:obj`, `comp:obl`, `comp@expl`, and `comp@pass`.
 
-![Pronominal Verb](/images/pron_verb.png)
+![Pronominal Verb](/images/language/French/syntaxic/french_pronominal_verb/pron_verb.png)
 
 All reflexive marker (_se_, _me_, _te_, _nous_, _vous_) are analysed as forms of the reflexive pronoun _se_: `PRON`, `Reflex=Yes`, and `lemma=se`.
 

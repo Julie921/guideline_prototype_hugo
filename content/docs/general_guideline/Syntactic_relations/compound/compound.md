@@ -5,7 +5,7 @@ SUD shares with with UD its `compound` relation, though the exact usage of this 
 >[!tip]
 > pattern { GOV-[compound]->DEP } 
 
-Naija in particular makes heavy use of this relation, which is used to link nouns to virtually any other nouns which play a modifying role. However, it is also used to annotate phrasal verbs as well as a more limited subset of relations between nouns and adjectives, such as *dry cleaner*, which are considered fixed expressions whose meaning cannot be directly understood from its constituent parts. For more information about use of this relation in Naija, please consult the language's [dedicated page](../../../pcm).
+Naija in particular makes heavy use of this relation, which is used to link nouns to virtually any other nouns which play a modifying role. However, it is also used to annotate phrasal verbs as well as a more limited subset of relations between nouns and adjectives, such as *dry cleaner*, which are considered fixed expressions whose meaning cannot be directly understood from its constituent parts. For more information about use of this relation in Naija, please consult the language's [dedicated page](../../../language/Naija/syntaxic/compound_phrasal_verbs.md).
 
   
 

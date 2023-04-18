@@ -8,7 +8,7 @@ It is sometimes not trivial to chose between the part of speech `AUX` and `VERB`
 
 - when **être** has an existensial meaning (*je pense donc je suis* -***I think therefore I am***) or has a locative argument or another argument, which is not a predicative argument (*je suis pour la dépénalisation du cannabis* -***I am for the decriminalization of cannabis***), it has the POS `VERB`.
 
-**Locative argument**
+## Locativ argument
 {{< conll >}}
 # text = Ils sont sur Cherbourg depuis 2007.
 1	Ils	eux	PRON	_	Emph=No|Gender=Masc|Number=Plur|Person=3|PronType=Prs	2	subj	_	wordform=ils
@@ -20,7 +20,7 @@ It is sometimes not trivial to chose between the part of speech `AUX` and `VERB`
 7	.	.	PUNCT	_	_	2	punct	_	_
 {{< /conll >}}
 
-**Existensial meaning** 
+## Existensial meaning
 {{< conll >}}
 # text = Pourquoi en serait-il autrement cette fois-ci ?
 1	Pourquoi	pourquoi	ADV	_	_	3	mod	_	wordform=pourquoi

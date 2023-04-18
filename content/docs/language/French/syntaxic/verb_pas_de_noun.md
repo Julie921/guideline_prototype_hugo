@@ -11,7 +11,7 @@ bookToc: true
 
 # VERB + pas de + NOUN 
 
- in the construction VERB + pas de + (NOUN | PRON), we consider de as a preposition introducing NOUN|PRON and depending on VERB through comp:obj.
+In the construction VERB + pas de + (NOUN | PRON), we consider `de` as a preposition introducing NOUN|PRON and depending on VERB through comp:obj.
 
 Examples:
 

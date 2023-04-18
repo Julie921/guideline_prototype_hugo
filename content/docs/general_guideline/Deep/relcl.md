@@ -1,10 +1,19 @@
+---
+title: "relcl"
+weight: 3
+bookFlatSection: true
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
 # Relativ clause
 
 The `@relcl` feature is used for the relation between the head of a relative clause and its antecedent.
 
   
-<!-- tabs:start -->
-#### **English**
+> French 
 {{< conll >}}
 
 1   This    this    PRON    _   _   2   subj    _   _
@@ -20,4 +29,3 @@ The `@relcl` feature is used for the relation between the head of a relative cla
 6   earned  earn    VERB    _   _   5   comp:aux@tense  _   _
 
 {{< /conll >}}
-<!-- tabs:end -->

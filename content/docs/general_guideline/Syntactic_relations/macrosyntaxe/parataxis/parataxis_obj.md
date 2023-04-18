@@ -1,17 +1,15 @@
 # Parataxis:obj
-The depency relation `parataxis:obj` has been deleted.
+The depency relation `parataxis:obj` has been deleted. See [Reported Speech](../../../Particular_construction/reported_speech.md)
 
   
-
 Direct discourse is attached its governor by the relation `comp:obj` with the features Reported = "Yes".
 
-  
-#### **French**
+> French
 {{< conll >}}
 
-\# text_fr = Ce qui est horrible c' est de se dire je n' en sortirai jamais
+# text_fr = Ce qui est horrible c' est de se dire je n' en sortirai jamais
 
-\# text_en = What is horrible is to think I will never get out
+# text_en = What is horrible is to think I will never get out
 
 1   Ce  ce  PRON    _   _   6   dislocated  _   Gloss=this
 
@@ -45,23 +43,20 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 
   
 
-#### **Naija**
-
-  
-
+> Naija 
 {{< conll >}}
 
-\# sent_id = ABJ_GWA_02_Market-Food-Church_DG__58
+# sent_id = ABJ_GWA_02_Market-Food-Church_DG__58
 
-\# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/ABJ_GWA_02_Market-Food-Church_DG.mp3
+# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/ABJ_GWA_02_Market-Food-Church_DG.mp3
 
-\# speaker_id = Sp275
+# speaker_id = Sp275
 
-\# text = eh e say [ you go parboil di banga //] //
+# text = eh e say [ you go parboil di banga //] //
 
-\# text_en = She said you'll parboil the banga.
+# text_en = She said you'll parboil the banga.
 
-\# text_ortho = Eh e say you go parboil di banga.
+# text_ortho = Eh e say you go parboil di banga.
 
 1   eh  eh  INTJ    _   _   3   discourse   _   AlignBegin=84260|AlignEnd=84598|Gloss=eh
 
@@ -86,4 +81,3 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 11  //  //  PUNCT   _   _   3   punct   _   AlignBegin=86960|AlignEnd=86960|Gloss=PUNCT
 
 {{< /conll >}}
-<!-- tabs:end -->

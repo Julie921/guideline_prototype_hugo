@@ -9,4 +9,12 @@ bookCollapseSection: true
 # bookSearchExclude: false
 ---
 
-# Particular Construction 
+# Particular Construction 
+
+This section brings together the different constructions that are common in treebanks : 
+
+- [comparative construction](comparative_construction.md)
+- [coordination](coordination.md)
+- [disfluency](disfluency.md)
+- [number](number.md)
+- [reported speech](reported_speech.md)

@@ -1,17 +1,15 @@
 # Vocative
 The `vocative` relation is used when a speaker directly addresses a listener in an utterance.
  
->[!tip]
+
 > pattern { GOV-[vocative]->DEP }
 
-<!-- tabs:start -->
-#### **French**
-
+> French
 {{< conll >}}
 
-\# text_fr = Merci beaucoup monsieur
+# text_fr = Merci beaucoup monsieur
 
-\# text_en = Thank you very much sir
+# text_en = Thank you very much sir
 
 1   Merci   merci   NOUN    _   _   0   root    _   Gloss=thanks
 
@@ -21,15 +19,15 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 
 {{< /conll >}}
 
-#### **Naija** 
 
+> Naija
 {{< conll >}}
 
-\# text = ehn auntie < di ting no easy o //
+# text = ehn auntie < di ting no easy o //
 
-\# text_en = Uh... auntie, it's not easy.
+# text_en = Uh... auntie, it's not easy.
 
-\# text_ortho = Ehn auntie, di ting no easy o.
+# text_ortho = Ehn auntie, di ting no easy o.
 
 1   ehn ehn INTJ    _   _   7   discourse   _   AlignBegin=5850|AlignEnd=6134|Gloss=ehn
 
@@ -50,4 +48,3 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 9   //  //  PUNCT   _   _   7   punct   _   AlignBegin=7840|AlignEnd=7840|Gloss=PUNCT
 
 {{< /conll >}}
-<!-- tabs:end -->

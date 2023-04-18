@@ -5,17 +5,15 @@ In some cases the discourse marker can be another proposition.
 
 Ex: *He comes on wednesday, I think.* In this sentence *I think* is a discourse marker because it lacks an object (the object of the verb *think* is the rest of the sentence) and because they are fixed (*I think* doesn't commute with *he thinks*).
 
->[!tip]
+
 > pattern { GOV-[discourse]->DEP }
   
-<!-- tabs:start -->
-#### **French**
-
+> French
 {{< conll >}}
 
-\# text_fr = Ils sont un peu euh , un peu choqués je pense
+# text_fr = Ils sont un peu euh , un peu choqués je pense
 
-\# text_en = They are a bit um, a bit shocked I think
+# text_en = They are a bit um, a bit shocked I think
 
 1   Ils il  PRON    _   Gender=Masc|Number=Plur|Person=3|PronType=Prs   2   subj    _   Gloss=they
 
@@ -40,24 +38,18 @@ Ex: *He comes on wednesday, I think.* In this sentence *I think* is a discourse 
 11  pense   penser  VERB    _   Number=Sing|Person=1    2   discourse   _   Gloss=think
 
 {{< /conll >}}
-<!-- tabs:end -->
-  
   
 
 The `discourse` relation is also used for simple discourse markers such as interjections or adverbs.
 
   
 
-<!-- tabs:start -->
-#### **French**
-
-  
-
+> French
 {{< conll >}}
 
-\# text_fr = Enfin c'était un shooting photo .
+# text_fr = Enfin c'était un shooting photo .
 
-\# text_en = Well it was a photo shooting .
+# text_en = Well it was a photo shooting .
 
 1   Enfin   enfin   ADV _   _   3   discourse   _   |Gloss=finally
 
@@ -75,15 +67,14 @@ The `discourse` relation is also used for simple discourse markers such as inter
 
 {{< /conll >}}
 
-#### **naija**
-
+> Naija
 {{< conll >}}
 
-\# text = so < just do wetin de want //
+# text = so < just do wetin de want //
 
-\# text_en = So, just do what they want.
+# text_en = So, just do what they want.
 
-\# text_ortho = So, just do wetin de want.
+# text_ortho = So, just do wetin de want.
 
 1   so  so  ADV _   _   4   discourse   _   AlignBegin=163233|AlignEnd=163569|Gloss=so
 
@@ -102,4 +93,3 @@ The `discourse` relation is also used for simple discourse markers such as inter
 8   //  //  PUNCT   _   _   4   punct   _   AlignBegin=165250|AlignEnd=165250|Gloss=PUNCT
 
 {{< /conll >}}
-<!-- tabs:end -->

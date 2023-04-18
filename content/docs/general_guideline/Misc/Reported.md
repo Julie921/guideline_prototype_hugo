@@ -1,13 +1,11 @@
 # Reported
 
-We use the features `Reported=Yes` to annotate reported speech in the spoken corpora. 
+## Universal
 
->[!tip] 
-> pattern { N[Reported] }
+We use the features `Reported=Yes` to annotate reported speech in the spoken corpora. The features is on the head of the reported speech. 
 
-<!-- tabs:start -->
-#### **French ParisStories**
-\# text = je fais oui, oui, j'ai l'impression de t'avoir déjà vue !
+{{< conll >}}
+# text = je fais oui, oui, j'ai l'impression de t'avoir déjà vue !
 1	je	il	PRON	_	Number=Sing|Person=1|PronType=Prs	2	subj	_	AlignBegin=11315|AlignEnd=11458
 2	fais	faire	VERB	_	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	AlignBegin=11458|AlignEnd=11601
 3	oui	oui	ADV	_	_	8	discourse	_	AlignBegin=11601|AlignEnd=11743|ExtPos=INTJ|SpaceAfter=No
@@ -24,4 +22,10 @@ We use the features `Reported=Yes` to annotate reported speech in the spoken cor
 14	déjà	déjà	ADV	_	_	13	mod	_	AlignBegin=12853|AlignEnd=12991
 15	vue	voir	VERB	_	Gender=Fem|Number=Sing|Tense=Past|VerbForm=Part	13	comp:aux@tense	_	AlignBegin=12991|AlignEnd=13129
 16	!	!	PUNCT	_	_	2	punct	_	AlignBegin=13129|AlignEnd=13129
-<!-- tabs:end -->
+{{< /conll >}}
+
+{{< hint info >}}
+
+You can find more information about the Reported Speech [here](../Particular_construction/reported_speech.md)
+
+{{< /hint >}}

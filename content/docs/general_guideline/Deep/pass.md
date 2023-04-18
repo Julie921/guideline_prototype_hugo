@@ -1,18 +1,23 @@
+---
+title: "pass"
+weight: 3
+bookFlatSection: true
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
 # Passiv
 
-The `@pass` feature is used for the arguments of **passive auxiliaries**.
+## Universal
 
-  
-  
+The `@pass` feature is used for the arguments of **passive auxiliaries**.
 
 The relation between the auxiliary and the verb is marked `comp:aux@pass` and the subject of the auxiliary bears the `subj@pass` feature.
 
   
-<!-- tabs:start -->
-#### **English**
-
-  
-
+> English
 {{< conll >}}
 
 1   They    they    PRON    _   _   2   subj@pass   _   _
@@ -23,14 +28,11 @@ The relation between the auxiliary and the verb is marked `comp:aux@pass` and th
 
 {{< /conll >}}
 
-  
-#### **French**
-
+> French
 {{< conll >}}
 
-\# text_fr = Le château est ensuite vendu
-
-\# text_en = Later the castle is sold
+# text_fr = Le château est ensuite vendu
+# text_en = Later the castle is sold
 
 1   Le  le  DET _   Definite=Def|Gender=Masc|Number=Sing|Person=3|PronType=Art  2   det _   wordform=le|Gloss=The
 
@@ -44,22 +46,14 @@ The relation between the auxiliary and the verb is marked `comp:aux@pass` and th
 
 {{< /conll >}}
 
-<!-- tabs:end -->
-  
-
 In case of **passive reflexive constructions**, the subject is analysed with a regular `subj` relation and the pronoun with the `comp@pass` relation. For more information about the usage of `comp`, see the [dedicated page](../../relations/comp).
 
-  
-<!-- tabs:start -->
-#### **French**
-
-  
-
+  > French
 {{< conll >}}
 
-\# text_fr = L'affaire se complique un peu
+# text_fr = L'affaire se complique un peu
 
-\# text_en = The case gets a little complicated
+# text_en = The case gets a little complicated
 
 1   L'  le  DET _   Definite=Def|Number=Sing|Person=3|PronType=Art  2   det _   SpaceAfter=No|wordform=l'|Gloss=The
 
@@ -74,23 +68,15 @@ In case of **passive reflexive constructions**, the subject is analysed with a r
 6   peu peu ADV _   _   5   unk _   InIdiom=Yes|Gloss=little
 
 {{< /conll >}}
-<!-- tabs:end -->
-  
-  
 
 Complements of the verbs in a passive construction are marked `comp:obj@pass`
 
-  
-
-
-<!-- tabs:start -->
-#### **French**
-
+> French
 {{< conll >}}
 
-\# text_en = It is decided that the execution of the sentence is postponed
+# text_en = It is decided that the execution of the sentence is postponed
 
-\# text = Il est décidé que l'exécution de la sentence soit différé
+# text = Il est décidé que l'exécution de la sentence soit différé
 
 1   Il  il  PRON    _   Gender=Masc|Number=Sing|Person=3|PronType=Prs   2   subj@expl   _   wordform=il|Gloss=It
 
@@ -115,4 +101,3 @@ Complements of the verbs in a passive construction are marked `comp:obj@pass`
 11  différé différer    VERB    _   Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part    10  comp:aux@pass   _   Gloss=postponed
 
 {{< /conll >}}
-<!-- tabs:end -->

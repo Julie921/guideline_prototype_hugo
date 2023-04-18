@@ -11,23 +11,15 @@ bookCollapseSection: true
 
 # Flat
 
-  
+## Universal 
+The `flat` relation plays a similar role to the `[compound](../compound/compound.md)` one, and its exact usage also varies on a language-by-language basis. However, it is most frequently used to connect the various elements of proper names to one another, including titles and honorifics.  
 
-The `flat` relation plays a similar role to the `compound` one, and its exact usage also varies on a language-by-language basis. However, it is most frequently used to connect the various elements of proper names to one another, including titles and honorifics.  
-
->[!tip]
 > pattern { GOV-[flat]->DEP }
   
-<!-- tabs:start -->
-#### **English**
-
+> English
 {{< conll >}}
+# text = Emperor Joshua Norton, in full military regalia, circa 1880 or earlier
 
-\# sent_id = GUM_bio_emperor-18
-
-\# text = Emperor Joshua Norton, in full military regalia, circa 1880 or earlier
-
-\# s_type = frag
 
 1   Emperor Emperor PROPN   NNP Number=Sing 0   root    _   Entity=(person-1
 
@@ -47,7 +39,7 @@ The `flat` relation plays a similar role to the `compound` one, and its exact us
 
 {{< /conll >}}
 
-#### **English 2**
+> English
 {{< conll >}}
 
 1   Once    once    SCONJ   IN  _   8   mod _   _
@@ -79,16 +71,12 @@ The `flat` relation plays a similar role to the `compound` one, and its exact us
 14  .   .   PUNCT   .   _   8   punct   _   _
 
 {{< /conll >}}
-
-<!-- tabs:end -->
   
 
 The `flat` relation can also be used to link individual elements of numbers to one another.
 
   
-<!-- tabs:start -->
-#### **French**
-
+> French
 {{< conll >}}
 
 \# text_en = In 1918, they say there were forty million deaths around the world.
@@ -136,4 +124,5 @@ The `flat` relation can also be used to link individual elements of numbers to o
 21  décès   décès   NOUN    _   _   20  comp:obj    _   Gloss=deaths
 
 {{< /conll >}}
-<!-- tabs:end -->
+
+The syntactic relation ̀`flat` can have the deep `[name](../../Deep/name.md)` to annotated the composed proper name. 

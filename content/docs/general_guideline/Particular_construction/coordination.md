@@ -28,7 +28,6 @@ The first example below shows the annotation of a coordination in UD and the sec
 7	come	come	VERB	_	_	6	comp:aux	_	_
 {{< /conll >}}
 
->[!tip]
 > pattern { GOV-[conj:coord]->DEP }
 > % or pattern {GOV-[conj]->DEP }
 
@@ -51,7 +50,6 @@ The `conj` label does not make a distinction between embedded relations and surf
 10	come	come	VERB	_	_	9	comp:aux	_	_
 {{< /conll >}}
 
->[!tip]
 > pattern { GOV-[conj:coord@emb]->DEP }
 > % or GOV-[conj@emb->DEP 
 
@@ -62,6 +60,5 @@ Right dependents on a coordination are attached to the head of the rightmost con
 
 As a consequence, left and right dependents on a coordination are marked with feature `Shared=Yes`, which distinguishes them from the own dependents of the respective leftmost and rightmost conjuncts.
 
->[!tip]
 > pattern { N1 [Shared=Yes] ; N1-[conj]->N2 }
 > % or pattern { N1 [Shared=Yes] ; N1-[conj:coord]->N2 }

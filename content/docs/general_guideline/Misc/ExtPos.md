@@ -9,8 +9,9 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-## ExtPos 
+# ExtPos 
 
+## Universal
 
 The `ExtPos` feature was introduced to facilitate the annotation of idioms, titles, and other multi-word units which behave like a certain part of speech, even though none of their constituents necessarily carry that part of speech. This feature allows the annotator to preserve the internal syntactic relationships between the various components of these units.
 
@@ -18,11 +19,11 @@ See [Idioms and titles](./extpos/idioms_titles) page for examples of idioms and 
 
 The usage of `ExtPos` was also generalized to cases of single tokens which are given a `upos`  but they are used in the syntactic structure with another role.
 
-### Examples in Naija
+## Naija
 
 In Naija, it is mostly used for adjective used as verbs.
 
-![Extpos cluster in Naija](/images/naija_extpos_cluster.png)
+![Extpos cluster in Naija](/images/General_Guideline/Misc/ExtPos/naija_extpos_cluster.png)
 
 > Naija
 
@@ -36,13 +37,13 @@ In Naija, it is mostly used for adjective used as verbs.
 
 See [More examples on Grew-match](http://match.grew.fr/?corpus=SUD_Naija-NSC@latest&custom=613dff2609468).
 
-### Examples in French 
+## French 
 
 {{< hint info >}}
 Idée du type de table que l'on pourrait avoir ici. Est-ce que chaque case pourrait être cliquable et renvoyer vers la page correspondante ? Ou plutôt vers le pattern dans GREW (après, on peut être redirigé vers GREW directement depuis la page correspondante) ? On peut rediriger vers la page si elle existe, sinon vers grew.  
 {{< /hint >}}
 
-![clusterisation of ExtPos in French](/images/extpos_cluster.png)
+![clusterisation of ExtPos in French](/images/General_Guideline/Misc/ExtPos/extpos_cluster.png)
 
 In French, it is mainly used for:
 

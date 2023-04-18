@@ -2,17 +2,14 @@
 
 The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical clause, an inserted clause could not form an independent sentence
 
->[!tip]
 > pattern { GOV-[parataxis:insert]->DEP }  
   
-<!-- tabs:start -->
-#### **French**
-
+> French
 {{< conll >}}
 
-\# text_fr = La France est rose constate La Voix du Nord
+# text_fr = La France est rose constate La Voix du Nord
 
-\# text_en = France is pink notes La Voix du Nord
+# text_en = France is pink notes La Voix du Nord
 
 1   La  le  DET _   Definite=Def|Gender=Fem|Number=Sing|PronType=Art    2   det _   Gloss=the
 
@@ -37,4 +34,3 @@ The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical 
 10  Nord    Nord    PROPN   _   _   8   comp:obj    _   Gloss=north
 
 {{< /conll >}}
-<!-- tabs:end -->

@@ -2,7 +2,8 @@
 
 This fetaures `CorrectForm` is used to annotate typo correction.
 
-\# text = Ironiquement, Trois morceaux en forme de poire comporte sept mouvements.
+{{< conll >}}
+# text = Ironiquement, Trois morceaux en forme de poire comporte sept mouvements.
 1	Ironiquement	ironiquement	ADV	_	_	9	mod	_	SpaceAfter=No|wordform=ironiquement
 2	,	,	PUNCT	_	_	1	punct	_	_
 3	Trois	trois	NUM	_	Number=Plur	4	det	_	wordform=trois
@@ -15,6 +16,6 @@ This fetaures `CorrectForm` is used to annotate typo correction.
 10	sept	sept	NUM	_	Number=Plur	11	det	_	_
 11	mouvements	mouvement	NOUN	_	Gender=Masc|Number=Plur	9	comp:obj	_	SpaceAfter=No
 12	.	.	PUNCT	_	_	9	punct	_	_
+{{< /conll >}}
 
->[!tip] 
-> pattern { N[CorrectForm] }
+There is always the features `[Typo](Typo.md)=Yes` with the node which has the features `CorrectForm`. 

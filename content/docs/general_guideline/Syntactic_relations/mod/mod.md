@@ -1,19 +1,18 @@
 # mod
 
-The `mod`relation is used for modifiers of verbs, nouns, adjectives, adverbs, auxiliaries, adpositions and conjunctions.
+The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, auxiliaries, adpositions and conjunctions.
 
->[!NOTE]
->The relation `mod` can have these features:
+
+> The relation `mod` can have these features:
 > * [@relcl](../../deep_features/relcl)
 > pattern { GOV -[mod@relcl]-> DEP}
 
->[!tip]
+
 > pattern { GOV-[mod]->DEP }
 > % or with a clustering e.label 
 > pattern { e : GOV-[1=mod]->DEP }
   
-<!-- tabs:start -->
-#### **English 1**
+> English
 {{< conll >}}
 1   a   a   DET _   _   2   det _   _
 2   country country NOUN    _   _   0   root    _   _
@@ -26,7 +25,7 @@ The `mod`relation is used for modifiers of verbs, nouns, adjectives, adverbs, au
 {{< /conll >}}
 
   
-#### **English 2**
+> English
 {{< conll >}}
 1   Even    even    ADV _   _   2   mod _   _
 2   when    when    SCONJ   _   _   8   mod _   _
@@ -39,9 +38,9 @@ The `mod`relation is used for modifiers of verbs, nouns, adjectives, adverbs, au
 9   him he  PRON    _   _   8   comp:obj    _   _
 {{< /conll >}}
 
-#### **French**
+> French
 {{< conll >}}
-\# text = Cerebral concussions have become so commun in this sport that one can consider them the routine.
+# text = Cerebral concussions have become so commun in this sport that one can consider them the routine.
 1   Les le  DET _   Definite=Def|Gender=Fem|Number=Plur|PronType=Art    2   det _   Gloss=the
 2   commotions  commotion   NOUN    _   Gender=Fem|Number=Plur  4   subj    _   Gloss=concussions
 3   cérébrales  cérébral    ADJ _   Gender=Fem|Number=Plur  2   mod _   Gloss=cerebral
@@ -62,4 +61,3 @@ The `mod`relation is used for modifiers of verbs, nouns, adjectives, adverbs, au
 18  routine routine NOUN    _   Gender=Fem|Number=Sing  16  comp:obj    _   Gloss=routine
 19  .   .   PUNCT   _   _   4   punct   _   .
 {{< /conll >}}
-<!-- tabs:end -->

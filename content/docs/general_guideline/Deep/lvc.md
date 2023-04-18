@@ -1,13 +1,21 @@
+---
+title: "lvc"
+weight: 3
+bookFlatSection: true
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
 # Light Verb Construction - lvc
+
+## Universal 
 
 A light verb construction (LVC) is a type of verbal structure in which a verb is coupled with another element – typically a noun phrase – which provides the primary semantic value. Common examples of LVCs in English include *take a walk*, *give a kiss*, or *have a drink*. In SUD, LVCs are marked with the deep feature `@lvc`.
 
   
-<!-- tabs:start -->
-#### **French**
-
-  
-
+> French 
 {{< conll >}}
 
 \# text_fr = faire face à la situation
@@ -27,7 +35,7 @@ A light verb construction (LVC) is a type of verbal structure in which a verb is
 6   situation   situation   NOUN    _   _   4   comp:obj    _   Gloss=situation
 
 {{< /conll >}}
-<!-- tabs:end -->
+
   
   
 
@@ -41,11 +49,7 @@ The complements of these constructions are sometimes attached to the noun rather
 
 This first criterion explains the differing interpretations of the following two sentences. "A date with his girlfriend" forms a perfectly coherent phrase which allows for reformulations such as "the date with his girlfriend, it was pleasant". However, "part in the discussion" is less semantically transparent and therefore less prone to such reformulations. Because of this, the verb "take" is treated as the head of the complement.
 
-  
-<!-- tabs:start -->
-#### **English 1**
-
-  
+> English 
 
 {{< conll >}}
 
@@ -65,8 +69,7 @@ This first criterion explains the differing interpretations of the following two
 
 {{< /conll >}}
 
-  
-#### **English 2**
+> English 
 {{< conll >}}
 
 1   take    take    VERB    _   _   0   root    _   _
@@ -80,18 +83,13 @@ This first criterion explains the differing interpretations of the following two
 5   discussion  discussion  NOUN    _   _   3   comp:obj    _   _
 
 {{< /conll >}}
-<!-- tabs:end -->
   
   
 
 In cases of ambiguity, pronominalization can be a useful test for determining dependencies. Pronominalizing "He has a date with his girlfriend" as "the date, he has it with his girlfriend" would sound awkward to most native English speakers. However, pronominalizing "He took a walk with his wife" as "the walk, he took it with his wife" sounds much more natural. This explains the different syntactic interpretations of the following sentences.
 
   
-<!-- tabs:start -->
-#### **English 1**
-
-  
-
+> English
 {{< conll >}}
 
 1   He  he  PRON    _   _   2   subj    _   _
@@ -110,12 +108,7 @@ In cases of ambiguity, pronominalization can be a useful test for determining de
 
 {{< /conll >}}
 
-  
-
-#### **English 2**
-
-  
-
+> English
 {{< conll >}}
 
 1   He  he  PRON    _   _   2   subj    _   _
@@ -137,11 +130,7 @@ In cases of ambiguity, pronominalization can be a useful test for determining de
 The `@lvc` feature is used for arguments of light verbs.
 
   
-
-#### **English 3**
-
-  
-
+> English
 {{< conll >}}
 
 1   take    take    VERB    _   _   0   root    _   _
@@ -156,13 +145,10 @@ The `@lvc` feature is used for arguments of light verbs.
 
 {{< /conll >}}
 
-  
-
-#### **French**
-
+> French
 {{< conll >}}
 
-\# text_en = He's afraid of the spider
+# text_en = He's afraid of the spider
 
 1   il  il  PRON    _   Gender=Masc|Number=Sing|Person=3|PronType=Prs   2   subj    _   Gloss=he
 
@@ -177,7 +163,8 @@ The `@lvc` feature is used for arguments of light verbs.
 6   araignée    araignée    PROPN   _   _   4   comp:obj    _   Gloss=spider
 
 {{< /conll >}}
-<!-- tabs:end -->
-  
 
-See [issue #5](https://github.com/surfacesyntacticud/guidelines/issues/5) for a discussion about light verb construction annotation in SUD.
+## French 
+
+
+You can find more information about the annotation in french corpora [here](../../language/French/syntaxic/french_light_verb.md)

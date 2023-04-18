@@ -1,21 +1,14 @@
 # Idiom and Title
 
-SUD offers several traits which allow annotators to mark idiomatic expressions and titles while still preserving the internal syntactic relationships between their various components. We have decided to distinguish these two categories from Multi-Word Expressions (MWEs), which represent a broader category which also includes named entities.
+## Universal
 
-  
+SUD offers several traits which allow annotators to mark idiomatic expressions and titles while still preserving the internal syntactic relationships between their various components. We have decided to distinguish these two categories from Multi-Word Expressions (MWEs), which represent a broader category which also includes named entities.
 
 For our purposes, "titles" refer to any title given to a film, book, painting, or other work of art, such as *Planet of the Apes*, *Dark Side of the Moon*, *American Gothic*, or *Super Mario Bros*. However, this excludes other named entities like events, holidays or locations, such as *The Gulf War*, *Good Friday*, or *The Eiffel Tower*.
 
-  
-
 Idioms, meanwhile, refer to any figurative expression ranging from classic examples like *kick the bucket* to to extremely common phrases like *in general* whose precise meaning cannot directly be deduced from its constituents. Pronominal verbs, such as those common in Romance languages, are also treated as idioms.
 
-  
-
 Idioms and titles are annotated in the following way:
-
-  
-
 - The **head** of the idiom or title contains the feature `Idiom=Yes` or `Title=Yes`
 
 - The **head** also contains an "external part of speech" feature (`ExtPos`) which denotes the element's function within the wider sentence. Please note that all titles will carry the `ExtPos` value of `PROPN`.
@@ -23,19 +16,19 @@ Idioms and titles are annotated in the following way:
 - The **remaining components** of the element will contain the feature `InIdiom=Yes` or `InTitle=Yes`.
 
   
-
 This approach has several advantages. By marking these categories with features rather than a `fixed` relation, we are able to preserve its internal syntactic relationships.  
 
-  
->[!tip] 
-> pattern { N[Idiom] }
-> pattern { N[Title] }
+{{< hint info >}}
+Grew pattern : 
+- pattern { N[Idiom] }
+- pattern { N[Title] }
+{{< /hint >}}
 
 **NB**: Until version 2.8, the feature `PhraseType=Idiom` was used for the head of idioms (now replaced by `Idiom=Yes`) and the feature `PhraseType=Title` was used for the head of titles (now replaced by `Title=Yes`)
 
-## With internal syntactic relations
-<!-- tabs:start -->
-#### **English 1**
+### With internal syntactic relations
+
+> English 
 {{< conll >}}
 
 1   Karen   Karen   PROPN   _   _   2   subj    _   _
@@ -57,8 +50,7 @@ This approach has several advantages. By marking these categories with features 
 9   Nest    nest    VERB    _   InTitle=Yes 5   comp:obj    _   _
 
 {{< /conll >}}
-
-#### **English 2**
+> English
 {{< conll >}}
 
 1   That    that    PRON    _   InIdiom=Yes 2   subj@pass   _   _
@@ -79,13 +71,10 @@ This approach has several advantages. By marking these categories with features 
 
 {{< /conll >}}
 
-#### **Spanish**
-
-  
-
+> Spanish
 {{< conll >}}
 
-\# text_en = His name is Alejandro.
+# text_en = His name is Alejandro.
 
 1   Se  se  PRON    _   InIdiom=Yes 2   comp    _   Gloss=himself
 
@@ -94,13 +83,12 @@ This approach has several advantages. By marking these categories with features 
 3   Alejandro   Alejandro   PROPN   _   _   2   comp:pred   _   Gloss=Alejandro
 
 {{< /conll >}}
-<!-- tabs:end -->
 
-## Without internal syntactic relations 
+
+### Without internal syntactic relations 
 When there is no clear internal syntactic structure, the relation `unk` is used.
 
-<!-- tabs:start -->
-#### **English**
+> English
 {{< conll >}}
 
 1   Let let VERB    _   _   0   root    _   _
@@ -126,14 +114,13 @@ When there is no clear internal syntactic structure, the relation `unk` is used.
 11  can can AUX _   _   7   comp:obj    _   _
 
 {{< /conll >}}
-#### **French**
+
+> French
 {{< conll >}}
 
-\# sent_id = fr-ud-train_10134__shorten
+# text_en = I found the rates applied here to be quite correct.
 
-\# text_en = I found the rates applied here to be quite correct.
-
-\# text = j'ai trouvé tout à fait correct les tarifs appliqués ici.
+# text = j'ai trouvé tout à fait correct les tarifs appliqués ici.
 
 1   j'  il  PRON    _   Number=Sing|Person=1|PronType=Prs   2   subj    _   Gloss=I
 
@@ -158,4 +145,9 @@ When there is no clear internal syntactic structure, the relation `unk` is used.
 11  ici ici ADV _   _   10  mod _   Gloss=here
 
 {{< /conll >}}
-<!-- tabs:end -->
+
+## French 
+
+{{< hint info >}}
+AJOUT DES TABLES ICI 
+{{< /hint >}}

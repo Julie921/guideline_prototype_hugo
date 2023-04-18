@@ -2,17 +2,14 @@
 
 The `parataxis:parenth` relation is used for parenthetical clauses, in the sense that the clause is backgrounded (as if it were inside parentheses). A parenthetical clause could form an independent sentence.
 
->[!tip]
 > pattern { GOV-[parataxis:parenth]->DEP }
   
-<!-- tabs:start -->
-#### **French**
-
+> French
 {{< conll >}}
 
-\# textfr = vous avez fait paraître ce ce chef -d' oeuvre pour moi c' est un chef -d' oeuvre qui s' appelle Un Barrage contre le Pacifique
+# textfr = vous avez fait paraître ce ce chef -d' oeuvre pour moi c' est un chef -d' oeuvre qui s' appelle Un Barrage contre le Pacifique
 
-\# text_en = you released this masterpiece for me it's a masterpiece called Un Barrage contre le Pacifique
+# text_en = you released this masterpiece for me it's a masterpiece called Un Barrage contre le Pacifique
 
 1   vous    il  PRON    _   Number=Plur|Person=2|PronType=Prs   2   subj@caus   _   Gloss=you
 
@@ -67,25 +64,22 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 {{< /conll >}}
 
   
-#### **Naija**
-
-  
-
+> Naija
 {{< conll >}}
 
-\# text = en mille neuf cent cinquante quand vous avez fait paraître ce ce chef -d' oeuvre pour moi c' est un chef -d' oeuvre qui s' appelle Un Barrage contre le Pacifique
+# text = en mille neuf cent cinquante quand vous avez fait paraître ce ce chef -d' oeuvre pour moi c' est un chef -d' oeuvre qui s' appelle Un Barrage contre le Pacifique
 
-\# sent_id = ABJ_INF_08_Impatience_DG__27
+# sent_id = ABJ_INF_08_Impatience_DG__27
 
-\# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/ABJ_INF_08_Impatience_DG.mp3
+# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/ABJ_INF_08_Impatience_DG.mp3
 
-\# speaker_id = Sp27
+# speaker_id = Sp27
 
-\# text = from primary four ( dat time < I even still dey seven years //) < one day < naim { my papa just || my papa } just come school //
+# text = from primary four ( dat time < I even still dey seven years //) < one day < naim { my papa just || my papa } just come school //
 
-\# text_en = From primary four (I was still seven at the time), one day, then my father just... my father just came to the school.
+# text_en = From primary four (I was still seven at the time), one day, then my father just... my father just came to the school.
 
-\# text_ortho = From primary four (dat time, I even still dey seven years, ), one day, naim my papa just, my papa just come school.
+# text_ortho = From primary four (dat time, I even still dey seven years, ), one day, naim my papa just, my papa just come school.
 
 1   from    from    ADP _   _   29  mod:periph  _   AlignBegin=58888|AlignEnd=59237|Gloss=from
 
@@ -150,4 +144,3 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 31  //  //  PUNCT   _   _   29  punct   _   AlignBegin=66560|AlignEnd=66560|Gloss=PUNCT
 
 {{< /conll >}}
-<!-- tabs:end -->

@@ -1,10 +1,19 @@
+---
+title: "tense"
+weight: 3
+bookFlatSection: true
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
 # Tense
 
 The `@tense` feature is used for the argument of tense auxiliaries.
 
   
-<!-- tabs:start -->
-#### **English**
+> Tense
 {{< conll >}}
 
 1   This    this    PRON    _   _   2   subj    _   _

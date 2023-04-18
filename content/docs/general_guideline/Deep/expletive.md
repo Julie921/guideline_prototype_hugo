@@ -1,9 +1,20 @@
+---
+title: "expl"
+weight: 3
+bookFlatSection: true
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
 # Expletive
+
+## Universal 
 
 The `@expl` feature is used for arguments of predicates without semantic contents (impersonal subjects for instance).
 
-<!-- tabs:start -->
-#### **English 1**
+> English
 {{< conll >}}
 
 1   it  it  PRON    _   _   2   subj@expl   _   _
@@ -22,8 +33,7 @@ The `@expl` feature is used for arguments of predicates without semantic content
 
 {{< /conll >}}
 
-#### **English 2**  
-
+> English
 {{< conll >}}
 
 1   it  it  PRON    _   _   2   subj@expl   _   _
@@ -39,18 +49,16 @@ The `@expl` feature is used for arguments of predicates without semantic content
 6   England England PROPN   _   _   5   comp:obj    _   _
 
 {{< /conll >}}
-<!-- tabs:end -->
-  
+
 
 This feature can also be used to annotate repeated subjects, such as those which are common in certain French interrogative constructions.
 
-<!-- tabs:start -->
-#### **French**
+> French 
 {{< conll >}}
 
-\# text = Jean vient-il demain ?
+# text = Jean vient-il demain ?
 
-\# text_en = Is Jean coming tomorrow?
+# text_en = Is Jean coming tomorrow?
 
 1   Jean    Jean    PROPN   _   _   2   subj    _   Gloss=Jean
 
@@ -63,4 +71,3 @@ This feature can also be used to annotate repeated subjects, such as those which
 5   ?   ?   PUNCT   _   _   2   punct   _   Gloss=?
 
 {{< /conll >}}
-<!-- tabs:end -->

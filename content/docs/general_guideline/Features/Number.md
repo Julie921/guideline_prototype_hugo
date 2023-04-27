@@ -33,8 +33,8 @@ Est-ce qu'on ré-écrit l'information du UD ou est-ce qu'on renvoie vers le site
 [Grpl](https://universaldependencies.org/u/feat/Number.html#Grpl),
 [Inv](https://universaldependencies.org/u/feat/Number.html#Inv),
 [Paux](https://universaldependencies.org/u/feat/Number.html#Paux),
-[Plur]https://universaldependencies.org/u/feat/Number.html#Plur),
-[Ptang]https://universaldependencies.org/u/feat/Number.html#Ptang),
+[Plur](https://universaldependencies.org/u/feat/Number.html#Plur),
+[Ptang](https://universaldependencies.org/u/feat/Number.html#Ptang),
 [Sing](https://universaldependencies.org/u/feat/Number.html#Sing), 
 [Tri](https://universaldependencies.org/u/feat/Number.html#Tri).
 

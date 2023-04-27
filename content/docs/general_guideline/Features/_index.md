@@ -12,3 +12,13 @@ bookCollapseSection: true
 # Features
 
 You can find more information about the features on the [UD webpage](https://universaldependencies.org/u/feat/) : *"The features distinguish additional lexical and grammatical properties of words, not covered by the POS tags"*
+
+{{<hint info>}}
+- On pourrait imaginer plutôt des pages pour les valeurs des traits (comme la page pour les valeurs des upos) ? Pourquoi cette différence ? 
+- On pourrait mieux structurer les features : 
+    - lexical 
+    - inflecional
+        - verbal
+        - nominal
+cf : organisation UD. Mais, on double complétement l'information avec UD si on énumère les mêmes traits. Est-ce nécessaire ? 
+{{</hint>}}

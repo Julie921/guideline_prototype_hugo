@@ -1,0 +1,54 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "comp",
+      "headerName": "comp",
+      "request": "pattern {GOV-[comp]->DEP}"
+    },
+    {
+      "field": "comp_pass",
+      "headerName": "comp_pass",
+      "request": "pattern {GOV-[comp@pass]->DEP}"
+    },
+    {
+      "field": "comp_expl",
+      "headerName": "comp_expl",
+      "request": "pattern {GOV-[comp@expl]->DEP}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "comp": 19,
+      "comp_pass": 684,
+      "comp_expl": 1217
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "comp": 13,
+      "comp_pass": 24,
+      "comp_expl": 357
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "comp": 30,
+      "comp_pass": 33,
+      "comp_expl": 290
+    }
+  ]
+}

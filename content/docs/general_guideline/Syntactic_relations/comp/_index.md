@@ -15,20 +15,20 @@ bookCollapseSection: true
 
 The `comp` relation is used for arguments of verbs, nouns, adjectives, adverbs, auxiliaries, adpositions and conjunctions.
 
-> pattern { GOV-[comp]->DEP }
-
 This relation is refined into several sub-relations:  [`comp:aux`](./comp_aux) (auxiliary argument), [`comp:cleft`](./comp_cleft) (cleft clauses), [`comp:obj`(./comp_obj) (direct object),[`comp:obl`](./comp_obl) (oblique argument), [`comp:pred`](./comp_pred) (predicative argument).
-
-> pattern { e : GOV-[1=comp]->DEP }
-> find more example [here](http://universal.grew.fr/?custom=63ff56c2f1034)
 
 In most cases, SUD native corpora are directly annotated with the sub-relations, rather than with the `comp` relation. However, `comp` may sometimes be used when one has difficulty deciding between `comp:obj` and `comp:obl`.
 
-## French
+You can find more examples in this [table](http://tables.grew.fr/?data=sud_deps/comp)
+
+## French
+
+### Overview
 
 In **French**, the `comp` label is frequently used to annotate reflexive pronouns and other pronominal clitics which contribute to the formation of pronominal verbs when it is difficult to determine the role of a pronoun. In constructions such as *Il s'en sort* the pronoun *se* no longer provides the semantic value of an argument of the verb. However, it fits so well into the typical argument structure that it is hard to recognize that it cannot be de-pronominalized. For this reason, we annotate the relation with a `comp` label.
 
 > Example 
+
 {{< conll >}}
 # text_fr = Il s'en sort bien
 # text_en = He's doing well
@@ -40,6 +40,7 @@ In **French**, the `comp` label is frequently used to annotate reflexive pronoun
 {{< /conll >}}
 
 > Example 
+
 {{< conll >}}
 # text_fr = Il se souvient
 # text_en = He remembers
@@ -49,6 +50,7 @@ In **French**, the `comp` label is frequently used to annotate reflexive pronoun
 {{< /conll >}}
 
 > Example 
+
 {{< conll >}}
 # text_fr = Christine en veut à son amie
 # text_en = Christine is angry at her friend
@@ -60,8 +62,9 @@ In **French**, the `comp` label is frequently used to annotate reflexive pronoun
 6   amie    ami NOUN    _   _   4   comp:obj    _   Gloss=friend
 {{< /conll >}}
 
+### Deep syntactic features
 
-In the case of **passive reflexive constructions**, the pronoun is labelled `comp` with the deep syntactic feature `@[pass](../../Deep/pass.md)`.
+In the case of **passive reflexive constructions**, the pronoun is labelled `comp` with the deep syntactic feature @[`pass`](../../Deep/pass.md).
 
 
 > Example 
@@ -80,3 +83,26 @@ In the case of **passive reflexive constructions**, the pronoun is labelled `com
 9   le  le  DET _   Definite=Def|Gender=Masc|Number=Sing|Person=3|PronType=Art  10  det _   Gloss=the
 10  nord-ouest  nord-ouest  NOUN    _   Gender=Masc|Number=Sing 8   comp:obj    _   Gloss=north-west
 {{< /conll >}}
+
+We can also have the deep syntactic feature [`@expl`](../../Deep/expletiv.md) for the label ̀`comp`. 
+
+> Example 
+{{< conll >}}
+# text = euh, il y a un stade aussi à côté.
+1	euh	euh	INTJ	_	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	_	_	1	punct	_	_
+3	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	5	subj@expl	_	_
+4	y	y	PRON	_	Person=3|PronType=Prs	5	comp@expl	_	_
+5	a	avoir	VERB	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+6	un	un	DET	_	Definite=Ind|Gender=Masc|Number=Sing|PronType=Art	7	det	_	_
+7	stade	stade	NOUN	_	Gender=Masc|Number=Sing	5	comp:obj	_	_
+8	aussi	aussi	ADV	_	_	5	mod	_	_
+9	à	à	ADP	_	_	5	mod	_	_
+10	côté	côté	NOUN	_	Gender=Masc|Number=Sing	9	comp:obj	_	SpaceAfter=No
+11	.	.	PUNCT	_	_	5	punct	_	_
+{{< /conll >}}
+
+You can find more information on the [`pronomional verb`](../../../language/French/syntaxic/french_pronominal_verb.md) page or on the [`il y a`](../../../language/French/syntaxic/il_y_a.md) annotation page. 
+
+
+{{<agg comp_french>}}

@@ -107,7 +107,7 @@ Tableau double entrée pour avoir les valeurs de traits ? Il faut un moyen de me
 #### Features Number for ADV
 
 {{<hint warning>}}
-Certains ADV sont annotés avec le trait Number dans PS mais pas dans GSD. Problème de cohérence d'annotation -> je ne sais pas quoi écrire encore ici. Dans tous les cas, ici, on peut mettre un lien vers l'upos [ADV](../Upos/ADV.md#specific-features-of-adv) ? 
+Certains [ADV](docs/general_guideline/Upos/ADV.md) sont annotés avec le trait Number dans PS mais pas dans GSD. Problème de cohérence d'annotation -> je ne sais pas quoi écrire encore ici. Dans tous les cas, ici, on peut mettre un lien vers l'upos [ADV](../Upos/ADV.md#specific-features-of-adv) ? 
 {{</hint>}}
 
 #### Upos without Number

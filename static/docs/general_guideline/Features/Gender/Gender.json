@@ -1,0 +1,38 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "Plurial_and_Gender_for_the_NOUN",
+      "headerName": "Plurial_and_Gender_for_the_NOUN",
+      "request": "pattern {N [upos = NOUN, Number=Plur, !Gender]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "Plurial_and_Gender_for_the_NOUN": 125
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "Plurial_and_Gender_for_the_NOUN": 41
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "Plurial_and_Gender_for_the_NOUN": 1
+    }
+  ]
+}

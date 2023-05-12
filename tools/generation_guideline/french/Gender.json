@@ -1,0 +1,18 @@
+[{
+    "Language":"French",
+    "Tag":"FEATS",
+    "value":"Gender",
+    "overview":"The features `Gender` in french can be on several upos.",
+    "upos_and_value_feats":
+        {
+            "AUX":["Fem","Masc"]
+        },
+    "specific_pattern":
+    {
+        "Plurial and Gender for the NOUN":
+            {
+                "pattern":"N [upos = NOUN, Number=Plur, !Gender]",
+                "descriptions":"Sometimes, in french, the NOUN don't have the features `Gender` when they have Number=Plur. It is because we can get the information."
+            }
+    }
+}]

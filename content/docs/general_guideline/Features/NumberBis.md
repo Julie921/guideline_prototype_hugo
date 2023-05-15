@@ -56,7 +56,7 @@ Several upos can have the `Number` features in French, with the two values `Sing
 ![value](/images/General_Guideline/Features/Number/value_french_nb.png)
 
 
-### Pattern
+### Specific Pattern
 
 
 #### Features Number for ADV

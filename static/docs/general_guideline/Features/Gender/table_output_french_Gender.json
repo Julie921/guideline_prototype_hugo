@@ -1,0 +1,38 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "Explication_one",
+      "headerName": "Explication_one",
+      "request": "pattern {GOV[Gender=Masc]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "Explication_one": 93810
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "Explication_one": 8427
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "Explication_one": 8109
+    }
+  ]
+}

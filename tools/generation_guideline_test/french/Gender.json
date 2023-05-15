@@ -1,4 +1,4 @@
-{
+[{
     "Language":"French",
     "Tag":"FEATS",
     "value":"Gender",
@@ -15,4 +15,4 @@
                 "descriptions":"Sometimes, in french, the NOUN don't have the features `Gender` when they have Number=Plur. It is because we can get the information."
             }
     }
-}
+}]

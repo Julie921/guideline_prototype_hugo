@@ -32,18 +32,19 @@ def json_to_markdown_feats_misc(file_json:str,table_json:str)->str:
                 md += f" The upos {key} has the values : {value}\n\n\n"
         md += "### Specific Pattern\n\n"
         # for each key/value of value d['specific_pattern'] of the dictionnary for each element
-        for key,value in d['specific_pattern'].items():
-            md += f"#### {key} \n\n"
-            for kk,vv in value.items():
-                if kk == "descriptions":
-                    md += f"- Description: {vv}\n\n"
-                if kk == "pattern":
-                    md += f"- Pattern: {vv}\n\n\n"
-                if kk == "example":
-                    md += "{{<conll>}} \n"
-                    md += f"{vv}"
-                    md += "{{</conll>}}"
-                    md += "\n\n"            
+        if d['specific_pattern']:
+            for key,value in d['specific_pattern'].items():
+                md += f"#### {key} \n\n"
+                for kk,vv in value.items():
+                    if kk == "descriptions":
+                        md += f"- Description: {vv}\n\n"
+                    if kk == "pattern":
+                        md += f"- Pattern: {vv}\n\n\n"
+                    if kk == "example":
+                        md += "{{<conll>}} \n"
+                        md += f"{vv}\n"
+                        md += "{{</conll>}}"
+                        md += "\n\n"            
             md += f"#### Tables\n\n Here is the table where you can find the pattern in the treebanks.\n\n"
             # writing the name of the JSON table file. 
             md+= "{{< agg " 
@@ -51,6 +52,33 @@ def json_to_markdown_feats_misc(file_json:str,table_json:str)->str:
             md += " >}}"
         md += "\n"
     # return var md 
+    return md
+
+def json_to_markdown_no_pattern(file_json:str)->str:
+    """
+    This function return a string with the markdown content from a lsit of dict from the json file's fromular (formulaire.py). 
+    Parameters
+    ---------
+    file : str
+        a JSON file
+    
+    Return
+    ---------
+    string 
+        string for the markdown content file   
+    """
+    with open(file_json, 'r') as f:
+        data = json.load(f)
+    # variable to add the content for the markdown file
+    md = ""
+    # for each element in the list
+    for d in data:
+        md += f"## {d['Language']}\n\n"
+        md += f"### Overview\n\n {d['overview']}\n\n"
+        # for each key/value of value d['upos_and_value_feats'] of the dictionnary for each element 
+        for key, value in d['upos_and_value_feats'].items():
+            if value != "None":
+                md += f" The upos {key} has the values : {value}\n\n\n"
     return md
 
 def add_link(file:str,md:str)->str:

@@ -10,6 +10,7 @@ streamlit run formulaire.py
 """
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
+particular_phenomena_check = ['number','coordination','comparative_construction','disluency','reported_speech']
 
 def add_answer():
     """
@@ -43,7 +44,33 @@ def add_answer():
 language = st.text_input('Name of the language')
 
 # Get the type of page that the user want to write. 
-tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','MISC','Upos','Other linguistic phenomena','Deep'))
+tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','MISC','Upos','Other linguistic phenomena','Deep','Particular_construction'))
+
+## particular construction -> as define in the guideline ! If it exist, we cannot create an "other linguistic phenomena"
+if tag == 'Particular_construction':
+    # which particular construction 
+    which_phenm = st.multiselect(f'wich particular construction do you want to documente in your language ?', particular_phenomena_check)
+    
+    # description
+    overview = st.text_area(f"Can you give a short description of the feature {which_phenm} in your language ? ", height=200) 
+
+    # give general example
+    general_ex = st.text_area(f"Conll example",height=200)
+
+    # THe user can add some pattern to describe in his page 
+    add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
+    if add_pattern == "Yes":
+        st.write("Describe your pattern")
+        add_answer()
+    get_pattern = {}
+    # we get the information from the function and put them in a dict 
+    for answer in st.session_state.answers:
+        get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
+
+    # Add the data in a DataFrame
+    data = {'Language': [language], 'Tag': [tag],'value': [which_phenm],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[] ,'specific_pattern':[get_pattern]}
+    df = pd.DataFrame(data)
+
 
 # Different type of page
 if tag == 'Features' or tag =="MISC":
@@ -185,37 +212,32 @@ if tag == "Other linguistic phenomena":
     # name of the features
     ling = st.text_input(f"What is the linguistic phenomena ? ")
 
-    # short description of the features
-    overview = st.text_area(f"Can you give a short description of the linguistic phenomena {ling} in your language ? ",height=200) 
-    
-    # give general example
-    general_ex = st.text_area(f"Conll example",height=200)
-    
-    # # which upos can have the features 
-    # which_upos = st.multiselect(f'which features, upos or deprel are conserned by the phenomena ?', liste_of_upos)
+    if ling in particular_phenomena_check:
+        st.write("You have to write your phenomena in the 'particular_phenomena' section because a page already exists\n Please change.")
+    else:
 
-    # # for each upos, we can indicates the feature's value 
-    # for i in range(len(which_upos)):
-    #     combo_value_feats = st.text_input(f"Which are the value of the features {feats} for the upos {which_upos[i]} ? (put a ';' between each value)")
-    #     combos = combo_value_feats.split(";")
-    #     upos_value[which_upos[i]] = combos
+        # short description of the features
+        overview = st.text_area(f"Can you give a short description of the linguistic phenomena {ling} in your language ? ",height=200) 
+        
+        # give general example
+        general_ex = st.text_area(f"Conll example",height=200)
+
     
-    # THe user can add some pattern to describe in his page 
-    add_pattern = st.radio("Can you describe more your pattern ? ",('Yes','No'))
-    if add_pattern == "Yes":
-        st.write("Describe your pattern")
-        # fonction add_answer()
-        add_answer()
-    get_pattern = {}
-    # we get the information from the function and put them in a dict 
-    for answer in st.session_state.answers:
-        get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
+        # THe user can add some pattern to describe in his page 
+        add_pattern = st.radio("Can you describe more your pattern ? ",('Yes','No'))
+        if add_pattern == "Yes":
+            st.write("Describe your pattern")
+            # fonction add_answer()
+            add_answer()
+        get_pattern = {}
+        # we get the information from the function and put them in a dict 
+        for answer in st.session_state.answers:
+            get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
-    # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex], 'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
-    df = pd.DataFrame(data)
+        # Add the data in a DataFrame
+        data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex], 'upos_and_value_feats':[] ,'specific_pattern':[get_pattern]}
+        df = pd.DataFrame(data)
 
-st.write(f"specific pattern : {data['specific_pattern']}")
 
 # Save the data in JSON file
 if st.button('Enregistrer au format JSON'):

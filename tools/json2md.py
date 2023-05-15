@@ -26,6 +26,10 @@ def json_to_markdown_feats_misc(file_json:str,table_json:str)->str:
     for d in data:
         md += f"## {d['Language']}\n\n"
         md += f"### Overview\n\n {d['overview']}\n\n"
+        md += "{{<conll>}} \n"
+        md += f"{d['general_ex']}\n" 
+        md += "{{</conll>}}"
+        md += "\n\n"   
         # for each key/value of value d['upos_and_value_feats'] of the dictionnary for each element 
         for key, value in d['upos_and_value_feats'].items():
             if value != "None":

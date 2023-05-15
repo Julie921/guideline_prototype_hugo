@@ -59,6 +59,9 @@ if tag == 'Features' or tag =="MISC":
 
     # short description of the features
     overview = st.text_area(f"Can you give a short description of the feature {feats} in your language ? ", height=200) 
+
+    # give general example
+    general_ex = st.text_area(f"Conll example",height=200)
     
     # which upos can have the features 
     which_upos = st.multiselect(f'which upos are conserned by the feature {feats} ? (optional)', liste_of_upos)
@@ -80,7 +83,7 @@ if tag == 'Features' or tag =="MISC":
         get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
     # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [feats],'overview':[overview],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
+    data = {'Language': [language], 'Tag': [tag],'value': [feats],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
 
@@ -101,6 +104,9 @@ if tag == 'Upos':
 
     # short description of the features
     overview = st.text_area(f"Can you give a short description of the feature {upos} in your language ? ", height=200) 
+
+    # give general example
+    general_ex = st.text_area(f"Conll example",height=200)
 
     # which upos can have the features 
     which_features = st.text_area(f"Which features can be on the {upos} ? (put a ';' between each value) (optional)",height=200)
@@ -125,7 +131,7 @@ if tag == 'Upos':
         get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
     # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [upos],'overview':[overview],'upos_and_value_feats':[features_name] ,'specific_pattern':[get_pattern]}
+    data = {'Language': [language], 'Tag': [tag],'value': [upos],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[features_name] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
 ############
@@ -144,6 +150,9 @@ if tag == 'Syntactic_relations' or tag == 'Deep':
     # short description of the features
     overview = st.text_area(f"Can you give a short description of the feature {deprel} in your language ? ",height=200) 
     
+    # give general example
+    general_ex = st.text_area(f"Conll example",height=200)
+
     # which upos can have the features 
     which_upos = st.multiselect(f'which upos can be the head of the {deprel} ? (optional)', liste_of_upos)
 
@@ -165,7 +174,7 @@ if tag == 'Syntactic_relations' or tag == 'Deep':
         get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
     # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [deprel],'overview':[overview],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
+    data = {'Language': [language], 'Tag': [tag],'value': [deprel],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
 if tag == "Other linguistic phenomena":
@@ -178,6 +187,9 @@ if tag == "Other linguistic phenomena":
 
     # short description of the features
     overview = st.text_area(f"Can you give a short description of the linguistic phenomena {ling} in your language ? ",height=200) 
+    
+    # give general example
+    general_ex = st.text_area(f"Conll example",height=200)
     
     # # which upos can have the features 
     # which_upos = st.multiselect(f'which features, upos or deprel are conserned by the phenomena ?', liste_of_upos)
@@ -200,7 +212,7 @@ if tag == "Other linguistic phenomena":
         get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
     # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
+    data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex], 'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
 st.write(f"specific pattern : {data['specific_pattern']}")

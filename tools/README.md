@@ -5,46 +5,62 @@ This repertory some tools to help the generation of the guidelines. You will fin
 # Script for writing the guidelines
 
 You can find the scripts in the sub repertory `generation_guideline`. You will find : 
-- `formulaire.py` which requires streamlit. This formular will help you write your page. The output (`output.json`) is a JSON file. 
+- `formulaire.py` which requires streamlit. This formular will help you write your page.  
 - `create_request_from_json` : this script will create a request file in JSON with the pattern specified in the formular. You will then use the script to produce the table.
 - `json2md.py`: this script will transform the json file from the formular to a markdown file. You will need the JSON file from the formular and the table JSON file. 
 
 ## formulaire.py 
 
-This script requires streamlit : 
+This script requires : 
+- streamlit 
 ```
 pip install streamlit
 ```
+- Ocaml library `grewlib` version **1.12.1**
+   - check your version with `opam list | grep grewlib`
+   - if needed, update with `opam update && opam install grewlib.1.12.1`
+- Ocaml executable `grewpy_backend` version **0.3.1**
+   - check your version with `opam list | grep grewpy_backend`
+   - if needed, update with `opam update && opam install grewpy_backend.0.3.1`
+- Python library `grewpy` version **0.3.0**
+   - check your version with `pip3 list | grep grewpy`
+   - if needed, update with `pip3 install grewpy --upgrade`
+- a folder with your language (it has to have the same name as the sub folder in the guideline), and the three sub module :
+	- language_page : it will contain the markdwon page produce by the fromular.
+	- language_request_json : it will contain the request json file needed to create the table in the guideline. Only if you specify pattern in the formular. This folder may also contain other requests JSON files obtained outside of the form filling process.
+	- language_table_json : in this one, you need to add a json with the information of your corpora. Example below.
+	- output : the json file obtained from the formular's answers. 
 
-You need to launch the script : 
+**Example of the french treebank json file :**
+
+```json
+{
+  "corpora": [
+    {
+      "id": "SUD_French-GSD@latest",
+      "directory": "corpora/SUD_French-GSD"
+    },
+    {
+      "id": "SUD_French-ParisStories@latest",
+      "directory": "corpora/SUD_French-ParisStories"
+    },
+    {
+      "id": "SUD_French-Rhapsodie@latest",
+      "directory": "corpora/SUD_French-Rhapsodie"
+    }
+  ]
+}
+
+```
+The command to launch the script :
 
 ```bash
 streamlit run formulaire.py
 ```
 
-You can then follow the instruction in the formular. You need to save your answers into JSON file. 
+You can then follow the instruction in the formular. This script helps you write the guidelines. Indeed, it will automaticly update the guideline  with the informations you write in the formular. It uses the python script `create_request_from_json.py, `json2md.py` and `test_build_table.py`. 
 
-The output is a file named `output.json`
 
-## create_request_from_json 
-
-This script requires that you did the first step.
-
-```
-python3 create_request_from_json.py path/to/JSON/file/from/formular
-```
-
-This script create the request file that you can use to produce your table. See the section below for more information.
-
-## json2md.py
-
-This script requires that you did the first two steps. Indeed, you need the JSON file from the formular and the JSON file taht containt the table. 
-
-```
-python3 json2md.py path/JSON/file/formular path/JSON/file/table
-```
-
-This script produce a Markdown file `output.md` that you can add in the guideline. You have to copy/paste the content in the right place.
 
 # Script for production of tables
 

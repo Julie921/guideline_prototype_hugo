@@ -1,0 +1,12 @@
+[
+  {
+    "id": "ADV",
+    "request": [
+      {
+        "pattern": [
+          "N [ExtPos=ADV/upos=ADV]"
+        ]
+      }
+    ]
+  }
+]

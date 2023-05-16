@@ -1,0 +1,23 @@
+[
+  {
+    "id": "adv_neg",
+    "request": [
+      {
+        "pattern": [
+          "N [ExtPos=ADV/upos=ADV, Polarity=Neg]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "adv_pos",
+    "request": [
+      {
+        "pattern": [
+          "N [ExtPos=ADV/upos=ADV, Polarity=Pos]"
+        ]
+      }
+    ]
+  }
+]
+

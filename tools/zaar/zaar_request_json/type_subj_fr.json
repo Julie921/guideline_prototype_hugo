@@ -1,0 +1,42 @@
+[
+  {
+    "id": "passiv_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV -[subj@pass]-> DEP"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expltiv_subject",
+    "request": [
+      {
+        "pattern": [
+          "GOV -[subj@expl]-> DEP"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "causativ_subject",
+    "request": [
+      {
+        "pattern": [
+          "GOV -[subj@caus]-> DEP"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "subject",
+    "request": [
+      {
+        "pattern": [
+          "GOV -[subj]-> DEP"
+        ]
+      }
+    ]
+  }
+]

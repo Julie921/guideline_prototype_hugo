@@ -6,7 +6,20 @@ from test_build_table import process_files
 import os 
 
 """
-streamlit run formulaire.py
+Ce script est un formulaire pour guider l'utilisateur dans la rédaction du guide d'annotation. Il correspond au formalisme du guide d'annotation établie lors de mon
+mémoire. La sutie du script permet d'enregistrer et de mettre à jour automatiquement le guide d'annotation. Il permet également de créer des tables grew-match directement
+suite à la description de pattern dans la partie où il est possible de spécifier des patterns. S'il n'est pas indiqué qu'une question est optionnal, c'est parce qu'elle est
+obligatoire pour l'écriture de la page md. 
+
+ATTENTION : la langue donnée doit correspondre à la langue présente dans le fichier du guide d'annotation et des sous-fichier dans tools. 
+
+COMMANDE pour lancer le script : streamlit run formulaire.py
+
+Chaque langue à son dossier dans tools/ 
+- french_page : contient la version markdown de la page créer
+- french_request_json : contient le fichier .json de requête pour construire une table ag-grid 
+- french_table_json : contient le fichier .json des corpus utilisé pour construire une table ag-grid (ATTENTION : à fournir obligatoirement pour constuire les tables)
+- output : contient le fichier json du formulaire
 """
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
@@ -38,7 +51,7 @@ def add_answer():
     st.session_state.answers = answers
 
 
-# Formular 
+# Formular -> different question for each tag
 
 # Get the language
 language = st.text_input('Name of the language')
@@ -46,6 +59,9 @@ language = st.text_input('Name of the language')
 # Get the type of page that the user want to write. 
 tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','MISC','Upos','Other linguistic phenomena','Deep','Particular_construction'))
 
+##################################################################################
+######################## PARTICULAR CONSTRUCTION #################################
+##################################################################################
 ## particular construction -> as define in the guideline ! If it exist, we cannot create an "other linguistic phenomena"
 if tag == 'Particular_construction':
     # which particular construction 
@@ -71,6 +87,9 @@ if tag == 'Particular_construction':
     data = {'Language': [language], 'Tag': [tag],'value': [which_phenm],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
+##################################################################################
+######################## FEATS AND MISCs##########################################
+##################################################################################
 
 # Different type of page
 if tag == 'Features' or tag =="MISC":
@@ -114,9 +133,9 @@ if tag == 'Features' or tag =="MISC":
     df = pd.DataFrame(data)
 
 
-###############
-
-
+##################################################################################
+#################################### UPOS ########################################
+##################################################################################
 # Different type of page
 if tag == 'Upos':
     """
@@ -161,7 +180,9 @@ if tag == 'Upos':
     data = {'Language': [language], 'Tag': [tag],'value': [upos],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[features_name] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
-############
+##################################################################################
+######################## Syntactic relations  ####################################
+##################################################################################
 
 # Different type of page
 if tag == 'Syntactic_relations' or tag == 'Deep':
@@ -204,6 +225,11 @@ if tag == 'Syntactic_relations' or tag == 'Deep':
     data = {'Language': [language], 'Tag': [tag],'value': [deprel],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
+
+##################################################################################
+######################## OTHER LING PHENOMENA ####################################
+##################################################################################  
+
 if tag == "Other linguistic phenomena":
 
     # dict to get the upos that can have the features? 
@@ -239,10 +265,15 @@ if tag == "Other linguistic phenomena":
         df = pd.DataFrame(data)
 
 
+##################################################################################
+######################## ENREGISTREMENT DES DONNE ################################
+################ ET ECRITURE DANS LE GUIDE D'ANNOTATION ##########################
+##################################################################################
 # Save the data in JSON file
 if st.button('Enregistrer au format JSON'):
     if tag == 'Syntactic_relations' or tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
         named = data['value'][0]
+    # on ajoute des underscore pour la page du phenomen linguistic pour le nom du fichier. 
     if tag == 'Other linguistic phenomena':
         named = str(data['value'][0])
         named = named.split(" ")
@@ -251,7 +282,8 @@ if st.button('Enregistrer au format JSON'):
     df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
     #st.write('Les données ont été enregistrées au format JSON.')
 
-    # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit
+    # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit. Ici on considère
+    # que l'utilisateur a écrit des patterns pour créer une table 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] != [{}]:
 
         # Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_rrequest_json/...
@@ -285,7 +317,8 @@ if st.button('Enregistrer au format JSON'):
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 with open(f"../content/docs/general_guideline/{tag}/{named}.md", 'a') as f:
                     f.write("\n\n"+md_output+"\n\n")
-        
+
+        # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
             if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
@@ -328,7 +361,7 @@ if st.button('Enregistrer au format JSON'):
                             f.write("\n\n"+md_output+"\n\n")
 
         
-        # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
+        # Sinon on crée une page pour un phénomène linguistique, on ajoute une nouvelle page au bon endroit
         if tag == "Other linguistic phenomena":
             name = str(data['value'][0])
             name = name.split(" ")
@@ -340,9 +373,10 @@ if st.button('Enregistrer au format JSON'):
             new_path = f"../static/docs/language/{str(language).lower()}/{data['value'][0]}/table_output_{str(language).lower()}_{name}.json"
             os.rename(old_path,new_path)
 
-    # S'il n'y pas de pattern specific pour construire les tables 
+    # S'il n'y pas de pattern specific pour construire les tables, on enlève une étape et on utilise une autre fonction de json2md.py
 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
+
         # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
         md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
         md_output = add_link("links.csv",md_output)
@@ -351,11 +385,12 @@ if st.button('Enregistrer au format JSON'):
         #st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n\n Vous pouvez quitter le formulaire.")
         
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
+        if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep" or tag =="Particular_phenomena":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 with open(f"../content/docs/general_guideline/{tag}/{named}.md", 'a') as f:
                     f.write("\n\n"+md_output+"\n\n")
-        
+
+        # même chose que précédemment, relation syntaxique organisé autrement
         if tag == "Syntactic_relations":
             if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":

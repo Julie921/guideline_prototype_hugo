@@ -1,0 +1,22 @@
+[
+  {
+    "id": "accord_with_noun",
+    "request": [
+      {
+        "pattern": [
+          "GOV[Number, upos=NOUN] ; DEP [Number, upos=DET|ADJ] ; GOV.Number = DEP.Number ;e: GOV->DEP"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "accord_verb_subj",
+    "request": [
+      {
+        "pattern": [
+          "GOV[Number, upos=VERB]; DEP [Number, upos=NOUN|PRON] ; GOV.Number = DEP.Number ;e: GOV->DEP"
+        ]
+      }
+    ]
+  }
+]

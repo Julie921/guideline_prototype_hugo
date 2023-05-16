@@ -1,0 +1,22 @@
+[
+  {
+    "id": "etre_aux",
+    "request": [
+      {
+        "pattern": [
+          "GOV[lemma=\"être\", upos=AUX]"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "etre_verb",
+    "request": [
+      {
+        "pattern": [
+          "GOV[lemma=\"être\", upos=VERB]"
+        ]
+      }
+    ]
+  }
+]

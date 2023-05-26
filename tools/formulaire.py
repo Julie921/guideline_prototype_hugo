@@ -88,7 +88,7 @@ if tag == 'Particular_construction':
         get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
     # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [which_phenm],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':['None'] ,'specific_pattern':[get_pattern]}
+    data = {'Language': [language], 'Tag': [tag],'value': [which_phenm],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[dict()],'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
 ##################################################################################
@@ -265,7 +265,7 @@ if tag == "Other linguistic phenomena":
             get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
         # Add the data in a DataFrame
-        data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex], 'upos_and_value_feats':['None'] ,'specific_pattern':[get_pattern]}
+        data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[dict()],'specific_pattern':[get_pattern]}
         df = pd.DataFrame(data)
 
 
@@ -359,7 +359,7 @@ if st.button('Enregistrer au format JSON'):
         
         st.write("On ajout la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 with open(f"../content/docs/general_guideline/{tag}/{named}.md", 'a') as f:
                     f.write("\n\n"+md_output+"\n\n")
@@ -420,6 +420,8 @@ if st.button('Enregistrer au format JSON'):
             os.rename(old_path,new_path)
 
     st.write("Vous pouvez quitter le formulaire.")
+
+
     # S'il n'y pas de pattern specific pour construire les tables, on enlève une étape et on utilise une autre fonction de json2md.py
 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
@@ -433,7 +435,7 @@ if st.button('Enregistrer au format JSON'):
         
         st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Particular_phenomena":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 with open(f"../content/docs/general_guideline/{tag}/{named}.md", 'a') as f:
                     f.write("\n\n"+md_output+"\n\n")

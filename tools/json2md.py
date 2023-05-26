@@ -60,7 +60,7 @@ def json_to_markdown_fwith_pattern(file_json:str,table_json:str)->str:
         md += "{{</conll>}}"
         md += "\n\n"   
         # for each key/value of value d['upos_and_value_feats'] of the dictionnary for each element 
-        if d["upos_and_value_feats"] !="None":
+        if d["upos_and_value_feats"]:
             for key, value in d['upos_and_value_feats'].items():
                 if value != "None":
                     md_bis += f" The upos {key} has the values : {value}\n\n\n"
@@ -123,10 +123,11 @@ def json_to_markdown_no_pattern(file_json:str)->str:
         md += "{{</conll>}}"
         md += "\n\n"   
         # for each key/value of value d['upos_and_value_feats'] of the dictionnary for each element 
-        for key, value in d['upos_and_value_feats'].items():
-            if value != "None":
-                other_md += f" - The upos {key} has the values : {value}\n\n\n"
-                other_md = add_link("links.csv",other_md)
+        if d['upos_and_value_feats']:
+            for key, value in d['upos_and_value_feats'].items():
+                if value != "None":
+                    other_md += f" - The upos {key} has the values : {value}\n\n\n"
+                    other_md = add_link("links.csv",other_md)
     return md + other_md
 
 

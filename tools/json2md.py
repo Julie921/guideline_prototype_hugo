@@ -60,10 +60,11 @@ def json_to_markdown_fwith_pattern(file_json:str,table_json:str)->str:
         md += "{{</conll>}}"
         md += "\n\n"   
         # for each key/value of value d['upos_and_value_feats'] of the dictionnary for each element 
-        for key, value in d['upos_and_value_feats'].items():
-            if value != "None":
-                md_bis += f" The upos {key} has the values : {value}\n\n\n"
-                md_bis = add_link("links.csv",md_bis)
+        if d["upos_and_value_feats"] !="None":
+            for key, value in d['upos_and_value_feats'].items():
+                if value != "None":
+                    md_bis += f" The upos {key} has the values : {value}\n\n\n"
+                    md_bis = add_link("links.csv",md_bis)
         md = md + md_bis
         md_bis = ""
         md += "### Specific Pattern\n\n"

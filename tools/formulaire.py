@@ -88,7 +88,7 @@ if tag == 'Particular_construction':
         get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
     # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [which_phenm],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[] ,'specific_pattern':[get_pattern]}
+    data = {'Language': [language], 'Tag': [tag],'value': [which_phenm],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':['None'] ,'specific_pattern':[get_pattern]}
     df = pd.DataFrame(data)
 
 ##################################################################################
@@ -265,7 +265,7 @@ if tag == "Other linguistic phenomena":
             get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
         # Add the data in a DataFrame
-        data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex], 'upos_and_value_feats':[] ,'specific_pattern':[get_pattern]}
+        data = {'Language': [language], 'Tag': [tag],'value': [ling],'overview':[overview], 'general_ex':[general_ex], 'upos_and_value_feats':['None'] ,'specific_pattern':[get_pattern]}
         df = pd.DataFrame(data)
 
 
@@ -286,6 +286,8 @@ if st.button('Enregistrer au format JSON'):
         named = str(data['value'][0])
         named = named.split(" ")
         named = "_".join(named)
+    if tag =='Particular_construction':
+        named = " ".join(data["value"][0])
 
     df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
     st.write('Les données ont été enregistrées au format JSON.')

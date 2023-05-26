@@ -16,7 +16,8 @@
 {{<conll>}} 
 # text = mh.
 1	mh	mh	[INTJ](docs/general_guideline/Upos/INTJ.md)	_	_	0	root	_	AlignBegin=13304|AlignEnd=13483|SpaceAfter=No
-2	.	.	[PUNCT](docs/general_guideline/Upos/PUNCT.md)	_	_	1	punct	_	AlignBegin=13483|AlignEnd=13483{{</conll>}}
+2	.	.	[PUNCT](docs/general_guideline/Upos/PUNCT.md)	_	_	1	punct	_	AlignBegin=13483|AlignEnd=13483
+{{</conll>}}
 
 #### Tables
 

@@ -1,0 +1,86 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "passiv_construction",
+      "headerName": "passiv_construction",
+      "request": "pattern {GOV-[subj@pass]->DEP}"
+    },
+    {
+      "field": "expletiv_construction",
+      "headerName": "expletiv_construction",
+      "request": "pattern {GOV-[subj@expl]->DEP}"
+    },
+    {
+      "field": "causativ_construction",
+      "headerName": "causativ_construction",
+      "request": "pattern {GOV-[subj@expl]->DEP}"
+    },
+    {
+      "field": "nominal_subject",
+      "headerName": "nominal_subject",
+      "request": "pattern {GOV-[1=subj]->DEP;DEP[upos=NOUN|PROPN|PRON|NUM,!Title, !InTitle];GOV [upos=AUX|VERB]}"
+    },
+    {
+      "field": "title_as_a_subject",
+      "headerName": "title_as_a_subject",
+      "request": "pattern {GOV-[1=subj]->DEP;DEP [Title=Yes/InTitle=Yes];GOV [upos=AUX|VERB]}"
+    },
+    {
+      "field": "VerbInf_as_a_subject",
+      "headerName": "VerbInf_as_a_subject",
+      "request": "pattern {GOV-[1=subj]->DEP;GOV [upos=AUX|VERB];DEP [upos=VERB|AUX, VerbForm = Inf, !Title, !InTitle]}"
+    },
+    {
+      "field": "Adverb_used_as_pronoun_in_french_subject",
+      "headerName": "Adverb_used_as_pronoun_in_french_subject",
+      "request": "pattern {GOV-[1=subj]->DEP;GOV [upos=AUX|VERB];DEP [upos=ADV, ExtPos=PRON, !Title, !InTitle]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "passiv_construction": 3673,
+      "expletiv_construction": 932,
+      "causativ_construction": 932,
+      "nominal_subject": 18647,
+      "title_as_a_subject": 74,
+      "VerbInf_as_a_subject": 19,
+      "Adverb_used_as_pronoun_in_french_subject": 37
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "passiv_construction": 41,
+      "expletiv_construction": 315,
+      "causativ_construction": 315,
+      "nominal_subject": 3956,
+      "title_as_a_subject": 0,
+      "VerbInf_as_a_subject": 0,
+      "Adverb_used_as_pronoun_in_french_subject": 0
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "passiv_construction": 124,
+      "expletiv_construction": 425,
+      "causativ_construction": 425,
+      "nominal_subject": 3366,
+      "title_as_a_subject": 3,
+      "VerbInf_as_a_subject": 2,
+      "Adverb_used_as_pronoun_in_french_subject": 2
+    }
+  ]
+}

@@ -1,26 +1,28 @@
 import streamlit as st
 import pandas as pd
 from create_request_from_json import create_request_file
-from json2md import json_to_markdown_feats_misc, add_link,json_to_markdown_no_pattern
+from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern
 from test_build_table import process_files
 import os 
 
-"""
-Ce script est un formulaire pour guider l'utilisateur dans la rédaction du guide d'annotation. Il correspond au formalisme du guide d'annotation établie lors de mon
-mémoire. La sutie du script permet d'enregistrer et de mettre à jour automatiquement le guide d'annotation. Il permet également de créer des tables grew-match directement
-suite à la description de pattern dans la partie où il est possible de spécifier des patterns. S'il n'est pas indiqué qu'une question est optionnal, c'est parce qu'elle est
-obligatoire pour l'écriture de la page md. 
 
-ATTENTION : la langue donnée doit correspondre à la langue présente dans le fichier du guide d'annotation et des sous-fichier dans tools. 
 
-COMMANDE pour lancer le script : streamlit run formulaire.py
+st.title("Formular to help the guideline's writting")
 
-Chaque langue à son dossier dans tools/ 
-- french_page : contient la version markdown de la page créer
-- french_request_json : contient le fichier .json de requête pour construire une table ag-grid 
-- french_table_json : contient le fichier .json des corpus utilisé pour construire une table ag-grid (ATTENTION : à fournir obligatoirement pour constuire les tables)
-- output : contient le fichier json du formulaire
-"""
+st.markdown("""
+This script is a form to guide the user in writing the annotation guide. It corresponds to the annotation guide formalism established in my thesis. The rest of the script allows for automatic saving and updating of the annotation guide. It also enables the creation of direct pattern-to-table mappings in the section where patterns can be specified. If a question is not indicated as optional, it is because it is required for writing the MD page.
+
+:warning: :red[WARNING: The language provided must match the language present in the annotation guide file and sub-files in the tools folder.] :warning:
+
+*COMMAND to run the script: streamlit run formulaire.py*
+
+Each language has its folder in tools/:
+* french_page: contains the markdown version of the created page.
+* french_request_json: contains the .json file of the request for building an ag-grid table.
+* french_table_json: contains the .json file of the corpus used for building an ag-grid table (CAUTION: must be provided for table construction).
+* output: contains the JSON file of the form.
+""")
+
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
 particular_phenomena_check = ['number','coordination','comparative_construction','disluency','reported_speech']
@@ -50,6 +52,8 @@ def add_answer():
     # update the list of answers during the session. 
     st.session_state.answers = answers
 
+
+st.title("Begining of the script")
 
 # Formular -> different question for each tag
 
@@ -138,9 +142,6 @@ if tag == 'Features' or tag =="MISC":
 ##################################################################################
 # Different type of page
 if tag == 'Upos':
-    """
-    Text zone to write the upos page for the guideline. 
-    """
 
     # dict to get the feats that can be on the upos
     features_name = {}
@@ -194,6 +195,9 @@ if tag == 'Syntactic_relations' or tag == 'Deep':
 
     # name of the features
     deprel = st.text_input(f"What is the {tag} ? ")
+
+    deprel = deprel.replace(":","_")
+
 
     # short description of the features
     overview = st.text_area(f"Can you give a short description of the feature {deprel} in your language ? ",height=200) 
@@ -269,6 +273,10 @@ if tag == "Other linguistic phenomena":
 ######################## ENREGISTREMENT DES DONNE ################################
 ################ ET ECRITURE DANS LE GUIDE D'ANNOTATION ##########################
 ##################################################################################
+# Reset the form
+if st.button("Delete"):
+    st.session_state.answers = []
+
 # Save the data in JSON file
 if st.button('Enregistrer au format JSON'):
     if tag == 'Syntactic_relations' or tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
@@ -280,12 +288,13 @@ if st.button('Enregistrer au format JSON'):
         named = "_".join(named)
 
     df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
-    #st.write('Les données ont été enregistrées au format JSON.')
-
+    st.write('Les données ont été enregistrées au format JSON.')
+    st.title("Saving your answer and updating the guidelines, dont quit :warning:")
+    st.markdown(":warning: :red[Don't quite the formulaire while you're not welcome to] :warning:")
     # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit. Ici on considère
     # que l'utilisateur a écrit des patterns pour créer une table 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] != [{}]:
-
+        st.write("Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_request_json/")
         # Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_rrequest_json/...
         st.write(f"Le fichier {str(language).lower()}/output/output_{str(language).lower()}_{named}.json a été enregistré.")
         content = create_request_file(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
@@ -294,24 +303,59 @@ if st.button('Enregistrer au format JSON'):
         st.write(f"Le fichier de requête pour construire les tables est fait : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
         
         # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
+        st.write("Creation des tables ad-grid dans le sous dossier langue/langue_table_json/ - le fichier sera déplacé par la suite")
         result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
         with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
             f.write(str(result))
         st.write(f"Le fichier contenant les tables ag-grid est fait : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json ")
         
         # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
-        md_output = json_to_markdown_feats_misc(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
-        md_output = add_link("links.csv",md_output)
+        st.write("Ecriture de la page en markdown pour le guide d'annotation")
+        md_output = json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
+        #md_output = add_link("links.csv",md_output)
         with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
             f.write(md_output)
         st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n\n Vous pouvez quitter le formulaire.")
 
+        st.write("On déplace la table ag-grid au bon endroit")
         # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Syntactic_relations' or tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
+        if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep" or tag =="Particular_construction":
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
             new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
             os.rename(old_path,new_path)
         
+        # traitement différent si deprel
+        if tag == "Syntactic_relations":
+            old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
+            
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
+                new_path = f"../static/docs/general_guideline/{tag}/{named}/{named}/table_output_{str(language).lower()}_{named}.json"
+            
+            if named.startswith("comp"):
+                if named == "comp":
+                    new_path = f"../static/docs/general_guideline/{tag}/comp/table_output_{str(language).lower()}_{named}.json"
+                else:
+                    new_path = f"../static/docs/general_guideline/{tag}/comp/{named}/table_output_{str(language).lower()}_{named}.json"
+            
+            if named.startswith("conj"):
+                if named == "conj":
+                    new_path = f"../static/docs/general_guideline/{tag}/conj/table_output_{str(language).lower()}_{named}.json"
+                else:
+                    new_path = f"../static/docs/general_guideline/{tag}/conj/{named}/table_output_{str(language).lower()}_{named}.json"
+            
+            if named == "discourse" or named == "dislocated" or named =="vocative":
+                new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/{named}/table_output_{str(language).lower()}_{named}.json"
+
+            if named.startswith("parataxis"):
+                if named == "parataxis":
+                    new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/parataxis/table_output_{str(language).lower()}_{named}.json"
+                else:
+                    new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}/table_output_{str(language).lower()}_{named}.json"
+            st.write(f"ATTENTION PROBLEME : {old_path} ET {new_path}")
+            os.rename(old_path,new_path)
+        
+        
+        st.write("On ajout la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
@@ -373,17 +417,19 @@ if st.button('Enregistrer au format JSON'):
             new_path = f"../static/docs/language/{str(language).lower()}/{data['value'][0]}/table_output_{str(language).lower()}_{name}.json"
             os.rename(old_path,new_path)
 
+    st.write("Vous pouvez quitter le formulaire.")
     # S'il n'y pas de pattern specific pour construire les tables, on enlève une étape et on utilise une autre fonction de json2md.py
 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
 
+        st.write("Ecriture du fichier markdown dans le sous dossier langue/langue_page/")
         # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
         md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
-        md_output = add_link("links.csv",md_output)
+        #md_output = add_link("links.csv",md_output)
         with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
             f.write(md_output)
-        #st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n\n Vous pouvez quitter le formulaire.")
         
+        st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep" or tag =="Particular_phenomena":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
@@ -439,3 +485,6 @@ if st.button('Enregistrer au format JSON'):
             name = "_".join(name)
             with open(f"../content/docs/general_guideline/language/{str(language).lower()}/{name}.md", 'w') as f:
                 f.write(md_output)
+
+        st.write("Vous pouvez quitter le formulaire")
+    

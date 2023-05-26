@@ -2,15 +2,15 @@
   "corpora": [
     {
       "id": "SUD_French-GSD@latest",
-      "directory": "corpora/SUD_French-GSD"
+      "directory": "french/corpora/SUD_French-GSD"
     },
     {
       "id": "SUD_French-ParisStories@latest",
-      "directory": "corpora/SUD_French-ParisStories"
+      "directory": "french/corpora/SUD_French-ParisStories"
     },
     {
       "id": "SUD_French-Rhapsodie@latest",
-      "directory": "corpora/SUD_French-Rhapsodie"
+      "directory": "french/corpora/SUD_French-Rhapsodie"
     }
   ]
 }

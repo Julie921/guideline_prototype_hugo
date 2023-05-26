@@ -188,7 +188,134 @@ The [`comp:aux`](../../Syntactic_relations/comp/comp_aux.md) relation can be use
 
 {{< agg aux-french >}}
 
+## french
+
+### Overview
+
+ In French, the `[comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)` relations is always between an `[AUX](docs/general_guideline/Upos/AUX.md)`(the governer) and an other `[AUX](docs/general_guideline/Upos/AUX.md)` or a `[VERB](docs/general_guideline/Upos/VERB.md)`. When there are disfluencies, the relations can be between an `[AUX](docs/general_guideline/Upos/AUX.md)` and an unknown node (upos=`[X](docs/general_guideline/Upos/X.md)`). 
+
+The  [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)  relation always has a `deep` : 
+- [tense](docs/general_guideline/Deep/tense.md) : expressing a [tense](docs/general_guideline/Deep/tense.md) construction
+- [pass](docs/general_guideline/Deep/pass.md) :  expressing a [pass](docs/general_guideline/Deep/pass.md)ive construction
+- [caus](docs/general_guideline/Deep/caus.md) :  expressing a [caus](docs/general_guideline/Deep/caus.md)ative construction
+
+{{< conll >}} 
+# text_en = She has disappeared.
+1	elle	il	PRON	_	Gender=Fem|Number=Sing|Person=3|PronType=Prs	2	subj	_	Gloss=she
+2	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=has
+3	disparu	disparaître	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	2	comp:aux@tense	_	Gloss=disappeared
+{{< /conll >}}
+
+ The upos [AUX](docs/general_guideline/Upos/AUX.md) has the values : ['[AUX](docs/general_guideline/Upos/AUX.md)', '[VERB](docs/general_guideline/Upos/VERB.md)']
 
 
+### Specific Pattern
+
+#### Auxiliary expressing a [tense](docs/general_guideline/Deep/tense.md) 
+
+- Pattern: GOV-[comp:aux@tense]->DEP
+
+
+- Description:  In French, the relation [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)@[tense](docs/general_guideline/Deep/tense.md) is used with both verbs **être** and **avoir** and is the most common sub-relation. 
+
+{{< conll >}}
+# text_en = She has disappeared.
+1	elle	il	PRON	_	Gender=Fem|Number=Sing|Person=3|PronType=Prs	2	subj	_	Gloss=she
+2	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=has
+3	disparu	disparaître	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	2	comp:aux@tense	_	Gloss=disappeared
+{{< /conll >}}
+
+
+#### [pass](docs/general_guideline/Deep/pass.md)ive construction 
+
+- Pattern: GOV-[comp:aux@pass]->DEP
+
+
+- Description: The relation [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)@[pass](docs/general_guideline/Deep/pass.md) is only used with the verb **être** and **se voir**.
+
+{{< conll >}}
+# text_en = The castle is then sold.
+1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	Gloss=the
+2	château	château	NOUN	_	Gender=Masc|Number=Sing	3	subj@pass	_	Gloss=castle
+3	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=is
+4	ensuite	ensuite	ADV	_	_	3	mod	_	Gloss=next
+5	vendu	vendre	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	3	comp:aux@pass	_	Gloss=sold
+{{< /conll >}}
+
+#### [caus](docs/general_guideline/Deep/caus.md)ative construction 
+
+- Pattern: GOV-[comp:aux@caus]->DEP
+
+
+- Description: The relation [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)@cas is only used with the aux **faire** .
+
+{{< conll >}}
+# text_en = He makes it fall.
+1	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	subj@caus	_	Gloss=he
+2	le	le	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	comp:obj@agent	_	Gloss=it
+3	fait	faire	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=makes
+4	tomber	tomber	VERB	_	VerbForm=Inf	3	comp:aux@caus	_	Gloss=fall
+{{< /conll >}}
+
+#### Tables
+
+ Here is the table where you can find the pattern in the treebanks.
+
+{{< agg table_output_french_comp_aux >}}
+
+
+
+
+## french
+
+### Overview
+
+ test for conll
+
+{{<conll>}} 
+# text_en = He makes it fall.
+1	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	subj@caus	_	Gloss=he
+2	le	le	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	comp:obj@agent	_	Gloss=it
+3	fait	faire	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=makes
+4	tomber	tomber	VERB	_	VerbForm=Inf	3	comp:aux@caus	_	Gloss=fall
+{{</conll>}}
+
+### Specific Pattern
+
+#### test one 
+
+- Description: test
+
+- Pattern: GOV[Number]
+
+
+{{<conll>}}
+# text_en = He makes it fall.
+1	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	subj@caus	_	Gloss=he
+2	le	le	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	comp:obj@agent	_	Gloss=it
+3	fait	faire	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=makes
+4	tomber	tomber	VERB	_	VerbForm=Inf	3	comp:aux@caus	_	Gloss=fall
+{{</conll>}}
+
+#### causative test two 
+
+- Description: test 2
+
+- Pattern: GOV[Gender]
+
+
+{{<conll>}}
+# text_en = He makes it fall.
+1	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	subj@caus	_	Gloss=he
+2	le	le	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	comp:obj@agent	_	Gloss=it
+3	fait	faire	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	Gloss=makes
+4	tomber	tomber	VERB	_	VerbForm=Inf	3	comp:aux@caus	_	Gloss=fall
+{{</conll>}}
+
+#### Tables
+
+ Here is the table where you can find the pattern in the treebanks.
+
+{{< agg table_output_french_comp_aux >}}
 
 

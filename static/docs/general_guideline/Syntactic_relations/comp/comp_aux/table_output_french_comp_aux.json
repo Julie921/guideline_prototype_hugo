@@ -16,23 +16,31 @@
       "lockPinned": true
     },
     {
-      "field": "nominal_subject",
-      "headerName": "nominal_subject",
-      "request": "pattern {GOV-[subj]->DEP;DEP [upos=PRON|PROPN|NOUN]}"
+      "field": "test_one",
+      "headerName": "test_one",
+      "request": "pattern {GOV[Number]}"
+    },
+    {
+      "field": "causative_test_two",
+      "headerName": "causative_test_two",
+      "request": "pattern {GOV[Gender]}"
     }
   ],
   "rowData": [
     {
       "row_header": "SUD_French-GSD@latest",
-      "nominal_subject": 18699
+      "test_one": 223669,
+      "causative_test_two": 160884
     },
     {
       "row_header": "SUD_French-ParisStories@latest",
-      "nominal_subject": 3971
+      "test_one": 19745,
+      "causative_test_two": 11842
     },
     {
       "row_header": "SUD_French-Rhapsodie@latest",
-      "nominal_subject": 3396
+      "test_one": 20397,
+      "causative_test_two": 12434
     }
   ]
 }

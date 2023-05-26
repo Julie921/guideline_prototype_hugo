@@ -1,0 +1,20 @@
+NOTE mémoire :
+
+# partie 2 : 
+problème terminologie -> guide d'annotation et schéma d'annotation à mieux définir 
+différent outils pour assister l'annotation (schéma, articles, grammaire,validateur, error mining, outils suggestion, cas difficile tagset)
+ajouter dans caption si provient d'un article 
+orange -> faute
+jaune -> formulation / terme 
+- mieux décider des exemples si on prend SUD -> SUD assistant d'annotation avant mon projet 
+
+suggestion
+- guidelink - bdd d'exemple 
+- parser 
+
+terme "implémentation" -> expliquer ou changer de terme (2.7)
+2.7.3 conclusion pas clair, ajouter une conclusion sur toute la partie 2 
+
+partie 2 : reprendre l'endroit où je liste les papiers et les faire rentrer dans un tableau -> faire un meilleur point -> terme pas standardiser 
+on peut aussi ne pas utiliser le terme de guide d'annotation si trop problématique 
+travail : améliorer guide de SUD 

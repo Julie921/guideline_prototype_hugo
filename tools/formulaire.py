@@ -412,7 +412,8 @@ if st.button('Enregistrer au format JSON'):
             name = str(data['value'][0])
             name = name.split(" ")
             name = "_".join(name)
-            with open(f"../content/docs/general_guideline/language/{str(language).lower()}/{name}.md", 'w') as f:
+            st.write(f"../content/docs/language/{str(language).lower()}/{name}.md")
+            with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
                 f.write(md_output)
             # Et on bouge la table à l'endroit correspondant dans la partie static (TODO : vérifier que ça fonctionne bien)
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{name}.json"
@@ -487,7 +488,8 @@ if st.button('Enregistrer au format JSON'):
             name = str(data['value'][0])
             name = name.split(" ")
             name = "_".join(name)
-            with open(f"../content/docs/general_guideline/language/{str(language).lower()}/{name}.md", 'w') as f:
+            st.write(f"../content/docs/language/{str(language).lower()}/{name}.md")
+            with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
                 f.write(md_output)
 
         st.write("Vous pouvez quitter le formulaire")

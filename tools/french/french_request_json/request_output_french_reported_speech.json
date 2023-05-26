@@ -1,1 +1,1 @@
-[{"id": "regrtgttg", "request": [{"pattern": ["GOV-[subj]->DEP"]}]}]
+[{"id": "reported_speech_introduce_by_a_verb", "request": [{"pattern": [" N [Reported=Yes] ; GOV-[comp:obj]->N ; GOV[upos= VERB,lemma <>faire]"]}]}]

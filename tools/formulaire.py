@@ -61,7 +61,7 @@ st.title("Begining of the script")
 language = st.text_input('Name of the language')
 
 # Get the type of page that the user want to write. 
-tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','MISC','Upos','Other linguistic phenomena','Deep','Particular_construction'))
+tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','Misc','Upos','Other linguistic phenomena','Deep','Particular_construction'))
 
 ##################################################################################
 ######################## PARTICULAR CONSTRUCTION #################################
@@ -92,13 +92,13 @@ if tag == 'Particular_construction':
     df = pd.DataFrame(data)
 
 ##################################################################################
-######################## FEATS AND MISCs##########################################
+######################## FEATS AND Miscs##########################################
 ##################################################################################
 
 # Different type of page
-if tag == 'Features' or tag =="MISC":
+if tag == 'Features' or tag =="Misc":
     """
-    Text zone to write the a Feature's or MISC's page for the guideline. 
+    Text zone to write the a Feature's or Misc's page for the guideline. 
     """
 
     # dict to get the upos that can have the features? 
@@ -279,7 +279,7 @@ if st.button("Delete"):
 
 # Save the data in JSON file
 if st.button('Enregistrer au format JSON'):
-    if tag == 'Syntactic_relations' or tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
+    if tag == 'Syntactic_relations' or tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep":
         named = data['value'][0]
     # on ajoute des underscore pour la page du phenomen linguistic pour le nom du fichier. 
     if tag == 'Other linguistic phenomena':
@@ -303,7 +303,7 @@ if st.button('Enregistrer au format JSON'):
         st.write(f"Le fichier de requête pour construire les tables est fait : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
         
         # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
-        st.write("Creation des tables ad-grid dans le sous dossier langue/langue_table_json/ - le fichier sera déplacé par la suite")
+        st.write(f"Creation des tables ad-grid dans le sous dossier {language}/{language}_table_json/ - le fichier sera déplacé par la suite")
         result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
         with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
             f.write(str(result))
@@ -319,7 +319,7 @@ if st.button('Enregistrer au format JSON'):
 
         st.write("On déplace la table ag-grid au bon endroit")
         # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep" or tag =="Particular_construction":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Particular_construction":
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
             new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
             os.rename(old_path,new_path)
@@ -357,7 +357,7 @@ if st.button('Enregistrer au format JSON'):
         
         st.write("On ajout la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 with open(f"../content/docs/general_guideline/{tag}/{named}.md", 'a') as f:
                     f.write("\n\n"+md_output+"\n\n")
@@ -431,7 +431,7 @@ if st.button('Enregistrer au format JSON'):
         
         st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='MISC' or tag=='Upos' or tag =="Deep" or tag =="Particular_phenomena":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Particular_phenomena":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 with open(f"../content/docs/general_guideline/{tag}/{named}.md", 'a') as f:
                     f.write("\n\n"+md_output+"\n\n")

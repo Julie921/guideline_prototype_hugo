@@ -1,0 +1,1 @@
+[{"id": "adverb_used_as_pronoun", "request": [{"pattern": ["N [ExtPos=PRON, !Idiom, !Title, upos=ADV]"]}]}, {"id": "noun_used_in_prespositional_construction", "request": [{"pattern": ["N [ExtPos=ADV, !Idiom, !Title, upos=NOUN]"]}]}, {"id": "french_symbols", "request": [{"pattern": ["N [ExtPos, !Idiom, !Title, upos=SYM]"]}]}]

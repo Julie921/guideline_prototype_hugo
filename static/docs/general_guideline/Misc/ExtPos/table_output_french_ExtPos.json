@@ -1,0 +1,54 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "adverb_used_as_pronoun",
+      "headerName": "adverb_used_as_pronoun",
+      "request": "pattern {N [ExtPos=PRON, !Idiom, !Title, upos=ADV]}"
+    },
+    {
+      "field": "noun_used_in_prespositional_construction",
+      "headerName": "noun_used_in_prespositional_construction",
+      "request": "pattern {N [ExtPos=ADV, !Idiom, !Title, upos=NOUN]}"
+    },
+    {
+      "field": "french_symbols",
+      "headerName": "french_symbols",
+      "request": "pattern {N [ExtPos, !Idiom, !Title, upos=SYM]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "adverb_used_as_pronoun": 397,
+      "noun_used_in_prespositional_construction": 204,
+      "french_symbols": 682
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "adverb_used_as_pronoun": 0,
+      "noun_used_in_prespositional_construction": 0,
+      "french_symbols": 0
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "adverb_used_as_pronoun": 17,
+      "noun_used_in_prespositional_construction": 0,
+      "french_symbols": 0
+    }
+  ]
+}

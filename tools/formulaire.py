@@ -4,7 +4,7 @@ from create_request_from_json import create_request_file
 from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern
 from test_build_table import process_files
 import os 
-
+from write_in_file import add_text
 
 
 st.title("Formular to help the guideline's writting")

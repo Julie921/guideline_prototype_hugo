@@ -15,9 +15,9 @@ nombre_fichiers = 0
 find "$racine" -type f | while read -r fichier; do
   nom_fichier=$(basename "$fichier")
     # Vérifier si le fichier ne commence pas par "_"
-  if [[ ! $nom_fichier =~ ^_ ]]; then
+  #if [[ ! $nom_fichier =~ ^_ ]]; then
     echo "$nom_fichier"
-    echo -e "## $folder_name \n" >> "$nom_fichier"
+    #echo -e "## $folder_name \n" >> "$nom_fichier"
     nombre_fichiers=$((nombre_fichiers + 1))
-  fi
+  #fi
 done

@@ -167,4 +167,65 @@ The `@lvc` feature is used for arguments of light verbs.
 ## French 
 
 
-You can find more information about the annotation in french corpora [here](../../language/French/syntaxic/french_light_verb.md)
+You can find more information about the annotation in french corpora [here](../../language/French/syntaxic/french_light_verb.md)## test 
+
+
+
+## breton 
+
+
+
+## testeone 
+
+
+
+## testetwo 
+
+
+
+## testthree 
+
+
+
+## testfour 
+
+
+
+## testfive 
+
+
+
+## testsix 
+
+
+
+## breton
+
+ TODO 
+
+
+## test
+
+ TODO 
+
+
+## maintenant
+
+ TODO 
+
+
+## la
+
+ TODO 
+
+
+## julie
+
+TODO 
+
+
+
+## ok
+
+TODO 
+

@@ -23,7 +23,7 @@ fi
 cd "$folder_name"
 
 # Crée les sous-dossiers
-subfolder_names=("${folder_name}_page" "${folder_name}_request_json" "${folder_name}_table_json")
+subfolder_names=("${folder_name}_page" "${folder_name}_request_json" "${folder_name}_table_json" "output")
 
 for subfolder_name in "${subfolder_names[@]}"; do
   mkdir "$subfolder_name"
@@ -77,12 +77,13 @@ json_content+='
 json_file="${folder_name}_table_json/sud_${folder_name}.json"
 echo "$json_content" > "$json_file"
 
-echo $json_content
 
 # Affiche le chemin du fichier JSON généré
 echo "Le fichier JSON a été généré : $json_file"
 
+cd ..
 
+pwd
 
 # Chemin de la racine de l'arborescence
 racine="../content/docs/general_guideline"
@@ -94,23 +95,26 @@ if [ ! -d "$racine" ]; then
 fi
 
 # récupérer le nombre de fichier 
-nombre_fichiers = 0
+nombre_fichiers=0
 # Itérer sur tous les fichiers de l'arborescence
-find "$racine" -type f | while read -r fichier; do
+while read -r fichier; do
   nom_fichier=$(basename "$fichier")
     # Vérifier si le fichier ne commence pas par "_"
   if [[ ! $nom_fichier =~ ^_ ]]; then
-    echo "$nom_fichier"
-    echo -e "## $folder_name \n" >> "$nom_fichier"
+    chemin_complet=$(dirname "$fichier")"/$nom_fichier"
+    echo -e "\n\n## $folder_name\n\nTODO \n" >> "$chemin_complet"
     nombre_fichiers=$((nombre_fichiers + 1))
+    echo $nombre_fichiers
   fi
-done
+done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre_fichiers -- process substitution
+
+#echo $nombre_fichiers
 
 # Créer le sous-dossier dans le guide d'annotation pour la langue
 
 mkdir ../content/docs/language/"$folder_name"
 touch ../content/docs/language/"$folder_name"/_index.md
-echo -e "# $folder_name \n ## General information \n ## Treebank information \n There is $nombre_fichiers pages to fill. \n Statut of the guideline : 0% written \n ## Author information \n" > ../content/docs/language/"$folder_name"/_index.md
+echo -e "# $folder_name \n ## General information \n\n ## Treebank information \n\n### Guidelines status\n\nStatut of the guideline : 0% written\n\n## Author information \n" > ../content/docs/language/"$folder_name"/_index.md
 
 
 exit 0

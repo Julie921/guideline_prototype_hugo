@@ -4,7 +4,7 @@ from create_request_from_json import create_request_file
 from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern
 from test_build_table import process_files
 import os 
-from write_in_file import add_text
+from write_in_file import add_text, parcourir_arborescence
 
 
 st.title("Formular to help the guideline's writting")
@@ -25,6 +25,7 @@ Each language has its folder in tools/:
 
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
+list_of_deprel = []
 particular_phenomena_check = ['number','coordination','comparative_construction','disluency','reported_speech']
 
 def add_answer():
@@ -350,17 +351,17 @@ if st.button('Enregistrer au format JSON'):
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
-                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()} \n")
+                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
 
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
             if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()} \n")
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
             
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()} \n")
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
 
 
         
@@ -395,17 +396,17 @@ if st.button('Enregistrer au format JSON'):
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
-                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()} \n")
+                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
 
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
             if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()} \n")
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
             
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()} \n")
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
 
         # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
         if tag == "Other linguistic phenomena":
@@ -418,3 +419,7 @@ if st.button('Enregistrer au format JSON'):
 
         st.write("Vous pouvez quitter le formulaire")
     
+
+    get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
+    print(get_percent_to_write)
+    add_text(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")

@@ -12,3 +12,65 @@ Naija in particular makes heavy use of this relation, which is used to link noun
 In many cases, the existence of a `compound` relation can be determined with a series of linguistic tests. For example, it might be impossible to insert an adjective between two elements of a compound. In English, compounds are phonologically distinct, pronounced with an intonation similar to that of a single word. Consider the difference in pronunciation between *real estate*, a bona fide compound, and *real property*, an adjective and a noun connected with a simple `mod` relation.
 
   
+## test 
+
+
+
+## breton 
+
+
+
+## testeone 
+
+
+
+## testetwo 
+
+
+
+## testthree 
+
+
+
+## testfour 
+
+
+
+## testfive 
+
+
+
+## testsix 
+
+
+
+## breton
+
+ TODO 
+
+
+## test
+
+ TODO 
+
+
+## maintenant
+
+ TODO 
+
+
+## la
+
+ TODO 
+
+
+## julie
+
+TODO 
+
+
+
+## ok
+
+TODO 
+

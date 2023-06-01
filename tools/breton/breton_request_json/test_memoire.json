@@ -1,1 +1,0 @@
-[{"id": "Plurial_and_Gender_for_the_NOUN", "request": [{"pattern": ["N [upos = NOUN, Number=Plur, !Gender]"]}]}]

@@ -117,4 +117,65 @@ This helps to reduce cumbersome long-distance relations. We also believe it to b
 {{< /conll >}}
 <!-- tabs:end -->
 
-For more information about coordination, see the [dedicated page](../../Particular_construction/coordination.md).
+For more information about coordination, see the [dedicated page](../../Particular_construction/coordination.md).## test 
+
+
+
+## breton 
+
+
+
+## testeone 
+
+
+
+## testetwo 
+
+
+
+## testthree 
+
+
+
+## testfour 
+
+
+
+## testfive 
+
+
+
+## testsix 
+
+
+
+## breton
+
+ TODO 
+
+
+## test
+
+ TODO 
+
+
+## maintenant
+
+ TODO 
+
+
+## la
+
+ TODO 
+
+
+## julie
+
+TODO 
+
+
+
+## ok
+
+TODO 
+

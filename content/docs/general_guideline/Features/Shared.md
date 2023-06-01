@@ -6,4 +6,65 @@ Right dependents on a coordination are attached to the head of the rightmost con
 As a consequence, left and right dependents on a coordination are marked with feature `Shared=Yes`, which distinguishes them from the own dependents of the respective leftmost and rightmost conjuncts.
 
 >[!tip] 
-> pattern { N[Shared] }
+> pattern { N[Shared] }## test 
+
+
+
+## breton 
+
+
+
+## testeone 
+
+
+
+## testetwo 
+
+
+
+## testthree 
+
+
+
+## testfour 
+
+
+
+## testfive 
+
+
+
+## testsix 
+
+
+
+## breton
+
+ TODO 
+
+
+## test
+
+ TODO 
+
+
+## maintenant
+
+ TODO 
+
+
+## la
+
+ TODO 
+
+
+## julie
+
+TODO 
+
+
+
+## ok
+
+TODO 
+

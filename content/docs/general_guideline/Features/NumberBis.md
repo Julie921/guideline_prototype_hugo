@@ -81,3 +81,65 @@ On peut se servir des différents patterns pour construire le validateur
 {{</hint>}}
 
 
+## test 
+
+
+
+## breton 
+
+
+
+## testeone 
+
+
+
+## testetwo 
+
+
+
+## testthree 
+
+
+
+## testfour 
+
+
+
+## testfive 
+
+
+
+## testsix 
+
+
+
+## breton
+
+ TODO 
+
+
+## test
+
+ TODO 
+
+
+## maintenant
+
+ TODO 
+
+
+## la
+
+ TODO 
+
+
+## julie
+
+TODO 
+
+
+
+## ok
+
+TODO 
+

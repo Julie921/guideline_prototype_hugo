@@ -1,0 +1,38 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "reported_speech_introduce_by_a_verb",
+      "headerName": "reported_speech_introduce_by_a_verb",
+      "request": "pattern {N [Reported=Yes];GOV-[comp:obj]->N;GOV[upos= VERB,lemma <>faire]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "reported_speech_introduce_by_a_verb": 0
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "reported_speech_introduce_by_a_verb": 101
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "reported_speech_introduce_by_a_verb": 53
+    }
+  ]
+}

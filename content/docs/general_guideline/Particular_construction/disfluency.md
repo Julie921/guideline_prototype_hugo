@@ -117,4 +117,65 @@ Below we can see an example when a speaker starts with one word, then decides it
 14	lui-même	lui-même	PRON	_	_	13	comp:obj	_	Gloss=himself
 {{< /conll >}}
 
->pattern { GOV-[deep=scrap]->DEP }
+>pattern { GOV-[deep=scrap]->DEP }## test 
+
+
+
+## breton 
+
+
+
+## testeone 
+
+
+
+## testetwo 
+
+
+
+## testthree 
+
+
+
+## testfour 
+
+
+
+## testfive 
+
+
+
+## testsix 
+
+
+
+## breton
+
+ TODO 
+
+
+## test
+
+ TODO 
+
+
+## maintenant
+
+ TODO 
+
+
+## la
+
+ TODO 
+
+
+## julie
+
+TODO 
+
+
+
+## ok
+
+TODO 
+

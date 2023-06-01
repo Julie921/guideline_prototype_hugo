@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # Demande le nom du dossier
-read -p "Entrez le nom de la langue : " folder_name
+read -p "Entrez le nom de la langue : " language
 read -p "Entrez le chemin vers le dossier contenant le treebank : " path_treebank
 
 corpora="corpora"
+
+folder_name=$(echo "$language" | tr '[:upper:]' '[:lower:]')
 
 # Crée le dossier principal
 mkdir "$folder_name"

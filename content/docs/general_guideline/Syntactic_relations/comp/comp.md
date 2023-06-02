@@ -114,3 +114,12 @@ You can find more information on the [`pronomional verb`](../../../language/Fren
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

@@ -94,3 +94,12 @@ While this feature is most often used in relationships between finite verbs and 
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

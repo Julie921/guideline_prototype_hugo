@@ -48,3 +48,12 @@ The `[conj](../Syntactic_relations/conj/conj_coord.md)` label does not make a di
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

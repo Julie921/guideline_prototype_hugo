@@ -297,3 +297,12 @@ You can find more information about passive constructions on this [page](../../D
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

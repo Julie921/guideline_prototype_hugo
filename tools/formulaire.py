@@ -4,7 +4,7 @@ from create_request_from_json import create_request_file
 from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern
 from test_build_table import process_files
 import os 
-from write_in_file import add_text, parcourir_arborescence, check_env
+from write_in_file import add_text, parcourir_arborescence, check_env, add_text_check
 
 
 st.title("Formular to help the guideline's writting")
@@ -425,4 +425,4 @@ if st.button('Enregistrer au format JSON'):
 
     get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
     print(get_percent_to_write)
-    add_text(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")
+    add_text_check(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")

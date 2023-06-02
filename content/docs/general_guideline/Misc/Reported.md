@@ -39,3 +39,12 @@ You can find more information about the Reported Speech [here](../Particular_con
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

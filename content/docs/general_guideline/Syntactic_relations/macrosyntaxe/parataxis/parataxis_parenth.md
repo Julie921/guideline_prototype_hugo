@@ -153,3 +153,12 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

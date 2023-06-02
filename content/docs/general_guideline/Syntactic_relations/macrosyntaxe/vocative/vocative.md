@@ -57,3 +57,12 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

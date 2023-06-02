@@ -24,3 +24,12 @@ It has been replaced by nodes features: see [here](../Misc/Idiom_Titles.md)## te
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

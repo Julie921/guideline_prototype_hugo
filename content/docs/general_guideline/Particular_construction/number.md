@@ -63,3 +63,12 @@ The number have the [NUM](../Upos/NUM.md) part of speech
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

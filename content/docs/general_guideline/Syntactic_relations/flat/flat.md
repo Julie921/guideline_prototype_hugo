@@ -134,3 +134,12 @@ The syntactic relation ̀`flat` can have the deep `[name](../../Deep/name.md)` t
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

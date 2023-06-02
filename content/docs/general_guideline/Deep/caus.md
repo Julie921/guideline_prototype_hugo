@@ -36,3 +36,12 @@ The `@caus` feature is used for the argument of causative auxiliaries.
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

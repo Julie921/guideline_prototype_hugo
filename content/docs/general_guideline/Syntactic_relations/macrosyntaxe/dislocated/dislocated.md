@@ -185,3 +185,12 @@ In this sentence, the proposition *J'ai des copines* (*I have some friends*) doe
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

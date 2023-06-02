@@ -326,3 +326,12 @@ The  [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)  re
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

@@ -121,3 +121,12 @@ The `comp:pred` relation can also be used in certain subordinating constructions
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

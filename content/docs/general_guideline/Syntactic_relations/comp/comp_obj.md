@@ -340,3 +340,12 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

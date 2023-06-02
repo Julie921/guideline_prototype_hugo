@@ -130,3 +130,12 @@ Below we can see an example when a speaker starts with one word, then decides it
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

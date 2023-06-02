@@ -40,3 +40,12 @@ The `@tense` feature is used for the argument of tense auxiliaries.
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

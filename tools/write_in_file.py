@@ -10,6 +10,37 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
     with open(fichier, 'r') as f:
         contenu = f.readlines()
 
+    print(contenu)
+    # on récupère l'index du repère 
+    get_index_lang = contenu.index(texte_repere)
+
+    # on supprime le contenu que l'on veut changer
+    indexes_to_remove = [get_index_lang + i for i in range(1, 5)]
+    for index in sorted(indexes_to_remove, reverse=True):
+        contenu.pop(index)
+
+    # Rechercher le texte de repère dans le contenu
+    try:
+        index = contenu.index(texte_repere)
+    except ValueError:
+        print("Le texte de repère n'a pas été trouvé dans le fichier.")
+        # with open(fichier, 'w') as f:
+        #     f.writelines(contenu)
+        return
+
+    # Insérer le texte à ajouter après le texte de repère
+    contenu.insert(index + 2, texte_a_ajouter)
+
+    # Écrire le contenu modifié dans le fichier
+    with open(fichier, 'w') as f:
+        f.writelines(contenu)
+
+def add_text_check(fichier, texte_a_ajouter, texte_repere):
+    # Lire le contenu existant du fichier
+    with open(fichier, 'r') as f:
+        contenu = f.readlines()
+
+    print(contenu)
     # on récupère l'index du repère 
     get_index_lang = contenu.index(texte_repere)
 
@@ -31,7 +62,6 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
     # Écrire le contenu modifié dans le fichier
     with open(fichier, 'w') as f:
         f.writelines(contenu)
-
 
 def parcourir_arborescence(repertoire,langue):
     nombre_fichiers = 0  # Variable pour compter les fichiers
@@ -89,11 +119,11 @@ def check_env(dossier_racine):
 
 if __name__ == '__main__':
     # Exemple d'utilisation
-    fichier = '../content/docs/general_guideline/Upos/NOUN.md'
+    fichier = '../content/docs/general_guideline/Upos/PART.md'
     texte_a_ajouter = 'Texte à ajouter'
-    position_dans_le_fichier = "## julie\n"
+    position_dans_le_fichier = "## bejatestone\n"
 
-    #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
+    add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
     # Chemin du répertoire racine
     #repertoire_racine = '../content/docs/general_guideline'
@@ -102,7 +132,7 @@ if __name__ == '__main__':
     #print(parcourir_arborescence(repertoire_racine,"julie"))
 
     # Chemin du dossier racine à vérifier
-    dossier_racine = 'french'
+    #dossier_racine = 'french'
 
     # Appel de la fonction pour vérifier l'arborescence
-    check_env(dossier_racine)
+    #check_env(dossier_racine)

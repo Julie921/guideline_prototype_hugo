@@ -193,3 +193,12 @@ Here, the nouns have the features [ADV](docs/general_guideline/Upos/ADV.md) as [
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

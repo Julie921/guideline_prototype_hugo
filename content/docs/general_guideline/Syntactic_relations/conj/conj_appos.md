@@ -70,3 +70,12 @@ This relation is used for appositions. In an apposition, conjuncts have the same
 ## Specific Pattern
 
 
+
+
+## bejatestone
+
+### Overview
+
+### Specific Pattern
+
+

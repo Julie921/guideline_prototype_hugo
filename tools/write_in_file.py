@@ -63,6 +63,30 @@ def lire_contenu_fichier(chemin_fichier):
     return contenu
 
 
+import os
+
+def check_env(dossier_racine):
+    v = True
+    sous_dossiers = ['corpora', f'{dossier_racine}_page', f'{dossier_racine}_request_json', f'{dossier_racine}_table_json',"output"]
+
+    if os.path.exists(dossier_racine):
+        print(f"Le dossier racine '{dossier_racine}' existe.")
+        
+        for sous_dossier in sous_dossiers:
+            chemin_sous_dossier = os.path.join(dossier_racine, sous_dossier)
+            
+            if os.path.exists(chemin_sous_dossier):
+                continue
+            else:
+                v = False
+    else:
+        v = False
+    
+    return v
+
+
+
+
 if __name__ == '__main__':
     # Exemple d'utilisation
     fichier = '../content/docs/general_guideline/Upos/NOUN.md'
@@ -72,7 +96,13 @@ if __name__ == '__main__':
     #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
     # Chemin du répertoire racine
-    repertoire_racine = '../content/docs/general_guideline'
+    #repertoire_racine = '../content/docs/general_guideline'
 
     # Appel de la fonction pour parcourir l'arborescence et compter les fichiers
-    print(parcourir_arborescence(repertoire_racine,"julie"))
+    #print(parcourir_arborescence(repertoire_racine,"julie"))
+
+    # Chemin du dossier racine à vérifier
+    dossier_racine = 'french'
+
+    # Appel de la fonction pour vérifier l'arborescence
+    check_env(dossier_racine)

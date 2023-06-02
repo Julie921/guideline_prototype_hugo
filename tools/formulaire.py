@@ -4,7 +4,7 @@ from create_request_from_json import create_request_file
 from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern
 from test_build_table import process_files
 import os 
-from write_in_file import add_text, parcourir_arborescence
+from write_in_file import add_text, parcourir_arborescence, check_env
 
 
 st.title("Formular to help the guideline's writting")
@@ -25,7 +25,8 @@ Each language has its folder in tools/:
 
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
-list_of_deprel = []
+list_of_deprel = ['comp','comp:aux','comp:prep','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
+list_of_deep = ["pass","relcl","tense","x","caus","name","agent","emb","lvc","foreign","expl"]
 particular_phenomena_check = ['number','coordination','comparative_construction','disluency','reported_speech']
 
 def add_answer():
@@ -60,6 +61,8 @@ st.title("Begining of the script")
 
 # Get the language
 language = st.text_input('Name of the language')
+
+
 
 # Get the type of page that the user want to write. 
 tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','Misc','Upos','Other linguistic phenomena','Deep','Particular_construction'))

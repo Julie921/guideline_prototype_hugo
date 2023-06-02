@@ -317,39 +317,3 @@ The  [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)  re
  Here is the table where you can find the pattern in the treebanks.
 
 {{< agg table_output_french_comp_aux >}}
-
-
-## breton
-
-TODO
-
-
-
-## julie
-
-TODO 
-
-
-
-## ok
-
-TODO 
-
-
-
-## gbaya
-
-TODO 
-
-
-
-## beja2
-
-TODO 
-
-
-
-## beja3
-
-TODO 
-

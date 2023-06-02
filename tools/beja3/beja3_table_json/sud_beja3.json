@@ -1,8 +1,0 @@
-{
-  "corpora": [
-    {
-      "id": "SUD_Beja-NSC@latest",
-      "directory":  "beja3/corpora/SUD_Beja-NSC"
-    }
-  ]
-}

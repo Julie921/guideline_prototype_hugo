@@ -1,8 +1,9 @@
 #!/bin/bash
 
+
 # Demande le nom du dossier
 read -p "Entrez le nom de la langue : " language
-read -p "Entrez le chemin vers le dossier contenant le treebank : " path_treebank
+#read -p "Entrez le chemin vers le dossier contenant le treebank : " path_treebank
 
 corpora="corpora"
 
@@ -19,22 +20,52 @@ else
   exit 1
 fi
 
+
 # Se déplace dans le dossier principal
 cd "$folder_name"
 
 # Crée les sous-dossiers
-subfolder_names=("${folder_name}_page" "${folder_name}_request_json" "${folder_name}_table_json" "output")
+subfolder_names=("${folder_name}_page" "${folder_name}_request_json" "${folder_name}_table_json" "output" "corpora")
 
 for subfolder_name in "${subfolder_names[@]}"; do
   mkdir "$subfolder_name"
 done
 
-# Copie le contenu du treebank vers le dossier corpora
-ln -s "../$path_treebank" "$corpora"
-
 # Affiche la liste des fichiers et dossiers créés
 echo "Les sous-dossiers suivants ont été créés :"
 ls -l
+
+cd .. 
+echo "Je suis ici après avoir crée les sous-dossiers" 
+pwd
+
+cd "$folder_name"/corpora
+pwd
+
+# Demande à l'utilisateur de saisir les dossiers
+read -p "Entrez le chemin vers le dossier contenant le treebank (appuyez sur Entrée pour terminer) : " path_treebank
+
+# Tant que l'utilisateur saisit des dossiers
+while [ -n "$path_treebank" ]; do
+  # Vérifie si le dossier existe
+  if [ -d "$path_treebank" ]; then
+    # Con récupère le nom du fichier
+    name_file=$(basename "$path_treebank")
+    # et on crée le lien symbolique dans le fichier corpora 
+    ln -s "$path_treebank" "$name_file"
+  else
+    echo "Le dossier '$path_treebank' n'existe pas."
+  fi
+
+  # Demande à l'utilisateur de saisir un autre dossier
+  read -p "Entrez le chemin vers le dossier contenant le treebank (appuyez sur Entrée pour terminer) : " path_treebank
+done
+
+# Se déplace dans le dossier principal
+cd ..
+
+echo "Je suis ici après avoir donné les noms des dossiers treebanks"
+pwd
 
 # Génère le contenu du fichier JSON
 json_content='{
@@ -104,7 +135,6 @@ while read -r fichier; do
     chemin_complet=$(dirname "$fichier")"/$nom_fichier"
     echo -e "\n\n## $folder_name\n\nTODO \n" >> "$chemin_complet"
     nombre_fichiers=$((nombre_fichiers + 1))
-    echo $nombre_fichiers
   fi
 done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre_fichiers -- process substitution
 

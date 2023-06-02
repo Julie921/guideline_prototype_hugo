@@ -288,3 +288,12 @@ You can find more information about passive constructions on this [page](../../D
  Here is the table where you can find the pattern in the treebanks.
 
 {{< agg table_output_french_subj >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

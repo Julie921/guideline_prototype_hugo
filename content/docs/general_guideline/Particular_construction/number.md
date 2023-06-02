@@ -54,3 +54,12 @@ Numbers composed of more than one word, such as *five hundred* or *six thousand*
 ## Written in number
 
 The number have the [NUM](../Upos/NUM.md) part of speech
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

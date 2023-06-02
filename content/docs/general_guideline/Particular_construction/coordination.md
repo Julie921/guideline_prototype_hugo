@@ -63,3 +63,12 @@ As a consequence, left and right dependents on a coordination are marked with fe
 > pattern { N1 [Shared=Yes] ; N1-[conj]->N2 }
 > % or pattern { N1 [Shared=Yes] ; N1-[conj:coord]->N2 }## test 
 
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

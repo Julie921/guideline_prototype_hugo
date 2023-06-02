@@ -27,3 +27,12 @@ The `@caus` feature is used for the argument of causative auxiliaries.
 5   troupes troupe  NOUN    _   _   2   comp:obj@agent  _   Gloss=troops
 
 {{< /conll >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

@@ -9,3 +9,12 @@ As a consequence, left and right dependents on a coordination are marked with fe
 > pattern { N[Shared] }## test 
 
 
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

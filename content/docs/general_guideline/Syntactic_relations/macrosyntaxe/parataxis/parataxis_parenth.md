@@ -144,3 +144,12 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 31  //  //  PUNCT   _   _   29  punct   _   AlignBegin=66560|AlignEnd=66560|Gloss=PUNCT
 
 {{< /conll >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

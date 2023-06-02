@@ -177,3 +177,11 @@ Let's consider the following example:
   
 
 In this sentence, the proposition *J'ai des copines* (*I have some friends*) doesn't provide any information. The fact that the speaker has some friends is considered as obvious and we cannot negate it or question it. The informational content of this sentence is **about** these friends, not about the fact that the speaker has some.
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

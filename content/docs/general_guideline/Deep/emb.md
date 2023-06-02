@@ -39,3 +39,12 @@ The `[conj](../Syntactic_relations/conj/conj_coord.md)` label does not make a di
 10  come    come    VERB    _   _   9   comp:aux    _   _
 
 {{< /conll >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

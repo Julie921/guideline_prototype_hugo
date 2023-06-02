@@ -184,3 +184,12 @@ Here, the nouns have the features [ADV](docs/general_guideline/Upos/ADV.md) as [
  Here is the table where you can find the pattern in the treebanks.
 
 {{< agg table_output_french_ExtPos >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

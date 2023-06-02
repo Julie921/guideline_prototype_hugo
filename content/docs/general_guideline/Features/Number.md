@@ -125,3 +125,12 @@ On peut y inclure ce genre de requête par exemple :
 {{<hint info>}}
 On peut se servir des différents patterns pour construire le validateur
 {{</hint>}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

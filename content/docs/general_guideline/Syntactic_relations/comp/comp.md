@@ -106,3 +106,11 @@ You can find more information on the [`pronomional verb`](../../../language/Fren
 
 
 {{<agg comp_french>}}
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

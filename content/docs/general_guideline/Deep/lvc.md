@@ -169,3 +169,12 @@ The `@lvc` feature is used for arguments of light verbs.
 
 You can find more information about the annotation in french corpora [here](../../language/French/syntaxic/french_light_verb.md)## test 
 
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

@@ -85,3 +85,12 @@ While this feature is most often used in relationships between finite verbs and 
 7   linguist    linguist    NOUN    _   _   5   comp:pred   _   _
 
 {{< /conll >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

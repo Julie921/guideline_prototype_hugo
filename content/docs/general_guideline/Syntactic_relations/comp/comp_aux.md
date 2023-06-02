@@ -317,3 +317,12 @@ The  [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)  re
  Here is the table where you can find the pattern in the treebanks.
 
 {{< agg table_output_french_comp_aux >}}
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

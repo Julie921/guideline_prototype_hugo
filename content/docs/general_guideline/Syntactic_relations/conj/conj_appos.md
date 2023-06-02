@@ -61,3 +61,12 @@ This relation is used for appositions. In an apposition, conjuncts have the same
 27  //  //  PUNCT   _   _   17  punct   _   AlignBegin=66220|AlignEnd=66250|Gloss=PUNCT
 {{< /conll >}}
 <!-- tabs:end --> 
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

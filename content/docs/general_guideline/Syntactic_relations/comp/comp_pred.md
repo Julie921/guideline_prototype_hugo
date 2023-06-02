@@ -112,3 +112,12 @@ The `comp:pred` relation can also be used in certain subordinating constructions
 15  Algérie Algeria PROPN   _   _   12  conj    _   SpaceAfter=No
 {{< /conll >}}
 <!-- tabs:end -->
+
+
+## bejatest
+
+### Overview
+
+## Specific Pattern
+
+

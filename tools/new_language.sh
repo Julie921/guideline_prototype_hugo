@@ -114,7 +114,7 @@ done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre
 
 mkdir ../content/docs/language/"$folder_name"
 touch ../content/docs/language/"$folder_name"/_index.md
-echo -e "# $folder_name \n ## General information \n\n ## Treebank information \n\n### Guidelines status\n\nStatut of the guideline : 0% written\n\n## Author information \n" > ../content/docs/language/"$folder_name"/_index.md
+echo -e "# $folder_name \n## General information \n\n## Treebank information \n\n### Guidelines status\n\nStatut of the guideline : 0% written\n\n## Author information \n" > ../content/docs/language/"$folder_name"/_index.md
 
 
 exit 0

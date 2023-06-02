@@ -1,0 +1,30 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "gender_in_beja_test",
+      "headerName": "gender_in_beja_test",
+      "request": "pattern {N [Gender]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_Beja-NSC@latest",
+      "gender_in_beja_test": 316
+    }
+  ]
+}

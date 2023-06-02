@@ -1,0 +1,21 @@
+[
+  {
+    "id": "subject_noun",
+    "request": [
+      {"pattern": ["GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP[upos=NOUN|PROPN|PRON|NUM,!Title, !InTitle]"] }
+    ]
+  },
+  {
+    "id": "subject_verb_infinitif",
+    "request": [
+      {"pattern": ["GOV-[subj]->DEP ; GOV [upos=AUX|VERB] ; DEP [upos=VERB|AUX, VerbForm = Inf, !Title, !InTitle]"] }
+    ]
+  },
+  {
+    "id": "subject_adp",
+    "request": [
+      {"pattern": ["GOV-[subj]->DEP ; GOV[upos=AUX|VERB] ; DEP [lemma=de|jusque] ; DEP-[comp:obj]->X ; X [upos<>PROPN]"] }
+    ]
+  }
+]
+

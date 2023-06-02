@@ -1,0 +1,32 @@
+[
+  {
+    "id": "tense",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[comp:aux@tense]->DEP"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "passive_construction",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[comp:aux@pass]->DEP"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "causative_construction",
+    "request": [
+      {
+        "pattern": [
+          "GOV-[comp:aux@caus]->DEP"
+        ]
+      }
+    ]
+  }
+]

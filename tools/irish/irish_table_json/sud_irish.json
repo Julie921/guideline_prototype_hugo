@@ -1,0 +1,8 @@
+{
+  "corpora": [
+    {
+      "id": "SUD_Beja-NSC@latest",
+      "directory":  "irish/corpora/SUD_Beja-NSC"
+    }
+  ]
+}

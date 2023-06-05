@@ -119,9 +119,9 @@ def check_env(dossier_racine):
 
 if __name__ == '__main__':
     # Exemple d'utilisation
-    fichier = '../content/docs/general_guideline/Upos/PART.md'
+    fichier = '../content/docs/general_guideline/Upos/PUNCT.md'
     texte_a_ajouter = 'Texte à ajouter'
-    position_dans_le_fichier = "## bejatestone\n"
+    position_dans_le_fichier = "## bejatestthree\n"
 
     add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 

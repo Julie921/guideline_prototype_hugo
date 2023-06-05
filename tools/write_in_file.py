@@ -29,19 +29,27 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
     for i in range(get_index_lang):
         new_contenu.append(contenu[i])
 
+
     new_text = texte_a_ajouter.split("\n")
-    new_text.pop(0)
-    print(new_text)
+
+    # for element in new_text:
+    #     print(f"element :{element}" )
+
     for element in new_text:
         new_contenu.append(f"{element}\n")
+        print(f"element :{element}" )
+
+    if new_text[0] != texte_repere:
+        new_text.pop(0)
+
     
     for i in range(get_index_lang+7,len(contenu)):
         new_contenu.append(contenu[i])
 
-                   
-    # Écrire le contenu modifié dans le fichier
-    # with open(fichier, 'w') as f:
-    #     f.writelines(new_contenu)
+    #print(new_contenu)           
+    #Écrire le contenu modifié dans le fichier
+    with open(fichier, 'w') as f:
+        f.writelines(new_contenu)
 
 def add_text_check(fichier, texte_a_ajouter, texte_repere):
     # Lire le contenu existant du fichier
@@ -80,8 +88,9 @@ def parcourir_arborescence(repertoire,langue):
                 pass
             else:
                 chemin_fichier = os.path.join(dossier_racine, fichier)
-                #print(chemin_fichier)
+                print(chemin_fichier)
                 contenu_fichier = lire_contenu_fichier(chemin_fichier)
+                print(contenu_fichier)
                 nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
                 index = contenu_fichier.index(f"## {langue}\n")
                 if contenu_fichier[index+2] == "TODO\n":
@@ -128,41 +137,24 @@ def check_env(dossier_racine):
 
 if __name__ == '__main__':
     # Exemple d'utilisation
-    fichier = '../content/docs/general_guideline/Upos/CCONJ.md'
-    texte_a_ajouter = """
-## irish
+    fichier = '../content/docs/general_guideline/Upos/SYM.md'
 
-### Overview
+    with open("english/english_page/output_english_PRON.md","r") as f:
+        texte_a_ajouter = ""
+        line = f.readline()
+        while line:
+            texte_a_ajouter = texte_a_ajouter + line
+            line = f.readline()
 
- test
+    position_dans_le_fichier = "## irish\n"
 
-
- The upos  has the values : ['']
-
-
-### Specific Pattern
-
-#### test irish num 
-
-- Description: test
-
-- Pattern: N [upos=NUM]	
-
-#### Tables
-
- Here is the table where you can find the pattern in the treebanks.
-
-{{< agg table_output_irish_NUM >}}
-"""
-    position_dans_le_fichier = "## english\n"
-
-    add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
+    #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
     # Chemin du répertoire racine
-    #repertoire_racine = '../content/docs/general_guideline'
+    repertoire_racine = '../content/docs/general_guideline'
 
     # Appel de la fonction pour parcourir l'arborescence et compter les fichiers
-    #print(parcourir_arborescence(repertoire_racine,"english"))
+    print(parcourir_arborescence(repertoire_racine,"julie"))
 
     # Chemin du dossier racine à vérifier
     #dossier_racine = 'french'

@@ -354,17 +354,17 @@ if st.button('Enregistrer au format JSON'):
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
-                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
+                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
             if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
             
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
 
         
@@ -399,17 +399,17 @@ if st.button('Enregistrer au format JSON'):
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
-                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
+                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
             if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
             
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n  {md_output} \n\n", f"## {str(language).lower()}\n")
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
         # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
         if tag == "Other linguistic phenomena":

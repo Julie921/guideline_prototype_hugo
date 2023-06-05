@@ -33,7 +33,7 @@ for subfolder_name in "${subfolder_names[@]}"; do
 done
 
 # Affiche la liste des fichiers et dossiers créés
-echo "Les sous-dossiers suivants ont été créés :"
+echo -e"\nLes sous-dossiers suivants ont été créés :"
 ls -l
 
 # on se place dans le sous-dossier corpora (qui contiendra le lien symbolique vers les fichiers)
@@ -41,7 +41,7 @@ cd "$folder_name"/corpora
 
 
 # Demande à l'utilisateur de saisir les dossiers
-echo "Vous vous trouvez dans ce repertoire, entrez le chemin relatif vers le dossier content les treebank"
+echo -e "\n########## Vous vous trouvez dans ce repertoire, entrez le chemin relatif vers le dossier content les treebank #########\n"
 pwd
 read -p "Entrez le chemin vers le dossier contenant le treebank (appuyez sur Entrée pour terminer) : " path_treebank
 
@@ -54,7 +54,7 @@ while [ -n "$path_treebank" ]; do
     # et on crée le lien symbolique dans le fichier corpora 
     ln -s "$path_treebank" "$name_file"
   else
-    echo "Le dossier '$path_treebank' n'existe pas."
+    echo -e "\nLe dossier '$path_treebank' n'existe pas.\n"
   fi
 
   # Demande à l'utilisateur de saisir un autre dossier
@@ -73,7 +73,6 @@ first=true
 if [ -d corpora ]; then
     # Itérer sur les fichiers du dossier
     cd corpora
-    pwd
     for fichier in $(ls .) ; do
         # Vérifier si le fichier est un fichier régulier
         echo $fichier
@@ -113,7 +112,7 @@ racine="../content/docs/general_guideline"
 
 # Vérifier si le répertoire racine existe
 if [ ! -d "$racine" ]; then
-  echo "Le répertoire racine $racine n'existe pas."
+  echo -e "Le répertoire racine $racine n'existe pas.\n"
   exit 1
 fi
 

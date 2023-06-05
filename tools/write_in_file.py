@@ -25,24 +25,23 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
     ## crée nouvelle liste !!! + bsimple sinon impossible  
     get_index_lang = contenu.index(texte_repere)
     
-    print(contenu)
 
     for i in range(get_index_lang):
         new_contenu.append(contenu[i])
 
     new_text = texte_a_ajouter.split("\n")
+    new_text.pop(0)
+    print(new_text)
     for element in new_text:
         new_contenu.append(f"{element}\n")
     
     for i in range(get_index_lang+7,len(contenu)):
         new_contenu.append(contenu[i])
 
-
-    print(new_contenu)
                    
     # Écrire le contenu modifié dans le fichier
-    with open(fichier, 'w') as f:
-        f.writelines(new_contenu)
+    # with open(fichier, 'w') as f:
+    #     f.writelines(new_contenu)
 
 def add_text_check(fichier, texte_a_ajouter, texte_repere):
     # Lire le contenu existant du fichier
@@ -129,7 +128,7 @@ def check_env(dossier_racine):
 
 if __name__ == '__main__':
     # Exemple d'utilisation
-    fichier = '../content/docs/general_guideline/Upos/SCONJ.md'
+    fichier = '../content/docs/general_guideline/Upos/CCONJ.md'
     texte_a_ajouter = """
 ## irish
 
@@ -155,7 +154,7 @@ if __name__ == '__main__':
 
 {{< agg table_output_irish_NUM >}}
 """
-    position_dans_le_fichier = "## irish\n"
+    position_dans_le_fichier = "## english\n"
 
     add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 

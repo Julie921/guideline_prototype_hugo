@@ -133,7 +133,29 @@ def check_env(dossier_racine):
     return v
 
 
+def read_partial_markdown(filename):
+    with open(filename, "r", encoding="utf-8") as file:
+        contents = file.read()
+        lines = contents.split("\n")
+        output_lines = []
+        subheading_count = 0
+        exclude_code_block = False
 
+        for line in lines:
+            if line.startswith("{{<"):
+                exclude_code_block = True
+            elif line.startswith("{{</"):
+                exclude_code_block = False
+            elif not exclude_code_block:
+                output_lines.append(line)
+
+                if line.startswith("##"):
+                    subheading_count += 1
+                    if subheading_count == 2:
+                        break
+
+        output = "\n".join(output_lines)
+        return output
 
 if __name__ == '__main__':
     # Exemple d'utilisation

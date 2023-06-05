@@ -4,7 +4,9 @@ from create_request_from_json import create_request_file
 from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern
 from test_build_table import process_files
 import os 
-from write_in_file import add_text, parcourir_arborescence, check_env, add_text_check
+from write_in_file import add_text, parcourir_arborescence, check_env, add_text_check, read_partial_markdown
+from streamlit_extras.stoggle import stoggle
+from streamlit_extras.mention import mention
 
 
 st.title("Formular to help the guideline's writting")
@@ -12,16 +14,12 @@ st.title("Formular to help the guideline's writting")
 st.markdown("""
 This script is a form to guide the user in writing the annotation guide. It corresponds to the annotation guide formalism established in my thesis. The rest of the script allows for automatic saving and updating of the annotation guide. It also enables the creation of direct pattern-to-table mappings in the section where patterns can be specified. If a question is not indicated as optional, it is because it is required for writing the MD page.
 
-:warning: :red[WARNING: The language provided must match the language present in the annotation guide file and sub-files in the tools folder.] :warning:
+:warning: :red[WARNING: The language provided must match the language present in the annotation guide file and sub-files in the tools folder.] See README.md :warning:
 
-*COMMAND to run the script: streamlit run formulaire.py*
-
-Each language has its folder in tools/:
-* french_page: contains the markdown version of the created page.
-* french_request_json: contains the .json file of the request for building an ag-grid table.
-* french_table_json: contains the .json file of the corpus used for building an ag-grid table (CAUTION: must be provided for table construction).
-* output: contains the JSON file of the form.
 """)
+
+from streamlit_extras.echo_expander import echo_expander
+
 
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
@@ -67,6 +65,7 @@ language = st.text_input('Name of the language')
 # Get the type of page that the user want to write. 
 tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','Misc','Upos','Other linguistic phenomena','Deep','Particular_construction'))
 
+
 ##################################################################################
 ######################## PARTICULAR CONSTRUCTION #################################
 ##################################################################################
@@ -74,7 +73,22 @@ tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Fea
 if tag == 'Particular_construction':
     # which particular construction 
     which_phenm = st.multiselect(f'wich particular construction do you want to documente in your language ?', particular_phenomena_check)
-    
+
+    which_phenm_str = ", ".join(which_phenm)
+    if which_phenm:
+        explaination = read_partial_markdown(f"../content/docs/general_guideline/{tag}/{which_phenm_str}.md")
+
+        with st.expander(f"See explanation of {which_phenm_str}"):
+            
+
+            mention(
+                label="See the guidelines page for more",
+                icon="streamlit",  # Some icons are available... like Streamlit!
+                url=f"https://julie921.github.io/guideline_prototype_hugo/docs/general_guideline/Particular_construction/{which_phenm_str}/",
+            )
+            st.write(f"""
+                {explaination}
+        """)
     # description
     overview = st.text_area(f"Can you give a short description of the feature {which_phenm} in your language ? ", height=200) 
 
@@ -160,7 +174,7 @@ if tag == 'Upos':
     general_ex = st.text_area(f"Conll example",height=200)
 
     # which upos can have the features 
-    which_features = st.text_area(f"Which features can be on the {upos} ? (put a ';' between each value) (optional)",height=200)
+    which_features = st.text_area(f"Which features can be on the {upos} ? (put a ';' between each value) (optional)",height=10)
 
     which_features = which_features.split(";")
 
@@ -194,6 +208,8 @@ if tag == 'Syntactic_relations' or tag == 'Deep':
     """
     Text zone to write the a syntactic relation's page for the guideline. 
     """
+    
+
     # dict to get the upos that can have the features? 
     upos_value = {}
 
@@ -294,42 +310,40 @@ if st.button('Enregistrer au format JSON'):
         named = " ".join(data["value"][0])
 
     df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
-    st.write('Les données ont été enregistrées au format JSON.')
+    st.write(f"The request file {str(language).lower()}/output/output_{str(language).lower()}_{named}.json has been saved.")
     st.title("Saving your answer and updating the guidelines, dont quit :warning:")
     st.markdown(":warning: :red[Don't quite the formulaire while you're not welcome to] :warning:")
     # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit. Ici on considère
     # que l'utilisateur a écrit des patterns pour créer une table 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] != [{}]:
-
-        st.write("Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_request_json/")
-        # Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_rrequest_json/...
-        st.write(f"Le fichier {str(language).lower()}/output/output_{str(language).lower()}_{named}.json a été enregistré.")
+        st.markdown("## Writing the table link to grew-match")
+        st.write("Writing of the request file for the table...")
+        # # Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_request_json/...
 
         # contenu pour les requête
         content = create_request_file(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
 
-        # écriture du fichier de requête
         with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w') as f:
             f.write(str(content))
-        st.write(f"Le fichier de requête pour construire les tables est fait : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
+        st.write(f" The request file has been saved : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
         
         # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
-        st.write(f"Creation des tables ad-grid dans le sous dossier {language}/{language}_table_json/ - le fichier sera déplacé par la suite")
+        st.write(f"Creation of the tables ag-grid in the sub-folder {language}/{language}_table_json/ ...")
         result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
         with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
             f.write(str(result))
-        st.write(f"Le fichier contenant les tables ag-grid est fait : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json ")
+        st.write(f"The file : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json has been saved")
         
         # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
         # CHANGEMENT : on écrit directement au bon endroit ! -> voir plus loin ! 
-        st.write("Ecriture de la page en markdown pour le guide d'annotation")
+        #st.write("Ecriture de la page en markdown pour le guide d'annotation")
         md_output = json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
         #md_output = add_link("links.csv",md_output)
         with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
             f.write(md_output)
-        st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n")
+        #st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n")
 
-        st.write("On déplace la table ag-grid au bon endroit")
+        st.write("We move the table to the right place...")
         # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Particular_construction":
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
@@ -349,8 +363,10 @@ if st.button('Enregistrer au format JSON'):
             # on bouge les fichiers table.json
             os.rename(old_path,new_path)
         
-        
-        st.write("On ajout la page markdown au bon endroit dans le guide d'annotation")
+        st.write("Table has been moved.")
+
+        st.markdown("## Writting the guideline's page")
+        st.write("guideline's page writting...")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
         if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
@@ -365,7 +381,7 @@ if st.button('Enregistrer au format JSON'):
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
+        st.write("guideline's page has been written.")
 
         
         # Sinon on crée une page pour un phénomène linguistique, on ajoute une nouvelle page au bon endroit
@@ -373,15 +389,17 @@ if st.button('Enregistrer au format JSON'):
             name = str(data['value'][0])
             name = name.split(" ")
             name = "_".join(name)
-            st.write(f"../content/docs/language/{str(language).lower()}/{name}.md")
+            st.markdown(f"## Creating the guideline's page ../content/docs/language/{str(language).lower()}/{name}.md ...")
             with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
                 f.write(md_output)
+            st.markdown(f"Guideline's page has been creating.")
+            st.write("Mooving the table in the right place...")
             # Et on bouge la table à l'endroit correspondant dans la partie static (TODO : vérifier que ça fonctionne bien)
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{name}.json"
             new_path = f"../static/docs/language/{str(language).lower()}/{data['value'][0]}/table_output_{str(language).lower()}_{name}.json"
             os.rename(old_path,new_path)
-
-    st.write("Vous pouvez quitter le formulaire.")
+            st.write("The table has been moved.")
+    st.write("You can quit the formular !")
 
 
     # S'il n'y pas de pattern specific pour construire les tables, on enlève une étape et on utilise une autre fonction de json2md.py

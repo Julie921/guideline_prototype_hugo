@@ -6,18 +6,11 @@ import os
 from typing import List
 
 def add_text(fichier, texte_a_ajouter, texte_repere):
+    new_contenu = []
     # Lire le contenu existant du fichier
     with open(fichier, 'r') as f:
         contenu = f.readlines()
 
-    print(contenu)
-    # on récupère l'index du repère 
-    get_index_lang = contenu.index(texte_repere)
-
-    # on supprime le contenu que l'on veut changer
-    indexes_to_remove = [get_index_lang + i for i in range(1, 5)]
-    for index in sorted(indexes_to_remove, reverse=True):
-        contenu.pop(index)
 
     # Rechercher le texte de repère dans le contenu
     try:
@@ -28,12 +21,28 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
         #     f.writelines(contenu)
         return
 
-    # Insérer le texte à ajouter après le texte de repère
-    contenu.insert(index + 2, texte_a_ajouter)
+    # on récupère l'index du repère 
+    ## crée nouvelle liste !!! + bsimple sinon impossible  
+    get_index_lang = contenu.index(texte_repere)
+    
+    print(contenu)
 
+    for i in range(get_index_lang):
+        new_contenu.append(contenu[i])
+
+    new_text = texte_a_ajouter.split("\n")
+    for element in new_text:
+        new_contenu.append(f"{element}\n")
+    
+    for i in range(get_index_lang+7,len(contenu)):
+        new_contenu.append(contenu[i])
+
+
+    print(new_contenu)
+                   
     # Écrire le contenu modifié dans le fichier
     with open(fichier, 'w') as f:
-        f.writelines(contenu)
+        f.writelines(new_contenu)
 
 def add_text_check(fichier, texte_a_ajouter, texte_repere):
     # Lire le contenu existant du fichier
@@ -120,17 +129,41 @@ def check_env(dossier_racine):
 
 if __name__ == '__main__':
     # Exemple d'utilisation
-    fichier = '../content/docs/general_guideline/Upos/PUNCT.md'
-    texte_a_ajouter = 'Texte à ajouter'
-    position_dans_le_fichier = "## bejatestthree\n"
+    fichier = '../content/docs/general_guideline/Upos/SCONJ.md'
+    texte_a_ajouter = """
+## irish
 
-    #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
+### Overview
+
+ test
+
+
+ The upos  has the values : ['']
+
+
+### Specific Pattern
+
+#### test irish num 
+
+- Description: test
+
+- Pattern: N [upos=NUM]	
+
+#### Tables
+
+ Here is the table where you can find the pattern in the treebanks.
+
+{{< agg table_output_irish_NUM >}}
+"""
+    position_dans_le_fichier = "## irish\n"
+
+    add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
     # Chemin du répertoire racine
-    repertoire_racine = '../content/docs/general_guideline'
+    #repertoire_racine = '../content/docs/general_guideline'
 
     # Appel de la fonction pour parcourir l'arborescence et compter les fichiers
-    print(parcourir_arborescence(repertoire_racine,"english"))
+    #print(parcourir_arborescence(repertoire_racine,"english"))
 
     # Chemin du dossier racine à vérifier
     #dossier_racine = 'french'

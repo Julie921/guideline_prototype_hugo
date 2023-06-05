@@ -3,13 +3,14 @@
 
 # Demande le nom du dossier
 read -p "Entrez le nom de la langue : " language
-#read -p "Entrez le chemin vers le dossier contenant le treebank : " path_treebank
 
+# création du nom de dossier corpora
 corpora="corpora"
 
+# on uniformise la typo de la langue pour le nom du dossier correspondant 
 folder_name=$(echo "$language" | tr '[:upper:]' '[:lower:]')
 
-# Crée le dossier principal
+# Crée le dossier principal - nom de la langue
 mkdir "$folder_name"
 
 # Vérifie si la création du dossier a réussi
@@ -35,14 +36,13 @@ done
 echo "Les sous-dossiers suivants ont été créés :"
 ls -l
 
-cd .. 
-echo "Je suis ici après avoir crée les sous-dossiers" 
-pwd
-
+# on se place dans le sous-dossier corpora (qui contiendra le lien symbolique vers les fichiers)
 cd "$folder_name"/corpora
-pwd
+
 
 # Demande à l'utilisateur de saisir les dossiers
+echo "Vous vous trouvez dans ce repertoire, entrez le chemin relatif vers le dossier content les treebank"
+pwd
 read -p "Entrez le chemin vers le dossier contenant le treebank (appuyez sur Entrée pour terminer) : " path_treebank
 
 # Tant que l'utilisateur saisit des dossiers
@@ -64,14 +64,9 @@ done
 # Se déplace dans le dossier principal
 cd ..
 
-echo "Je suis ici après avoir donné les noms des dossiers treebanks"
-pwd
-
 # Génère le contenu du fichier JSON
 json_content='{
   "corpora": ['
-
-
 
 # Vérifier si le dossier existe
 first=true
@@ -104,17 +99,14 @@ json_content+='
 }'
 
 
-# Enregistre le contenu du fichier JSON dans un fichier
+# Enregistre le contenu du fichier JSON dans un fichier langue_table_json/sud_langue.json
 json_file="${folder_name}_table_json/sud_${folder_name}.json"
 echo "$json_content" > "$json_file"
 
 
 # Affiche le chemin du fichier JSON généré
-echo "Le fichier JSON a été généré : $json_file"
+echo "Le fichier JSON des corpus a été généré : $json_file"
 
-cd ..
-
-pwd
 
 # Chemin de la racine de l'arborescence
 racine="../content/docs/general_guideline"
@@ -138,7 +130,6 @@ while read -r fichier; do
   fi
 done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre_fichiers -- process substitution
 
-#echo $nombre_fichiers
 
 # Créer le sous-dossier dans le guide d'annotation pour la langue
 

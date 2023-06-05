@@ -72,14 +72,15 @@ def parcourir_arborescence(repertoire,langue):
                 pass
             else:
                 chemin_fichier = os.path.join(dossier_racine, fichier)
+                #print(chemin_fichier)
                 contenu_fichier = lire_contenu_fichier(chemin_fichier)
                 nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
                 index = contenu_fichier.index(f"## {langue}\n")
-                if contenu_fichier[index+2] == "TODO \n":
+                if contenu_fichier[index+2] == "TODO\n":
                     nombre_todo = nombre_todo +1
                     #print(f"Le fichier '{fichier}' est à rédiger.")
     if nombre_fichiers == nombre_todo:
-        if nombre_fichiers == 0:
+        if nombre_todo == 0:
             return 100
         else:
             return 0
@@ -123,16 +124,16 @@ if __name__ == '__main__':
     texte_a_ajouter = 'Texte à ajouter'
     position_dans_le_fichier = "## bejatestthree\n"
 
-    add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
+    #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
     # Chemin du répertoire racine
-    #repertoire_racine = '../content/docs/general_guideline'
+    repertoire_racine = '../content/docs/general_guideline'
 
     # Appel de la fonction pour parcourir l'arborescence et compter les fichiers
-    #print(parcourir_arborescence(repertoire_racine,"julie"))
+    print(parcourir_arborescence(repertoire_racine,"english"))
 
     # Chemin du dossier racine à vérifier
     #dossier_racine = 'french'
 
-    # Appel de la fonction pour vérifier l'arborescence
+    #Appel de la fonction pour vérifier l'arborescence
     #check_env(dossier_racine)

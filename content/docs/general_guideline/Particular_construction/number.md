@@ -56,3 +56,13 @@ Numbers composed of more than one word, such as *five hundred* or *six thousand*
 The number have the [NUM](../Upos/NUM.md) part of speech
 
 
+
+
+## english
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

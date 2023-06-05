@@ -4,13 +4,12 @@
 # Demande le nom du dossier
 read -p "Entrez le nom de la langue : " language
 
-# création du nom de dossier corpora
+# création du nom de dossier
 corpora="corpora"
 
-# on uniformise la typo de la langue pour le nom du dossier correspondant 
 folder_name=$(echo "$language" | tr '[:upper:]' '[:lower:]')
 
-# Crée le dossier principal - nom de la langue
+# Crée le dossier principal
 mkdir "$folder_name"
 
 # Vérifie si la création du dossier a réussi
@@ -33,16 +32,17 @@ for subfolder_name in "${subfolder_names[@]}"; do
 done
 
 # Affiche la liste des fichiers et dossiers créés
-echo -e"\nLes sous-dossiers suivants ont été créés :"
+echo "Les sous-dossiers suivants ont été créés :"
 ls -l
 
-# on se place dans le sous-dossier corpora (qui contiendra le lien symbolique vers les fichiers)
-cd "$folder_name"/corpora
+cd .. 
+echo "Je suis ici après avoir crée les sous-dossiers" 
+pwd
 
+cd "$folder_name"/corpora
+pwd
 
 # Demande à l'utilisateur de saisir les dossiers
-echo -e "\n########## Vous vous trouvez dans ce repertoire, entrez le chemin relatif vers le dossier content les treebank #########\n"
-pwd
 read -p "Entrez le chemin vers le dossier contenant le treebank (appuyez sur Entrée pour terminer) : " path_treebank
 
 # Tant que l'utilisateur saisit des dossiers
@@ -54,7 +54,7 @@ while [ -n "$path_treebank" ]; do
     # et on crée le lien symbolique dans le fichier corpora 
     ln -s "$path_treebank" "$name_file"
   else
-    echo -e "\nLe dossier '$path_treebank' n'existe pas.\n"
+    echo "Le dossier '$path_treebank' n'existe pas."
   fi
 
   # Demande à l'utilisateur de saisir un autre dossier
@@ -64,15 +64,21 @@ done
 # Se déplace dans le dossier principal
 cd ..
 
+echo "Je suis ici après avoir donné les noms des dossiers treebanks"
+pwd
+
 # Génère le contenu du fichier JSON
 json_content='{
   "corpora": ['
+
+
 
 # Vérifier si le dossier existe
 first=true
 if [ -d corpora ]; then
     # Itérer sur les fichiers du dossier
     cd corpora
+    pwd
     for fichier in $(ls .) ; do
         # Vérifier si le fichier est un fichier régulier
         echo $fichier
@@ -98,21 +104,24 @@ json_content+='
 }'
 
 
-# Enregistre le contenu du fichier JSON dans un fichier langue_table_json/sud_langue.json
+# Enregistre le contenu du fichier JSON dans un fichier
 json_file="${folder_name}_table_json/sud_${folder_name}.json"
 echo "$json_content" > "$json_file"
 
 
 # Affiche le chemin du fichier JSON généré
-echo "Le fichier JSON des corpus a été généré : $json_file"
+echo "Le fichier JSON a été généré : $json_file"
 
+cd ..
+
+pwd
 
 # Chemin de la racine de l'arborescence
 racine="../content/docs/general_guideline"
 
 # Vérifier si le répertoire racine existe
 if [ ! -d "$racine" ]; then
-  echo -e "Le répertoire racine $racine n'existe pas.\n"
+  echo "Le répertoire racine $racine n'existe pas."
   exit 1
 fi
 
@@ -129,6 +138,7 @@ while read -r fichier; do
   fi
 done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre_fichiers -- process substitution
 
+#echo $nombre_fichiers
 
 # Créer le sous-dossier dans le guide d'annotation pour la langue
 

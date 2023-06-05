@@ -73,19 +73,5 @@ This feature can also be used to annotate repeated subjects, such as those which
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

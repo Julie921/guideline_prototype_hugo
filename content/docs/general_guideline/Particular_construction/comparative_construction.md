@@ -111,19 +111,3 @@ These constructions are similar to other constructions organized around pairs of
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

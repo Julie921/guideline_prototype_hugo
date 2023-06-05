@@ -127,19 +127,3 @@ On peut se servir des différents patterns pour construire le validateur
 {{</hint>}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

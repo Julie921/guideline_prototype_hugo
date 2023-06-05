@@ -10,18 +10,3 @@ weight: 1
 ---
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-Texte à ajouter
-### Specific Pattern
-
-

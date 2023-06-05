@@ -142,19 +142,3 @@ Like the example above shows (*Il a peur de l'araignée*) `comp:obl` can also be
 {{< /conll >}}
 <!-- tabs:end -->
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

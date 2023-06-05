@@ -8,17 +8,3 @@ weight: 1
 # bookComments: false
 # bookSearchExclude: false
 ---
-
-
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-Texte à ajouter

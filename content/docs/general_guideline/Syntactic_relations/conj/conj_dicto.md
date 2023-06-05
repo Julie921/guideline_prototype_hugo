@@ -98,19 +98,3 @@ In SUD we decided to adopt the following analysis.
 For more examples on disfluencies, you can refer to [this page](../../Particular_construction/disfluency.md).
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

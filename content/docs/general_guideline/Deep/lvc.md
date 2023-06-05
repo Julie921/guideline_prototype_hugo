@@ -171,19 +171,5 @@ You can find more information about the annotation in french corpora [here](../.
 
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

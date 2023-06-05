@@ -146,19 +146,3 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

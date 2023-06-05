@@ -17,19 +17,5 @@ It has been replaced by nodes features: see [here](../Misc/Idiom_Titles.md)## te
 
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

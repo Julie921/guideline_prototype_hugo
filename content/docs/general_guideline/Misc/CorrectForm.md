@@ -22,19 +22,5 @@ There is always the features `[Typo](Typo.md)=Yes` with the node which has the f
 
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

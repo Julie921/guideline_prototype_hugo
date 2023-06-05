@@ -88,20 +88,3 @@ But if the sentence is uttered in a context where the speaker is referring to on
 {{< /conll >}}
 <!-- tabs:end -->
 
-
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

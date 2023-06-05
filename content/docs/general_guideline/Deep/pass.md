@@ -104,19 +104,6 @@ Complements of the verbs in a passive construction are marked `comp:obj@pass`
 
 
 
-## bejatest
 
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

@@ -153,20 +153,3 @@ AJOUT DES TABLES ICI
 {{< /hint >}}## test 
 
 
-
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

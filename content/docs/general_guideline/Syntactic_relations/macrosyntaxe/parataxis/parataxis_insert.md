@@ -36,19 +36,5 @@ The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical 
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

@@ -31,19 +31,4 @@ The `@relcl` feature is used for the relation between the head of a relative cla
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
 

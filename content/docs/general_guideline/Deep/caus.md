@@ -29,19 +29,6 @@ The `@caus` feature is used for the argument of causative auxiliaries.
 {{< /conll >}}
 
 
-## bejatest
 
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

@@ -9,20 +9,3 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

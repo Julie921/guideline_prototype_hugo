@@ -33,19 +33,4 @@ The `@tense` feature is used for the argument of tense auxiliaries.
 
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
 

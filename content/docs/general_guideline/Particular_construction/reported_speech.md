@@ -182,19 +182,3 @@ TODO : rajouter tableau avec les différentes annotations possibles.
 {{< agg table_output_french_reported_speech >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

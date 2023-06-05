@@ -32,19 +32,5 @@ You can find more information about the Reported Speech [here](../Particular_con
 
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
 
 

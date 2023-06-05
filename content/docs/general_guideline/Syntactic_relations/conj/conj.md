@@ -70,19 +70,3 @@ The first example below shows the annotation of a coordination in UD and the sec
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

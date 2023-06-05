@@ -58,19 +58,4 @@ The `@agent` feature is used for arguments that are agents of their governor at 
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
 

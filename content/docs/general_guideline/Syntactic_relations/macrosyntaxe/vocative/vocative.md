@@ -50,19 +50,4 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 {{< /conll >}}
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
 

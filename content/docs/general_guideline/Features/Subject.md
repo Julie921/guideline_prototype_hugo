@@ -129,19 +129,3 @@ Sometimes, you can find `Subject=NoRaising` which corresponds to Subject=Generic
 
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

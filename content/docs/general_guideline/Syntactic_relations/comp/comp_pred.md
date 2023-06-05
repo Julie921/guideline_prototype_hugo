@@ -114,19 +114,3 @@ The `comp:pred` relation can also be used in certain subordinating constructions
 <!-- tabs:end -->
 
 
-## bejatest
-
-### Overview
-
-## Specific Pattern
-
-
-
-
-## bejatestone
-
-### Overview
-
-### Specific Pattern
-
-

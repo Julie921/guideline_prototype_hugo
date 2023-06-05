@@ -9,12 +9,3 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

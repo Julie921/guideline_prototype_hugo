@@ -148,11 +148,3 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

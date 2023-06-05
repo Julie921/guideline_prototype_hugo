@@ -65,11 +65,3 @@ This relation is used for appositions. In an apposition, conjuncts have the same
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

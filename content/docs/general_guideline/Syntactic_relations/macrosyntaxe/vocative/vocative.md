@@ -53,11 +53,3 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -180,11 +180,3 @@ In this sentence, the proposition *J'ai des copines* (*I have some friends*) doe
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

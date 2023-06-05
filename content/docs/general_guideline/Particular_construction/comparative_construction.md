@@ -112,12 +112,3 @@ These constructions are similar to other constructions organized around pairs of
 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

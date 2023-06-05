@@ -152,14 +152,3 @@ When there is no clear internal syntactic structure, the relation `unk` is used.
 AJOUT DES TABLES ICI 
 {{< /hint >}}## test 
 
-
-
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -14,11 +14,3 @@ weight: 1
 TODO
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

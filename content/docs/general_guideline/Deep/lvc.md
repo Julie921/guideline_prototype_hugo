@@ -173,13 +173,3 @@ You can find more information about the annotation in french corpora [here](../.
 
 
 
-
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

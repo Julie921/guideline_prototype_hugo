@@ -333,12 +333,3 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 {{< /conll >}}
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

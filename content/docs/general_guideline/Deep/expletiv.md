@@ -77,11 +77,3 @@ This feature can also be used to annotate repeated subjects, such as those which
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

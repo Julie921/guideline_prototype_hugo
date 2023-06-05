@@ -292,11 +292,3 @@ You can find more information about passive constructions on this [page](../../D
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

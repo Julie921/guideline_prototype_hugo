@@ -85,12 +85,3 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

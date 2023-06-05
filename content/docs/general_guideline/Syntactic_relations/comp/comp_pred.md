@@ -116,11 +116,3 @@ The `comp:pred` relation can also be used in certain subordinating constructions
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -40,11 +40,3 @@ The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical 
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

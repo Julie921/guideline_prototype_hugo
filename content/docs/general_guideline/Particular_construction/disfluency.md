@@ -125,11 +125,3 @@ Below we can see an example when a speaker starts with one word, then decides it
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -64,11 +64,3 @@ La suite est générée depuis un formulaire - page TEST pour la formalisation e
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -88,12 +88,3 @@ While this feature is most often used in relationships between finite verbs and 
 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -183,12 +183,3 @@ TODO : rajouter tableau avec les différentes annotations possibles.
 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

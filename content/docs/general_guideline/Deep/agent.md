@@ -57,15 +57,3 @@ The `@agent` feature is used for arguments that are agents of their governor at 
 6	pizza	pizza	PUNCT	_	_	4	punct	_	Gloss=pizza
 {{< /conll >}}
 
-
-
-
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

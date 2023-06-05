@@ -127,13 +127,3 @@ On peut se servir des différents patterns pour construire le validateur
 {{</hint>}}
 
 
-
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

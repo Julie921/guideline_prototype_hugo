@@ -321,11 +321,3 @@ The  [comp:aux](docs/general_guideline/Syntactic_relations/comp/comp_aux.md)  re
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

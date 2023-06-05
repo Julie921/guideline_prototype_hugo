@@ -11,11 +11,3 @@ weight: 1
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

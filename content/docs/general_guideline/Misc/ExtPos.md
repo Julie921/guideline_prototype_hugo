@@ -188,12 +188,3 @@ Here, the nouns have the features [ADV](docs/general_guideline/Upos/ADV.md) as [
 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

@@ -58,11 +58,3 @@ The number have the [NUM](../Upos/NUM.md) part of speech
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

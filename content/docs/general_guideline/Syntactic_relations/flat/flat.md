@@ -128,12 +128,3 @@ The `flat` relation can also be used to link individual elements of numbers to o
 The syntactic relation ̀`flat` can have the deep `[name](../../Deep/name.md)` to annotated the composed proper name. 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

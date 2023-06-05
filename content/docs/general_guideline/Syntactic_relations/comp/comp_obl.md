@@ -144,11 +144,3 @@ Like the example above shows (*Il a peur de l'araignée*) `comp:obl` can also be
 
 
 
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

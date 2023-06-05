@@ -89,12 +89,3 @@ But if the sentence is uttered in a context where the speaker is referring to on
 <!-- tabs:end -->
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

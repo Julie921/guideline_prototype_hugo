@@ -28,17 +28,3 @@ The `@caus` feature is used for the argument of causative auxiliaries.
 
 {{< /conll >}}
 
-
-
-
-
-
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

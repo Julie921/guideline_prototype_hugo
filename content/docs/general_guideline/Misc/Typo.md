@@ -31,13 +31,3 @@ This features is used to indicate that a node has a typographic error. It has al
 
 
 
-
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

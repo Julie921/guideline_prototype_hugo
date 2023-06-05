@@ -25,12 +25,3 @@ There is always the features `[Typo](Typo.md)=Yes` with the node which has the f
 
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-

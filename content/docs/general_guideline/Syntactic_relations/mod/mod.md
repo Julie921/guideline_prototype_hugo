@@ -72,3 +72,13 @@ The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, a
 
 
 
+
+
+## french
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

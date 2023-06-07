@@ -1,0 +1,30 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "test_for_english",
+      "headerName": "test_for_english",
+      "request": "pattern {N [upos=X]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_Beja-NSC@latest",
+      "test_for_english": 1
+    }
+  ]
+}

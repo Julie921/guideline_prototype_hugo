@@ -14,17 +14,17 @@
       "headerName": "Treebank",
       "pinned": "left",
       "lockPinned": true
+    },
+    {
+      "field": "test_english_symbols",
+      "headerName": "test_english_symbols",
+      "request": "pattern {N [upos=NOUN]}"
     }
   ],
   "rowData": [
     {
-      "row_header": "SUD_French-GSD@latest"
-    },
-    {
-      "row_header": "SUD_French-ParisStories@latest"
-    },
-    {
-      "row_header": "SUD_French-Rhapsodie@latest"
+      "row_header": "SUD_Beja-NSC@latest",
+      "test_english_symbols": 116
     }
   ]
 }

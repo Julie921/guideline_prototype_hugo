@@ -27,7 +27,7 @@ def add_link(file:str,md:str)->str:
             if key == "tag":
                 link = element['link']
                 # we replace the tag with [tag](link)
-                md = re.sub(rf"\b{re.escape(value)}\b",f"[{re.escape(value)}]({element['link']})",md)
+                md = re.sub(rf"\b{re.escape(value)}\b",f"[{re.escape(value)}]({link})",md)
     # we return the string md with the links 
     return md
 
@@ -63,8 +63,8 @@ def json_to_markdown_fwith_pattern(file_json:str,table_json:str)->str:
         if d["upos_and_value_feats"]:
             for key, value in d['upos_and_value_feats'].items():
                 if value != "None":
-                    md_bis += f" The upos {key} has the values : {value}\n\n\n"
-                    md_bis = add_link("links.csv",md_bis)
+                    md_bis += f"- The upos {key} has the values : {value}\n\n\n"
+        md_bis = add_link("links.csv",md_bis)
         md = md + md_bis
         md_bis = ""
         md += "### Specific Pattern\n\n"
@@ -127,7 +127,7 @@ def json_to_markdown_no_pattern(file_json:str)->str:
             for key, value in d['upos_and_value_feats'].items():
                 if value != "None":
                     other_md += f" - The upos {key} has the values : {value}\n\n\n"
-                    other_md = add_link("links.csv",other_md)
+    other_md = add_link("links.csv",other_md)
     return md + other_md
 
 

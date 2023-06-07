@@ -140,10 +140,10 @@ You can find more information about passive constructions on this [page](../../D
 17	.	.	PUNCT	_	_	3	punct	_	_
 {{</conll>}}
 
- The upos [[VERB](docs/general_guideline/Upos/VERB.md)](docs/general_guideline/Upos/[VERB](docs/general_guideline/Upos/VERB.md).md) has the values : ['[[NUM](docs/general_guideline/Upos/NUM.md)](docs/general_guideline/Upos/[NUM](docs/general_guideline/Upos/NUM.md).md)', '[[PROPN](docs/general_guideline/Upos/PROPN.md)](docs/general_guideline/Upos/[PROPN](docs/general_guideline/Upos/PROPN.md).md)', '[[PRON](docs/general_guideline/Upos/PRON.md)](docs/general_guideline/Upos/[PRON](docs/general_guideline/Upos/PRON.md).md)', '[[NOUN](docs/general_guideline/Upos/NOUN.md)](docs/general_guideline/Upos/[NOUN](docs/general_guideline/Upos/NOUN.md).md)']
+- The upos [VERB](docs/general_guideline/Upos/VERB.md) has the values : ['[NUM](docs/general_guideline/Upos/NUM.md)', '[PROPN](docs/general_guideline/Upos/PROPN.md)', '[NOUN](docs/general_guideline/Upos/NOUN.md)']
 
 
- The upos [AUX](docs/general_guideline/Upos/AUX.md) has the values : ['[NUM](docs/general_guideline/Upos/NUM.md)', '[NOUN](docs/general_guideline/Upos/NOUN.md)', '[PROPN](docs/general_guideline/Upos/PROPN.md)', '[PRON](docs/general_guideline/Upos/PRON.md)']
+- The upos [AUX](docs/general_guideline/Upos/AUX.md) has the values : ['[NUM](docs/general_guideline/Upos/NUM.md)', '[NOUN](docs/general_guideline/Upos/NOUN.md)', '[PROPN](docs/general_guideline/Upos/PROPN.md)', '[PRON](docs/general_guideline/Upos/PRON.md)']
 
 
 ### Specific Pattern

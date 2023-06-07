@@ -37,7 +37,7 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
 
     for element in new_text:
         new_contenu.append(f"{element}\n")
-        print(f"element :{element}" )
+        #print(f"element :{element}" )
 
     if new_text[0] != texte_repere:
         new_text.pop(0)
@@ -88,9 +88,9 @@ def parcourir_arborescence(repertoire,langue):
                 pass
             else:
                 chemin_fichier = os.path.join(dossier_racine, fichier)
-                print(chemin_fichier)
+                #print(chemin_fichier)
                 contenu_fichier = lire_contenu_fichier(chemin_fichier)
-                print(contenu_fichier)
+                #print(contenu_fichier)
                 nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
                 index = contenu_fichier.index(f"## {langue}\n")
                 if contenu_fichier[index+2] == "TODO\n":
@@ -161,14 +161,14 @@ if __name__ == '__main__':
     # Exemple d'utilisation
     fichier = '../content/docs/general_guideline/Upos/SYM.md'
 
-    with open("english/english_page/output_english_PRON.md","r") as f:
-        texte_a_ajouter = ""
-        line = f.readline()
-        while line:
-            texte_a_ajouter = texte_a_ajouter + line
-            line = f.readline()
+    # with open("english/english_page/output_english_PRON.md","r") as f:
+    #     texte_a_ajouter = ""
+    #     line = f.readline()
+    #     while line:
+    #         texte_a_ajouter = texte_a_ajouter + line
+    #         line = f.readline()
 
-    position_dans_le_fichier = "## irish\n"
+    position_dans_le_fichier = "## french\n"
 
     #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
@@ -176,7 +176,7 @@ if __name__ == '__main__':
     repertoire_racine = '../content/docs/general_guideline'
 
     # Appel de la fonction pour parcourir l'arborescence et compter les fichiers
-    print(parcourir_arborescence(repertoire_racine,"julie"))
+    print(parcourir_arborescence(repertoire_racine,"french"))
 
     # Chemin du dossier racine à vérifier
     #dossier_racine = 'french'

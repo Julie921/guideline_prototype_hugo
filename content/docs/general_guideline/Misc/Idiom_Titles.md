@@ -146,12 +146,12 @@ When there is no clear internal syntactic structure, the relation `unk` is used.
 
 {{< /conll >}}
 
-## French 
+<!-- ## French 
 
 {{< hint info >}}
 AJOUT DES TABLES ICI 
 {{< /hint >}}## test 
-
+ -->
 
 
 ## french

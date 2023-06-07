@@ -1,1 +1,0 @@
-[{"id": "nominal_subject", "request": [{"pattern": ["GOV-[subj]->DEP ; DEP [upos=PRON|PROPN|NOUN]"]}]}]

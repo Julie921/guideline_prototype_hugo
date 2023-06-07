@@ -1,3 +1,14 @@
+---
+title: "comp:obj"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # comp:obj
 The `comp:obj` relation is used for direct object complements, including direct complements of an adposition or a subordinating conjunction.
 

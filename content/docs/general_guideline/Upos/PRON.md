@@ -1,5 +1,5 @@
 ---
-title: "Pron"
+title: "PRON"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

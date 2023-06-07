@@ -1,3 +1,15 @@
+---
+title: "conj:coord"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
+
 # conj:coord
 
 This relation is used to link elements connected with a coordinating conjunction such as *and* and *or*. The conjunction itself is linked to the second element with a `cc` relation. It is analogous to [`conj`](https://universaldependencies.org/u/dep/conj.html) relation in UD and SUD for written language.

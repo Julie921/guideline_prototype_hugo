@@ -1,3 +1,14 @@
+---
+title: "parataxis:parenth"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Parataxis:parenth
 
 The `parataxis:parenth` relation is used for parenthetical clauses, in the sense that the clause is backgrounded (as if it were inside parentheses). A parenthetical clause could form an independent sentence.

@@ -1,5 +1,5 @@
 ---
-title: "Det"
+title: "DET"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

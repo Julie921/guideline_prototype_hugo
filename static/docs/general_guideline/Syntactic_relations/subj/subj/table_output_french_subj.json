@@ -1,0 +1,54 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "passive_subject",
+      "headerName": "passive_subject",
+      "request": "pattern {GOV-[subj@pass]->DEP}"
+    },
+    {
+      "field": "causativ_subject",
+      "headerName": "causativ_subject",
+      "request": "pattern {GOV-[subj@caus]->DEP}"
+    },
+    {
+      "field": "expletiv_subject",
+      "headerName": "expletiv_subject",
+      "request": "pattern {GOV-[subj@expl]->DEP}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "passive_subject": 3673,
+      "causativ_subject": 132,
+      "expletiv_subject": 932
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "passive_subject": 41,
+      "causativ_subject": 4,
+      "expletiv_subject": 315
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "passive_subject": 124,
+      "causativ_subject": 14,
+      "expletiv_subject": 425
+    }
+  ]
+}

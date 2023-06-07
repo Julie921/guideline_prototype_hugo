@@ -1,3 +1,14 @@
+---
+title: "comp:cleft"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # comp:cleft
 
 The `comp:cleft` relation is used in cleft sentences for the dependency from the head of the sentence to the head of the complement clause.

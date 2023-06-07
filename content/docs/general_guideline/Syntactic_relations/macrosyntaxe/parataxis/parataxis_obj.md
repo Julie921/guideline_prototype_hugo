@@ -1,3 +1,14 @@
+---
+title: "parataxis:obj"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Parataxis:obj
 The depency relation `parataxis:obj` has been deleted. See [Reported Speech](../../../Particular_construction/reported_speech.md)
 

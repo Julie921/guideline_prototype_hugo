@@ -1,3 +1,14 @@
+---
+title: "compound"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Compound
 
 SUD shares with with UD its `compound` relation, though the exact usage of this relationship is determined on a language-by-language basis. SUD annotations for some languages, such as French, do not use the `compound` relation at all.

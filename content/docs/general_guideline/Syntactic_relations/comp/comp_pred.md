@@ -1,3 +1,13 @@
+---
+title: "comp:pred"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
 # comp:pred
 
 The `comp:pred` relation is used for predicative arguments of verbs.

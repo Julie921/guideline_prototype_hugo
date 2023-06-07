@@ -1,5 +1,5 @@
 ---
-title: "Particular Construction"
+title: "Universal Construction"
 weight: 2
 # bookFlatSection: false
 bookToc: true
@@ -9,7 +9,7 @@ bookCollapseSection: true
 # bookSearchExclude: false
 ---
 
-# Particular Construction 
+# Universal Construction 
 
 This section brings together the different constructions that are common in treebanks : 
 

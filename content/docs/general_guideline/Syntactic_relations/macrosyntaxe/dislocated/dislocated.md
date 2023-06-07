@@ -1,3 +1,15 @@
+---
+title: "dislocated"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
+
 # Dislocated
 
 The `dislocated` relation is used to analyze detached elements that do not enter in the core grammatical relations of a sentence.

@@ -1,3 +1,14 @@
+---
+title: "udep"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Udep
 
 The `udep` relation is used for complements when one does not wish to or is unable to distinguish between arguments and modifiers. This relationship can notably be used in cases where the complement's relationship with its governor is ambiguous. When there is little debate about the nature of the relationship, the more specific label is preferred.

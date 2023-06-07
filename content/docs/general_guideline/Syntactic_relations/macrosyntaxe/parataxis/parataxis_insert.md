@@ -1,3 +1,15 @@
+---
+title: "parataxis:insert"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
+
 # Parataxis:insert
 
 The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical clause, an inserted clause could not form an independent sentence

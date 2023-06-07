@@ -108,17 +108,6 @@ You can find more information on the [`pronomional verb`](../../../language/Fren
 {{<agg comp_french>}}
 
 
-
-## english
-
-TODO
-### Overview
-
-### Specific Pattern
-
-
-
-
 ## french
 
 TODO

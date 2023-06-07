@@ -1,5 +1,5 @@
 ---
-title: "Flat"
+title: "flat"
 weight: 3
 # bookFlatSection: false
 bookToc: true

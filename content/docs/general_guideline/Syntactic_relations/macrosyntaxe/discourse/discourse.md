@@ -1,3 +1,15 @@
+---
+title: "discourse"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
+
 # Discourse
 The `discourse` relation is used to link discourse markers. These markers are not clearly linked to the structure of the sentence, except in an expressive way.
 

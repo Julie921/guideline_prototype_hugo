@@ -1,5 +1,5 @@
 ---
-title: "Noun"
+title: "NOUN"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

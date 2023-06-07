@@ -1,5 +1,5 @@
 ---
-title: "Sym"
+title: "SYM"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

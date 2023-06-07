@@ -1,3 +1,14 @@
+---
+title: "Comparative construction"
+weight: 1
+# bookFlatSection: false
+# bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Comparative constructions
 
 In **comparative constructions** where each term is introduced with a grammatical pair like *more... than*, the relation between the two grammatical words is labeled `comp:obj`, with the first word being the head of the second. Consider the example:

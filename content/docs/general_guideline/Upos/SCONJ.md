@@ -1,5 +1,5 @@
 ---
-title: "Sconj"
+title: "SCONJ"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

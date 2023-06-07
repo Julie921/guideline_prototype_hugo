@@ -1,3 +1,14 @@
+---
+title: "vocativ"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Vocative
 The `vocative` relation is used when a speaker directly addresses a listener in an utterance.
  

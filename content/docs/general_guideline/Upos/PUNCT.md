@@ -1,5 +1,5 @@
 ---
-title: "Punct"
+title: "PUNCT"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

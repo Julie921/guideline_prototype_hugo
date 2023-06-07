@@ -1,1 +1,1 @@
-[{"id": "causative_construction", "request": [{"pattern": ["GOV-[subj@caus]->DEP"]}]}, {"id": "passive_construction", "request": [{"pattern": ["GOV-[subj@pass]->DEP"]}]}, {"id": "expletive_construction", "request": [{"pattern": ["GOV-[subj@expl]->DEP"]}]}]
+[{"id": "passive_subject", "request": [{"pattern": ["GOV-[subj@pass]->DEP"]}]}, {"id": "causativ_subject", "request": [{"pattern": ["GOV-[subj@caus]->DEP"]}]}, {"id": "expletiv_subject", "request": [{"pattern": ["GOV-[subj@expl]->DEP"]}]}]

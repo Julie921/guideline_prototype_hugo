@@ -1,4 +1,16 @@
+---
+title: "CorrectForm"
+weight: 1
+# bookFlatSection: false
+# bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
 # CorrectForm 
+
+## Universal
 
 This fetaures `CorrectForm` is used to annotate typo correction.
 
@@ -19,12 +31,6 @@ This fetaures `CorrectForm` is used to annotate typo correction.
 {{< /conll >}}
 
 There is always the features `[Typo](Typo.md)=Yes` with the node which has the features `CorrectForm`. ## test 
-
-
-
-
-
-
 
 
 ## french

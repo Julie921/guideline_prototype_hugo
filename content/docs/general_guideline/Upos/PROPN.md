@@ -1,5 +1,5 @@
 ---
-title: "Propn"
+title: "PROPN"
 weight: 1
 # bookFlatSection: false
 # bookToc: true

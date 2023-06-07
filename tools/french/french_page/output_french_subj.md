@@ -2,11 +2,11 @@
 
 ### Overview
 
- The [subj](docs/general_guideline/Syntactic_relations/subj/subj.md) in french is usualy between a [VERB](docs/general_guideline/Upos/VERB.md) or an [AUX](docs/general_guideline/Upos/AUX.md) (often the root) and a nominal group ( [PRON](docs/general_guideline/Upos/PRON.md), [PROPN](docs/general_guideline/Upos/PROPN.md) or [NOUN](docs/general_guideline/Upos/NOUN.md)). You can see all the pattern in this table. In french, we can have three deep syntactic sub-relations :
+  The [subj](docs/general_guideline/Syntactic_relations/subj/subj.md) in french is usualy between a [VERB](docs/general_guideline/Upos/VERB.md) or anAUX (often the root) and a nominal group ([NOUN](docs/general_guideline/Upos/NOUN.md), [PROPN](docs/general_guideline/Upos/PROPN.md) or [PRON](docs/general_guideline/Upos/PRON.md)). You can see all the pattern in this table. In french, we can have three deep syntactic sub-relations :
 
-@ [pass](docs/general_guideline/Deep/pass.md) : expressing a passiv subject
+@[pass](docs/general_guideline/Deep/pass.md) :  expressing a passiv subject
 @expl : expressing an [expletiv](docs/general_guideline/Deep/expletiv.md) subject
-@ [caus](docs/general_guideline/Deep/caus.md) : expressing a causative construction
+@[caus](docs/general_guideline/Deep/caus.md) :: expressing a causative construction
 
 {{<conll>}} 
 # text = L'œuvre est située dans la galerie des batailles, dans le château de Versailles.
@@ -30,17 +30,36 @@
 17	.	.	PUNCT	_	_	3	punct	_	_
 {{</conll>}}
 
- The upos [[AUX](docs/general_guideline/Upos/AUX.md)](docs/general_guideline/Upos/[AUX](docs/general_guideline/Upos/AUX.md).md) has the values : ['[[PROPN](docs/general_guideline/Upos/PROPN.md)](docs/general_guideline/Upos/[PROPN](docs/general_guideline/Upos/PROPN.md).md)', '[[NOUN](docs/general_guideline/Upos/NOUN.md)](docs/general_guideline/Upos/[NOUN](docs/general_guideline/Upos/NOUN.md).md)', '[[NUM](docs/general_guideline/Upos/NUM.md)](docs/general_guideline/Upos/[NUM](docs/general_guideline/Upos/NUM.md).md)', '[[PRON](docs/general_guideline/Upos/PRON.md)](docs/general_guideline/Upos/[PRON](docs/general_guideline/Upos/PRON.md).md)']
+ The upos [[VERB](docs/general_guideline/Upos/VERB.md)](docs/general_guideline/Upos/[VERB](docs/general_guideline/Upos/VERB.md).md) has the values : ['[[NUM](docs/general_guideline/Upos/NUM.md)](docs/general_guideline/Upos/[NUM](docs/general_guideline/Upos/NUM.md).md)', '[[PROPN](docs/general_guideline/Upos/PROPN.md)](docs/general_guideline/Upos/[PROPN](docs/general_guideline/Upos/PROPN.md).md)', '[[PRON](docs/general_guideline/Upos/PRON.md)](docs/general_guideline/Upos/[PRON](docs/general_guideline/Upos/PRON.md).md)', '[[NOUN](docs/general_guideline/Upos/NOUN.md)](docs/general_guideline/Upos/[NOUN](docs/general_guideline/Upos/NOUN.md).md)']
 
 
- The upos [VERB](docs/general_guideline/Upos/VERB.md) has the values : ['[PROPN](docs/general_guideline/Upos/PROPN.md)', '[PRON](docs/general_guideline/Upos/PRON.md)', '[NOUN](docs/general_guideline/Upos/NOUN.md)', '[NUM](docs/general_guideline/Upos/NUM.md)']
+ The upos [AUX](docs/general_guideline/Upos/AUX.md) has the values : ['[NUM](docs/general_guideline/Upos/NUM.md)', '[NOUN](docs/general_guideline/Upos/NOUN.md)', '[PROPN](docs/general_guideline/Upos/PROPN.md)', '[PRON](docs/general_guideline/Upos/PRON.md)']
 
 
 ### Specific Pattern
 
-#### causative construction 
+#### passive subject 
 
-- Description: The deep tag @[caus](docs/general_guideline/Deep/caus.md) express an causativ subject here. 
+- Description: Exemple of a passiv subject in french.
+
+- Pattern: GOV-[subj@pass]->DEP
+
+
+{{<conll>}}
+1	Le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	2	det	_	wordform=le
+2	château	château	NOUN	_	Gender=Masc|Number=Sing	3	subj@pass	_	_
+3	est	être	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	ensuite	ensuite	ADV	_	_	3	mod	_	_
+5	vendu	vendre	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part|Voice=Pass	3	comp:aux@pass	_	_
+6	plusieurs	plusieurs	DET	_	Number=Plur|PronType=Ind	7	det	_	_
+7	fois	fois	NOUN	_	Gender=Fem|Number=Plur	3	mod	_	_
+8	;	;	PUNCT	_	_	3	punct	_	_
+
+{{</conll>}}
+
+#### causativ subject 
+
+- Description: Exemple of a causativ subject in french.
 
 - Pattern: GOV-[subj@caus]->DEP
 
@@ -61,28 +80,9 @@
 12	.	.	PUNCT	_	_	6	punct	_	AlignBegin=62406|AlignEnd=62406
 {{</conll>}}
 
-#### passive construction 
+#### [expletiv](docs/general_guideline/Deep/expletiv.md) subject 
 
-- Description: The deep tag @[pass](docs/general_guideline/Deep/pass.md) express a passiv subject here. 
-
-- Pattern: GOV-[subj@pass]->DEP
-
-
-{{<conll>}}
-# text = ça a été organisé par le prof.
-1	ça	ça	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Dem	2	subj@pass	_	AlignBegin=49795|AlignEnd=49995
-2	a	avoir	AUX	_	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	AlignBegin=49995|AlignEnd=50194
-3	été	être	AUX	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	2	comp:aux@tense	_	AlignBegin=50194|AlignEnd=50394
-4	organisé	organiser	VERB	_	Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part	3	comp:aux@pass	_	AlignBegin=50394|AlignEnd=50593
-5	par	par	ADP	_	_	4	comp:obl@agent	_	AlignBegin=50593|AlignEnd=50793
-6	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|PronType=Art	7	det	_	AlignBegin=50793|AlignEnd=50992
-7	prof	prof	NOUN	_	Gender=Masc|Number=Sing	5	comp:obj	_	AlignBegin=50992|AlignEnd=51192|CorrectForm=profs|CorrectNumber=Plur|SpaceAfter=No
-8	.	.	PUNCT	_	_	2	punct	_	AlignBegin=51192|AlignEnd=5119
-{{</conll>}}
-
-#### expletive construction 
-
-- Description: The deep tag @expl express an expletive subject here. 
+- Description: Exemple of an [expletiv](docs/general_guideline/Deep/expletiv.md) subject in french.
 
 - Pattern: GOV-[subj@expl]->DEP
 

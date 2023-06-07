@@ -1,3 +1,14 @@
+---
+title: "comp:obl"
+weight: 1
+# bookFlatSection: false
+bookToc: true
+# bookHidden: false
+# bookCollapseSection: true
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # comp:obl
 The `comp:obl` relation is used for oblique arguments of verbs, adjectives, adverbs, nouns or pronouns, regardless of their form. Unlike UD, SUD does not make a distinction between indirect objects and oblique arguments. SUD instead makes the distinction between arguments and modifiers.
 

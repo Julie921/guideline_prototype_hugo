@@ -1,3 +1,14 @@
+---
+title: "Disfluency"
+weight: 1
+# bookFlatSection: false
+# bookToc: true
+# bookHidden: false
+# bookCollapseSection: false
+# bookComments: false
+# bookSearchExclude: false
+---
+
 # Disfluency
 
 In oral language, speakers form sentences while speaking, which means that sometimes they might search for words while speaking.

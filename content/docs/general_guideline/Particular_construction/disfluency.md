@@ -125,3 +125,13 @@ Below we can see an example when a speaker starts with one word, then decides it
 
 
 
+
+
+## bedja
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

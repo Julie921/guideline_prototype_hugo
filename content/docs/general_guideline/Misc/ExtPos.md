@@ -188,3 +188,13 @@ Here, the nouns have the features [ADV](docs/general_guideline/Upos/ADV.md) as [
 
 
 
+
+
+## bedja
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

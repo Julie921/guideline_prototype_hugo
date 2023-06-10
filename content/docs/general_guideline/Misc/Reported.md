@@ -36,3 +36,13 @@ You can find more information about the Reported Speech [here](../Particular_con
 
 
 
+
+
+## bedja
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

@@ -127,3 +127,13 @@ On peut se servir des différents patterns pour construire le validateur
 {{</hint>}}
 
 
+
+
+## bedja
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

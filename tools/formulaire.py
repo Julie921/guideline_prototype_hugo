@@ -389,14 +389,15 @@ if st.button('Enregistrer au format JSON'):
             name = str(data['value'][0])
             name = name.split(" ")
             name = "_".join(name)
-            st.markdown(f"## Creating the guideline's page ../content/docs/language/{str(language).lower()}/{name}.md ...")
+            st.markdown(f"## Creating the guideline's page \n ../content/docs/language/{str(language).lower()}/{name}.md ...")
+            os.mkdir(f"../static/docs/language/{str(language).lower()}/{name}")
             with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
                 f.write(md_output)
             st.markdown(f"Guideline's page has been creating.")
             st.write("Mooving the table in the right place...")
             # Et on bouge la table à l'endroit correspondant dans la partie static (TODO : vérifier que ça fonctionne bien)
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{name}.json"
-            new_path = f"../static/docs/language/{str(language).lower()}/{data['value'][0]}/table_output_{str(language).lower()}_{name}.json"
+            new_path = f"../static/docs/language/{str(language).lower()}/{name}/table_output_{str(language).lower()}_{name}.json"
             os.rename(old_path,new_path)
             st.write("The table has been moved.")
     st.write("You can quit the formular !")

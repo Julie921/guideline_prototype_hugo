@@ -90,7 +90,7 @@ def parcourir_arborescence(repertoire,langue):
                 chemin_fichier = os.path.join(dossier_racine, fichier)
                 #print(chemin_fichier)
                 contenu_fichier = lire_contenu_fichier(chemin_fichier)
-                #print(contenu_fichier)
+                print(contenu_fichier)
                 nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
                 index = contenu_fichier.index(f"## {langue}\n")
                 if contenu_fichier[index+2] == "TODO\n":

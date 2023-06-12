@@ -25,7 +25,7 @@ from streamlit_extras.echo_expander import echo_expander
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
 list_of_deprel = ['comp','comp:aux','comp:pred','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
 list_of_deep = ["pass","relcl","tense","x","caus","name","agent","emb","lvc","foreign","expl"]
-particular_phenomena_check = ['number','coordination','comparative_construction','disfluency','reported_speech']
+particular_phenomena_check = ['numeral','coordination','comparative_construction','disfluency','reported_speech']
 liste_of_features=["Number","Gender","Mood","Person","Polarity","Tense","VerbForm","Shared","Subject"]
 liste_of_misc=["CorrectForm","ExtPos","Idiom_Titles","Typo","Reported","Word_TextForm"]
 

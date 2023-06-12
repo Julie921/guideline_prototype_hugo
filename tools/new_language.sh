@@ -63,9 +63,10 @@ done
 
 # Se déplace dans le dossier principal
 cd ..
-
-echo "Je suis ici après avoir donné les noms des dossiers treebanks"
+echo -e "#################################################################################################"
+echo -e "############\n Je suis ici après avoir donné les noms des dossiers treebanks \n ################"
 pwd
+echo -e "#################################################################################################"
 
 # Génère le contenu du fichier JSON
 json_content='{

@@ -56,7 +56,7 @@ def add_text_check(fichier, texte_a_ajouter, texte_repere):
     with open(fichier, 'r') as f:
         contenu = f.readlines()
 
-    print(contenu)
+    #print(contenu)
     # on récupère l'index du repère 
     get_index_lang = contenu.index(texte_repere)
 
@@ -90,7 +90,7 @@ def parcourir_arborescence(repertoire,langue):
                 chemin_fichier = os.path.join(dossier_racine, fichier)
                 #print(chemin_fichier)
                 contenu_fichier = lire_contenu_fichier(chemin_fichier)
-                print(contenu_fichier)
+                #print(contenu_fichier)
                 nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
                 index = contenu_fichier.index(f"## {langue}\n")
                 if contenu_fichier[index+2] == "TODO\n":
@@ -139,23 +139,37 @@ def read_partial_markdown(filename):
         lines = contents.split("\n")
         output_lines = []
         subheading_count = 0
+        exclude_metadata = False
         exclude_code_block = False
 
         for line in lines:
+            if line.strip() == "---":
+                exclude_metadata = not exclude_metadata
+                continue
+            
+            if exclude_metadata:
+                continue
+            
             if line.startswith("{{<"):
                 exclude_code_block = True
+                continue
             elif line.startswith("{{</"):
                 exclude_code_block = False
-            elif not exclude_code_block:
-                output_lines.append(line)
+                continue
+            
+            if exclude_code_block:
+                continue
+            
+            output_lines.append(line)
 
-                if line.startswith("##"):
-                    subheading_count += 1
-                    if subheading_count == 2:
-                        break
+            if line.startswith("##"):
+                subheading_count += 1
+                if subheading_count == 2:
+                    break
 
         output = "\n".join(output_lines)
         return output
+
 
 if __name__ == '__main__':
     # Exemple d'utilisation

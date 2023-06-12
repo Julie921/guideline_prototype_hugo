@@ -23,9 +23,11 @@ from streamlit_extras.echo_expander import echo_expander
 
 
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
-list_of_deprel = ['comp','comp:aux','comp:prep','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
+list_of_deprel = ['comp','comp:aux','comp:pred','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
 list_of_deep = ["pass","relcl","tense","x","caus","name","agent","emb","lvc","foreign","expl"]
-particular_phenomena_check = ['number','coordination','comparative_construction','disluency','reported_speech']
+particular_phenomena_check = ['number','coordination','comparative_construction','disfluency','reported_speech']
+liste_of_features=["Number","Gender","Mood","Person","Polarity","Tense","VerbForm","Shared","Subject"]
+liste_of_misc=["CorrectForm","ExtPos","Idiom_Titles","Typo","Reported","Word_TextForm"]
 
 def add_answer():
     """
@@ -63,14 +65,16 @@ language = st.text_input('Name of the language')
 
 
 # Get the type of page that the user want to write. 
-tag = st.radio("What do you want to documentate ? ", ('Syntactic_relations','Features','Misc','Upos','Other linguistic phenomena','Deep','Particular_construction'))
+tag = st.radio("What do you want to documentate ? ", ('Syntactic relation','Morphological features','Lexical features','Part of Speech','Other linguistic phenomena','Deep relation tag','Universal construction'))
 
 
 ##################################################################################
 ######################## PARTICULAR CONSTRUCTION #################################
 ##################################################################################
 ## particular construction -> as define in the guideline ! If it exist, we cannot create an "other linguistic phenomena"
-if tag == 'Particular_construction':
+if tag == 'Universal construction':
+
+    tag = 'Universal_construction'
     # which particular construction 
     which_phenm = st.multiselect(f'wich particular construction do you want to documente in your language ?', particular_phenomena_check)
 
@@ -84,7 +88,7 @@ if tag == 'Particular_construction':
             mention(
                 label="See the guidelines page for more",
                 icon="streamlit",  # Some icons are available... like Streamlit!
-                url=f"https://julie921.github.io/guideline_prototype_hugo/docs/general_guideline/Particular_construction/{which_phenm_str}/",
+                url=f"https://julie921.github.io/guideline_prototype_hugo/docs/general_guideline/Universal_construction/{which_phenm_str}/",
             )
             st.write(f"""
                 {explaination}
@@ -114,7 +118,7 @@ if tag == 'Particular_construction':
 ##################################################################################
 
 # Different type of page
-if tag == 'Features' or tag =="Misc":
+if tag == 'Morphological features' or tag =="Lexical features":
     """
     Text zone to write the a Feature's or Misc's page for the guideline. 
     """
@@ -123,132 +127,160 @@ if tag == 'Features' or tag =="Misc":
     upos_value = {}
 
     # name of the features
-    feats = st.text_input(f"What is the {tag} ? ")
+    if tag =='Morphological features':
+        tag = 'Features'
+        feats = st.multiselect(f'Choose the features ?', liste_of_features)
+    if tag =="Lexical features":
+        tag = "MISC"
+        feats = st.multiselect(f'Choose the features ?', liste_of_misc)
 
-    # short description of the features
-    overview = st.text_area(f"Can you give a short description of the feature {feats} in your language ? ", height=200) 
+    if len(feats) == 1:
+        feats = str(feats[0])
 
-    # give general example
-    general_ex = st.text_area(f"Conll example",height=200)
+        # short description of the features
+        overview = st.text_area(f"Can you give a short description of the feature {feats} in your language ? ", height=200) 
+
+        # give general example
+        general_ex = st.text_area(f"Conll example",height=200)
+        
+        # which upos can have the features 
+        which_upos = st.multiselect(f'which upos are conserned by the feature {feats} ? (optional)', liste_of_upos)
+
+        # for each upos, we can indicates the feature's value 
+        for i in range(len(which_upos)):
+            combo_value_feats = st.text_input(f"Which are the value of the features {feats} for the upos {which_upos[i]} ? (put a ';' between each value)")
+            combos = combo_value_feats.split(";")
+            upos_value[which_upos[i]] = combos
+        
+        # THe user can add some pattern to describe in his page 
+        add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
+        if add_pattern == "Yes":
+            st.write("Describe your pattern")
+            add_answer()
+        get_pattern = {}
+        # we get the information from the function and put them in a dict 
+        for answer in st.session_state.answers:
+            get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
+
+        # Add the data in a DataFrame
+        data = {'Language': [language], 'Tag': [tag],'value': [feats],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
+        df = pd.DataFrame(data)
     
-    # which upos can have the features 
-    which_upos = st.multiselect(f'which upos are conserned by the feature {feats} ? (optional)', liste_of_upos)
-
-    # for each upos, we can indicates the feature's value 
-    for i in range(len(which_upos)):
-        combo_value_feats = st.text_input(f"Which are the value of the features {feats} for the upos {which_upos[i]} ? (put a ';' between each value)")
-        combos = combo_value_feats.split(";")
-        upos_value[which_upos[i]] = combos
-    
-    # THe user can add some pattern to describe in his page 
-    add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
-    if add_pattern == "Yes":
-        st.write("Describe your pattern")
-        add_answer()
-    get_pattern = {}
-    # we get the information from the function and put them in a dict 
-    for answer in st.session_state.answers:
-        get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
-
-    # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [feats],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
-    df = pd.DataFrame(data)
+    if len(feats) > 1:
+        st.write("Choose only one tag!")
 
 
 ##################################################################################
 #################################### UPOS ########################################
 ##################################################################################
 # Different type of page
-if tag == 'Upos':
+if tag == 'Part of Speech':
+
+    tag = "Upos"
 
     # dict to get the feats that can be on the upos
     features_name = {}
 
     # name of the features
-    upos = st.text_input(f"What is the {tag} ? ")
+    upos = st.multiselect(f'Choose the features ?', liste_of_upos)
 
-    # short description of the features
-    overview = st.text_area(f"Can you give a short description of the feature {upos} in your language ? ", height=200) 
+    if len(upos)==1:
+        upos = str(upos[0])
 
-    # give general example
-    general_ex = st.text_area(f"Conll example",height=200)
+        # short description of the features
+        overview = st.text_area(f"Can you give a short description of the feature {upos} in your language ? ", height=200) 
 
-    # which upos can have the features 
-    which_features = st.text_area(f"Which features can be on the {upos} ? (put a ';' between each value) (optional)",height=10)
+        # give general example
+        general_ex = st.text_area(f"Conll example",height=200)
 
-    which_features = which_features.split(";")
+        # which upos can have the features 
+        which_features = st.text_area(f"Which features can be on the {upos} ? (put a ';' between each value) (optional)",height=10)
 
-    # for each features, we can indicates the feature's value 
-    for i in range(len(which_features)):
-        combo_value_feats = st.text_input(f"Which are the value of the features {which_features[i]} for the upos {upos} ? (put a ';' between each value)")
-        combos = combo_value_feats.split(";")
-        features_name[which_features[i]] = combos
+        which_features = which_features.split(";")
+
+        # for each features, we can indicates the feature's value 
+        for i in range(len(which_features)):
+            combo_value_feats = st.text_input(f"Which are the value of the features {which_features[i]} for the upos {upos} ? (put a ';' between each value)")
+            combos = combo_value_feats.split(";")
+            features_name[which_features[i]] = combos
+        
+        # THe user can add some pattern to describe in his page 
+        add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
+        if add_pattern == "Yes":
+            st.write("Describe your pattern")
+            # fonction add_answer()
+            add_answer()
+        get_pattern = {}
+        # we get the information from the function and put them in a dict 
+        for answer in st.session_state.answers:
+            get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
+
+        # Add the data in a DataFrame
+        data = {'Language': [language], 'Tag': [tag],'value': [upos],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[features_name] ,'specific_pattern':[get_pattern]}
+        df = pd.DataFrame(data)
     
-    # THe user can add some pattern to describe in his page 
-    add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
-    if add_pattern == "Yes":
-        st.write("Describe your pattern")
-        # fonction add_answer()
-        add_answer()
-    get_pattern = {}
-    # we get the information from the function and put them in a dict 
-    for answer in st.session_state.answers:
-        get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
-
-    # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [upos],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[features_name] ,'specific_pattern':[get_pattern]}
-    df = pd.DataFrame(data)
+    if len(upos) > 1:
+        st.write("Choose only one tag !")
 
 ##################################################################################
 ######################## Syntactic relations  ####################################
 ##################################################################################
 
 # Different type of page
-if tag == 'Syntactic_relations' or tag == 'Deep':
+if tag == 'Syntactic relation' or tag == 'Deep relation tag':
     """
     Text zone to write the a syntactic relation's page for the guideline. 
     """
-    
 
     # dict to get the upos that can have the features? 
     upos_value = {}
-
+    
     # name of the features
-    deprel = st.text_input(f"What is the {tag} ? ")
+    if tag =='Syntactic relation':
+        tag = 'Syntactic_relations'
+        deprel = st.multiselect(f'Choose the features ?', list_of_deprel)
+    if tag =="Deep relation tag":
+        tag = "Deep"
+        deprel = st.multiselect(f'Choose the features ?', list_of_deep)
 
-    deprel = deprel.replace(":","_")
+    if len(deprel) == 1:
 
+        deprel = str(deprel[0])
 
-    # short description of the features
-    overview = st.text_area(f"Can you give a short description of the feature {deprel} in your language ? ",height=200) 
-    
-    # give general example
-    general_ex = st.text_area(f"Conll example",height=200)
+        deprel = deprel.replace(":","_")
 
-    # which upos can have the features 
-    which_upos = st.multiselect(f'which upos can be the head of the {deprel} ? (optional)', liste_of_upos)
+        # short description of the features
+        overview = st.text_area(f"Can you give a short description of the feature {deprel} in your language ? ",height=200) 
+        
+        # give general example
+        general_ex = st.text_area(f"Conll example",height=200)
 
-    # for each upos, we can indicates the feature's value 
-    for i in range(len(which_upos)):
-        combo_value_feats = st.multiselect(f"For this {which_upos[i]}, what can be the dependent of the {deprel} ?", liste_of_upos)
-        combos = combo_value_feats
-        upos_value[which_upos[i]] = combos
-    
-    # THe user can add some pattern to describe in his page 
-    add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
-    if add_pattern == "Yes":
-        st.write("Describe your pattern")
-        # fonction add_answer()
-        add_answer()
-    get_pattern = {}
-    # we get the information from the function and put them in a dict 
-    for answer in st.session_state.answers:
-        get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
+        # which upos can have the features 
+        which_upos = st.multiselect(f'which upos can be the head of the {deprel} ? (optional)', liste_of_upos)
 
-    # Add the data in a DataFrame
-    data = {'Language': [language], 'Tag': [tag],'value': [deprel],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
-    df = pd.DataFrame(data)
+        # for each upos, we can indicates the feature's value 
+        for i in range(len(which_upos)):
+            combo_value_feats = st.multiselect(f"For this {which_upos[i]}, what can be the dependent of the {deprel} ?", liste_of_upos)
+            combos = combo_value_feats
+            upos_value[which_upos[i]] = combos
+        
+        # THe user can add some pattern to describe in his page 
+        add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
+        if add_pattern == "Yes":
+            st.write("Describe your pattern")
+            # fonction add_answer()
+            add_answer()
+        get_pattern = {}
+        # we get the information from the function and put them in a dict 
+        for answer in st.session_state.answers:
+            get_pattern[answer["name"]]={'pattern':answer["pattern"], 'descriptions':answer["description"], 'example':answer['example']}
 
+        # Add the data in a DataFrame
+        data = {'Language': [language], 'Tag': [tag],'value': [deprel],'overview':[overview], 'general_ex':[general_ex],'upos_and_value_feats':[upos_value] ,'specific_pattern':[get_pattern]}
+        df = pd.DataFrame(data)
+
+    if len(deprel) > 1:
+        st.write("Choose only one tag!")
 
 ##################################################################################
 ######################## OTHER LING PHENOMENA ####################################
@@ -306,13 +338,13 @@ if st.button('Enregistrer au format JSON'):
         named = str(data['value'][0])
         named = named.split(" ")
         named = "_".join(named)
-    if tag =='Particular_construction':
+    if tag =='Universal_construction':
         named = " ".join(data["value"][0])
 
     df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
     st.write(f"The request file {str(language).lower()}/output/output_{str(language).lower()}_{named}.json has been saved.")
     st.title("Saving your answer and updating the guidelines, dont quit :warning:")
-    st.markdown(":warning: :red[Don't quite the formulaire while you're not welcome to] :warning:")
+    st.markdown(":warning: :red[Don't quit the formulare while you're not welcome to] :warning:")
     # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit. Ici on considère
     # que l'utilisateur a écrit des patterns pour créer une table 
     if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] != [{}]:
@@ -345,7 +377,7 @@ if st.button('Enregistrer au format JSON'):
 
         st.write("We move the table to the right place...")
         # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Particular_construction":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Universal_construction":
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
             new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
             os.rename(old_path,new_path)
@@ -368,7 +400,7 @@ if st.button('Enregistrer au format JSON'):
         st.markdown("## Writting the guideline's page")
         st.write("guideline's page writting...")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
@@ -416,7 +448,7 @@ if st.button('Enregistrer au format JSON'):
         
         st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
         # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Particular_construction":
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 

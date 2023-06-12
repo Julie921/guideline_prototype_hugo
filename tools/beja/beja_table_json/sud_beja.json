@@ -2,7 +2,7 @@
   "corpora": [
     {
       "id": "SUD_Beja-NSC@latest",
-      "directory":  "bedja/corpora/SUD_Beja-NSC"
+      "directory":  "beja/corpora/SUD_Beja-NSC"
     }
   ]
 }

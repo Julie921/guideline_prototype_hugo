@@ -475,5 +475,5 @@ if st.button('Enregistrer au format JSON'):
     
 
     get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
-    print(get_percent_to_write)
+    #print(get_percent_to_write)
     add_text_check(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")

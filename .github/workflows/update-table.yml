@@ -17,6 +17,22 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.10.6  
+
+      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+
+      - run: opam install . --deps-only --with-test
+
+      - run: opam exec -- dune build
+
+      - run: opam exec -- dune runtest
+      
+      - run: opam install grew
+      
+      - name: install grewlib 
+        run: opam update && opam install grewlib.1.12.1
       
       - name: Install grewpy backend un
         run: opam update && opam install grewpy_backend.0.3.1

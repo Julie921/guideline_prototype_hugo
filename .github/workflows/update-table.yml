@@ -8,41 +8,15 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
-  build:
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - macos-latest
-          - ubuntu-latest
-          - windows-latest
-        ocaml-compiler:
-          - "5.0"
+   
+   steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - name: Checkout tree
-        uses: actions/checkout@v3
-
-      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
-        uses: ocaml/setup-ocaml@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
         with:
-          ocaml-compiler: ${{ matrix.ocaml-compiler }}
-
-      - run: opam install . --deps-only --with-test
-
-      - run: opam exec -- dune build
-
-      - run: opam exec -- dune runtest
-      
-      - run: opam install grew
-      
-      - name: install grewlib 
-        run: opam update && opam install grewlib.1.12.1
-      
-      - name: Install grewpy backend un
-        run: opam update && opam install grewpy_backend.0.3.1
+          python-version: 3.10.6
       
       - name: Install grewpy_backend
         run: pip3 install grewpy --upgrade

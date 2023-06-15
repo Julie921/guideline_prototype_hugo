@@ -4,8 +4,6 @@ on: [push]
 
 jobs:
   build:
-  
-    needs: ocaml
 
     runs-on: ubuntu-latest
     strategy:

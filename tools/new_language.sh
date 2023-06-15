@@ -9,6 +9,8 @@ corpora="corpora"
 
 folder_name=$(echo "$language" | tr '[:upper:]' '[:lower:]')
 
+mkdir "../static/docs/language/$folder_name"
+
 # Crée le dossier principal
 mkdir "$folder_name"
 

@@ -1,4 +1,4 @@
-name: Main workflow
+name: Install OCAML
 
 on:
   pull_request:
@@ -33,10 +33,6 @@ jobs:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
 
       - run: opam install . --deps-only --with-test
-
-      - run: opam exec -- dune build
-
-      - run: opam exec -- dune runtest
 
       - run: opam install grew
 

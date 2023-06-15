@@ -16,10 +16,10 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x  # Remplacez par la version de Python appropriée
+          python-version: 3.10.6  
 
       - name: Install dependencies
-        run: pip install -r requirements.txt  # Remplacez par la commande pour installer vos dépendances
+        run: pip install -r requirements.txt 
 
       - name: Update table
-        run: python tools/update_tables.py  # Remplacez par la commande pour exécuter votre script de mise à jour de la table
+        run: python tools/update_tables.py  

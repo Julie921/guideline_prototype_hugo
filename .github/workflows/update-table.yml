@@ -3,7 +3,7 @@ name: Update Table
 on:
   push:
     branches:
-      - integration_continu  # Remplacez par la branche appropriée
+      - main  # Remplacez par la branche appropriée
 
 jobs:
   update:

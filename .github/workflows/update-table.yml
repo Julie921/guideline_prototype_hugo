@@ -8,6 +8,8 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+  build:
+    needs: ocaml.yml
    
    steps:
       - name: Checkout repository

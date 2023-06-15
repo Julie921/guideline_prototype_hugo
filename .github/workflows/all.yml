@@ -1,4 +1,4 @@
-name: Install OCAML
+name: V2 
 
 on:
   pull_request:

@@ -216,3 +216,13 @@ You can find more information about passive constructions on this [page](../../D
 
 {{< agg table_output_french_subj >}}
  
+
+
+## haitien
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

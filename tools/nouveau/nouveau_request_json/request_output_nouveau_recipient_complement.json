@@ -1,1 +1,0 @@
-[{"id": "recipient_complemet_with_a_verb", "request": [{"pattern": ["GOV-[comp:obj@R]->DEP ; GOV[upos=VERB]"]}]}, {"id": "recipient_complemet_with_a_NOUN", "request": [{"pattern": ["GOV-[comp:obj@R]->DEP ; GOV[upos=VERB]"]}]}]

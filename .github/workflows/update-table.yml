@@ -1,0 +1,25 @@
+name: Update Table
+
+on:
+  push:
+    branches:
+      - integration_continu  # Remplacez par la branche appropriée
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Remplacez par la version de Python appropriée
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # Remplacez par la commande pour installer vos dépendances
+
+      - name: Update table
+        run: python tools/update_table.py  # Remplacez par la commande pour exécuter votre script de mise à jour de la table

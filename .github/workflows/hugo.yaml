@@ -30,7 +30,6 @@ defaults:
 jobs:
   # Build job
   build:
-    needs: update-table
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.111.3

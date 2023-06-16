@@ -3,6 +3,9 @@ name: Update Table
 on: [push]
 
 jobs:
+  validate_test:
+    name: validate
+    uses: ./.github/workflows/ocaml.yml
   build:
 
     runs-on: ubuntu-latest

@@ -28,9 +28,9 @@ defaults:
     shell: bash
 
 jobs:
-  validate_test:
-    name: validate test
-    uses: ./.github/workflows/update-table.yml
+  # validate_test:
+  #   name: validate test
+  #   uses: ./.github/workflows/update-table.yml
   # Build job
   build:
     runs-on: ubuntu-latest

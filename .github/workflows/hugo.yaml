@@ -64,6 +64,8 @@ jobs:
       - run: opam remote add grew "http://opam.grew.fr"
       
       - run: opam install grew
+      
+      - run: opam install grewpy_backend
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v4

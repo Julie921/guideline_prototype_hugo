@@ -37,66 +37,47 @@ jobs:
       fail-fast: false
       matrix:
         os:
-          - macos-latest
           - ubuntu-latest
-          - windows-latest
+        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
         ocaml-compiler:
-          - 4.13.x
-          - 4.08.x
-          - 4.06.x
+          - "5.0"
+    
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.111.3
+
     steps:
-      - name: Checkout code
+      - name: Checkout tree
         uses: actions/checkout@v3
 
-      - name: Use OCaml ${{ matrix.ocaml-compiler }}
+      - name: Set-up OCaml ${{ matrix.ocaml-compiler }}
         uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: ${{ matrix.ocaml-compiler }}
+      
+      - run: opam init
+      
+      - run: opam switch create 4.14.1 4.14.1
+      
+      - run: eval $(opam env --switch=4.14.1)
+      
+      - run: opam remote add grew "http://opam.grew.fr"
+      
+      - run: opam install grew
 
-      - run: opam install . --deps-only --with-doc --with-test
-
-      - run: opam exec -- dune build
-
-      - run: opam exec -- dune runtest
-
-      - name: Upload the build artifact
-        uses: actions/upload-artifact@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
         with:
-          name: ${{ matrix.os }}-${{ matrix.ocaml-version }}-world.exe
-          path: _build/default/world.exe
+          python-version: ${{ matrix.python-version }}
+          
+      - name: Install dependencies
+        run: pip install -r requirements.txt 
+        
+      - name: Install grewpy_backend
+        run: pip3 install grewpy --upgrade
 
-  lint-doc:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Use OCaml 4.13.x
-        uses: ocaml/setup-ocaml@v2
-        with:
-          ocaml-compiler: 4.13.x
-          dune-cache: true
-
-      - name: Lint doc
-        uses: ocaml/setup-ocaml/lint-doc@v2
-
-  lint-fmt:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Use OCaml 4.13.x
-        uses: ocaml/setup-ocaml@v2
-        with:
-          ocaml-compiler: 4.13.x
-          dune-cache: true
-
-      - name: Lint fmt
-        uses: ocaml/setup-ocaml/lint-fmt@v2
+      - name: Update table
+        run: python tools/update_tables.py  
       - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \

@@ -79,6 +79,8 @@ jobs:
         run: pip install -r requirements.txt 
         
       - run: opam install -y grewpy_backend
+      
+      - run: eval $(opam env)
         
       - name: Install grewpy python lib
         run: pip3 install grewpy --upgrade

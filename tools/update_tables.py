@@ -4,9 +4,48 @@ Script python utiliser pour mettre à jour toutes les tables à chaque push
 
 
 import os 
-from test_build_table import process_files
 import shutil
 from grewpy import Request, Corpus, set_config
+import argparse
+import json
+import datetime
+import argparse
+import sys
+import json
+from grewpy import Request, Corpus, set_config
+
+def process_files(request_file, corpora_file):
+    with open(request_file, "rb") as f:
+        grew_requests = { x["id"]: Request.from_json(x["request"]) for x in json.load(f) }
+
+    with open(corpora_file, "rb") as f:
+        json_data = json.load(f)
+        corpora = { x["id"]: x["directory"] for x in json_data["corpora"] }
+
+    main_dict = {}
+    for corpus_name in corpora:
+        corpus = Corpus(corpora[corpus_name])
+
+        main_dict[corpus_name] = { id: corpus.count(grew_requests[id]) for id in grew_requests }
+        corpus.clean()
+
+    columnDefs = [ { "field": "row_header", "headerName": "Treebank", "pinned": "left", "lockPinned": True} ] 
+    columnDefs += [ {"field": id, "headerName": id, "request": str(grew_requests[id])} for id in grew_requests ]
+
+    rowData = [ {"row_header": k1 } | { k2: main_dict[k1][k2] for k2 in main_dict[k1]} for k1 in main_dict]
+
+    data = { 
+        "defaultColDef": {
+            "width": 150,
+            "sortable": True,
+            "sortingOrder": ["desc", "asc"],
+            "resizable": True
+        },
+        "columnDefs": columnDefs,
+        "rowData": rowData,
+    }
+
+    return json.dumps(data, indent=2)
 
 
 
@@ -87,6 +126,5 @@ if __name__ == "__main__":
             directory = "../static/docs/"
             filename = element
             actual_table_path = f"{key}/{key}_table_json/{element}"
-            #print(f"directory = {directory}\n filename = {filename}\n actual_table_path = {actual_table_path}")
             replace_file(directory,filename,actual_table_path)
 

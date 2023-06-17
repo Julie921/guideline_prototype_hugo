@@ -84,7 +84,7 @@ jobs:
         run: pip3 install grewpy --upgrade
 
       - name: Update table
-        run: python tools/update_tables.py  
+        run: python3 tools/update_tables.py  
         
         
         

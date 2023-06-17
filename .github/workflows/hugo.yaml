@@ -88,9 +88,11 @@ jobs:
           opam var lib
           ls $HOME/.opam/4.14.1/lib/grewpy_backend
 
+      - name: Lancer le script update_tables
+        run: |
+          cd tools
+          python3 update_tables.py
 
-      - name: Update table
-        run: python3 tools/update_tables.py  
         
         
         

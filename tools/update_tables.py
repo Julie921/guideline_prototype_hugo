@@ -44,8 +44,7 @@ def replace_file(directory,filename,actual_table_path):
     file_path = find_file_by_name(directory, filename)
     file_path_r = str(file_path).split("/")
     new_file_path = f"{'/'.join(file_path_r[:-1])}"
-    print(new_file_path)
-    os.rename(actual_table_path,file_path)
+    os.rename(actual_table_path,f"{new_file_path}/{filename}")
 
 if __name__ == "__main__":
     directory_path = "."
@@ -88,6 +87,6 @@ if __name__ == "__main__":
             directory = "../static/docs/"
             filename = element
             actual_table_path = f"{key}/{key}_table_json/{element}"
-            print(f"directory = {directory}\n filename = {filename}\n actual_table_path = {actual_table_path}")
-            replace_file("../static/docs/","table_output_french_subj.json","french/french_table_json/table_output_french_subj.json")
+            #print(f"directory = {directory}\n filename = {filename}\n actual_table_path = {actual_table_path}")
+            replace_file(directory,filename,actual_table_path)
 

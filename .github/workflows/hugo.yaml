@@ -77,6 +77,8 @@ jobs:
           
       - name: Install dependencies
         run: pip install -r requirements.txt 
+
+      - run: eval $(opam env)
         
       - run: opam install -y grewpy_backend
       

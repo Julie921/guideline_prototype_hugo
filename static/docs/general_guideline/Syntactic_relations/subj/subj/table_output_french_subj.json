@@ -34,9 +34,9 @@
   "rowData": [
     {
       "row_header": "SUD_French-GSD@latest",
-      "passive_subject": 0,
-      "causativ_subject": 0,
-      "expletiv_subject": 0
+      "passive_subject": 3673,
+      "causativ_subject": 132,
+      "expletiv_subject": 932
     },
     {
       "row_header": "SUD_French-ParisStories@latest",

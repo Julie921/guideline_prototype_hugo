@@ -79,6 +79,8 @@ jobs:
         run: pip install -r requirements.txt 
         
       - run: opam install -y grewpy_backend
+      
+      - run: eval $(opam env)
         
       - name: Install grewpy python lib
         run: pip3 install grewpy --upgrade
@@ -86,11 +88,12 @@ jobs:
       - name: Vérifier le chemin de grewpy_backend
         run: | 
           opam var lib
-          ls $HOME/.opam/4.14.1/lib/grewpy_backend
+          find /home/runner/.opam/4.14.1/lib -name "grewpy_backend"
 
       - name: Lancer le script update_tables
         run: |
           cd tools
+          ls 
           python3 update_tables.py
 
         

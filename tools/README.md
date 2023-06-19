@@ -87,3 +87,16 @@ If the (symbolically linked) folder `corpora` contains 3 sub-corpora named `SUD_
 ```
 python3 build_ag-grid_table.py --request_file request-file.json --corpora_file corpora-file.json > ../static/docs/ag-grid/grew.json
 ```
+# Visualisation 
+
+In order to check your work before adding your modification, you can do the following command at the root of the directory :
+
+```
+hugo server
+```
+
+And then go to :
+
+```
+ http://localhost:1313/
+```

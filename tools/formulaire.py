@@ -386,9 +386,15 @@ if st.button('Enregistrer au format JSON'):
         if tag == "Syntactic_relations":
             old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
             
-            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
                 new_path = f"../static/docs/general_guideline/{tag}/{named}/{named}/table_output_{str(language).lower()}_{named}.json"
             
+            if named.startswith("comp"):
+                new_path = f"../static/docs/general_guideline/{tag}/comp/{named}/table_output_{str(language).lower()}_{named}.json"
+
+            if named.startswith("conj"):
+                new_path = f"../static/docs/general_guideline/{tag}/comp/{named}/table_output_{str(language).lower()}_{named}.json"
+
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/{named}/table_output_{str(language).lower()}_{named}.json"
             
@@ -406,10 +412,19 @@ if st.button('Enregistrer au format JSON'):
 
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
-            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-            
+
+            if named.startswith("comp"):
+                if f"../content/docs/general_guideline/{tag}/comp/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+
+
+            if named.startswith("conj"):
+                if f"../content/docs/general_guideline/{tag}/conj/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+                        
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
@@ -452,16 +467,27 @@ if st.button('Enregistrer au format JSON'):
             if f"../content/docs/general_guideline/{tag}/{named}.md":
                 add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
+
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
-            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
                 if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-            
+
+            if named.startswith("comp"):
+                if f"../content/docs/general_guideline/{tag}/comp/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+
+
+            if named.startswith("conj"):
+                if f"../content/docs/general_guideline/{tag}/conj/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+                        
             if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
+        st.write("guideline's page has been written.")
+        
         # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
         if tag == "Other linguistic phenomena":
             name = str(data['value'][0])

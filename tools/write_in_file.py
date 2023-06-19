@@ -5,7 +5,21 @@ Module pour ajouter le texte markdown au bon endroit.
 import os
 from typing import List
 
-def add_text(fichier, texte_a_ajouter, texte_repere):
+def add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
+    """
+    This function write a new content in a file, replaceb thanks to an identified text 'text_repere'
+    Parameters
+    ---------
+    fichier : str
+    texte_a_ajouter : str
+    test_repere : str
+
+    
+    Return
+    ---------
+    None
+    """
+    # on crée une nouvelle liste pour récupérer le nouveau contenu
     new_contenu = []
     # Lire le contenu existant du fichier
     with open(fichier, 'r') as f:
@@ -22,36 +36,50 @@ def add_text(fichier, texte_a_ajouter, texte_repere):
         return
 
     # on récupère l'index du repère 
-    ## crée nouvelle liste !!! + bsimple sinon impossible  
     get_index_lang = contenu.index(texte_repere)
     
 
+    # ajouter le contenu dans la nouvelle liste, identique à l'ancien document jusqu'au texte repère
     for i in range(get_index_lang):
         new_contenu.append(contenu[i])
 
 
+    # on met le texte à ajouter sous forme de liste
     new_text = texte_a_ajouter.split("\n")
 
     # for element in new_text:
     #     print(f"element :{element}" )
 
+    # on ajoute le nouveau texte dans la nouvelle liste sauvegardant le nouveau document
     for element in new_text:
         new_contenu.append(f"{element}\n")
-        #print(f"element :{element}" )
 
+    # je sais plus
     if new_text[0] != texte_repere:
         new_text.pop(0)
 
-    
+    # et on ajoute le reste de l'ancien contenu
     for i in range(get_index_lang+7,len(contenu)):
         new_contenu.append(contenu[i])
-
-    #print(new_contenu)           
+         
     #Écrire le contenu modifié dans le fichier
     with open(fichier, 'w') as f:
         f.writelines(new_contenu)
 
 def add_text_check(fichier, texte_a_ajouter, texte_repere):
+    """
+    This function write a new content in a file, replaced thanks to an identified text 'text_repere'. This function is used only to change the guideline's status
+    Parameters
+    ---------
+    fichier : str
+    texte_a_ajouter : str
+    test_repere : str
+
+    
+    Return
+    ---------
+    None
+    """
     # Lire le contenu existant du fichier
     with open(fichier, 'r') as f:
         contenu = f.readlines()
@@ -79,23 +107,38 @@ def add_text_check(fichier, texte_a_ajouter, texte_repere):
     with open(fichier, 'w') as f:
         f.writelines(contenu)
 
-def parcourir_arborescence(repertoire,langue):
+def parcourir_arborescence(repertoire:str,langue:str)->int:
+    """
+    This function allows traversing a file/directory tree to count the number of properly filled pages for the general guidelines of a given language
+    Parameters
+    ---------
+    repertoire : str
+    langue : str
+
+    Return
+    ---------
+    int
+    """
     nombre_fichiers = 0  # Variable pour compter les fichiers
     nombre_todo = 0 # recup TODO information
+    # parcourir arborescence 
     for dossier_racine, sous_repertoires, fichiers in os.walk(repertoire):
         for fichier in fichiers:
             if fichier.startswith("_"):
                 pass
             else:
                 chemin_fichier = os.path.join(dossier_racine, fichier)
-                #print(chemin_fichier)
+                # on lit le contenu du fichier
                 contenu_fichier = lire_contenu_fichier(chemin_fichier)
-                #print(contenu_fichier)
+                # on compte le nb de fichier
                 nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
+                # on récupère l'endroit du fichier correspondant à la langue cible
                 index = contenu_fichier.index(f"## {langue}\n")
+                # si le fichier n'est pas rempli, on incrémente la variable
                 if contenu_fichier[index+2] == "TODO\n":
                     nombre_todo = nombre_todo +1
                     #print(f"Le fichier '{fichier}' est à rédiger.")
+    # on retourne l'information sous forme de %
     if nombre_fichiers == nombre_todo:
         if nombre_todo == 0:
             return 100
@@ -105,7 +148,18 @@ def parcourir_arborescence(repertoire,langue):
         return round((1-nombre_todo/nombre_fichiers)*100,2)
 
 
-def lire_contenu_fichier(chemin_fichier):
+def lire_contenu_fichier(chemin_fichier:str)->list:
+    """
+    This functions reads a file's content and return it in a list
+    Parameters
+    ---------
+    repertoire : str
+    langue : str
+
+    Return
+    ---------
+    int
+    """
     with open(chemin_fichier, 'r') as file:
         contenu = file.readlines()
     return contenu
@@ -113,7 +167,18 @@ def lire_contenu_fichier(chemin_fichier):
 
 import os
 
-def check_env(dossier_racine):
+def check_env(dossier_racine:str)->bool:
+    """
+    This function check if the environement for a language is right 
+    Parameters
+    ---------
+    repertoire : str (name of a language)
+
+
+    Return
+    ---------
+    boolen
+    """
     v = True
     sous_dossiers = ['corpora', f'{dossier_racine}_page', f'{dossier_racine}_request_json', f'{dossier_racine}_table_json',"output"]
 
@@ -133,15 +198,32 @@ def check_env(dossier_racine):
     return v
 
 
-def read_partial_markdown(filename):
+def read_partial_markdown(filename:str)->str:
+    """
+    This function reads the starts of a markdown files (only the first second title), and return the content
+    Parameters
+    ---------
+    filename : str
+
+    Return
+    ---------
+    str
+    """
     with open(filename, "r", encoding="utf-8") as file:
+        # lecture du contenu du fichier
         contents = file.read()
+        # contenu sous forme de liste (element = ligne)
         lines = contents.split("\n")
+        # nouvelle liste pour output
         output_lines = []
+        # variable pour compter sous titre
         subheading_count = 0
+        # exclure les métadonnées
         exclude_metadata = False
+        # exclure les balises pour les conlls
         exclude_code_block = False
 
+        # on exclut les méta données
         for line in lines:
             if line.strip() == "---":
                 exclude_metadata = not exclude_metadata
@@ -149,7 +231,7 @@ def read_partial_markdown(filename):
             
             if exclude_metadata:
                 continue
-            
+            # on éclut les conlls
             if line.startswith("{{<"):
                 exclude_code_block = True
                 continue
@@ -160,14 +242,17 @@ def read_partial_markdown(filename):
             if exclude_code_block:
                 continue
             
+            # on ajoute seulement les lignes
             output_lines.append(line)
 
+            # on s'arrête avant le début du deuxième titre (de niveau 2 ##)
             if line.startswith("##"):
                 subheading_count += 1
                 if subheading_count == 2:
                     break
 
         output = "\n".join(output_lines)
+        # on retourn la variable sous forme de string
         return output
 
 

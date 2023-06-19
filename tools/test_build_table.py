@@ -5,8 +5,26 @@ import argparse
 import sys
 import json
 from grewpy import Request, Corpus, set_config
+from typing import List
 
-def process_files(request_file, corpora_file):
+"""
+Module to use the script build_ad-grid_table.py as a function. See build_agg-grid_table.py for more informations.
+"""
+
+def process_files(request_file:str, corpora_file:str)->str:
+    """
+    This function create a JSON file which contain the information for the table's creation 
+    Parameters
+    ---------
+    reques_file : str
+        JSON 
+    corpora_file str
+        JSON 
+    
+    Return
+    ---------
+    JSON 
+    """
     with open(request_file, "rb") as f:
         grew_requests = { x["id"]: Request.from_json(x["request"]) for x in json.load(f) }
 

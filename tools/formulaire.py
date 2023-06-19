@@ -7,7 +7,7 @@ import os
 from write_in_file import add_text, parcourir_arborescence, check_env, add_text_check, read_partial_markdown
 from streamlit_extras.stoggle import stoggle
 from streamlit_extras.mention import mention
-
+import re
 
 st.title("Formular to help the guideline's writting")
 
@@ -25,7 +25,7 @@ from streamlit_extras.echo_expander import echo_expander
 liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON','PROPN','INTJ','ADP','NUM','PART','PUNCT','NOUN']
 list_of_deprel = ['comp','comp:aux','comp:pred','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
 list_of_deep = ["pass","relcl","tense","x","caus","name","agent","emb","lvc","foreign","expl"]
-particular_phenomena_check = ['numeral','coordination','comparative_construction','disfluency','reported_speech']
+particular_phenomena_check = ['numeral','coordination','comparative construction','disfluency','reported speech']
 liste_of_features=["Number","Gender","Mood","Person","Polarity","Tense","VerbForm","Shared","Subject"]
 liste_of_misc=["CorrectForm","ExtPos","Idiom_Titles","Typo","Reported","Word_TextForm"]
 
@@ -55,6 +55,14 @@ def add_answer():
     st.session_state.answers = answers
 
 
+def verifier_chaine(chaine):
+    pattern = r'^[a-zA-Z0-9\s]+$'
+    if re.match(pattern, chaine):
+        return True
+    else:
+        return False
+
+
 st.title("Begining of the script")
 
 # Formular -> different question for each tag
@@ -75,9 +83,10 @@ tag = st.radio("What do you want to documentate ? ", ('Syntactic relation','Morp
 if tag == 'Universal construction':
 
     tag = 'Universal_construction'
+    # list 
+    particular_phenomena_check = ['numeral','coordination','comparative_construction','disfluency','reported_speech']
     # which particular construction 
     which_phenm = st.multiselect(f'wich particular construction do you want to documente in your language ?', particular_phenomena_check)
-
     which_phenm_str = ", ".join(which_phenm)
     if which_phenm:
         explaination = read_partial_markdown(f"../content/docs/general_guideline/{tag}/{which_phenm_str}.md")
@@ -291,13 +300,16 @@ if tag == "Other linguistic phenomena":
     # dict to get the upos that can have the features? 
     upos_value = {}
 
-    # name of the features
+    # name of the linguistic phenomena
     ling = st.text_input(f"What is the linguistic phenomena ? ")
 
-    if ling in particular_phenomena_check:
-        st.write("You have to write your phenomena in the 'particular_phenomena' section because a page already exists\n Please change.")
-    else:
+    if ling.lower() in particular_phenomena_check:
+        st.write("You have to write your phenomena in the Universel Construction section because a page already exists\n Please change.")
 
+    if  verifier_chaine(ling) == False:
+        st.write("You can only have letter or number in the linguistic phenomena's name\n Please change.")
+        
+    else:
         # short description of the features
         overview = st.text_area(f"Can you give a short description of the linguistic phenomena {ling} in your language ? ",height=200) 
         

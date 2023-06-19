@@ -38,9 +38,9 @@ echo "Les sous-dossiers suivants ont été créés :"
 ls -l
 
 cd .. 
-echo "Je suis ici après avoir crée les sous-dossiers" 
-pwd
-
+# echo "Je suis ici après avoir crée les sous-dossiers" 
+# pwd
+echo -e "#####################\nVous vous trouvez ici pour donner le chemin relatif à votre fichie\n########################"
 cd "$folder_name"/corpora
 pwd
 
@@ -65,10 +65,10 @@ done
 
 # Se déplace dans le dossier principal
 cd ..
-echo -e "#################################################################################################"
-echo -e "############\n Je suis ici après avoir donné les noms des dossiers treebanks \n ################"
-pwd
-echo -e "#################################################################################################"
+# echo -e "#################################################################################################"
+# echo -e "############\n Je suis ici après avoir donné les noms des dossiers treebanks \n ################"
+# pwd
+# echo -e "#################################################################################################"
 
 # Génère le contenu du fichier JSON
 json_content='{

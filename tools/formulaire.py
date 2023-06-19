@@ -393,10 +393,13 @@ if st.button('Enregistrer au format JSON'):
                 new_path = f"../static/docs/general_guideline/{tag}/comp/{named}/table_output_{str(language).lower()}_{named}.json"
 
             if named.startswith("conj"):
-                new_path = f"../static/docs/general_guideline/{tag}/comp/{named}/table_output_{str(language).lower()}_{named}.json"
+                new_path = f"../static/docs/general_guideline/{tag}/conj/{named}/table_output_{str(language).lower()}_{named}.json"
 
-            if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
+            if named == "discourse" or named == "dislocated" or named =="vocative":
                 new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/{named}/table_output_{str(language).lower()}_{named}.json"
+
+            if named.startswith("parataxis"):
+                new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}/table_output_{str(language).lower()}_{named}.json"
             
             # on bouge les fichiers table.json
             os.rename(old_path,new_path)
@@ -418,16 +421,22 @@ if st.button('Enregistrer au format JSON'):
 
             if named.startswith("comp"):
                 if f"../content/docs/general_guideline/{tag}/comp/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+                    add_text(f"../content/docs/general_guideline/{tag}/comp/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
 
             if named.startswith("conj"):
                 if f"../content/docs/general_guideline/{tag}/conj/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+                    add_text(f"../content/docs/general_guideline/{tag}/conj/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
                         
-            if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
+            if named == "discourse" or named == "dislocated" or named =="vocative":
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+
+            if named.startswith("parataxis"):
+                if f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+               
+        
         st.write("guideline's page has been written.")
 
         
@@ -483,11 +492,16 @@ if st.button('Enregistrer au format JSON'):
                 if f"../content/docs/general_guideline/{tag}/conj/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
                         
-            if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
+            if named == "discourse" or named == "dislocated" or named =="vocative":
                 if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+
+            if named.startswith("parataxis"):
+                if f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+               
         st.write("guideline's page has been written.")
-        
+
         # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
         if tag == "Other linguistic phenomena":
             name = str(data['value'][0])
@@ -499,7 +513,6 @@ if st.button('Enregistrer au format JSON'):
 
         st.write("Vous pouvez quitter le formulaire")
     
-
+    #mis à jour du statu des guidelines
     get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
-    #print(get_percent_to_write)
     add_text_check(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")

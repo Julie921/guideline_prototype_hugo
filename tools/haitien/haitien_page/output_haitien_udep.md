@@ -1,96 +1,3 @@
----
-title: "udep"
-weight: 1
-# bookFlatSection: false
-bookToc: true
-# bookHidden: false
-# bookCollapseSection: true
-# bookComments: false
-# bookSearchExclude: false
----
-
-# Udep
-
-The `udep` relation is used for complements when one does not wish to or is unable to distinguish between arguments and modifiers. This relationship can notably be used in cases where the complement's relationship with its governor is ambiguous. When there is little debate about the nature of the relationship, the more specific label is preferred.
-
-
->pattern { GOV-[udep]->DEP} 
-
-The governor and the dependent of a `udep` relation can have any POS. The `udep` relation is frequently given to the complements of nouns, since it is generally more difficult to distinguish between arguments and modifiers for nouns than it is for verbs.
-
-  
-
-As shown in the [correspondences between SUD and UD](../../../../_index.md#correspondences-between-ud-and-sud), the `udep` label is used while automatically converting an `obl` label from a UD annotation. This is because `obl` can correspond to both `comp:obl` and `mod` in SUD.
-
-  
-> English
-{{< conll >}}
-
-1   An  a   DET _   _   2   det _   _
-
-2   act act NOUN    _   _   0   root    _   _
-
-3   of  of  ADP _   _   2   udep    _   _
-
-4   creation    creation    NOUN    _   _   3   comp:obj    _   _
-
-{{< /conll >}}
-
-  
-> English
-{{< conll >}}
-
-1   She she PRON    _   _   2   subj    _   _
-
-2   smiles  smile   VERB    _   _   0   root    _   _
-
-3   at  at  ADP _   _   2   udep    _   _
-
-4   this    this    DET _   _   5   det _   _
-
-5   discomfiture    discomfiture    NOUN    _   _   3   comp:obj    _   _
-
-{{< /conll >}}
-
-  
-
-> Spanish
-{{< conll >}}
-
-# text_es = Ficha de Juanjo Ciércolen en Don Balón
-
-# text_en = File of Juan Ciércoles in Don Balón
-1   Ficha   ficha   PRON    _   _   0   root    _   Gloss=file
-
-2   de  de  ADP _   _   1   udep    _   Gloss=of
-
-3   Juanjo  juanjo  PROPN   _   _   2   comp:obl    _   Gloss=Juanjo
-
-4   Ciércoles   ciércoles   PROPN   _   _   3   flat    _   Gloss=Ciércoles
-
-5   en  en  ADP _   _   1   udep    _   Gloss=in
-
-6   Don don PROPN   _   _   5   comp:obj    _   Gloss=Don
-
-7   Balón   balón   PROPN   _   _   6   appos   _   Gloss=Balón
-
-{{< /conll >}}
-
-
-
-
-## french
-
-TODO
-### Overview
-
-### Specific Pattern
-
-
-
-
-
-
 ## haitien
 
 ### Overview
@@ -140,7 +47,45 @@ TODO
 38	.	. 	PUNCT	_	_	1	punct	_	_
 {{</conll>}}
 
- 
+### Specific Pattern
+
+#### Causative construction with [ADP](docs/general_guideline/Upos/ADP.md) governor 
+
+- Description: In Haitian Creole a causative construction can be expressed with [ADP](docs/general_guideline/Upos/ADP.md) in the role of the root instead of a [VERB](docs/general_guideline/Upos/VERB.md) or an [AUX](docs/general_guideline/Upos/AUX.md). Then the governor of the [subj](docs/general_guideline/Syntactic_relations/subj/subj.md) is en [ADP](docs/general_guideline/Upos/ADP.md).
+
+- Pattern: GOV -[subj]-> DEP; GOV[upos=ADP]
 
 
+{{<conll>}}
+# sent_id = my_sample__10
+# text = Batay ant gang yo pou kontwòl teritwa lakoz anpil san koule epi plizyè santèn milye moun oblije kouri kite kay yo.
+# text_fr = La lutte entre les gangs pour le contrôle des territoires  a fait couler beaucoup de sang et plusieurs  centaines de gens sont obligés de courir en laissant leur maison.
+1	Batay	Batay 	NOUN	_	_	8	subj	_	Gloss=Lutte
+2	ant	ant 	ADP	_	_	1	udep	_	Gloss=entre
+3	gang	gang	NOUN	_	_	2	comp:obj	_	Gloss=gangs
+4	yo	yo	DET	_	Definite=Def|Number=Plur	3	det	_	Gloss=les
+5	pou	pou	ADP	_	_	1	udep	_	Gloss=pour
+6	kontwòl	kontwòl	NOUN	_	_	5	comp:obj	_	Gloss=contrôle
+7	teritwa	teritwa 	NOUN	_	_	6	comp:obj	_	Gloss=territoire
+8	lakoz	lakoz	ADP	_	_	0	root	_	Gloss=à cause
+9	anpil	anpil	ADJ	_	_	10	mod	_	Gloss=beacoup
+10	san	san	NOUN	_	_	8	comp:obj	_	Gloss=sang
+11	koule	koule	VERB	_	Number=Sing|Person=3|Tense=Pres	8	comp:pred	_	Gloss=coulé
+12	epi	epi	CCONJ	_	_	17	cc	_	Gloss=et
+13	plizyè	plizyè	ADV	_	_	14	det	_	Gloss=plusieurs
+14	santèn	santèn	NUM	_	_	17	subj	_	Gloss=centaine
+15	milye	milye	NUM	_	_	14	comp:obj	_	Gloss=milliers
+16	moun	moun	NOUN	_	_	15	comp:obj	_	Gloss=gens
+17	oblije	oblije	VERB	_	Number=Plur|Person=3|Tense=Pres	8	conj:coord	_	Gloss=obliger
+18	kouri	kouri	VERB	_	VerbForm=Inf	17	comp:obl	_	Gloss=courir
+19	kite	kite 	VERB	_	VerbForm=Inf	18	compound:svc	_	Gloss=quitter
+20	kay	kay	NOUN	_	_	19	comp:obj	_	Gloss=maisons
+21	yo	yo	DET	_	Number=Plur|Person=3|Poss=Yes	20	det	_	Gloss=PRON|SpaceAfter=No
+22	.	.	PUNCT	_	_	8	punct	_	_
+{{</conll>}}
 
+#### Tables
+
+ Here is the table where you can find the pattern in the treebanks.
+
+{{< agg table_output_haitien_udep >}}

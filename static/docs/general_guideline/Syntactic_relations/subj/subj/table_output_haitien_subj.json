@@ -16,15 +16,15 @@
       "lockPinned": true
     },
     {
-      "field": "recipient",
-      "headerName": "recipient",
-      "request": "pattern {GOV -[comp:obj@R]-> DEP}"
+      "field": "Causative_construction_with_ADP_governor",
+      "headerName": "Causative_construction_with_ADP_governor",
+      "request": "pattern {GOV -[subj]-> DEP;GOV[upos=ADP]}"
     }
   ],
   "rowData": [
     {
       "row_header": "SUD_Haitian_Creole-Autogramm@latest",
-      "recipient": 2
+      "Causative_construction_with_ADP_governor": 2
     }
   ]
 }

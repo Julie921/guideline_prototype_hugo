@@ -1,0 +1,1 @@
+[{"id": "Causative_construction_with_ADP_governor", "request": [{"pattern": ["GOV -[subj]-> DEP; GOV[upos=ADP]"]}]}]

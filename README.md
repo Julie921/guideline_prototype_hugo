@@ -21,3 +21,16 @@ git submodule update
 ## Writings in guidelines
 
 You have the option to add information directly in the guideline or utilize the various tools provided in the "tools" folder. More information about these tools can be found within the same folder.
+
+## Visualisation 
+
+In order to check your work before adding your modification, you can do the following command at the root of the directory :
+
+```
+hugo server
+```
+
+And then go to :
+
+```
+ http://localhost:1313/

@@ -40,6 +40,7 @@ def add_answer():
     # texts zone for the answers
     name = st.text_input("Name")
     pattern = st.text_input('Pattern')
+    st.markdown(":warning: :red[Syntax example for the pattern: 'GOV-[deprel]->DEP'] :warning:")
     descr = st.text_area('Description',height=200)
     example = st.text_area('Example (conll)',height=200)
 
@@ -161,7 +162,7 @@ if tag == 'Morphological features' or tag =="Lexical features":
             combos = combo_value_feats.split(";")
             upos_value[which_upos[i]] = combos
         
-        # THe user can add some pattern to describe in his page 
+        # The user can add some pattern to describe in his page 
         add_pattern = st.radio("Du you want to describe some specifs patterns ? ",('Yes','No'))
         if add_pattern == "Yes":
             st.write("Describe your pattern")

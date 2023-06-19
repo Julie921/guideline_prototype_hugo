@@ -87,14 +87,14 @@ jobs:
       - name: Install grewpy python lib
         run: pip3 install grewpy --upgrade
         
-      - name: Vérifier le chemin de grewpy_backend
-        run: echo "import grewpy" | python3
+    #  - name: Vérifier le chemin de grewpy_backend
+    #    run: echo "import grewpy" | python3
 
-      - name: Lancer le script update_tables
-        run: |
-          cd tools
-          ls 
-          python3 update_tables.py
+   #   - name: Lancer le script update_tables
+    #    run: |
+     #     cd tools
+    #      ls 
+     #     python3 update_tables.py
 
         
         

@@ -1,29 +1,3 @@
----
-title: "DET"
-weight: 1
-# bookFlatSection: false
-# bookToc: true
-# bookHidden: false
-# bookCollapseSection: false
-# bookComments: false
-# bookSearchExclude: false
----
-
-## Universal
-
-
-## french
-
-TODO
-### Overview
-
-### Specific Pattern
-
-
-
-
-
-
 ## haitien
 
 ### Overview
@@ -122,7 +96,3 @@ TODO
  Here is the table where you can find the pattern in the treebanks.
 
 {{< agg table_output_haitien_DET >}}
- 
-
-
-

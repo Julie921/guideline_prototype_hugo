@@ -1,0 +1,1 @@
+[{"id": "direct_object_complement_-_recipient", "request": [{"pattern": ["GOV-[comp:obj@R]->DEP"]}]}, {"id": "direct_object_complement_-_theme", "request": [{"pattern": ["GOV-[comp:obj@T]->DEP"]}]}]

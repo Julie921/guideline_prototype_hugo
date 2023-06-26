@@ -588,7 +588,6 @@ if st.button('Enregistrer au format JSON'):
 
                 st.markdown("## Writting the guideline's page")
                 st.write("guideline's page writting...")
-                st.write(which_strat)
                 # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
                 if f"../content/docs/general_guideline/{tag}/{named}.md":
                         content = []
@@ -601,7 +600,22 @@ if st.button('Enregistrer au format JSON'):
                 st.write("guideline's page has been written.")
                         # repere = content.index(which_str)
                         # add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-    
+            # S'il n'y pas de pattern specific pour construire les tables, on enlève une étape et on utilise une autre fonction de json2md.py
+
+        if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
+
+            st.write("Ecriture du fichier markdown dans le sous dossier langue/langue_page/")
+            # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
+            md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
+            #md_output = add_link("links.csv",md_output)
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+                f.write(md_output)
+            
+            st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
+            # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
+            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
+                if f"../content/docs/general_guideline/{tag}/{named}.md":
+                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
     
     
     

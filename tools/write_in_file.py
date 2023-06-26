@@ -66,6 +66,68 @@ def add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
     with open(fichier, 'w') as f:
         f.writelines(new_contenu)
 
+
+def univ_add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
+    """
+    This function write a new content in a file, replaceb thanks to an identified text 'text_repere'
+    Parameters
+    ---------
+    fichier : str
+    texte_a_ajouter : str
+    test_repere : str
+
+    
+    Return
+    ---------
+    None
+    """
+    # on crée une nouvelle liste pour récupérer le nouveau contenu
+    new_contenu = []
+    # Lire le contenu existant du fichier
+    with open(fichier, 'r') as f:
+        contenu = f.readlines()
+
+
+    # Rechercher le texte de repère dans le contenu
+    try:
+        index = contenu.index(texte_repere)
+    except ValueError:
+        print("Le texte de repère n'a pas été trouvé dans le fichier.")
+        # with open(fichier, 'w') as f:
+        #     f.writelines(contenu)
+        return
+
+    # on récupère l'index du repère 
+    get_index_lang = contenu.index(texte_repere)
+    
+
+    # ajouter le contenu dans la nouvelle liste, identique à l'ancien document jusqu'au texte repère
+    for i in range(get_index_lang+1):
+        new_contenu.append(contenu[i])
+
+
+    # on met le texte à ajouter sous forme de liste
+    new_text = texte_a_ajouter.split("\n")
+
+    # for element in new_text:
+    #     print(f"element :{element}" )
+
+    # on ajoute le nouveau texte dans la nouvelle liste sauvegardant le nouveau document
+    for element in new_text:
+        new_contenu.append(f"{element}\n")
+
+    #je sais plus
+    if new_text[0] != texte_repere:
+        new_text.pop(0)
+
+    # et on ajoute le reste de l'ancien contenu
+    for i in range(get_index_lang+1,len(contenu)):
+        new_contenu.append(contenu[i])
+         
+    #Écrire le contenu modifié dans le fichier
+    with open(fichier, 'w') as f:
+        f.writelines(new_contenu)
+
 def add_text_check(fichier, texte_a_ajouter, texte_repere):
     """
     This function write a new content in a file, replaced thanks to an identified text 'text_repere'. This function is used only to change the guideline's status

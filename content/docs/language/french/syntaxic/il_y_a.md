@@ -13,9 +13,15 @@ bookToc: true
 
 There are three possible annotation for `il y a` in french : 
 
-## `Il y a` as an ADP 
+- Il y a as an adposition
+- Il y a as an expletive construction
+- Il y a as a locativ pronoun
 
-Sometimes, `il y a` is used to express a temporal argument 
+## `Il y a` as an adposition
+
+Sometimes, `il y a` is used to express a temporal argument. 
+
+pattern : N1 [form="il"]; N2 [lemma="y"]; N3 [lemma="avoir"]; N1 << N2; N2 << N3 ; N3-[comp]->N2 ; N3-[subj]-> N1
 
 {{< conll >}}
 # text = vous y étiez il y a pas longtemps.
@@ -34,6 +40,10 @@ Sometimes, `il y a` is used to express a temporal argument
 
 ## `Il y a` as an expletive construction 
 
+Sometimes, `il y a` is used to express an expletive construction. 
+
+pattern : N1 [form="il"]; N2 [lemma="y"]; N3 [lemma="avoir"]; N1 << N2; N2 << N3 ; N3-[comp@expl]->N2 ; N3-[subj@expl]-> N1
+
 {{< conll >}}
 # text = il y a pas de problème.
 1	il	il	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Prs	3	subj@expl	_	_
@@ -47,6 +57,11 @@ Sometimes, `il y a` is used to express a temporal argument
 
 
 ## `Il y a` with `y` as a locativ pronoun 
+
+Sometimes, the `y` is a locativ pronoun which express a location in the `il y a` expression 
+
+pattern : N1 [form="il"]; N2 [lemma="y"]; N3 [lemma="avoir"]; N1 << N2; N2 << N3 ; N3-[mod]->N2 ; N3-[subj]-> N1
+
 
 {{< conll >}}
 # text = Il a aussi beaucoup travaillé en Allemagne, il y a réalisé par exemple le nouvel hôtel de ville de Mayence, l'entrée du Hannover Concert Hall et le pavillon administratif de la centrale électrique d'Hambourg.

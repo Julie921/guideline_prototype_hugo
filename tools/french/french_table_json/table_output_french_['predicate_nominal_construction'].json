@@ -1,0 +1,38 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "reght",
+      "headerName": "reght",
+      "request": "pattern {GOV-[subj]->DEP}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "reght": 19005
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "reght": 3978
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "reght": 3427
+    }
+  ]
+}

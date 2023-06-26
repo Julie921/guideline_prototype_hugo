@@ -5,11 +5,25 @@ This repertory some tools to help the generation of the guidelines. You will fin
 # Script for writing the guidelines
 
 You can find the scripts in the sub repertory `generation_guideline`. You will find : 
+- `new_language.sh` which creates the needed environement to use the tools below.
 - `formulaire.py` which requires streamlit. This formular will help you write your page.  
 - `create_request_from_json` : this script will create a request file in JSON with the pattern specified in the formular. You will then use the script to produce the table.
 - `json2md.py`: this script will transform the json file from the formular to a markdown file. You will need the JSON file from the formular and the table JSON file. 
 
+## new_language.sh
+
+In this script, you'll have to indicate your language (name) and the path to your data (folder with your treebank). It will produce the following foldder in `tools`:
+- language
+  - corpora : it contain your data
+  - language_page : it will save your guideline's page (.md)
+  - language_request_json : it will save your .json request file 
+  - language_table_json : it will save your .json table file 
+  - output : it will save your answer to the formualir (.json format)
+All this folder are needed to use the formulaire script below. 
+
 ## formulaire.py 
+
+Be sure to have the right environment before using the formulaire.
 
 This script requires : 
 - streamlit 

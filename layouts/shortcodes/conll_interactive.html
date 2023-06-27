@@ -1,10 +1,12 @@
-<reactive-dep-tree
-  shown-metas="text_en"
-  shown-features="UPOS,LEMMA,FEATS.Tense,FEATS.VerbForm,FEATS.Number,FEATS.Person,MISC.Gloss,FEATS.ExtPos,FEATS.Idiom,FEATS.Title,FEATS.InIdiom,FEATS.InTitle,MISC.Reported"
-  hidden-features="XPOS"
-  interactive
-  conll="
-    {{.Inner}}
-  "
->
-</reactive-dep-tree>
+<div style="background-color: #fdf8ed; border-radius: 10px; padding: 10px; margin: 15px 0;">
+  <reactive-dep-tree
+    shown-metas="text_en,pinyin"
+    shown-features="UPOS,LEMMA,FEATS.Tense,FEATS.VerbForm,FEATS.Number,FEATS.Person,MISC.Gloss,FEATS.ExtPos,FEATS.Idiom,FEATS.Title,FEATS.InIdiom,FEATS.InTitle,MISC.Reported"
+    hidden-features="XPOS"
+    interactive
+    conll="
+      {{.Inner}}
+    "
+  >
+  </reactive-dep-tree>
+</div>

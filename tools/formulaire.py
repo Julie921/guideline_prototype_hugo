@@ -75,7 +75,7 @@ language = st.text_input('Name of the language')
 
 
 # Get the type of page that the user want to write. 
-tag = st.radio("What do you want to documentate ? ", ('Syntactic relation','Morphological features','Lexical features','Part of Speech','Other linguistic phenomena','Deep relation tag','Universal construction'))
+tag = st.radio("What do you want to documentate ? ", ('Syntactic relation','Morphological features','Additional features','Part of Speech','Other linguistic phenomena','Deep relation tag','Universal construction'))
 
 
 ##################################################################################
@@ -141,7 +141,7 @@ if tag == 'Universal construction':
 ##################################################################################
 
 # Different type of page
-if tag == 'Morphological features' or tag =="Lexical features":
+if tag == 'Morphological features' or tag =="Additional features":
     """
     Text zone to write the a Feature's or Misc's page for the guideline. 
     """
@@ -153,7 +153,7 @@ if tag == 'Morphological features' or tag =="Lexical features":
     if tag =='Morphological features':
         tag = 'Features'
         feats = st.multiselect(f'Choose the features ?', liste_of_features)
-    if tag =="Lexical features":
+    if tag =="Additional features":
         tag = "MISC"
         feats = st.multiselect(f'Choose the features ?', liste_of_misc)
 

@@ -34,3 +34,14 @@ Example :
 ## Verbal strategy
 
 
+## TODO 
+
+### Haitien
+
+Overview :
+
+Pattern : 
+
+Example : 
+
+

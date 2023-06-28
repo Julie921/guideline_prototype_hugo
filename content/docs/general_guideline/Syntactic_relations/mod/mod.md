@@ -9,7 +9,10 @@ bookToc: true
 # bookSearchExclude: false
 ---
 
-# mod
+# mod 
+
+## Universal 
+
 
 The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, auxiliaries, adpositions and conjunctions.
 
@@ -24,7 +27,7 @@ The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, a
 > pattern { e : GOV-[1=mod]->DEP }
   
 > English
-{{< conll >}}
+{{<conll>}}
 1   a   a   DET _   _   2   det _   _
 2   country country NOUN    _   _   0   root    _   _
 3   with    with    ADP _   _   2   mod _   _
@@ -33,11 +36,11 @@ The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, a
 6   different   different   ADJ _   _   8   mod _   _
 7   language    language    NOUN    _   _   8   compound    _   _
 8   groups  group   NOUN    _   _   3   comp:obj    _   _
-{{< /conll >}}
+{{</conll>}}
 
   
 > English
-{{< conll >}}
+{{<conll>}}
 1   Even    even    ADV _   _   2   mod _   _
 2   when    when    SCONJ   _   _   8   mod _   _
 3   he  he  PRON    _   _   4   subj    _   _
@@ -47,10 +50,10 @@ The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, a
 7   he  he  PRON    _   _   8   subj    _   _
 8   pitied  pity    VERB    _   _   0   root    _   _
 9   him he  PRON    _   _   8   comp:obj    _   _
-{{< /conll >}}
+{{</conll>}}
 
 > French
-{{< conll >}}
+{{<conll>}}
 # text = Cerebral concussions have become so commun in this sport that one can consider them the routine.
 1   Les le  DET _   Definite=Def|Gender=Fem|Number=Plur|PronType=Art    2   det _   Gloss=the
 2   commotions  commotion   NOUN    _   Gender=Fem|Number=Plur  4   subj    _   Gloss=concussions
@@ -71,17 +74,7 @@ The `mod` relation is used for modifiers of verbs, nouns, adjectives, adverbs, a
 17  la  le  DET _   Definite=Def|Gender=Fem|Number=Sing|PronType=Art    18  det _   Gloss=the
 18  routine routine NOUN    _   Gender=Fem|Number=Sing  16  comp:obj    _   Gloss=routine
 19  .   .   PUNCT   _   _   4   punct   _   .
-{{< /conll >}}
-
-
-## french
-
-### Overview
-
- this is a fancy description. Does it work ??????
-
-
-
+{{</conll>}}
 
 
 

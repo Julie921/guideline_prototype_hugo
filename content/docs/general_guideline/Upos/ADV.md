@@ -9,9 +9,9 @@ bookToc: true
 # bookSearchExclude: false
 ---
 
-# ADVERBE
+#  Adverb  
 
-## Universal
+##  Universal  
 
 *Definition from [UD website](https://universaldependencies.org/u/pos/ADV.html)*
 

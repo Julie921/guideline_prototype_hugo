@@ -10,7 +10,12 @@ bookToc: true
 ---
 
 
-# conj:dicto
+# conj:dicto 
+
+
+
+## Universal 
+
 
 This relation is used to indicate difluencies when a speaker corrects his speech and to analyse reformulations. The relation `conj:coord` is used to link two different objects, two referants (ex: *Mary and John* are two different referents). The relation `conj:dicto` on the other hand is used to link two denotations of the same referent (ex: *the desert in Kenya, the Kenya desert* is denoting the same referant).
 
@@ -19,8 +24,7 @@ The ability of `conj:dicto` to anlyse both disfluencies and reformulations is th
 >[!tip]
 > pattern { GOV-[conj:dicto]->DEP }
 
-<!-- tabs:start -->
-#### **French 1**
+> **French 1**
 {{< conll >}}
 \# text_fr = puisque les les les les c~ les capitales les grandes villes ne me disaient rien du tout
 \# text_en = since I didn't know anything at all about the the the the c ~ the capitals the big cities
@@ -45,7 +49,7 @@ The ability of `conj:dicto` to anlyse both disfluencies and reformulations is th
 18  tout    tout    ADV _   _   16  comp:obj    _   Gloss=all
 {{< /conll >}}
 
-#### **French 2**
+> **French 2**
 {{< conll >}}
 \# sent_id = ParisStories_2019_stagePrimaire_15
 \# text_fr = j'ai j'ai vraiment adoré ce côté là .
@@ -62,7 +66,7 @@ The ability of `conj:dicto` to anlyse both disfluencies and reformulations is th
 10  .   .   PUNCT   _   _   _   _   _   _
 {{< /conll >}}
 
-#### **Naija**
+> **Naija**
 {{< conll >}}
 \# sent_id = JOS_10_Mothers-Against-Mini-Skirts_DG__79
 \# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/JOS_10_Mothers-Against-Mini-Skirts_DG.mp3
@@ -84,7 +88,7 @@ The ability of `conj:dicto` to anlyse both disfluencies and reformulations is th
 12  o   o   PART    _   PartType=Disc   11  mod:emph    _   AlignBegin=146600|AlignEnd=146888|Gloss=EMPH|Lang=en
 13  //  //  PUNCT   _   _   2   punct   _   AlignBegin=146888|AlignEnd=146888|Gloss=PUNCT
 {{< /conll >}}
-<!-- tabs:end -->
+
   
 
 Note that `conj:dicto` (SUD) considers the first element as the head of the next one, while `reparandum` (UD) considers these constructions as reparations and considers the last element as head.
@@ -94,8 +98,7 @@ This is because UD relies more on the semantics - it is the last element that ho
 This may result in some incoherencies. Note the following example. In this sentence we have two options of annotation. We can annotate the *é~* with an unknown POS (`X`). In that case `X` is the head of a `subj` relation which is undesirable (only `VERB` and `AUX` should be head of a `subj` relation). The other option would be to guess the POS and lemma of the unfinished word with the risk of guessing it wrong. In our case the token *é~* would be annotated with the lemma *être* and POS `AUX`. In this scenario, *é~* becomes part of the paradigm of the conjugated verb *être* which is also undesirable.
 
 In SUD we decided to adopt the following analysis.
-<!-- tabs:start -->
-#### **French**
+> **French**
 {{< conll >}}
 \# text_fr = C' é~ c' était vraiment
 \# text_en = It w~ it was really
@@ -105,7 +108,7 @@ In SUD we decided to adopt the following analysis.
 4   était   être    AUX conj:reform Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin    2   conj:dicto  _   Gloss=was
 5   vraiment    vraiment    ADV _   _   4   mod _   Gloss=really
 {{< /conll >}}
-<!-- tabs:end -->
+
   
 For more examples on disfluencies, you can refer to [this page](../../Particular_construction/disfluency.md).
 

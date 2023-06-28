@@ -21,7 +21,7 @@ They may repeat a word until they find the right one, or they may try with one w
 To analyse constructions of repetition or reformulation, we use the relation `[conj:dicto](../Syntactic_relations/conj/conj_dicto.md)`.
 
 > French   
-{{< conll >}}
+{{<conll>}}
 # text = Euh, et c'était, bah c'était super bien, euh super spacieux.
 # text_en = Um, it was, well it was really great, um super spacious. 
 1	euh	euh	INTJ	_	_	5	discourse	_	Gloss=um
@@ -40,13 +40,13 @@ To analyse constructions of repetition or reformulation, we use the relation `[c
 14	super	super	ADV	_	_	15	mod	_	Gloss=super
 15	spacieux	spacieux	ADJ	_	Gender=Masc	9	conj:dicto	_	Gloss=spacious
 16	.	.	PUNCT	_	_	5	punct	_	_
-{{< /conll >}}
+{{</conll>}}
   
 
 The [conj:dicto](../Syntactic_relations/conj/conj_dicto.md) relation applies also when the linked words are not the same.
 
 > French
-{{< conll >}}
+{{<conll>}}
 # text_fr = on sait euh la quantité euh le nombre de kilos de litres effectivement de produits
 # text_en = we know uh the quantity uh the number of kilos of liters actually of products 
 1	on	on	PRON	_	Gender=Masc|Number=Sing|Person=3|PronType=Ind	2	subj	_	Gloss=we
@@ -64,7 +64,7 @@ The [conj:dicto](../Syntactic_relations/conj/conj_dicto.md) relation applies als
 13	effectivement	effectivement	ADV	_	_	12	discourse	_	Gloss=actually
 14	de	de	ADP	_	_	12	udep	_	Gloss=of
 15	produits	produit	NOUN	_	Gender=Masc|Number=Plur	14	comp:obj	_	Gloss=products
-{{< /conll >}}
+{{</conll>}}
   
 
 > pattern { GOV-[conj:dicto]->DEP }
@@ -74,7 +74,7 @@ The [conj:dicto](../Syntactic_relations/conj/conj_dicto.md) relation applies als
 Sometimes speakers utter a half-finished construction. In that case, it may happen that a word cannot be attached to its head, because the speaker decided not to utter it.
 
 > French  
-{{< conll >}}
+{{<conll>}}
 # text = Je lis son le portrait de notre de votre héros
 # text_en = I'im reading his the portrayal of our of your hero
 1	je	il	PRON	_	Number=Sing|Person=1|PronType=Prs	2	subj	_	Gloss=I
@@ -87,14 +87,14 @@ Sometimes speakers utter a half-finished construction. In that case, it may happ
 8	de	de	ADP	_	_	6	conj:dicto	_	Gloss=of
 9	votre	son	DET	_	Number=Sing|Person=3|PossNumber=Plur|PossPerson=2|PronType=Prs	10	det	_	Gloss=your
 10	héros	héros	NOUN	_	Gender=Masc	8	comp:obj	_	Gloss=hero
-{{< /conll >}}
+{{</conll>}}
 
 In this example we can see the construction *Je lis son le portrait de notre de votre héros* (English: *I'im reading his the portrayal of our of your hero*). This construction causes some issues because we can't attach the word *notre* to its semantic head *héros* because of the presence of the second *de*.
 
 If the sentence was *portrait de notre votre héros* (English: *portrayal of our your hero*) we could use the `[conj:dicto](../Syntactic_relations/conj/conj_dicto.md)` relation to attach *votre* to *notre*.
 
 > French
-{{< conll >}}
+{{<conll>}}
 # text = portrait de notre votre héros
 # text_en = portrayal of our your hero
 1	portrait	portrait	NOUN	_	Gender=Masc|Number=Sing	0	root	_	Gloss=portrayal
@@ -102,14 +102,14 @@ If the sentence was *portrait de notre votre héros* (English: *portrayal of our
 3	notre	son	DET	_	Number=Sing|Person=3|PossNumber=Plur|PossPerson=1|PronType=Prs	5	det	_	Gloss=our
 4	votre	son	DET	_	Number=Sing|Person=3|PossNumber=Plur|PossPerson=2|PronType=Prs	3	conj:dicto	_	Gloss=your
 5	héros	héros	NOUN	_	Gender=Masc	2	comp:obj	_	Gloss=hero
-{{< /conll >}}
+{{</conll>}}
 
 In these cases we prefer to attach the two words *de* with a `conj:dicto` relation and link the word *notre* to the first *de* as an incomplete object - `comp:obj@[scrap](../Deep/scrap.md)`.
 
 Below we can see an example when a speaker starts with one word, then decides it doesn't fit and searches for a more fitting word.
   
 > French
-{{< conll >}}
+{{<conll>}}
 # text_fr = c'est-à-dire que le m~ le le virus sait faire sa propre besogne de lui-même
 # text_en = that means that the virus can do its own work
 1	c'est-à-dire	c'est-à-dire	CCONJ	_	_	0	root	_	ExtPos=CCONJ|PhraseType=Idiom|Gloss=that_means
@@ -126,7 +126,7 @@ Below we can see an example when a speaker starts with one word, then decides it
 12	besogne	besogne	NOUN	_	Gender=Fem|Number=Sing	9	comp:obj	_	Gloss=work
 13	de	de	ADP	_	_	9	mod	_	Gloss=of
 14	lui-même	lui-même	PRON	_	_	13	comp:obj	_	Gloss=himself
-{{< /conll >}}
+{{</conll>}}
 
 >pattern { GOV-[deep=scrap]->DEP }## test 
 
@@ -137,12 +137,11 @@ Below we can see an example when a speaker starts with one word, then decides it
 
 
 
-
-## french
+## TODO
+### french
 
 TODO
-### Overview
+#### Overview
 
-### Specific Pattern
-
+#### Specific Pattern
 

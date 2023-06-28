@@ -10,6 +10,8 @@ bookToc: true
 ---
 # X
 
+## Universal
+
 {{<hint danger>}}
 NOT USE ANYMORE. REPLACE BY FEATURES `Subject`
 {{</hint>}}

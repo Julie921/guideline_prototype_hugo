@@ -10,6 +10,7 @@ bookCollapseSection: true
 ---
 
 # Deep 
+
 In SUD, dependency relations are designed to describe syntactic surface relations. Information related to deep syntax or semantics is given on dependencies with deep features which are extensions to dependency label introduced by the @ symbol.
 
 The deep features are : 

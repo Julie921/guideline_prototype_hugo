@@ -10,6 +10,8 @@ bookToc: true
 ---
 # Agent
 
+## Universal
+
 The `@agent` feature is used for arguments that are agents of their governor at the semantic level in various constructions (e.g., causative, passive, impersonal, etc.).
 
 > English

@@ -12,12 +12,14 @@ bookToc: true
 
 # Parataxis:insert
 
+
+## Universal
 The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical clause, an inserted clause could not form an independent sentence
 
 > pattern { GOV-[parataxis:insert]->DEP }  
   
 > French
-{{< conll >}}
+{{<conll>}}
 
 # text_fr = La France est rose constate La Voix du Nord
 
@@ -45,7 +47,7 @@ The `parataxis:insert` is used for inserted clause. Contrary to a parenthetical 
 
 10  Nord    Nord    PROPN   _   _   8   comp:obj    _   Gloss=north
 
-{{< /conll >}}
+{{</conll>}}
 
 
 

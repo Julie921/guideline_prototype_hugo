@@ -22,10 +22,6 @@ It can have severals [values](https://universaldependencies.org/u/feat/all.html#
 
 ### Value
 
-{{<hint info>}}
-Est-ce qu'on ré-écrit l'information du UD ou est-ce qu'on renvoie vers le site et la page correspondante ?
-{{</hint>}}
-
 [Coll](https://universaldependencies.org/u/feat/Number.html#Coll),
 [Count](https://universaldependencies.org/u/feat/Number.html#Count),
 [Dual](https://universaldependencies.org/u/feat/Number.html#Dual),
@@ -38,16 +34,6 @@ Est-ce qu'on ré-écrit l'information du UD ou est-ce qu'on renvoie vers le site
 [Sing](https://universaldependencies.org/u/feat/Number.html#Sing), 
 [Tri](https://universaldependencies.org/u/feat/Number.html#Tri).
 
-#### Sing : singular number
-
-A singular noun denotes one person, animal or thing.
-*Examples* : [en] car
-
-### Examples
-
-{{<hint info>}}
-Différents tableaux possibles.
-{{</hint>}}
 
 #### Number features in Treebanks
 
@@ -80,21 +66,21 @@ Différents tableaux possibles.
 
 ### Overview
 
-Several upos can have the `Number` features in French, with the two values ̀`Sing` or ̀`Plur` :  
+Several upos can have the `Number` features in French, with the two values ̀`Sing` or ̀`Plur`.
 
-![value](/images/General_Guideline/Features/Number/value_french_nb.png)
+<!-- ![value](/images/General_Guideline/Features/Number/value_french_nb.png) -->
 
-{{<hint info>}}
+<!-- {{<hint info>}}
 On peut mettre des liens vers les upos directement (la partie qui décrit le français à chaque fois). Par exemple [AUX](../Upos/AUX.md#specific-features-of-aux) ? 
-{{</hint>}}
+{{</hint>}} -->
 
-### Pattern
+### Specific Pattern
 
-{{<hint warning>}}
+<!-- {{<hint warning>}}
 Pour les relations, c'est l'ExtPos qui est importante. Pour les features, c'est l'upos qui est important. Par exemple, les NOUN qui ont une ExtPos=INTJ ont des traits Number, contrairement aux upos=INTJ. 
-{{</hint>}}
+{{</hint>}} -->
 
-You can find some examples in the corpus below : 
+<!-- You can find some examples in the corpus below : 
 
 ![Number POS french](/images/General_Guideline/Features/Number/grew_number_upos_value_fr.png)
 
@@ -102,7 +88,7 @@ You can find some examples in the corpus below :
 Tableau double entrée pour avoir les valeurs de traits ? Il faut un moyen de mettre les trois treebank du français... 
 + Est-ce qu'on décrit les règles d'accord par exemple ? 
 + Les upos qui n'ont pas le trait Number ? 
-{{< /hint >}}
+{{< /hint >}} -->
 
 #### Features Number for ADV
 
@@ -120,20 +106,11 @@ On peut y inclure ce genre de requête par exemple :
 + autres exemples 
 {{</hint>}}
 
-### validateur ? 
+<!-- ### validateur ? 
 
 {{<hint info>}}
 On peut se servir des différents patterns pour construire le validateur
-{{</hint>}}
+{{</hint>}} -->
 
-
-
-
-## french
-
-TODO
-### Overview
-
-### Specific Pattern
 
 

@@ -15,7 +15,7 @@ In **comparative constructions** where each term is introduced with a grammatica
 
 > French
 
-{{< conll >}}
+{{<conll>}}
 # text = vous êtes plus jeune que moi
 # text_en = You are younger than me
 1	Vous	vous	PRON	_	_	2	subj	_	Gloss=you
@@ -24,7 +24,7 @@ In **comparative constructions** where each term is introduced with a grammatica
 4	jeune	jeune	ADJ	_	_	2	comp:pred	_	Gloss=young
 5	que	que	SCONJ	_	_	3	comp:obj	_	Gloss=than
 6	moi	lui	PRON	_	_	5	comp:obj	_	Gloss=I
-{{< /conll >}}
+{{</conll>}}
 
 
 Note that the first grammatical word of the comparison (*plus*) is considered a modifier of the property being compared. Examples in other languages: *plus ... que* (French), *più ... di* (Italian), *bardziej ... niż* (Polish).
@@ -37,13 +37,13 @@ pattern { N1 [lemma="plus"|"moins"]; N2 [lemma="que"]; N1 << N2 ; N1-[comp:obj]-
 {{< /hint >}}
 
 > English
-{{< conll >}}
+{{<conll>}}
 1	John	John	PROPN	_	_	2	subj	_	_
 2	is	be	AUX	_	_	0	root	_	_
 3	taller	tall	ADJ	_	_	2	comp:pred	_	_
 4	than	than	ADV	_	_	3	comp:obj	_	_
 5	Mary	Mary	PROPN	_	_	4	comp:obj	_	_
-{{< /conll >}}
+{{</conll>}}
 
   
 ## Superlative constructions
@@ -51,7 +51,7 @@ pattern { N1 [lemma="plus"|"moins"]; N2 [lemma="que"]; N1 << N2 ; N1-[comp:obj]-
 **Superlative constructions** containing a reference to the group of nouns compared are annotated with a `udep` relation connecting the comparative to the preposition.
 
 > English
-{{< conll >}}
+{{<conll>}}
 1	John	John	PROPN	_	_	2	subj	_	_
 2	is	be	AUX	_	_	0	root	_	_
 3	the	the	DET	_	_	4	det	_	_
@@ -59,17 +59,17 @@ pattern { N1 [lemma="plus"|"moins"]; N2 [lemma="que"]; N1 << N2 ; N1-[comp:obj]-
 5	of	of	ADP	_	_	4	udep	_	_
 6	his	his	DET	_	_	7	det	_	_
 7	friends	friend	NOUN	_	_	5	comp:obj	_	_
-{{< /conll >}}
+{{</conll>}}
 
 > French 
-{{< conll >}}
+{{<conll>}}
 # text_en = the best of the trilogy
 1	le	le	DET	_	Definite=Def|Gender=Masc|Number=Sing|Person=3|PronType=Art	2	det	_	Gloss=the
 2	meilleur	meilleur	NOUN	_	Gender=Masc|Number=Sing	0	root	_	Gloss=best
 3	de	de	ADP	_	_	2	udep	_	Gloss=of
 4	la	le	DET	_	Definite=Def|Number=Plur|Person=3|PronType=Art	5	det	_	Gloss=the
 5	trilogie	trilogie	NOUN	_	Gender=Masc|Number=Plur	3	comp:obj	_	Gloss=trilogy
-{{< /conll >}}
+{{</conll>}}
 
 
 {{< hint info >}}
@@ -81,7 +81,7 @@ Find more example [here](http://universal.grew.fr/?custom=63ff5abf81e54) and [he
 In **consecutive constructions**, such as *so... that* or in other languages: *tellement ... que* (French), *così ... che* (Italian), *tak ... że* (Polish), the analysis would be similar:
 
 > English
-{{< conll >}}
+{{<conll>}}
 # text = It was so successful that the military continued to use it
 1	It	it	PRON	_	_	2	subj	_	_
 2	was	be	AUX	_	_	0	root	_	_
@@ -94,7 +94,7 @@ In **consecutive constructions**, such as *so... that* or in other languages: *t
 9	to	to	PART	TO	_	8	comp:pred	_	_
 10	use	use	VERB	_	_	9	comp:obj	_	_
 11	it	it	PRON	_	_	10	comp:obj	_	_
-{{< /conll >}}
+{{</conll>}}
 
   
 {{< hint info>}}
@@ -106,7 +106,7 @@ These constructions are similar to other constructions organized around pairs of
 
   
 > French
-{{< conll >}}
+{{<conll>}}
 # text = Il est la première personne à avoir gravi ce sommet
 # text_en = He is the first person to have climbed that summit
 1	Il	il	PRON	_	_	2	subj	_	Gloss=he
@@ -119,17 +119,16 @@ These constructions are similar to other constructions organized around pairs of
 8	gravi	gravir	VERB	_	_	7	comp:aux	_	Gloss=climbed
 9	ce	ce	DET	_	_	10	det	_	Gloss=that
 10	sommet	sommet	NOUN	_	_	8	comp:obj	_	Gloss=summit
-{{< /conll >}}
+{{</conll>}}
 
 
 
 
 
-## french
+## TODO
+### french
 
 TODO
-### Overview
+#### Overview
 
-### Specific Pattern
-
-
+#### Specific Pattern

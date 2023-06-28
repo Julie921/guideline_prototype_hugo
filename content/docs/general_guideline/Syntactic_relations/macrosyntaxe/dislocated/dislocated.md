@@ -12,45 +12,36 @@ bookToc: true
 
 # Dislocated
 
+
+
+## Universal
+
+
 The `dislocated` relation is used to analyze detached elements that do not enter in the core grammatical relations of a sentence.
 
 >[!tip]
 > pattern { GOV-[dislocated]->DEP }  
 
-<!-- tabs:start -->
-#### **French**
+> **French**
 
-{{< conll >}}
-
-\# text_fr = ça a duré dix ans le silence autour de moi
-
-\# text_en = çthe silence around me lasted for ten years
-
+{{<conll>}}
+#text_fr = ça a duré dix ans le silence autour de moi
+#text_en = çthe silence around me lasted for ten years
 1   ça  ça  PRON    _   Gender=Masc|Number=Sing|Person=3|PronType=Dem   2   subj    _   Gloss=that
-
 2   a   avoir   AUX _   Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   0   root    _   Gloss=has
-
 3   duré    durer   VERB    _   Gender=Masc|Number=Sing|Tense=Past|VerbForm=Part    2   comp:aux    _   Gloss=lasted
-
 4   dix dix NUM _   Number=Plur 5   det _   Gloss=ten
-
 5   ans an  NOUN    _   Gender=Masc|Number=Plur 3   comp:obj    _   Gloss=years
-
 6   le  le  DET _   Definite=Def|Gender=Masc|Number=Sing|PronType=Art   7   det _   Gloss=the
-
 7   silence silence NOUN    _   Gender=Masc|Number=Sing 2   dislocated  _   Gloss=silence
-
 8   autour  autour  ADV _   _   7   mod _   Gloss=around
-
 9   de  de  ADP _   _   8   comp:obl    _   Gloss=of
-
 10  moi lui PRON    _   Number=Sing|Person=1|PronType=Prs   9   comp:obj    _   Gloss=me
+{{</conll>}}
 
-{{< /conll >}}
+> **Naija**
 
-#### **Naija**
-
-{{< conll >}}
+{{<conll>}}
 
 \# sent_id = JOS_21_Marriage-Talk-With-Oscar-1_DG__167
 
@@ -90,20 +81,18 @@ The `dislocated` relation is used to analyze detached elements that do not enter
 
 13  //  //  PUNCT   _   _   10  punct   _   AlignBegin=310430|AlignEnd=310430|Gloss=PUNCT
 
-{{< /conll >}}
+{{</conll>}}
 
-<!-- tabs:end -->
+
   
 
 This relation can also be used for pronouns which are detached from the core syntactic structure of an utterance, such as French tonic pronouns.
 
-  
-<!-- tabs:start -->
-#### **French**
+> **French**
 
   
 
-{{< conll >}}
+{{<conll>}}
 
 \# text_fr = Moi je pense qu' il vient pas
 
@@ -123,14 +112,13 @@ This relation can also be used for pronouns which are detached from the core syn
 
 7   pas pas ADV _   Polarity=Neg    6   mod _   Gloss=not
 
-{{< /conll >}}
+{{</conll>}}
+
+> **Naija**
 
   
-#### **Naija**
 
-  
-
-{{< conll >}}
+{{<conll>}}
 
 \# text_en = It's not good.
 
@@ -140,8 +128,8 @@ This relation can also be used for pronouns which are detached from the core syn
 
 3   good    good    ADJ _   _   0   root    _   AlignBegin=98522|AlignEnd=98791|Gloss=good
 
-{{< /conll >}}
-<!-- tabs:end -->
+{{</conll>}}
+
   
 
 In case of multiple propositions in one sentence, `dislocated` is used when the second proposition doesn't hold any actual information value and it cannot be neither separated nor negated.
@@ -151,10 +139,9 @@ In case of multiple propositions in one sentence, `dislocated` is used when the 
 Let's consider the following example:
 
   
-<!-- tabs:start -->
-#### **French**
+>  **French**
 
-{{< conll >}}
+{{<conll>}}
 
 \# text_fr = j'ai des copines euh actuellement euh , je m'entends super bien avec
 
@@ -184,8 +171,8 @@ Let's consider the following example:
 
 12  avec    avec    ADP _   _   9   comp:obl    _   Gloss=with
 
-{{< /conll >}}
-<!-- tabs:end -->
+{{</conll>}}
+
   
 
 In this sentence, the proposition *J'ai des copines* (*I have some friends*) doesn't provide any information. The fact that the speaker has some friends is considered as obvious and we cannot negate it or question it. The informational content of this sentence is **about** these friends, not about the fact that the speaker has some.

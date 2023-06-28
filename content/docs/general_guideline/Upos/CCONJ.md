@@ -10,9 +10,20 @@ weight: 1
 ---
 
 
+# Coordination conjunction  
 
 
+## Universal 
 
+*Definition from de [UD website](https://universaldependencies.org/u/pos/CCONJ.html)*
+A coordinating conjunction is a word that links words or larger constituents without syntactically subordinating one to the other and expresses a semantic relationship between them.
+
+For subordinating conjunctions, see [SCONJ](./SCONJ.md).
+
+Examples
+- and
+- or
+- but
 
 
 ## french

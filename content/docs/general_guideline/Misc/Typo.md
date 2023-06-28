@@ -11,6 +11,8 @@ bookToc: true
 
 # Typo
 
+## Universal
+
 This features is used to indicate that a node has a typographic error. It has always the features `[CorrectForl](CorrectForm.md)` which contains the correct form of the node. 
 
 {{< conll >}}

@@ -8,7 +8,9 @@ bookToc: true
 # bookComments: false
 # bookSearchExclude: false
 ---
-# comp:pred
+# comp:pred 
+
+## Universal 
 
 The `comp:pred` relation is used for predicative arguments of verbs.
 
@@ -16,35 +18,34 @@ The `comp:pred` relation is used for predicative arguments of verbs.
 > pattern { GOV-[comp:pred]->DEP }
 
 
-## predicative arguments of verbs
-<!-- tabs:start -->
-#### **English 1**
-{{< conll >}}
+### predicative arguments of verbs
+> **English 1**
+{{<conll>}}
 1   I   I   PRON    _   _   2   subj    _   _
 2   was be  AUX _   _   0   root    _   _
 3   thirteen    thirteen    NUM _   _   2   comp:pred   _   _
-{{< /conll >}}
+{{</conll>}}
 
-#### **English 2**
-{{< conll >}}
+> **English 2**
+{{<conll>}}
 1   Norton  Norton  PROPN   _   _   2   subj    _   _
 2   had have    AUX _   _   0   root    _   _
 3   become  become  VERB    _   _   2   comp:aux    _   _
 4   completely  completely  ADV _   _   5   mod _   _
 5   disgruntled disgruntled ADJ _   _   3   comp:pred   _   _
-{{< /conll >}}
+{{</conll>}}
 
-#### **English 3**
-{{< conll >}}
+>  **English 3**
+{{<conll>}}
 1   Let let VERB    _   _   0   root    _   _
 2   them    them    PRON    _   _   1   comp:obj    _   _
 3   hear    hear    VERB    _   _   1   comp:pred   _   _
 4   you you PRON    _   _   3   comp:obj    _   _
 5   shout   shout   VERB    _   _   3   comp:pred   _   _
-{{< /conll >}}
+{{</conll>}}
 
-#### **English 4**
-{{< conll >}}
+> **English 4**
+{{<conll>}}
 1   Prague  Prague  PROPN   _   _   2   subj    _   _
 2   is  be  AUX VBZ Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   0   root    _   _
 3   considered  consider    VERB    VBN Tense=Past|VerbForm=Part    2   comp:aux@pass   _   _
@@ -60,10 +61,10 @@ The `comp:pred` relation is used for predicative arguments of verbs.
 13  the the DET DT  Definite=Def|PronType=Art   14  det _   Entity=(place-12
 14  world   world   NOUN    NN  Number=Sing 12  comp:obj    _   Entity=place-1)place-11)place-12)|SpaceAfter=No
 15  .   .   PUNCT   .   _   2   punct   _   _
-{{< /conll >}}
+{{</conll>}}
 
-#### **French 1**
-{{< conll >}}
+> **French 1**
+{{<conll>}}
 \# sent_id = fr-ud-train_12228
 \# text = Je trouve cette attitude totalement inadmissible !
 \# text_en = I find this attitude totally unacceptable!
@@ -74,10 +75,10 @@ The `comp:pred` relation is used for predicative arguments of verbs.
 5   totalement  totalement  ADV _   _   6   mod _   Gloss=totally
 6   inadmissible    inadmissible    ADJ _   Number=Sing 2   comp:pred   _   Gloss=unacceptable
 7   !   !   PUNCT   _   _   2   punct   _   Gloss=!
-{{< /conll >}}
+{{</conll>}}
 
-#### **French 2**
-{{< conll >}}
+> **French 2**
+{{<conll>}}
 \# text_en = The South is considered a dynamic and rich area in terms of industry.
 1   Le  le  DET _   Definite=Def|Gender=Masc|Number=Sing|Person=3|PronType=Art  2   det _   Gloss=the
 2   Sud sud NOUN    _   Gender=Masc|Number=Sing 3   subj@pass   _   Gloss=south
@@ -93,16 +94,15 @@ The `comp:pred` relation is used for predicative arguments of verbs.
 12  termes  terme   NOUN    _   Gender=Masc|Number=Plur 11  comp:obj    _   Gloss=terms
 13  d'  de  ADP _   _   12  udep    _   Gloss=of
 14  industrie   industrie   NOUN    _   Gender=Fem|Number=Sing  13  comp:obj    _   Gloss=industry
-{{< /conll >}}
-<!-- tabs:end -->
-  
-## subordinating constructions
-The `comp:pred` relation can also be used in certain subordinating constructions.
+{{</conll>}}
 
   
-<!-- tabs:start -->
-#### **French**
-{{< conll >}}
+### subordinating constructions
+The `comp:pred` relation can also be used in certain subordinating constructions.
+
+
+> **French**
+{{<conll>}}
 \# text = Mais la réalité est que la Mauritanie n'est pas le Maroc ou l'Algérie
 \# text_en = But the reality is that Mauritania isn't Morocco or Algeria.
 1   Mais    but CCONJ   _   _   4   cc  _   Gloss=but
@@ -120,11 +120,7 @@ The `comp:pred` relation can also be used in certain subordinating constructions
 13  ou  or  CCONJ   _   _   15  cc  _   _
 14  l'  the DET _   Definite=Def|Number=Sing|PronType=Art   15  det _   SpaceAfter=No
 15  Algérie Algeria PROPN   _   _   12  conj    _   SpaceAfter=No
-{{< /conll >}}
-<!-- tabs:end -->
-
-
-
+{{</conll>}}
 
 
 

@@ -16,7 +16,7 @@ The first example below shows the annotation of a coordination in UD and the sec
 
 > English 
 
-{{< conll >}}
+{{<conll>}}
 1	John	John	PROPN	_	_	7	nsubj	_	_
 2	,	,	PUNCT	_	_	3	punct	_	_
 3	Mary	Mary	PROPN	_	_	1	conj	_	_
@@ -24,11 +24,11 @@ The first example below shows the annotation of a coordination in UD and the sec
 5	Peter	Peter	PROPN	_	_	1	conj	_	_
 6	will	will	AUX	_	_	7	aux	_	_
 7	come	come	VERB	_	_	0	root	_	_
-{{< /conll >}}
+{{</conll>}}
 
 > English 
 
-{{< conll >}}
+{{<conll>}}
 1	John	John	PROPN	_	_	6	subj	_	_
 2	,	,	PUNCT	_	_	3	punct	_	_
 3	Mary	Mary	PROPN	_	_	1	conj	_	_
@@ -36,7 +36,7 @@ The first example below shows the annotation of a coordination in UD and the sec
 5	Peter	Peter	PROPN	_	_	3	conj	_	_
 6	will	will	AUX	_	_	0	root	_	_
 7	come	come	VERB	_	_	6	comp:aux	_	_
-{{< /conll >}}
+{{</conll>}}
 
 > pattern { GOV-[conj:coord]->DEP }
 > % or pattern {GOV-[conj]->DEP }
@@ -47,7 +47,7 @@ The `conj` label does not make a distinction between embedded relations and surf
 
 > English 
 
-{{< conll >}}
+{{<conll>}}
 1	John	John	PROPN	_	_	9	subj	_	_
 2	,	,	PUNCT	_	_	3	punct	_	_
 3	Mary	Mary	PROPN	_	_	1	conj	_	_
@@ -58,7 +58,7 @@ The `conj` label does not make a distinction between embedded relations and surf
 8	Peter	Peter	PROPN	_	_	6	conj	_	_
 9	will	will	AUX	_	_	0	root	_	_
 10	come	come	VERB	_	_	9	comp:aux	_	_
-{{< /conll >}}
+{{</conll>}}
 
 > pattern { GOV-[conj:coord@emb]->DEP }
 > % or GOV-[conj@emb->DEP 
@@ -76,13 +76,13 @@ As a consequence, left and right dependents on a coordination are marked with fe
 
 
 
-
-
-## french
+## TODO
+### french
 
 TODO
-### Overview
+#### Overview
 
-### Specific Pattern
+#### Specific Pattern
+
 
 

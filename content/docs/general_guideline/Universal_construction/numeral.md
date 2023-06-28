@@ -9,7 +9,7 @@ weight: 1
 # bookSearchExclude: false
 ---
 
-# Number's annotation
+# Numeral
 
 ## Written in Letter
 
@@ -21,7 +21,7 @@ Numbers composed of more than one word, such as *five hundred* or *six thousand*
 > pattern { N1 [upos=NUM]; N2 [upos=NUM]; N1-[flat]->N2 }
 
 > Naija
-{{< conll >}}
+{{<conll>}}
 
 1	#	#	PUNCT	_	_	3	punct	_	AlignBegin=136812|AlignEnd=137203|Gloss=PUNCT
 2	den	den	ADV	_	_	3	mod:periph	_	AlignBegin=137203|AlignEnd=137405|Gloss=den|LeftOverlap=False|RightOverlap=False|Syl1AvgHeightGlo=L|Syl1AvgHeightLoc=M|Syl1Glo=ll|Syl1Loc=mm|Syl1PitchRangeGlo=L|Syl1PitchRangeLoc=L|Syl1SlopeGlo=Flat|Syl1SlopeLoc=Flat|SyllableCount=1|WordContour=ll
@@ -34,11 +34,11 @@ Numbers composed of more than one word, such as *five hundred* or *six thousand*
 9	million	million	NUM	_	NumType=Card	8	flat	_	AlignBegin=139261|AlignEnd=139604|Gloss=million.CARD|LeftOverlap=False|RightOverlap=False|Syl1AvgHeightGlo=M|Syl1AvgHeightLoc=M|Syl1Glo=mm|Syl1Loc=mm|Syl1PitchRangeGlo=L|Syl1PitchRangeLoc=L|Syl1SlopeGlo=Flat|Syl1SlopeLoc=Flat|Syl2AvgHeightGlo=L|Syl2AvgHeightLoc=M|Syl2Glo=mL|Syl2Loc=hl|Syl2PitchRangeGlo=M|Syl2PitchRangeLoc=M|Syl2SlopeGlo=Fall|Syl2SlopeLoc=Fall|SyllableCount=2|WordContour=mLm1
 10	//	//	PUNCT	_	_	3	punct	_	AlignBegin=139604|AlignEnd=139604|Gloss=PUNCT
 
-{{< /conll >}}
+{{</conll>}}
 
 
 > English
-{{< conll >}}
+{{<conll>}}
 1   you you PRON    _   Case=Nom|Person=2|PronType=Prs  2   subj    _   AlignBegin=98152|AlignEnd=98230|Gloss=NOM.2
 2   invest  invest  VERB    _   _   0   root    _   AlignBegin=98230|AlignEnd=98757|Gloss=invest
 3   #   #   PUNCT   _   _   4   punct   _   AlignBegin=98757|AlignEnd=98980|Gloss=PUNCT
@@ -48,7 +48,7 @@ Numbers composed of more than one word, such as *five hundred* or *six thousand*
 7   thirty  thirty  NUM _ NumType=Card  5 conj:coord  _ AlignBegin=99520|AlignEnd=99760|Gloss=thirty.CARD
 8   seven seven NUM _ NumType=Card  7 flat  _ AlignBegin=99760|AlignEnd=100080|Gloss=seven.CARD
 9   thousand  thousand  NUM _ NumType=Card  8 flat  _ AlignBegin=100080|AlignEnd=100448|Gloss=thousand.CARD
-{{< /conll >}}
+{{</conll>}}
 
 > French
 {{<conll>}}
@@ -70,12 +70,10 @@ The number have the [NUM](../Upos/NUM.md) part of speech
 
 
 
-
-## french
+## TODO
+### french
 
 TODO
-### Overview
+#### Overview
 
-### Specific Pattern
-
-
+#### Specific Pattern

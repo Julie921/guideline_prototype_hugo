@@ -10,6 +10,8 @@ bookToc: true
 ---
 # Tense
 
+## Universal
+
 The `@tense` feature is used for the argument of tense auxiliaries.
 
   

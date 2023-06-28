@@ -1,22 +1,26 @@
 ---
-title: "vocativ"
-weight: 1
+title: "vocative"
+weight: 3
 # bookFlatSection: false
 bookToc: true
 # bookHidden: false
-# bookCollapseSection: true
+bookCollapseSection: true
 # bookComments: false
 # bookSearchExclude: false
 ---
 
 # Vocative
+
+## Universal
+
+
 The `vocative` relation is used when a speaker directly addresses a listener in an utterance.
  
 
 > pattern { GOV-[vocative]->DEP }
 
 > French
-{{< conll >}}
+{{<conll>}}
 
 # text_fr = Merci beaucoup monsieur
 
@@ -28,11 +32,11 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 
 3   monsieur    monsieur    NOUN    _   Gender=Masc|Number=Sing 1   vocative    _   Gloss=sir
 
-{{< /conll >}}
+{{</conll>}}
 
 
 > Naija
-{{< conll >}}
+{{<conll>}}
 
 # text = ehn auntie < di ting no easy o //
 
@@ -58,7 +62,7 @@ The `vocative` relation is used when a speaker directly addresses a listener in 
 
 9   //  //  PUNCT   _   _   7   punct   _   AlignBegin=7840|AlignEnd=7840|Gloss=PUNCT
 
-{{< /conll >}}
+{{</conll>}}
 
 
 

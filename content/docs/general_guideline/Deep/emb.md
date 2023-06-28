@@ -10,6 +10,8 @@ bookToc: true
 ---
 # Embedded coordination
 
+## Universal
+
 The conjunct of a coordination can itself be a coordination. Theoretically, this embedding can be nested indefinitely. In natural corpora, however, there is typically only one level of iteration.
 
 The `[conj](../Syntactic_relations/conj/conj_coord.md)` label does not make a distinction between embedded relations and surface relations because they form a single chain. However, these relations can be distinguished with the use of the extension `@emb` for embedded coordinations, as the following example shows.

@@ -1,6 +1,6 @@
 ---
 title: "discourse"
-weight: 1
+weight: 3
 # bookFlatSection: false
 bookToc: true
 # bookHidden: false
@@ -11,6 +11,11 @@ bookToc: true
 
 
 # Discourse
+
+
+## Universal 
+
+
 The `discourse` relation is used to link discourse markers. These markers are not clearly linked to the structure of the sentence, except in an expressive way.
 
 In some cases the discourse marker can be another proposition.
@@ -21,7 +26,7 @@ Ex: *He comes on wednesday, I think.* In this sentence *I think* is a discourse 
 > pattern { GOV-[discourse]->DEP }
   
 > French
-{{< conll >}}
+{{<conll>}}
 
 # text_fr = Ils sont un peu euh , un peu choqués je pense
 
@@ -49,7 +54,7 @@ Ex: *He comes on wednesday, I think.* In this sentence *I think* is a discourse 
 
 11  pense   penser  VERB    _   Number=Sing|Person=1    2   discourse   _   Gloss=think
 
-{{< /conll >}}
+{{</conll>}}
   
 
 The `discourse` relation is also used for simple discourse markers such as interjections or adverbs.
@@ -57,7 +62,7 @@ The `discourse` relation is also used for simple discourse markers such as inter
   
 
 > French
-{{< conll >}}
+{{<conll>}}
 
 # text_fr = Enfin c'était un shooting photo .
 
@@ -77,10 +82,10 @@ The `discourse` relation is also used for simple discourse markers such as inter
 
 7   .   .   PUNCT   _   _   3   punct   _   _
 
-{{< /conll >}}
+{{</conll>}}
 
 > Naija
-{{< conll >}}
+{{<conll>}}
 
 # text = so < just do wetin de want //
 
@@ -104,7 +109,7 @@ The `discourse` relation is also used for simple discourse markers such as inter
 
 8   //  //  PUNCT   _   _   4   punct   _   AlignBegin=165250|AlignEnd=165250|Gloss=PUNCT
 
-{{< /conll >}}
+{{</conll>}}
 
 
 

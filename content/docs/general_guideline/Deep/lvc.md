@@ -8,7 +8,7 @@ bookToc: true
 # bookComments: false
 # bookSearchExclude: false
 ---
-# Light Verb Construction - lvc
+# Light Verb Construction 
 
 ## Universal 
 
@@ -163,16 +163,6 @@ The `@lvc` feature is used for arguments of light verbs.
 6   araignée    araignée    PROPN   _   _   4   comp:obj    _   Gloss=spider
 
 {{< /conll >}}
-
-## French 
-
-
-You can find more information about the annotation in french corpora [here](../../language/French/syntaxic/french_light_verb.md)## test 
-
-
-
-
-
 
 
 ## french

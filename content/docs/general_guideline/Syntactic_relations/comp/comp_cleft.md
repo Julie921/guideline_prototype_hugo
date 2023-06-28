@@ -9,16 +9,14 @@ bookToc: true
 # bookSearchExclude: false
 ---
 
-# comp:cleft
+# comp:cleft 
+
+## Universal 
 
 The `comp:cleft` relation is used in cleft sentences for the dependency from the head of the sentence to the head of the complement clause.
 
->[!tip]
-> pattern { GOV-[comp:cleft]->DEP }
-
-<!-- tabs:start -->
-#### **English**
-{{< conll >}}
+> **English**
+{{<conll>}}
 1   It  it  PRON    _   _   2   subj    _   _
 2   was be  AUX _   _   0   root    _   _
 3   from    from    ADP _   _   2   comp:pred   _   _
@@ -28,11 +26,11 @@ The `comp:cleft` relation is used in cleft sentences for the dependency from the
 7   heard   hear    VERB    _   _   5   comp:obj    _   _
 8   the the DET _   _   9   det _   _
 9   news    news    NOUN    _   _   7   comp:obj    _   _
-{{< /conll >}}
+{{</conll>}}
 
   
-#### **French**
-{{< conll >}}
+> **French**
+{{<conll>}}
 \# text_en = So it was then Alba who retook control of the situation and quelled a popular revolt before the royal court.
 1   C'  ce  PRON    _   Gender=Masc|Number=Sing|Person=3|PronType=Dem   2   subj@expl   _   Gloss=it
 2   est être    AUX _   Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin   0   root    _   Gloss=is
@@ -58,17 +56,15 @@ The `comp:cleft` relation is used in cleft sentences for the dependency from the
 21  la  le  DET _   Definite=Def|Gender=Fem|Number=Sing|Person=3|PronType=Art   22  det _   Gloss=the
 22  cour    cour    NOUN    _   Gender=Fem|Number=Sing  20  comp:obj    _   Gloss=court
 23  royale  royal   ADJ _   Gender=Fem|Number=Sing  22  mod _   Gloss=royal
-{{< /conll >}}
-<!-- tabs:end -->
+{{</conll>}}
+
 
 Sometimes, there is an ambiguity between a relative clause and a cleft clause. Consider the sentence *It is the electric car that I chose*.
 
 If someone utters this sentence in a context where they must choose between a gasoline car and an electric car, the sentence is interpreted as a cleft sentence with the following annotation.
 
-  
-<!-- tabs:start -->
-#### **English**
-{{< conll >}}
+> **English**
+{{<conll>}}
 1   It  it  PRON    _   _   2   subj    _   _
 2   is  be  AUX _   _   0   root    _   _
 3   the the DET _   _   5   det _   _
@@ -77,17 +73,16 @@ If someone utters this sentence in a context where they must choose between a ga
 6   that    that    PRON    _   _   8   comp:obj    _   _
 7   I   I   PRON    _   _   8   subj    _   _
 8   chose   choose  VERB    _   _   2   comp:cleft  _   _
-{{< /conll >}}
-<!-- tabs:end -->
+{{</conll>}}
+
   
   
 
 But if the sentence is uttered in a context where the speaker is referring to one of several electric cars, the sentence is interpreted as having a relative clause with the following annotation.
 
-<!-- tabs:start -->
-#### **English**
+> **English**
 
-{{< conll >}}
+{{<conll>}}
 1   It  it  PRON    _   _   2   subj    _   _
 2   is  be  AUX _   _   0   root    _   _
 3   the the DET _   _   5   det _   _
@@ -96,8 +91,7 @@ But if the sentence is uttered in a context where the speaker is referring to on
 6   that    that    PRON    _   _   8   comp:obj    _   _
 7   I   I   PRON    _   _   8   subj    _   _
 8   chose   choose  VERB    _   _   5   mod@relcl   _   _
-{{< /conll >}}
-<!-- tabs:end -->
+{{</conll>}}
 
 
 

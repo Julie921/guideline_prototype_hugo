@@ -10,13 +10,17 @@ bookToc: true
 ---
 
 # Parataxis:obj
+
+
+## Universal
+
 The depency relation `parataxis:obj` has been deleted. See [Reported Speech](../../../Particular_construction/reported_speech.md)
 
   
 Direct discourse is attached its governor by the relation `comp:obj` with the features Reported = "Yes".
 
 > French
-{{< conll >}}
+{{<conll>}}
 
 # text_fr = Ce qui est horrible c' est de se dire je n' en sortirai jamais
 
@@ -50,12 +54,12 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 
 14  jamais  jamais  ADV _   _   13  mod _   Gloss=never
 
-{{< /conll >}}
+{{</conll>}}
 
   
 
 > Naija 
-{{< conll >}}
+{{<conll>}}
 
 # sent_id = ABJ_GWA_02_Market-Food-Church_DG__58
 
@@ -91,7 +95,7 @@ Direct discourse is attached its governor by the relation `comp:obj` with the fe
 
 11  //  //  PUNCT   _   _   3   punct   _   AlignBegin=86960|AlignEnd=86960|Gloss=PUNCT
 
-{{< /conll >}}
+{{</conll>}}
 
 
 

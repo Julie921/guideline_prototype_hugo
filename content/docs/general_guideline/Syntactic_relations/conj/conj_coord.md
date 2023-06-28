@@ -10,16 +10,18 @@ bookToc: true
 ---
 
 
-# conj:coord
+# conj:coord 
+
+## Universal 
 
 This relation is used to link elements connected with a coordinating conjunction such as *and* and *or*. The conjunction itself is linked to the second element with a `cc` relation. It is analogous to [`conj`](https://universaldependencies.org/u/dep/conj.html) relation in UD and SUD for written language.
 
 >[!tip]
 > pattern { GOV-[conj:coord]->DEP }
   
-<!-- tabs:start -->
-#### **French**
-{{< conll >}}
+
+> **French**
+{{< conll >}} 
 \# text_fr = Elle a instoré dans ce pays la démocratie politique et sociale
 \# text_en = She established in this country political and social democracy.
 1   Elle    il  PRON    _   _   2   subj    _   Gloss=she
@@ -35,8 +37,8 @@ This relation is used to link elements connected with a coordinating conjunction
 11  sociale sociale NOUN    _   _   9   conj:coord  _   Gloss=social
 {{< /conll >}}
 
-#### **Naija**
-{{< conll >}}
+> **Naija**
+{{< conll >}} 
 \# sent_id = JOS_10_Mothers-Against-Mini-Skirts_DG__51
 \# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/JOS_10_Mothers-Against-Mini-Skirts_DG.mp3
 \# speaker_id = Sp125
@@ -61,7 +63,7 @@ This relation is used to link elements connected with a coordinating conjunction
 16  you you PRON    _   Case=Nom|Person=2|PronType=Prs  15  comp:obj    _   AlignBegin=93731|AlignEnd=94037|Gloss=NOM.2
 17  //  //  PUNCT   _   _   14  punct   _   AlignBegin=94037|AlignEnd=94037|Gloss=PUNCT
 {{< /conll >}}
-<!-- tabs:end -->
+
   
 
 In case of multiple coordinating constructions, we analyze them in a chain in contrast to UD, which analyzes them as a bouquet structure.
@@ -69,8 +71,7 @@ In case of multiple coordinating constructions, we analyze them in a chain in co
 This helps to reduce cumbersome long-distance relations. We also believe it to be a more accurate representation of the cognitive process of coordination.
 
   
-<!-- tabs:start -->
-#### **French**
+> **French**
 {{< conll >}}
 \# textfr = Elle saura conjuguer le changement et la cohésion sociale l' esprit d' initiative et la sécurité la modernité et le bien vivre ensemble
 \# text_en = She will be able to combine change and social cohesion, a spirit of initiative and security, modernity and living well together.
@@ -99,7 +100,7 @@ This helps to reduce cumbersome long-distance relations. We also believe it to b
 23  ensemble    ensemble    ADV _   _   22  mod _   Gloss=together
 {{< /conll >}}
 
-#### **Naija**
+> **Naija**
 {{< conll >}}
 \# sent_id = KAD_22_Chatting-At-The-Restaurant_DG__134
 \# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/KAD_22_Chatting-At-The-Restaurant_DG.mp3
@@ -127,7 +128,7 @@ This helps to reduce cumbersome long-distance relations. We also believe it to b
 18  }   }   PUNCT   _   _   11  punct   _   AlignBegin=231552|AlignEnd=231552|Gloss=PUNCT
 19  //  //  PUNCT   _   _   5   punct   _   AlignBegin=231552|AlignEnd=231552|Gloss=PUNCT
 {{< /conll >}}
-<!-- tabs:end -->
+
 
 For more information about coordination, see the [dedicated page](../../Particular_construction/coordination.md).
 

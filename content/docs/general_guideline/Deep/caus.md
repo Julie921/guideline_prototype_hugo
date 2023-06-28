@@ -9,6 +9,9 @@ bookToc: true
 # bookSearchExclude: false
 ---
 # Causativ
+
+## Universal
+
 The `@caus` feature is used for the argument of causative auxiliaries.
 
 > English

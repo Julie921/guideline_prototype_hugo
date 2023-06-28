@@ -9,7 +9,11 @@ bookToc: true
 # bookSearchExclude: false
 ---
 
-# Udep
+# Udep 
+
+
+
+## Universal 
 
 The `udep` relation is used for complements when one does not wish to or is unable to distinguish between arguments and modifiers. This relationship can notably be used in cases where the complement's relationship with its governor is ambiguous. When there is little debate about the nature of the relationship, the more specific label is preferred.
 
@@ -24,7 +28,7 @@ As shown in the [correspondences between SUD and UD](../../../../_index.md#corre
 
   
 > English
-{{< conll >}}
+{{<conll>}}
 
 1   An  a   DET _   _   2   det _   _
 
@@ -34,11 +38,11 @@ As shown in the [correspondences between SUD and UD](../../../../_index.md#corre
 
 4   creation    creation    NOUN    _   _   3   comp:obj    _   _
 
-{{< /conll >}}
+{{</conll>}}
 
   
 > English
-{{< conll >}}
+{{<conll>}}
 
 1   She she PRON    _   _   2   subj    _   _
 
@@ -50,12 +54,12 @@ As shown in the [correspondences between SUD and UD](../../../../_index.md#corre
 
 5   discomfiture    discomfiture    NOUN    _   _   3   comp:obj    _   _
 
-{{< /conll >}}
+{{</conll>}}
 
   
 
 > Spanish
-{{< conll >}}
+{{<conll>}}
 
 # text_es = Ficha de Juanjo Ciércolen en Don Balón
 
@@ -74,7 +78,7 @@ As shown in the [correspondences between SUD and UD](../../../../_index.md#corre
 
 7   Balón   balón   PROPN   _   _   6   appos   _   Gloss=Balón
 
-{{< /conll >}}
+{{</conll>}}
 
 
 

@@ -9,16 +9,17 @@ bookToc: true
 # bookSearchExclude: false
 ---
 
-# conj:appos
+# conj:appos 
+
+## Universal 
 
 This relation is used for appositions. In an apposition, conjuncts have the same referent, but two clearly different denotations. The conjunct in apposition forms a predication in the background (in *Mary, my best friend*, the second conjunct *my best friend* is a predication on the first conjunct *Mary*, it is equivalent to *Mary is my best friend*).
 
 >[!tip]
 > pattern { GOV-[conj:appos]->DEP }
 
-<!-- tabs:start -->
-## **Spoken French**
-{{< conll >}}
+> **Spoken French**
+{{<conll>}}
 \# text_fr = Nietzsche le philosophe allemand parle de a une définition de l'art
 \# text_en = Nietzsche the German philosopher speaks of has an art definition
 1   Nietzsche   Nietzsche   PROPN   _   _   5   subj    _   Gloss=Niezsche
@@ -33,10 +34,10 @@ This relation is used for appositions. In an apposition, conjuncts have the same
 10  de  de  ADP _   _   9   udep    _   Gloss=of
 11  l'  le  DET _   Definite=Def|Number=Sing|PronType=Art   12  det _   Gloss=the
 12  art art NOUN    _   Gender=Masc|Number=Sing 10  comp:obj    _   Gloss=art
-{{< /conll >}}
+{{</conll>}}
 
-#### **Naija**
-{{< conll >}}
+> **Naija**
+{{<conll>}}
 \# sent_id = WAZA_01_Triplea-Sports_MG__10
 \# sound_url = http://www.tal.univ-paris3.fr/trameur/iTrameur-naija/mp3/WAZA_01_Triplea-Sports_MG.mp3
 \# speaker_id = Sp278
@@ -70,12 +71,7 @@ This relation is used for appositions. In an apposition, conjuncts have the same
 25  level   level   NOUN    _   _   23  comp:obj    _   AlignBegin=65840|AlignEnd=66220|Gloss=level
 26  ]   ]   PUNCT   _   _   20  punct   _   AlignBegin=66220|AlignEnd=66250|Gloss=PUNCT
 27  //  //  PUNCT   _   _   17  punct   _   AlignBegin=66220|AlignEnd=66250|Gloss=PUNCT
-{{< /conll >}}
-<!-- tabs:end --> 
-
-
-
-
+{{</conll>}}
 
 
 ## french

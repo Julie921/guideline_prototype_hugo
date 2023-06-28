@@ -9,7 +9,7 @@ bookCollapseSection: true
 # bookSearchExclude: false
 ---
 
-# Zaar
+# Specific Language Guidelines section
 
 
-retrgtgtgttrg
+Here, you will find some guidelines to annotate language's specific phenomena. 

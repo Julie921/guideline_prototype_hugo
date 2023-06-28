@@ -11,12 +11,15 @@ bookToc: true
 
 # Parataxis:parenth
 
+
+## Universal
+
 The `parataxis:parenth` relation is used for parenthetical clauses, in the sense that the clause is backgrounded (as if it were inside parentheses). A parenthetical clause could form an independent sentence.
 
 > pattern { GOV-[parataxis:parenth]->DEP }
   
 > French
-{{< conll >}}
+{{<conll>}}
 
 # textfr = vous avez fait paraître ce ce chef -d' oeuvre pour moi c' est un chef -d' oeuvre qui s' appelle Un Barrage contre le Pacifique
 
@@ -72,11 +75,11 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 
 25  Pacifique   Pacifique   PROPN   _   _   23  comp:obj    _   Gloss=Pacific
 
-{{< /conll >}}
+{{</conll>}}
 
   
 > Naija
-{{< conll >}}
+{{<conll>}}
 
 # text = en mille neuf cent cinquante quand vous avez fait paraître ce ce chef -d' oeuvre pour moi c' est un chef -d' oeuvre qui s' appelle Un Barrage contre le Pacifique
 
@@ -154,7 +157,7 @@ The `parataxis:parenth` relation is used for parenthetical clauses, in the sense
 
 31  //  //  PUNCT   _   _   29  punct   _   AlignBegin=66560|AlignEnd=66560|Gloss=PUNCT
 
-{{< /conll >}}
+{{</conll>}}
 
 
 

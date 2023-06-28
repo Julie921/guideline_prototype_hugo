@@ -9,7 +9,9 @@ bookToc: true
 # bookSearchExclude: false
 ---
 
-# Compound
+# Compound 
+
+## Universal  
 
 SUD shares with with UD its `compound` relation, though the exact usage of this relationship is determined on a language-by-language basis. SUD annotations for some languages, such as French, do not use the `compound` relation at all.
 

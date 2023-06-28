@@ -6,7 +6,7 @@ import os
 from typing import List
 
 def supp_text_univ_page(fichier:str, repere:str):
-    pattern = [f"{repere}","TODO\n","#### Overview\n","#### Specific Pattern\n"]
+    pattern = [f"#{repere}","TODO\n","#### Overview\n","#### Specific Pattern\n"]
     new_content =""
     with open(fichier,'r', encoding="utf-8") as old:
         line = old.readline()

@@ -381,6 +381,61 @@ if st.button('Enregistrer au format JSON'):
         named = na.replace(" ","_")
 
 
+    if tag =="Universal_construction":
+        df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
+        st.write(f"The request file {str(language).lower()}/output/output_{str(language).lower()}_{named}.json has been saved.")
+        st.title("Saving your answer and updating the guidelines, dont quit :warning:")
+        st.markdown(":warning: :red[Don't quit the formulare while you're not welcome to] :warning:")
+        # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit. Ici on considère
+        # que l'utilisateur a écrit des patterns pour créer une table 
+        if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] != [{}]:
+            st.markdown("## Writing the table link to grew-match")
+            st.write("Writing of the request file for the table...")
+            # # Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_request_json/...
+
+            # contenu pour les requête
+            content = create_request_file(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
+
+            with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w') as f:
+                f.write(str(content))
+            st.write(f" The request file has been saved : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
+
+            # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
+            st.write(f"Creation of the tables ag-grid in the sub-folder {language}/{language}_table_json/ ...")
+            result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
+            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
+                f.write(str(result))
+            st.write(f"The file : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json has been saved")
+
+            # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
+            # CHANGEMENT : on écrit directement au bon endroit ! -> voir plus loin ! 
+            #st.write("Ecriture de la page en markdown pour le guide d'annotation")
+            md_output = univ_json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
+            #md_output = add_link("links.csv",md_output)
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+                f.write(md_output)
+
+            st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
+            # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
+            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
+                if f"../content/docs/general_guideline/{tag}/{named}.md":
+                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
+
+        if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
+            st.write("Ecriture du fichier markdown dans le sous dossier langue/langue_page/")
+            # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
+            md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
+            #md_output = add_link("links.csv",md_output)
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+                f.write(md_output)
+
+            st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
+            # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
+            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
+                if f"../content/docs/general_guideline/{tag}/{named}.md":
+                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
+        
+        st.write("Vous pouvez quitter le formulaire")
 
     if tag != "Universal_construction":
         df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
@@ -439,12 +494,12 @@ if st.button('Enregistrer au format JSON'):
         
         st.write("Table has been moved.")
 
-            st.markdown("## Writting the guideline's page")
-            st.write("guideline's page writting...")
-            # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
-                if f"../content/docs/general_guideline/{tag}/{named}.md":
-                    add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+        st.markdown("## Writting the guideline's page")
+        st.write("guideline's page writting...")
+        # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
+            if f"../content/docs/general_guideline/{tag}/{named}.md":
+                add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
         # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
         if tag == "Syntactic_relations":
@@ -459,7 +514,7 @@ if st.button('Enregistrer au format JSON'):
 
             
             # Sinon on crée une page pour un phénomène linguistique, on ajoute une nouvelle page au bon endroit
-            if tag == "Other linguistic phenomena":
+        if tag == "Other linguistic phenomena":
                 name = str(data['value'][0])
                 name = name.split(" ")
                 name = "_".join(name)

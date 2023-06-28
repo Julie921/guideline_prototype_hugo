@@ -5,6 +5,22 @@ Module pour ajouter le texte markdown au bon endroit.
 import os
 from typing import List
 
+def supp_text_univ_page(fichier:str, langue:str):
+    pattern = [f"### {langue}\n","TODO\n","#### Overview\n","#### Specific Pattern\n"]
+    new_content =""
+    with open(fichier,'r', encoding="utf-8") as old:
+        line = old.readline()
+        while line:
+            if line in pattern:
+                pass
+            else:
+                new_content = new_content + line
+            line = old.readline()
+
+    with open(fichier,'w', encoding="utf-8") as new:
+        new.write(new_content)
+
+
 def add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
     """
     This function write a new content in a file, replaceb thanks to an identified text 'text_repere'
@@ -190,16 +206,31 @@ def parcourir_arborescence(repertoire:str,langue:str)->int:
                 pass
             else:
                 chemin_fichier = os.path.join(dossier_racine, fichier)
-                # on lit le contenu du fichier
-                contenu_fichier = lire_contenu_fichier(chemin_fichier)
-                # on compte le nb de fichier
-                nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
-                # on récupère l'endroit du fichier correspondant à la langue cible
-                index = contenu_fichier.index(f"## {langue}\n")
-                # si le fichier n'est pas rempli, on incrémente la variable
-                if contenu_fichier[index+2] == "TODO\n":
-                    nombre_todo = nombre_todo +1
-                    #print(f"Le fichier '{fichier}' est à rédiger.")
+                # traitement différent selon si on se situe dans une construction universelle
+                if chemin_fichier.startswith("../content/docs/general_guideline/Universal_construction"):
+                    contenu_fichier = lire_contenu_fichier(chemin_fichier)
+                    nombre_fichiers = nombre_fichiers +1
+                    if f"### {langue}\n" in contenu_fichier:
+                        index = contenu_fichier.index(f"### {langue}\n")
+                        if contenu_fichier[index+2] == "TODO\n":
+                            nombre_todo = nombre_todo+1
+                    else:
+                        pass    
+                # ou dans une page relative à une étiquette
+                else:
+                    # on lit le contenu du fichier
+                    contenu_fichier = lire_contenu_fichier(chemin_fichier)
+                    # on compte le nb de fichier
+                    nombre_fichiers = nombre_fichiers +1 # Incrémenter le compteur de fichiers
+                    # on récupère l'endroit du fichier correspondant à la langue cible
+                    if f"## {langue}\n" in contenu_fichier:
+                        index = contenu_fichier.index(f"## {langue}\n")
+                    # si le fichier n'est pas rempli, on incrémente la variable
+                        if contenu_fichier[index+2] == "TODO\n":
+                            nombre_todo = nombre_todo +1
+                    else:
+                        pass
+                        #print(f"Le fichier '{fichier}' est à rédiger.")
     # on retourne l'information sous forme de %
     if nombre_fichiers == nombre_todo:
         if nombre_todo == 0:
@@ -334,7 +365,7 @@ if __name__ == '__main__':
     #add_text(fichier, texte_a_ajouter, position_dans_le_fichier)
 
     # Chemin du répertoire racine
-    repertoire_racine = '../content/docs/general_guideline'
+    repertoire_racine = '../content/docs/general_guideline/'
 
     # Appel de la fonction pour parcourir l'arborescence et compter les fichiers
     print(parcourir_arborescence(repertoire_racine,"french"))
@@ -344,3 +375,5 @@ if __name__ == '__main__':
 
     #Appel de la fonction pour vérifier l'arborescence
     #check_env(dossier_racine)
+
+    supp_text_univ_page("../content/docs/general_guideline/Universal_construction/nominal_predicate_construction.md","french")

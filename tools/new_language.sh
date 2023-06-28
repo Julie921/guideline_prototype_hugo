@@ -140,7 +140,7 @@ while read -r fichier; do
       echo -e "\n\n## $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
       nombre_fichiers=$((nombre_fichiers + 1))
     elif [[ $chemin_complet =~ ^\.\./content/docs/general_guideline/Universal_construction/ ]]; then
-      echo -e "\n\n### $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
+      echo -e "\n\n### $folder_name\n\nTODO\n#### Overview\n\n#### Specific Pattern\n\n" >> "$chemin_complet"
       nombre_fichiers=$((nombre_fichiers + 1))
     fi
   fi

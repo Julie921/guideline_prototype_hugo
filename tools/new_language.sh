@@ -133,20 +133,19 @@ nombre_fichiers=0
 # Itérer sur tous les fichiers de l'arborescence
 while read -r fichier; do
   nom_fichier=$(basename "$fichier")
-    # Vérifier si le fichier ne commence pas par "_"
+  # Vérifier si le fichier ne commence pas par "_"
   if [[ ! $nom_fichier =~ ^_ ]]; then
     chemin_complet=$(dirname "$fichier")"/$nom_fichier"
-    echo "$chemin_complet"
-    if [[ ! $chemin_complet =~ ^../content/docs/general_guideline/Universal_construction/]]
+    if [[ ! $chemin_complet =~ ^\.\./content/docs/general_guideline/Universal_construction ]]; then
       echo -e "\n\n## $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
       nombre_fichiers=$((nombre_fichiers + 1))
-    fi
-    if [[ $chemin_complet =~ ^../content/docs/general_guideline/Universal_construction/]]
-      echo -e "\n\n## $folder_name\n\nTODO\n#### Overview\n\n#### Specific Pattern\n\n" >> "$chemin_complet"
+    elif [[ $chemin_complet =~ ^\.\./content/docs/general_guideline/Universal_construction/ ]]; then
+      echo -e "\n\n### $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
       nombre_fichiers=$((nombre_fichiers + 1))
     fi
   fi
-done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre_fichiers -- process substitution
+done < <(find "$racine" -type f)
+ # solution pour récupérer la variable $nombre_fichiers -- process substitution
 
 #echo $nombre_fichiers
 

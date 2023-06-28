@@ -1,0 +1,8 @@
+{
+  "corpora": [
+    {
+      "id": "SUD_French-GSD@latest",
+      "directory":  "test1/corpora/SUD_French-GSD"
+    }
+  ]
+}

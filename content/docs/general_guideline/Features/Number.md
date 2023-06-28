@@ -114,3 +114,22 @@ On peut se servir des différents patterns pour construire le validateur
 
 
 
+
+## french
+
+TODO
+### Overview
+
+### Specific Pattern
+
+
+
+
+## haitien
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

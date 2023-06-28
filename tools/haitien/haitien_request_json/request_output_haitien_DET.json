@@ -1,0 +1,1 @@
+[{"id": "Yon_determiner", "request": [{"pattern": ["GOV -[det]-> DEP; DEP[lemma=yon]"]}]}]

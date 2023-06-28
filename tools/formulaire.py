@@ -8,6 +8,7 @@ from write_in_file import add_text, parcourir_arborescence, check_env, add_text_
 from streamlit_extras.stoggle import stoggle
 from streamlit_extras.mention import mention
 import re
+import re
 
 st.title("Formular to help the guideline's writting")
 
@@ -26,6 +27,7 @@ liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON'
 list_of_deprel = ['comp','comp:aux','comp:pred','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
 list_of_deep = ["pass","relcl","tense","x","caus","name","agent","emb","lvc","foreign","expl"]
 particular_phenomena_check = ['numeral','coordination','comparative construction','disfluency','reported speech']
+particular_phenomena_check = ['numeral','coordination','comparative construction','disfluency','reported speech']
 liste_of_features=["Number","Gender","Mood","Person","Polarity","Tense","VerbForm","Shared","Subject"]
 liste_of_misc=["CorrectForm","ExtPos","Idiom_Titles","Typo","Reported","Word_TextForm"]
 universal_construction={"nominal predicate construction":["Zero copula strategy","Verbal copula strategy"," Verbal strategy"]}
@@ -42,6 +44,7 @@ def add_answer():
     name = st.text_input("Name")
     pattern = st.text_input('Pattern')
     st.markdown(":warning: :red[Syntax example for the pattern: 'GOV-[deprel]->DEP'] :warning:")
+    st.markdown(":warning: :red[Syntax example for the pattern: 'GOV-[deprel]->DEP'] :warning:")
     descr = st.text_area('Description',height=200)
     example = st.text_area('Example (conll)',height=200)
 
@@ -55,6 +58,14 @@ def add_answer():
         example = st.empty()
     # update the list of answers during the session. 
     st.session_state.answers = answers
+
+
+def verifier_chaine(chaine):
+    pattern = r'^[a-zA-Z0-9\s]+$'
+    if re.match(pattern, chaine):
+        return True
+    else:
+        return False
 
 
 def verifier_chaine(chaine):
@@ -406,36 +417,27 @@ if st.button('Enregistrer au format JSON'):
                 f.write(md_output)
             #st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n")
 
-            st.write("We move the table to the right place...")
-            # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
-            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Universal_construction":
-                old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
-                new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
-                os.rename(old_path,new_path)
+        st.write("We move the table to the right place...")
+        # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
+        if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Universal_construction":
+            old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
+            new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
+            os.rename(old_path,new_path)
+        
+        # traitement différent si deprel
+        if tag == "Syntactic_relations":
+            old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
             
-            # traitement différent si deprel
-            if tag == "Syntactic_relations":
-                old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
-                
-                if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
-                    new_path = f"../static/docs/general_guideline/{tag}/{named}/{named}/table_output_{str(language).lower()}_{named}.json"
-                
-                if named.startswith("comp"):
-                    new_path = f"../static/docs/general_guideline/{tag}/comp/{named}/table_output_{str(language).lower()}_{named}.json"
-
-                if named.startswith("conj"):
-                    new_path = f"../static/docs/general_guideline/{tag}/conj/{named}/table_output_{str(language).lower()}_{named}.json"
-
-                if named == "discourse" or named == "dislocated" or named =="vocative":
-                    new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/{named}/table_output_{str(language).lower()}_{named}.json"
-
-                if named.startswith("parataxis"):
-                    new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}/table_output_{str(language).lower()}_{named}.json"
-                
-                # on bouge les fichiers table.json
-                os.rename(old_path,new_path)
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
+                new_path = f"../static/docs/general_guideline/{tag}/{named}/{named}/table_output_{str(language).lower()}_{named}.json"
             
-            st.write("Table has been moved.")
+            if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
+                new_path = f"../static/docs/general_guideline/{tag}/macrosyntaxe/{named}/table_output_{str(language).lower()}_{named}.json"
+            
+            # on bouge les fichiers table.json
+            os.rename(old_path,new_path)
+        
+        st.write("Table has been moved.")
 
             st.markdown("## Writting the guideline's page")
             st.write("guideline's page writting...")
@@ -444,31 +446,16 @@ if st.button('Enregistrer au format JSON'):
                 if f"../content/docs/general_guideline/{tag}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
-            # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
-            if tag == "Syntactic_relations":
-                if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
-                    if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
-                if named.startswith("comp"):
-                    if f"../content/docs/general_guideline/{tag}/comp/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/comp/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
-
-                if named.startswith("conj"):
-                    if f"../content/docs/general_guideline/{tag}/conj/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/conj/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-                            
-                if named == "discourse" or named == "dislocated" or named =="vocative":
-                    if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
-                if named.startswith("parataxis"):
-                    if f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-                
+        # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
+        if tag == "Syntactic_relations":
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
+                if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
             
-            st.write("guideline's page has been written.")
+            if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
+                if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+        st.write("guideline's page has been written.")
 
             
             # Sinon on crée une page pour un phénomène linguistique, on ajoute une nouvelle page au bon endroit
@@ -507,119 +494,28 @@ if st.button('Enregistrer au format JSON'):
                 if f"../content/docs/general_guideline/{tag}/{named}.md":
                     add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
 
-
-            # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
-            if tag == "Syntactic_relations":
-                if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat":
-                    if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
-                if named.startswith("comp"):
-                    if f"../content/docs/general_guideline/{tag}/comp/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
-
-                if named.startswith("conj"):
-                    if f"../content/docs/general_guideline/{tag}/conj/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-                            
-                if named == "discourse" or named == "dislocated" or named =="vocative":
-                    if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-
-                if named.startswith("parataxis"):
-                    if f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md":
-                        add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/parataxis/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-                
-            st.write("guideline's page has been written.")
-
-            # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
-            if tag == "Other linguistic phenomena":
-                name = str(data['value'][0])
-                name = name.split(" ")
-                name = "_".join(name)
-                st.write(f"../content/docs/language/{str(language).lower()}/{name}.md")
-                with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
-                    f.write(md_output)
-
-            st.write("Vous pouvez quitter le formulaire")
-
-    if tag =="Universal_construction":
-        df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
-        st.write(f"The request file {str(language).lower()}/output/output_{str(language).lower()}_{named}.json has been saved.")
-        st.title("Saving your answer and updating the guidelines, dont quit :warning:")
-        st.markdown(":warning: :red[Don't quit the formulare while you're not welcome to] :warning:")
-        # Exécution conditionnelle du code après l'enregistrement du fichier -> on rédige les fichiers et on les place au bon endroit. Ici on considère
-        # que l'utilisateur a écrit des patterns pour créer une table 
-        if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] != [{}]:
-            st.markdown("## Writing the table link to grew-match")
-            st.write("Writing of the request file for the table...")
-            # # Ecriture du fichier request pour construire les tables dans le sous dossier langue/langue_request_json/...
-
-            # contenu pour les requête
-            content = create_request_file(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
-
-            with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w') as f:
-                f.write(str(content))
-            st.write(f" The request file has been saved : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
+        # On traitement différent les relarions syntaxiques car organisé autrement dans le guide
+        if tag == "Syntactic_relations":
+            if named == "subj" or named =="mod" or named =="compound" or named =="udep" or named=="flat" or named.startswith("comp") or named.startswith("conj"):
+                if f"../content/docs/general_guideline/{tag}/{named}/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
             
-            # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
-            st.write(f"Creation of the tables ag-grid in the sub-folder {language}/{language}_table_json/ ...")
-            result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
-            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
-                f.write(str(result))
-            st.write(f"The file : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json has been saved")
-            
-            # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
-            # CHANGEMENT : on écrit directement au bon endroit ! -> voir plus loin ! 
-            #st.write("Ecriture de la page en markdown pour le guide d'annotation")
-            md_output = univ_json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
-            #md_output = add_link("links.csv",md_output)
-            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+            if named == "discourse" or named == "dislocated" or named =="vocative" or named.startswith("parataxis"):
+                if f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md":
+                    add_text(f"../content/docs/general_guideline/{tag}/macrosyntaxe/{named}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
+
+        # Sinon on crée une page typique, on ajoute une nouvelle page au bon endroit
+        if tag == "Other linguistic phenomena":
+            name = str(data['value'][0])
+            name = name.split(" ")
+            name = "_".join(name)
+            st.write(f"../content/docs/language/{str(language).lower()}/{name}.md")
+            with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
                 f.write(md_output)
-            #st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n")
 
-            st.write("We move the table to the right place...")
-            # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
-            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Universal_construction":
-                old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
-                new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
-                os.rename(old_path,new_path)
+        st.write("Vous pouvez quitter le formulaire")
+    
 
-                st.markdown("## Writting the guideline's page")
-                st.write("guideline's page writting...")
-                # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-                if f"../content/docs/general_guideline/{tag}/{named}.md":
-                        content = []
-                        with open( f"../content/docs/general_guideline/{tag}/{named}.md","r") as input:
-                            line = input.readline()
-                            while line:
-                                content.append(line.strip())
-                                line = input.readline()
-                univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
-                st.write("guideline's page has been written.")
-                        # repere = content.index(which_str)
-                        # add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {str(language).lower()}\n")
-            # S'il n'y pas de pattern specific pour construire les tables, on enlève une étape et on utilise une autre fonction de json2md.py
-
-        if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
-
-            st.write("Ecriture du fichier markdown dans le sous dossier langue/langue_page/")
-            # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
-            md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
-            #md_output = add_link("links.csv",md_output)
-            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
-                f.write(md_output)
-            
-            st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
-            # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
-            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
-                if f"../content/docs/general_guideline/{tag}/{named}.md":
-                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
-    
-    
-    
-    
-    #mis à jour du statu des guidelines
-    # get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
-    # add_text_check(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")
+    get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
+    #print(get_percent_to_write)
+    add_text_check(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")

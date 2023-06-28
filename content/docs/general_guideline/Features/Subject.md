@@ -145,7 +145,18 @@ Sometimes, you can find `Subject=NoRaising` which corresponds to `Subject=Generi
 
 
 
+
 ## french
+
+TODO
+### Overview
+
+### Specific Pattern
+
+
+
+
+## haitien
 
 TODO
 ### Overview

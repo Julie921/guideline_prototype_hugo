@@ -1,0 +1,36 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "direct_object_complement_-_recipient",
+      "headerName": "direct_object_complement_-_recipient",
+      "request": "pattern {GOV-[comp:obj@R]->DEP}"
+    },
+    {
+      "field": "direct_object_complement_-_theme",
+      "headerName": "direct_object_complement_-_theme",
+      "request": "pattern {GOV-[comp:obj@T]->DEP}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_Haitian_Creole-Autogramm@latest",
+      "direct_object_complement_-_recipient": 2,
+      "direct_object_complement_-_theme": 1
+    }
+  ]
+}

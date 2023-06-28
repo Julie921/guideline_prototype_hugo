@@ -1,0 +1,30 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "Causative_construction_with_ADP_governor",
+      "headerName": "Causative_construction_with_ADP_governor",
+      "request": "pattern {GOV -[subj]-> DEP;GOV[upos=ADP]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_Haitian_Creole-Autogramm@latest",
+      "Causative_construction_with_ADP_governor": 2
+    }
+  ]
+}

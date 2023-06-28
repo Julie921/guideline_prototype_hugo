@@ -109,3 +109,13 @@ You can find more information on the [`pronomional verb`](../../../language/Fren
 
 
 
+
+
+## haitien
+
+TODO
+### Overview
+
+### Specific Pattern
+
+

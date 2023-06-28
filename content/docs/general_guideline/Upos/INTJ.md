@@ -131,4 +131,13 @@ As a special case of interjections, we recognize feedback particles such as yes,
 {{< agg table_output_french_INTJ >}}
  
 
+### Specific Pattern
+
+## haitien
+
+TODO
+### Overview
+
+### Specific Pattern
+
 

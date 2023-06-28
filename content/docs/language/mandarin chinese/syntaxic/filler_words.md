@@ -11,7 +11,7 @@ In Mandarin Chinese, there are several filler words (also known as "filler sound
 As in other languages, filler words in Mandarin should be used sparingly in formal speech or writing but can make informal speech sound more natural.
 
 ## How to annotate
-The filler word is annotate as an interjection (INTJ) and with a discourse relation to the head of the phrase. If there is punctuation related to the filler word, these punctuation will be governed by the filler word.
+The filler word is annotated as an interjection (INTJ) and with a discourse relation to the head of the phrase. If there is punctuation related to the filler word, the punctuation will be governed by the filler word.
 
 ## Structures
 

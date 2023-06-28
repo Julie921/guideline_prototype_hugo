@@ -5,8 +5,8 @@ Module pour ajouter le texte markdown au bon endroit.
 import os
 from typing import List
 
-def supp_text_univ_page(fichier:str, repere:str):
-    pattern = [f"#{repere}","TODO\n","#### Overview\n","#### Specific Pattern\n"]
+def supp_text_univ_page(fichier:str, langue:str):
+    pattern = [f"### {langue}\n","TODO\n","#### Overview\n","#### Specific Pattern\n"]
     new_content =""
     with open(fichier,'r', encoding="utf-8") as old:
         line = old.readline()
@@ -83,7 +83,7 @@ def add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
         f.writelines(new_contenu)
 
 
-def univ_add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
+def univ_add_text(fichier:str, texte_a_ajouter:str, texte_repere:str, langue:str):
     """
     This function write a new content in a file, replaceb thanks to an identified text 'text_repere'
     Parameters
@@ -144,7 +144,7 @@ def univ_add_text(fichier:str, texte_a_ajouter:str, texte_repere:str):
     with open(fichier, 'w') as f:
         f.writelines(new_contenu)
 
-    supp_text_univ_page(fichier,texte_repere)
+    supp_text_univ_page(fichier,langue)
 
 def add_text_check(fichier, texte_a_ajouter, texte_repere):
     """

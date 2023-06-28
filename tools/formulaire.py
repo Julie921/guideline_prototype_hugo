@@ -419,7 +419,7 @@ if st.button('Enregistrer au format JSON'):
             # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
             if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
                 if f"../content/docs/general_guideline/{tag}/{named}.md":
-                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
+                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n",f"{str(language).lower()}")
 
         if f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json' and data['specific_pattern'] == [{}]:
             st.write("Ecriture du fichier markdown dans le sous dossier langue/langue_page/")
@@ -433,7 +433,7 @@ if st.button('Enregistrer au format JSON'):
             # On ajoute le texte au bon endroit si l'utilisateur a écrit une page relative à un TAG
             if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag=="Universal_construction":
                 if f"../content/docs/general_guideline/{tag}/{named}.md":
-                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n")
+                    univ_add_text(f"../content/docs/general_guideline/{tag}/{named}.md", f"\n\n{md_output} \n\n", f"## {which_strat}\n",f"{str(language).lower()}")
         
         st.write("Vous pouvez quitter le formulaire")
 

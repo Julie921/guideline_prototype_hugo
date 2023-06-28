@@ -34,12 +34,10 @@ def create_request_file(file:str):
                         if kk == "pattern":
                             # manage the "" or '' for the grewpy_backend module !
                             vv = json.dumps(vv)
-                            print(vv)
                         # and add them in the right format in the dict_pattern
                             dict_pattern["request"]=[{"pattern":[f"{vv}"]}]
                     # add the pattern in the right format in the list
                     liste_dict_pattern.append(dict_pattern)
-                    print(liste_dict_pattern)
     content = str(liste_dict_pattern)
     content = content.replace("'\"",'"')
     content = content.replace("\"'",'"')

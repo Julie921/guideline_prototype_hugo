@@ -136,8 +136,15 @@ while read -r fichier; do
     # Vérifier si le fichier ne commence pas par "_"
   if [[ ! $nom_fichier =~ ^_ ]]; then
     chemin_complet=$(dirname "$fichier")"/$nom_fichier"
-    echo -e "\n\n## $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
-    nombre_fichiers=$((nombre_fichiers + 1))
+    echo "$chemin_complet"
+    if [[ ! $chemin_complet =~ ^../content/docs/general_guideline/Universal_construction/]]
+      echo -e "\n\n## $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
+      nombre_fichiers=$((nombre_fichiers + 1))
+    fi
+    if [[ $chemin_complet =~ ^../content/docs/general_guideline/Universal_construction/]]
+      echo -e "\n\n## $folder_name\n\nTODO\n#### Overview\n\n#### Specific Pattern\n\n" >> "$chemin_complet"
+      nombre_fichiers=$((nombre_fichiers + 1))
+    fi
   fi
 done < <(find "$racine" -type f) # solution pour récupérer la variable $nombre_fichiers -- process substitution
 

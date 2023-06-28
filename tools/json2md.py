@@ -33,7 +33,7 @@ def add_link(file:str,md:str)->str:
 
 def json_to_markdown_fwith_pattern(file_json:str,table_json:str)->str:
     """
-    This function return a string with the markdown content from a lsit of dict from the json file's fromular (formulaire.py). 
+    This function return a string with the markdown content from a list of dict from the json file's fromular (formulaire.py). 
     Parameters
     ---------
     file : str

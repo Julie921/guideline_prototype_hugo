@@ -43,8 +43,8 @@ def add_answer():
     # texts zone for the answers
     name = st.text_input("Name")
     pattern = st.text_input('Pattern')
-    st.markdown(":warning: :red[Syntax example for the pattern: 'GOV-[deprel]->DEP'] :warning:")
-    st.markdown(":warning: :red[Syntax example for the pattern: 'GOV-[deprel]->DEP'] :warning:")
+    #st.markdown(":warning: :red[Syntax example for the pattern: 'GOV-[deprel]->DEP'] :warning:")
+    pattern = pattern.replace('"','"')
     descr = st.text_area('Description',height=200)
     example = st.text_area('Example (conll)',height=200)
 

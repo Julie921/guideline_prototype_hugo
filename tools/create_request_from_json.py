@@ -32,15 +32,21 @@ def create_request_file(file:str):
                     # get the pattern 
                     for kk,vv in valuez.items():
                         if kk == "pattern":
-                            # and add them in the right format in the dict_pattern
-                            dict_pattern["request"]=[{"pattern":[vv]}]
-                    # add the pattern in the right format in the liste
+                            # manage the "" or '' for the grewpy_backend module !
+                            vv = json.dumps(vv)
+                            print(vv)
+                        # and add them in the right format in the dict_pattern
+                            dict_pattern["request"]=[{"pattern":[f"{vv}"]}]
+                    # add the pattern in the right format in the list
                     liste_dict_pattern.append(dict_pattern)
+                    print(liste_dict_pattern)
     content = str(liste_dict_pattern)
+    content = content.replace("'\"",'"')
+    content = content.replace("\"'",'"')
     content = content.replace("'",'"')
+    # content = content.replace('""','"')
+    # content = content.replace(r"\\\\",r"\\")
     return content
-
-
 
 if __name__ == '__main__':
     # Configuration des arguments de ligne de commande
@@ -51,9 +57,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Lancer la lecture pour écrire le fichier request au format JSON
-    content = create_request_file(args.file_json, "r")
+    content = create_request_file(args.file_json)
     # write the result in request_output.json
-    with open(f"request_{args.file_json}.json","w") as output:
+    with open("test.json","w") as output:
         output.write(str(content))
 
 

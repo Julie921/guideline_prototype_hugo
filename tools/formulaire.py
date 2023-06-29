@@ -27,7 +27,6 @@ liste_of_upos = ['AUX','ADV','DET','VERB','SYM','X','CCONJ','SCONJ','ADJ','PRON'
 list_of_deprel = ['comp','comp:aux','comp:pred','comp:obj',"comp:obl","comp:cleft","compound","conj","conj:appos","conj:coord","conj:dicto","det","discourse","dislocated","flat","parataxis","parataxis:obj","parataxis:insert","punct","root","subj","udep","unk","cc","vocative"]
 list_of_deep = ["pass","relcl","tense","x","caus","name","agent","emb","lvc","foreign","expl"]
 particular_phenomena_check = ['numeral','coordination','comparative construction','disfluency','reported speech']
-particular_phenomena_check = ['numeral','coordination','comparative construction','disfluency','reported speech']
 liste_of_features=["Number","Gender","Mood","Person","Polarity","Tense","VerbForm","Shared","Subject"]
 liste_of_misc=["CorrectForm","ExtPos","Idiom_Titles","Typo","Reported","Word_TextForm"]
 universal_construction={"nominal predicate construction":["Zero copula strategy","Verbal copula strategy"," Verbal strategy"]}
@@ -570,7 +569,7 @@ if st.button('Enregistrer au format JSON'):
 
         st.write("Vous pouvez quitter le formulaire")
     
-
+    # mis à jour des guidelines status !
     get_percent_to_write = parcourir_arborescence("../content/docs/general_guideline", f"{str(language).lower()}")
     #print(get_percent_to_write)
     add_text_check(f"../content/docs/language/{str(language).lower()}/_index.md", f"Statut of the guideline : {get_percent_to_write}% written\n", f"### Guidelines status\n")

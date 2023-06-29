@@ -1,5 +1,5 @@
 ---
-title: "Misc"
+title: "Additionnal Features (Misc)"
 weight: 1
 # bookFlatSection: false
 bookToc: true

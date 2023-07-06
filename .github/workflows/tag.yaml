@@ -1,4 +1,4 @@
-name: Vérifier si un tag correspond à une langue pour augmenter le guide via les issues
+name: Vérifier si un tag est dans une liste
 on:
   issues:
     types: [opened]
@@ -20,7 +20,7 @@ jobs:
         ISSUE_NUMBER=$(jq --raw-output .issue.number $GITHUB_EVENT_PATH)
 
         # Liste des tags autorisés
-        ALLOWED_TAGS=("french" "zaar" "beja" "mandarin" "haitien")
+        ALLOWED_TAGS=("french" "zaar" "haitien")
 
         # Vérifier si le tag est présent dans la liste
         if [[ " ${ALLOWED_TAGS[@]} " =~ " $TAG_NAME " ]]; then
@@ -33,7 +33,7 @@ jobs:
           echo "Contenu du fichier" > $FILE_PATH
 
           # Ajouter un commentaire à l'issue
-          echo "Fichier créé avec succès!" | gh issue comment $ISSUE_NUMBER
+          echo "Fichier créé avec succès!" | gh issue comment $ISSUE_NUMBER --body "Fichier créé avec succès!"
         else
           echo "Le tag n'est pas présent dans la liste."
         fi

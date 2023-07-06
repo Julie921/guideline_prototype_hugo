@@ -11,11 +11,13 @@ jobs:
     - name: Checkout du code
       uses: actions/checkout@v2
 
-    - name: Créer le fichier
+    - name: Vérifier le tag
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        echo pwd
         # Récupérer les informations de l'issue
         TAG_NAME=$(jq --raw-output .issue.labels[0].name $GITHUB_EVENT_PATH)
+
         ISSUE_NUMBER=$(jq --raw-output .issue.number $GITHUB_EVENT_PATH)
         
         

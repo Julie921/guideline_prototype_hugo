@@ -1,0 +1,38 @@
+name: Créer un fichier depuis une issue
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  createFile:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout du code
+      uses: actions/checkout@v2
+
+    - name: Créer le fichier
+      run: |
+        echo pwd
+        # Récupérer les informations de l'issue
+        TAG_NAME=$(jq --raw-output .issue.labels[0].name $GITHUB_EVENT_PATH)
+        ISSUE_NUMBER=$(jq --raw-output .issue.number $GITHUB_EVENT_PATH)
+        
+        
+        # Liste des tags autorisés
+        ALLOWED_TAGS=("french" "beja" "zaar" "chinese")
+
+        # Vérifier si le tag est présent dans la liste
+        if [[ " ${ALLOWED_TAGS[@]} " =~ " $TAG_NAME " ]]; then
+        
+          # Définir le chemin du fichier avec une variable
+          FILE_PATH="./content/docs/language/$TAG_NAME/$ISSUE_NUMBER.md"
+
+          # Créer le fichier dans le dossier souhaité
+          echo "Contenu du fichier" > $FILE_PATH
+
+          # Ajouter un commentaire à l'issue
+          echo "Fichier créé avec succès!" | gh issue comment $ISSUE_NUMBER
+        else
+          echo "Le tag ne correspond pas aux critères souhaités."
+        fi

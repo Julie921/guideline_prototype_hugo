@@ -13,14 +13,14 @@ jobs:
 
     - name: Vérifier le tag
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.PAT }}
       run: |
         # Récupérer les informations de l'issue
         TAG_NAME=$(jq --raw-output .issue.labels[0].name $GITHUB_EVENT_PATH)
         ISSUE_NUMBER=$(jq --raw-output .issue.number $GITHUB_EVENT_PATH)
 
         # Liste des tags autorisés
-        ALLOWED_TAGS=("french" "beja" "zaar")
+        ALLOWED_TAGS=("french" "zaar" "haitien")
 
         # Vérifier si le tag est présent dans la liste
         if [[ " ${ALLOWED_TAGS[@]} " =~ " $TAG_NAME " ]]; then
@@ -33,7 +33,4 @@ jobs:
           echo "Contenu du fichier" > $FILE_PATH
 
           # Ajouter un commentaire à l'issue
-          echo "Fichier créé avec succès!" | gh issue comment $ISSUE_NUMBER --body "Fichier créé avec succès!"
-        else
-          echo "Le tag n'est pas présent dans la liste."
-        fi
+          echo "Fichier créé avec

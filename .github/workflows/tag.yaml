@@ -1,4 +1,4 @@
-name: Vérifier si un tag est dans une liste
+name: Vérifier si un tag correspond à une langue pour augmenter le guide via les issues
 on:
   issues:
     types: [opened]
@@ -20,7 +20,7 @@ jobs:
         ISSUE_NUMBER=$(jq --raw-output .issue.number $GITHUB_EVENT_PATH)
 
         # Liste des tags autorisés
-        ALLOWED_TAGS=("tag1" "tag2" "tag3")
+        ALLOWED_TAGS=("french" "zaar" "beja" "mandarin" "haitien")
 
         # Vérifier si le tag est présent dans la liste
         if [[ " ${ALLOWED_TAGS[@]} " =~ " $TAG_NAME " ]]; then

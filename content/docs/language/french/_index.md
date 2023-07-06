@@ -5,7 +5,7 @@
 
 ### Guidelines status
 
-Statut of the guideline : 4.23% written
+Statut of the guideline : 5.68% written
 
 ## Author information 
 

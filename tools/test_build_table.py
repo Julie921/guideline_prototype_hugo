@@ -55,7 +55,7 @@ def process_files(request_file:str, corpora_file:str)->str:
         "rowData": rowData,
     }
 
-    return json.dumps(data, indent=2)
+    return json.dumps(data, indent=2, ensure_ascii=False)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

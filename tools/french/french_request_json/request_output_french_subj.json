@@ -1,1 +1,0 @@
-[{"id": "passive_subject", "request": [{"pattern": ["GOV-[subj@pass]->DEP"]}]}, {"id": "causativ_subject", "request": [{"pattern": ["GOV-[subj@caus]->DEP"]}]}, {"id": "expletiv_subject", "request": [{"pattern": ["GOV-[subj@expl]->DEP"]}]}]

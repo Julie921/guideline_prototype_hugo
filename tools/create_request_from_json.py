@@ -14,8 +14,13 @@ def create_request_file(file:str):
     ---------
     Nothing  
     """
-    with open(file, "r") as json_file: 
+    with open(file, "r", encoding="UTF-8") as json_file: 
         d = json.load(json_file)
+
+    print(d)
+    print(type(d))
+    #d = json.dumps(d, ensure_ascii=False)
+
     liste_dict_pattern = []
     for data in d:
         # get the key/value from the dict from the json file
@@ -33,17 +38,31 @@ def create_request_file(file:str):
                     for kk,vv in valuez.items():
                         if kk == "pattern":
                             # manage the "" or '' for the grewpy_backend module !
-                            vv = json.dumps(vv)
+                            vv = json.dumps(vv, ensure_ascii=False)
                         # and add them in the right format in the dict_pattern
                             dict_pattern["request"]=[{"pattern":[f"{vv}"]}]
                     # add the pattern in the right format in the list
                     liste_dict_pattern.append(dict_pattern)
-    content = str(liste_dict_pattern)
-    #content = content.replace("'\"",'"')
-    #content = content.replace("\"'",'"')
-    content = content.replace("'",'"')
-    content = content.replace('""','"')
-    # content = content.replace(r"\\\\",r"\\")
+    
+    content_str = str(liste_dict_pattern)
+
+    content_dict = liste_dict_pattern
+
+    if "\\" not in content_str:
+        content = content_str.replace("'",'"') #ancien code, nécessaire si vv.dump()
+        content = content.replace('""','"') #ancien code, nécessaire si vv.dump()
+
+    if "\\" in content_str:
+        # print("############## ",content_dict)
+        # print(type(content_dict))
+        #content = content_str.replace('"','\\"') #échapper les guillemets
+        content = content_str.replace("'\"",'"')
+        content = content.replace("\"'",'"')
+        content = content.replace("'",'"')
+        # content = content.replace('""','"')
+        content = content.replace('""','"')
+        content = content.replace('\\\\"','\\"')
+        # print(content)
     return content
 
 if __name__ == '__main__':

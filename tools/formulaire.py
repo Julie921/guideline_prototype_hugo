@@ -381,7 +381,7 @@ if st.button('Enregistrer au format JSON'):
 
 
     if tag =="Universal_construction":
-        df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
+        df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records',force_ascii= False)
         st.write(f"The request file {str(language).lower()}/output/output_{str(language).lower()}_{named}.json has been saved.")
         st.title("Saving your answer and updating the guidelines, dont quit :warning:")
         st.markdown(":warning: :red[Don't quit the formulare while you're not welcome to] :warning:")
@@ -395,14 +395,14 @@ if st.button('Enregistrer au format JSON'):
             # contenu pour les requête
             content = create_request_file(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
 
-            with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w', encoding="UTF-8") as f:
                 f.write(str(content))
             st.write(f" The request file has been saved : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
 
             # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
             st.write(f"Creation of the tables ag-grid in the sub-folder {language}/{language}_table_json/ ...")
             result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
-            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w' , encoding="UTF-8") as f:
                 f.write(str(result))
             st.write(f"The file : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json has been saved")
 
@@ -411,7 +411,7 @@ if st.button('Enregistrer au format JSON'):
             #st.write("Ecriture de la page en markdown pour le guide d'annotation")
             md_output = univ_json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
             #md_output = add_link("links.csv",md_output)
-            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w', encoding="UTF-8") as f:
                 f.write(md_output)
 
             st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
@@ -425,7 +425,7 @@ if st.button('Enregistrer au format JSON'):
             # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
             md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
             #md_output = add_link("links.csv",md_output)
-            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w', encoding="UTF-8") as f:
                 f.write(md_output)
 
             st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
@@ -437,7 +437,7 @@ if st.button('Enregistrer au format JSON'):
         st.write("Vous pouvez quitter le formulaire")
 
     if tag != "Universal_construction":
-        df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records')
+        df.to_json(f'{str(language).lower()}/output/output_{str(language).lower()}_{named}.json', orient='records', force_ascii= False)
         st.write(f"The request file {str(language).lower()}/output/output_{str(language).lower()}_{named}.json has been saved.")
         st.title("Saving your answer and updating the guidelines, dont quit :warning:")
         st.markdown(":warning: :red[Don't quit the formulare while you're not welcome to] :warning:")
@@ -450,15 +450,19 @@ if st.button('Enregistrer au format JSON'):
 
             # contenu pour les requête
             content = create_request_file(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
-
-            with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w') as f:
-                f.write(str(content))
+            # st.write(content)
+            
+            with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w', encoding="UTF-8") as json_file:
+                json_file.write(str(content))
+                
             st.write(f" The request file has been saved : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
             
             # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
             st.write(f"Creation of the tables ag-grid in the sub-folder {language}/{language}_table_json/ ...")
+
+            # TODO : problème ici, quand le fichier table se crée, j'ai de nouveau un problème d'encodaege (-> lien vers GM)
             result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
-            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w', encoding="UTF-8") as f:
                 f.write(str(result))
             st.write(f"The file : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json has been saved")
             
@@ -467,13 +471,13 @@ if st.button('Enregistrer au format JSON'):
             #st.write("Ecriture de la page en markdown pour le guide d'annotation")
             md_output = json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
             #md_output = add_link("links.csv",md_output)
-            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w', encoding="UTF-8") as f:
                 f.write(md_output)
             #st.write(f"Le fichier MarkDown est écrit : output_{str(language).lower()}_{named}.md\n")
 
             st.write("We move the table to the right place...")
             # On déplace le fichier des tables au bon endroit dans la partie static si l'utilisateur a écrit une page relative à un TAG
-            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep" or tag =="Universal_construction":
+            if tag == 'Features' or tag =='Misc' or tag=='Upos' or tag =="Deep":
                 old_path = f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json"
                 new_path = f"../static/docs/general_guideline/{tag}/{named}/table_output_{str(language).lower()}_{named}.json"
                 os.rename(old_path,new_path)
@@ -512,15 +516,15 @@ if st.button('Enregistrer au format JSON'):
             st.write("guideline's page has been written.")
 
                 
-                # Sinon on crée une page pour un phénomène linguistique, on ajoute une nouvelle page au bon endroit
+            # Sinon on crée une page pour un phénomène linguistique, on ajoute une nouvelle page au bon endroit
             if tag == "Other linguistic phenomena":
                     name = str(data['value'][0])
                     name = name.split(" ")
                     name = "_".join(name)
                     st.markdown(f"## Creating the guideline's page \n ../content/docs/language/{str(language).lower()}/{name}.md ...")
                     os.mkdir(f"../static/docs/language/{str(language).lower()}/{name}")
-                    md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
-                    with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
+                    md_output = json_to_markdown_fwith_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json",f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json")
+                    with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w', encoding="UTF-8") as f:
                         f.write(md_output)
                     st.markdown(f"Guideline's page has been creating.")
                     st.write("Mooving the table in the right place...")
@@ -540,7 +544,7 @@ if st.button('Enregistrer au format JSON'):
             # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...
             md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
             #md_output = add_link("links.csv",md_output)
-            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w') as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_page/output_{str(language).lower()}_{named}.md",'w', encoding="UTF-8") as f:
                 f.write(md_output)
             
             st.write("On ajoute la page markdown au bon endroit dans le guide d'annotation")
@@ -567,7 +571,7 @@ if st.button('Enregistrer au format JSON'):
                 
                 st.write(f"../content/docs/language/{str(language).lower()}/{name}.md")
                 md_output = json_to_markdown_no_pattern(f"{str(language).lower()}/output/output_{str(language).lower()}_{named}.json")
-                with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w') as f:
+                with open(f"../content/docs/language/{str(language).lower()}/{name}.md", 'w', encoding="UTF-8") as f:
                     f.write(md_output)
 
             st.write("Vous pouvez quitter le formulaire")

@@ -39,10 +39,10 @@ def create_request_file(file:str):
                     # add the pattern in the right format in the list
                     liste_dict_pattern.append(dict_pattern)
     content = str(liste_dict_pattern)
-    content = content.replace("'\"",'"')
-    content = content.replace("\"'",'"')
+    #content = content.replace("'\"",'"')
+    #content = content.replace("\"'",'"')
     content = content.replace("'",'"')
-    # content = content.replace('""','"')
+    content = content.replace('""','"')
     # content = content.replace(r"\\\\",r"\\")
     return content
 

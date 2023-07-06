@@ -20,7 +20,7 @@ jobs:
         ISSUE_NUMBER=$(jq --raw-output .issue.number $GITHUB_EVENT_PATH)
 
         # Liste des tags autorisés
-        ALLOWED_TAGS=("french" "zaar" "haitien")
+        ALLOWED_TAGS=("french" "beja" "zaar")
 
         # Vérifier si le tag est présent dans la liste
         if [[ " ${ALLOWED_TAGS[@]} " =~ " $TAG_NAME " ]]; then

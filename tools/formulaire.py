@@ -453,8 +453,11 @@ if st.button('Enregistrer au format JSON'):
             # st.write(content)
             
             with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w', encoding="UTF-8") as json_file:
-                json_file.write(str(content))
-                
+                json_file.write(str(content)) #### BONNE VERSION
+
+            # with open(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json",'w') as json_file:
+            #     json_file.write(str(content))    
+
             st.write(f" The request file has been saved : {str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json ")
             
             # Ecriture du fichier json pour les tables dans le sous dossier langue/langue_table_json/...
@@ -462,8 +465,9 @@ if st.button('Enregistrer au format JSON'):
 
             # TODO : problème ici, quand le fichier table se crée, j'ai de nouveau un problème d'encodaege (-> lien vers GM)
             result = process_files(f"{str(language).lower()}/{str(language).lower()}_request_json/request_output_{str(language).lower()}_{named}.json", f"{str(language).lower()}/{str(language).lower()}_table_json/sud_{str(language).lower()}.json")
-            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w', encoding="UTF-8") as f:
+            with open(f"{str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json" ,'w', encoding="ascii") as f: #change encoding ?
                 f.write(str(result))
+
             st.write(f"The file : {str(language).lower()}/{str(language).lower()}_table_json/table_output_{str(language).lower()}_{named}.json has been saved")
             
             # Ecriture du fichier markdown pour les pages dans le sous dossier langue/langue_page/...

@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-from create_request_from_json import create_request_file
-from json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern, univ_json_to_markdown_fwith_pattern, univ_json_to_markdown_no_pattern
-from test_build_table import process_files
+from modules.create_request_from_json import create_request_file
+from modules.json2md import add_link,json_to_markdown_no_pattern,json_to_markdown_fwith_pattern, univ_json_to_markdown_fwith_pattern, univ_json_to_markdown_no_pattern
+from modules.test_build_table import process_files
 import os 
-from write_in_file import add_text, parcourir_arborescence, check_env, add_text_check, read_partial_markdown, univ_add_text
+from modules.write_in_file import add_text, parcourir_arborescence, check_env, add_text_check, read_partial_markdown, univ_add_text
 from streamlit_extras.stoggle import stoggle
 from streamlit_extras.mention import mention
 import re

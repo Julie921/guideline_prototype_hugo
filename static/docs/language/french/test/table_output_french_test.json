@@ -1,0 +1,38 @@
+{
+  "defaultColDef": {
+    "width": 150,
+    "sortable": true,
+    "sortingOrder": [
+      "desc",
+      "asc"
+    ],
+    "resizable": true
+  },
+  "columnDefs": [
+    {
+      "field": "row_header",
+      "headerName": "Treebank",
+      "pinned": "left",
+      "lockPinned": true
+    },
+    {
+      "field": "Ttest_one_guillemet_and_accent",
+      "headerName": "Ttest_one_guillemet_and_accent",
+      "request": "pattern {GOV [lemma=\"\u00eatre\"]}"
+    }
+  ],
+  "rowData": [
+    {
+      "row_header": "SUD_French-GSD@latest",
+      "Ttest_one_guillemet_and_accent": 9627
+    },
+    {
+      "row_header": "SUD_French-ParisStories@latest",
+      "Ttest_one_guillemet_and_accent": 1606
+    },
+    {
+      "row_header": "SUD_French-Rhapsodie@latest",
+      "Ttest_one_guillemet_and_accent": 1403
+    }
+  ]
+}

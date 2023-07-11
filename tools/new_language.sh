@@ -136,10 +136,12 @@ while read -r fichier; do
   # Vérifier si le fichier ne commence pas par "_"
   if [[ ! $nom_fichier =~ ^_ ]]; then
     chemin_complet=$(dirname "$fichier")"/$nom_fichier"
+    # universal structure page's structure
     if [[ ! $chemin_complet =~ ^\.\./content/docs/general_guideline/Universal_construction ]]; then
       echo -e "\n\n## $folder_name\n\nTODO\n### Overview\n\n### Specific Pattern\n\n" >> "$chemin_complet"
       nombre_fichiers=$((nombre_fichiers + 1))
     elif [[ $chemin_complet =~ ^\.\./content/docs/general_guideline/Universal_construction/ ]]; then
+    # tag page's structure
       echo -e "\n\n### $folder_name\n\nTODO\n#### Overview\n\n#### Specific Pattern\n\n" >> "$chemin_complet"
       nombre_fichiers=$((nombre_fichiers + 1))
     fi
@@ -153,6 +155,7 @@ done < <(find "$racine" -type f)
 
 mkdir ../content/docs/language/"$folder_name"
 touch ../content/docs/language/"$folder_name"/_index.md
+# language information's page in language's subfolder
 echo -e "# $folder_name \n## General information \n\n## Treebank information \n\n### Guidelines status\n\nStatut of the guideline : 0% written\n\n## Author information \n" > ../content/docs/language/"$folder_name"/_index.md
 
 ## ajouter template 

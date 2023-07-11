@@ -10,18 +10,21 @@ You can find the scripts in the sub repertory `generation_guideline`. You will f
 - `create_request_from_json` : this script will create a request file in JSON with the pattern specified in the formular. You will then use the script to produce the table.
 - `json2md.py`: this script will transform the json file from the formular to a markdown file. You will need the JSON file from the formular and the table JSON file. 
 
-## new_language.sh
+## Step one : add a new language in the guidelines 
 
-In this script, you'll have to indicate your language (name) and the path to your data (folder with your treebank). It will produce the following foldder in `tools`:
+In the script `new_language.sh`, you'll have to indicate your language (name) and the path to your data (folder with your treebank). You can add multiple data (folder) if you want. It will produce the following foldder in `tools`:
 - language
   - corpora : it contain your data
   - language_page : it will save your guideline's page (.md)
   - language_request_json : it will save your .json request file 
   - language_table_json : it will save your .json table file 
   - output : it will save your answer to the formualir (.json format)
-All this folder are needed to use the formulaire script below. 
+  
+All this folder are needed to use the formulaire script below. Once done, you won't have to do it again.
 
-## formulaire.py 
+## Step two : adding annotation's instructions 
+
+You can use the `formulaire.py` to add information in the guidelines.
 
 Be sure to have the right environment before using the formulaire.
 
@@ -44,26 +47,6 @@ pip install streamlit
 	- language_request_json : it will contain the request json file needed to create the table in the guideline. Only if you specify pattern in the formular. This folder may also contain other requests JSON files obtained outside of the form filling process.
 	- language_table_json : in this one, you need to add a json with the information of your corpora. Example below.
 	- output : the json file obtained from the formular's answers. 
-
-**Example of the french treebank json file :**
-
-```json
-{
-  "corpora": [
-    {
-      "id": "SUD_French-GSD@latest",
-      "directory": "corpora/SUD_French-GSD"
-    },
-    {
-      "id": "SUD_French-ParisStories@latest",
-      "directory": "corpora/SUD_French-ParisStories"
-    },
-    {
-      "id": "SUD_French-Rhapsodie@latest",
-      "directory": "corpora/SUD_French-Rhapsodie"
-    }
-  ]
-}
 
 ```
 The command to launch the script :
@@ -90,9 +73,6 @@ The script requires:
  - Python library `grewpy` version **0.3.0**
    - check your version with `pip3 list | grep grewpy`
    - if needed, update with `pip3 install grewpy --upgrade`
-
-We suppose that there is a local folder named `corpora` from where the needed corpora are locally accessible.
-It can be a symbolic link.
 
 ## Run 
 

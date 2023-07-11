@@ -1,0 +1,1 @@
+[{"id": "possessive_determiner", "request": [{"pattern": ["X-[det]->Y; Y[Poss=\\"Yes\\"]"]}]}, {"id": "personal_pronoun_vs_personal_pronouns_as_object_complements", "request": [{"pattern": ["X-[comp:obj@R]->Y; Y[upos=PRON]"]}]}]
